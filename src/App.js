@@ -4,8 +4,6 @@ import {
   Header,
   Footer,
   Home,
-  Forum,
-  Question,
   Tag,
   Rank,
   Job,
@@ -15,6 +13,7 @@ import {
   Information,
   HelpDesk,
 } from './components';
+import { QuestionContainer, ForumContainer } from './container';
 // import axios from 'axios';
 
 class App extends Component {
@@ -30,8 +29,8 @@ class App extends Component {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/forum" component={Forum} />
-              <Route path="/question" component={Question} />
+              <Route path="/forum" component={ForumContainer} />
+              <Route path="/question" component={QuestionContainer} />
               <Route path="/tag" component={Tag} />
               <Route path="/rank" component={Rank} />
               <Route path="/job" component={Job} />
