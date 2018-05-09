@@ -12,6 +12,8 @@ import {
   Clause,
   Information,
   HelpDesk,
+  QuestionList,
+  ForumList,
 } from './components';
 import { QuestionContainer, ForumContainer } from './container';
 // import axios from 'axios';
@@ -31,7 +33,9 @@ class App extends Component {
           <div className="body">
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/forum/:id" component={ForumList} />
               <Route path="/forum" component={ForumContainer} />
+              <Route path="/question/:id" component={QuestionList} />
               <Route path="/question" component={QuestionContainer} />
               <Route path="/tag" component={Tag} />
               <Route path="/rank" component={Rank} />

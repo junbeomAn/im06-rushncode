@@ -1,6 +1,6 @@
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Home from './Home';
+import Home from './routes/Home';
 import Tag from './routes/Tag';
 import Rank from './routes/Rank';
 import Job from './routes/Job';
@@ -9,5 +9,21 @@ import Clause from './routes/Clause';
 import Information from './routes/Information';
 import HelpDesk from './routes/HelpDesk';
 import NoMatch from './routes/NoMatch';
+import QuestionList from './routes/QuestionList';
+import ForumList from './routes/ForumList';
 
-export { Header, Footer, Home, Tag, Rank, Job, Auth, Clause, Information, HelpDesk, NoMatch };
+export {
+  Header,
+  Footer,
+  Home,
+  Tag,
+  Rank,
+  Job,
+  Auth,
+  Clause,
+  Information,
+  HelpDesk,
+  NoMatch,
+  QuestionList,
+  ForumList,
+};

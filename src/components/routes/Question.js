@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import '../../styles/css/Question.css';
 
 const Question = ({ data }) => (
   <div className="Container">
     {data.map(item => (
       <div className="Question">
-        <h2>{item.title}</h2>
+        <Link to={`question/${item.id}`} href>
+          <h2>{item.title}</h2>
+        </Link>
         <p>{item.body}</p>
-        <Button className="button">click here</Button>
       </div>
-    ))}
+      ))}
   </div>
 );
 
