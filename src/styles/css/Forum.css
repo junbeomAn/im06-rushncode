@@ -1,0 +1,16 @@
+.Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.Forum {
+  border-bottom: 1px solid grey;
+  width: 70%; }
+
+.button {
+  background-color: black;
+  color: azure; }
+
+/*# sourceMappingURL=Forum.css.map */

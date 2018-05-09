@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Forum.css';
+import { Button } from 'semantic-ui-react';
+
+import '../../styles/css/Forum.css';
 
 const Forum = ({ data }) => (
-  <div>
+  <div className="Container">
     {data.map(item => (
-      <div>
+      <div className="Forum">
         <h2>{item.title}</h2>
         <p>{item.body}</p>
+        <Button className="button">click here</Button>
       </div>
     ))}
   </div>

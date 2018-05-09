@@ -24,9 +24,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Header />
-          <div>
+        <div className="Box">
+          <div className="Header">
+            <Header />
+          </div>
+          <div className="body">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/forum" component={ForumContainer} />
@@ -41,7 +43,9 @@ class App extends Component {
               <Route component={NoMatch} />
             </Switch>
           </div>
-          <Footer />
+          <div className="Footer">
+            <Footer />
+          </div>
         </div>
       </Router>
     );
