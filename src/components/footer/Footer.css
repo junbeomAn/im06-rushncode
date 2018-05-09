@@ -1,0 +1,24 @@
+.footer {
+  background: #222;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.foot_item {
+  text-decoration: none;
+  color: ghostwhite;
+  padding-left: 20px;
+}
+
+.left {
+  padding-left: 30px;
+}
+
+.right {
+  padding-right: 30px;
+}
