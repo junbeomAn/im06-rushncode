@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Question from '../components/routes/question/Question';
+import Question from '../components/routes/Question';
 
 class QuestionContainer extends Component {
   state = {};
