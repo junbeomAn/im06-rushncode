@@ -5,25 +5,25 @@ import './Header.css';
 const Header = () => (
   <div className="header">
     <NavLink exact to="/" className="item" activeClassName="active">
-      Rush & Code
+      러시앤코드
     </NavLink>
     <NavLink to="/forum" className="item" activeClassName="active">
-      Forum
+      포럼
     </NavLink>
     <NavLink to="/question" className="item" activeClassName="active">
-      Question
+      질문
     </NavLink>
     <NavLink to="/tag" className="item" activeClassName="active">
-      Tags
+      태그
     </NavLink>
     <NavLink to="/rank" className="item" activeClassName="active">
-      Ranks
+      랭크
     </NavLink>
     <NavLink to="/job" className="item" activeClassName="active">
-      Job-Info
+      채용정보
     </NavLink>
     <NavLink to="/auth" className="item" activeClassName="active">
-      Auth
+      로그인
     </NavLink>
   </div>
 );
