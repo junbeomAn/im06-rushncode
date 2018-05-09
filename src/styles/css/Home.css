@@ -1,0 +1,33 @@
+.upper {
+  height: 300px;
+  background-color: lightblue;
+  padding-top: 30px; }
+
+.lower {
+  height: 800px;
+  background-color: honeydew; }
+
+.inputContainer {
+  width: 40%;
+  float: right;
+  padding-right: 50px; }
+
+.upper-content {
+  margin-left: 30px;
+  display: inline-block;
+  width: 50%;
+  height: 80%;
+  background-color: floralwhite; }
+
+.lowerLeft {
+  width: 70%;
+  display: inline-block; }
+
+.post {
+  padding: 10px; }
+
+.lowerRight {
+  display: inline-block;
+  width: 30%; }
+
+/*# sourceMappingURL=Home.css.map */

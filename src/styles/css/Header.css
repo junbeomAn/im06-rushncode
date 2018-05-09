@@ -1,0 +1,24 @@
+.header {
+  background: #30414E;
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+
+.item {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: table-cell;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem; }
+
+.item:hover {
+  background: #63695B; }
+
+.item:active,
+.item.active {
+  background: #E9EAEA;
+  color: #30414E; }
+
+/*# sourceMappingURL=Header.css.map */
