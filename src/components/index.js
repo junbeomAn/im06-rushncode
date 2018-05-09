@@ -1,6 +1,6 @@
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Home from './Home';
+import Home from './routes/Home';
 import Tag from './routes/Tag';
 import Rank from './routes/Rank';
 import Job from './routes/Job';
