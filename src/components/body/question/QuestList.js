@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import '../../styles/css/Question.css';
+import '../../../styles/css/Question.css';
 
-const Question = ({ posts }) => (
+const QuestList = ({ posts }) => (
   <div className="Question_main">
     {posts.map(post => (
       <div className="Question" key={post.id}>
@@ -16,8 +16,8 @@ const Question = ({ posts }) => (
   </div>
 );
 
-Question.propTypes = {
+QuestList.propTypes = {
   posts: PropTypes.array.isRequired,
 };
 
-export default Question;
+export default QuestList;

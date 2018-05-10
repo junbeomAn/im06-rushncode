@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import '../../styles/css/Forum.css';
+import '../../../styles/css/Forum.css';
 
-const Forum = ({ forums }) => (
+const ForumList = ({ forums }) => (
   <div className="Container">
     {forums.map(item => (
       <div className="Forum" key={item.id}>
@@ -17,8 +17,8 @@ const Forum = ({ forums }) => (
   </div>
 );
 
-Forum.propTypes = {
+ForumList.propTypes = {
   forums: PropTypes.array.isRequired,
 };
 
-export default Forum;
+export default ForumList;

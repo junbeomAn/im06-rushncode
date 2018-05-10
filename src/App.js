@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// SEMANTIC UI
+import { Container } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
+// REDUX
+import { Provider } from 'react-redux';
+import store from './store/store';
 import {
   Header,
   Footer,
@@ -13,16 +19,12 @@ import {
   Information,
   HelpDesk,
 } from './components';
-import { QuestionContainer, ForumContainer, Question, Forum } from './container';
-
-// REDUX
-import { Provider } from 'react-redux';
-import store from './store/store';
-
-// SEMANTIC UI
-import { Container } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
-// import axios from 'axios';
+import {
+  QuestListContainer,
+  ForumListContainer,
+  QuestContainer,
+  ForumContainer,
+} from './container';
 
 class App extends Component {
   constructor(props) {
@@ -40,10 +42,10 @@ class App extends Component {
             <Container className="container">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/forum/:id" component={Forum} />
-                <Route path="/forum" component={ForumContainer} />
-                <Route path="/question/:id" component={Question} />
-                <Route path="/question" component={QuestionContainer} />
+                <Route path="/forum/:id" component={ForumContainer} />
+                <Route path="/forum" component={ForumListContainer} />
+                <Route path="/question/:id" component={QuestContainer} />
+                <Route path="/question" component={QuestListContainer} />
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />
                 <Route path="/job" component={Job} />

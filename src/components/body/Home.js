@@ -8,7 +8,14 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const Home = () => (
   <div className="container">
     <div className="upper">
-      <div className="upper-content">aa</div>
+      <div className="upper-content">
+        <h1>HELLO FUCKERS</h1>
+        <p>
+        At Palantir, we work for the common good—within our
+        organization and with other organizations around the world. We’re building a future where
+        data can be leveraged to serve people, create value, and improve quality of life.
+        </p>
+      </div>
       <div className="homeInputContainer">
         <div className="buttonContainer">
           <Button.Group widths="3">

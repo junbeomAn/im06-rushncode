@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Question from '../components/routes/Question';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchQuestions } from '../store/actions/questionAction';
+import QuestList from '../../components/body/question/QuestList';
+import { fetchQuestions } from '../../store/actions/questionAction';
 
-class QuestionContainer extends Component {
+class QuestListContainer extends Component {
   componentWillMount() {
     this.props.fetchQuestions();
   }
@@ -13,13 +13,13 @@ class QuestionContainer extends Component {
     const posts = this.props.questions;
     return (
       <div>
-        <Question posts={posts} />
+        <QuestList posts={posts} />
       </div>
     );
   }
 }
 
-QuestionContainer.propTypes = {
+QuestListContainer.propTypes = {
   fetchQuestions: PropTypes.func.isRequired,
   questions: PropTypes.array.isRequired,
 };
@@ -30,4 +30,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestions })(QuestionContainer);
+export default connect(mapStateToProps, { fetchQuestions })(QuestListContainer);

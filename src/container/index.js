@@ -1,6 +1,6 @@
-import QuestionContainer from './QuestionContainer';
-import ForumContainer from './ForumContainer';
-import Question from './Question';
-import Forum from './Forum';
+import QuestListContainer from './question/QuestListContainer';
+import ForumListContainer from './forum/ForumListContainer';
+import QuestContainer from './question/QuestContainer';
+import ForumContainer from './forum/ForumContainer';
 
-export { QuestionContainer, ForumContainer, Question, Forum };
+export { QuestListContainer, ForumListContainer, QuestContainer, ForumContainer };
