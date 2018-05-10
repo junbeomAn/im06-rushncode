@@ -1,0 +1,26 @@
+.authInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 37%;
+  margin-top: 10%;
+  padding-right: 50px; }
+
+.connectLogin {
+  margin-top: 10px; }
+
+.authContainer {
+  height: 700px;
+  width: 100%; }
+
+.authButtonContainer {
+  flex: 1;
+  margin-top: 10px; }
+
+.authDivider {
+  flex: 0.5; }
+
+.authFormContainer {
+  flex: 1; }
+
+/*# sourceMappingURL=Auth.css.map */
