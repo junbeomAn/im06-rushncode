@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
 import Question from '../components/routes/Question';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchQuestions } from '../store/actions/questionAction';
 
 class QuestionContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  componentWillMount() {
+    this.props.fetchQuestions();
   }
+
   render() {
-    const array = [
-      { id: 0, title: '타이틀1', body: '나는 바디1' },
-      { id: 1, title: '타이틀2', body: '나는 바디2' },
-      { id: 2, title: '타이틀3', body: '나는 바디3' },
-      { id: 3, title: '타이틀4', body: '나는 바디4' },
-    ];
+    const posts = this.props.questions;
     return (
       <div>
-        <Question data={array} />
+        <Question posts={posts} />
       </div>
     );
   }
 }
 
-export default QuestionContainer;
+QuestionContainer.propTypes = {
+  fetchQuestions: PropTypes.func.isRequired,
+  questions: PropTypes.array.isRequired,
+};
+
+// 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
+const mapStateToProps = state => ({
+  questions: state.questions.items,
+});
+
+// export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
+export default connect(mapStateToProps, { fetchQuestions })(QuestionContainer);

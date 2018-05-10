@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import '../../styles/css/Forum.css';
 
-const Forum = ({ data }) => (
+const Forum = ({ forums }) => (
   <div className="Container">
-    {data.map(item => (
+    {forums.map(item => (
       <div className="Forum">
         <Link to={`forum/${item.id}`} href>
           <h2>{item.title}</h2>
@@ -18,7 +18,7 @@ const Forum = ({ data }) => (
 );
 
 Forum.propTypes = {
-  data: PropTypes.array.isRequired,
+  forums: PropTypes.array.isRequired,
 };
 
 export default Forum;

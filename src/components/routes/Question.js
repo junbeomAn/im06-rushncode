@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import '../../styles/css/Question.css';
 
-const Question = ({ data }) => (
-  <div className="Container">
-    {data.map(item => (
-      <div className="Question">
-        <Link to={`question/${item.id}`} href>
-          <h2>{item.title}</h2>
+const Question = ({ posts }) => (
+  <div className="Question_main">
+    {posts.map(post => (
+      <div className="Question" key={post.id}>
+        <Link to={`question/${post.id}`} href>
+          <h2>{post.title}</h2>
         </Link>
-        <p>{item.body}</p>
       </div>
-      ))}
+    ))}
   </div>
 );
 
 Question.propTypes = {
-  data: PropTypes.array.isRequired,
+  posts: PropTypes.array.isRequired,
 };
 
 export default Question;

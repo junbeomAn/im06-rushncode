@@ -9,8 +9,6 @@ import Clause from './routes/Clause';
 import Information from './routes/Information';
 import HelpDesk from './routes/HelpDesk';
 import NoMatch from './routes/NoMatch';
-import QuestionList from './routes/QuestionList';
-import ForumList from './routes/ForumList';
 
 export {
   Header,
@@ -24,6 +22,4 @@ export {
   Information,
   HelpDesk,
   NoMatch,
-  QuestionList,
-  ForumList,
 };

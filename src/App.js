@@ -12,10 +12,16 @@ import {
   Clause,
   Information,
   HelpDesk,
-  QuestionList,
-  ForumList,
 } from './components';
-import { QuestionContainer, ForumContainer } from './container';
+import { QuestionContainer, ForumContainer, Question, Forum } from './container';
+
+// REDUX
+import { Provider } from 'react-redux';
+import store from './store/store';
+
+// SEMANTIC UI
+import { Container } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 // import axios from 'axios';
 
 class App extends Component {
@@ -25,33 +31,35 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
-        <div className="Box">
-          <div className="Header">
-            <Header />
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <div className="header">
+              <Header />
+            </div>
+            <Container className="container">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/forum/:id" component={Forum} />
+                <Route path="/forum" component={ForumContainer} />
+                <Route path="/question/:id" component={Question} />
+                <Route path="/question" component={QuestionContainer} />
+                <Route path="/tag" component={Tag} />
+                <Route path="/rank" component={Rank} />
+                <Route path="/job" component={Job} />
+                <Route path="/auth" component={Auth} />
+                <Route path="/clause" component={Clause} />
+                <Route path="/information" component={Information} />
+                <Route path="/helpdesk" component={HelpDesk} />
+                <Route component={NoMatch} />
+              </Switch>
+            </Container>
+            <div className="footer">
+              <Footer />
+            </div>
           </div>
-          <div className="body">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/forum/:id" component={ForumList} />
-              <Route path="/forum" component={ForumContainer} />
-              <Route path="/question/:id" component={QuestionList} />
-              <Route path="/question" component={QuestionContainer} />
-              <Route path="/tag" component={Tag} />
-              <Route path="/rank" component={Rank} />
-              <Route path="/job" component={Job} />
-              <Route path="/auth" component={Auth} />
-              <Route path="/clause" component={Clause} />
-              <Route path="/information" component={Information} />
-              <Route path="/helpdesk" component={HelpDesk} />
-              <Route component={NoMatch} />
-            </Switch>
-          </div>
-          <div className="Footer">
-            <Footer />
-          </div>
-        </div>
-      </Router>
+        </Router>
+      </Provider>
     );
   }
 }
