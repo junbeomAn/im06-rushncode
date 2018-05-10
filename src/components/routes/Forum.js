@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import '../../styles/css/Forum.css';
 
-const Forum = ({ data }) => (
+const Forum = ({ forums }) => (
   <div className="Container">
-    {data.map(item => (
+    {forums.map(item => (
       <div className="Forum">
-        <h2>{item.title}</h2>
+        <Link to={`forum/${item.id}`} href>
+          <h2>{item.title}</h2>
+        </Link>
         <p>{item.body}</p>
-        <Button className="button">click here</Button>
       </div>
     ))}
   </div>
 );
 
 Forum.propTypes = {
-  data: PropTypes.array.isRequired,
+  forums: PropTypes.array.isRequired,
 };
 
 export default Forum;

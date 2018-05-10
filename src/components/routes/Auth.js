@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Button, Form, Divider, Icon, Segment } from 'semantic-ui-react';
-import 'react-flexview/lib/flexView.css';
+// import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import '../../styles/css/Auth.css';
 

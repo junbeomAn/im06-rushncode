@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Button, Form, Divider, Segment, Icon } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
+// import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Home.css';
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -63,11 +63,8 @@ const Home = () => (
           </div>
         ))}
       </Segment>
-      <Segment className="lowerRight">
-        aaa
-      </Segment>
+      <Segment className="lowerRight">aaa</Segment>
     </div>
-    
   </div>
 );
 
