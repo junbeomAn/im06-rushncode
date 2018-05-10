@@ -10,4 +10,16 @@ import Information from './routes/Information';
 import HelpDesk from './routes/HelpDesk';
 import NoMatch from './routes/NoMatch';
 
-export { Header, Footer, Home, Tag, Rank, Job, Auth, Clause, Information, HelpDesk, NoMatch };
+export {
+  Header,
+  Footer,
+  Home,
+  Tag,
+  Rank,
+  Job,
+  Auth,
+  Clause,
+  Information,
+  HelpDesk,
+  NoMatch,
+};

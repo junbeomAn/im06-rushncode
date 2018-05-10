@@ -1,6 +1,6 @@
 .header {
-  background: #30414E;
-  display: table;
+  background: whitesmoke;
+  display: flex;
   table-layout: fixed;
   width: 100%;
 }
@@ -9,18 +9,20 @@
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  display: table-cell;
-  color: white;
+  margin-left: 100px;
+  display: block;
+  width: 70%;
+  color: #333;
   text-decoration: none;
   font-size: 1.1rem;
 }
 
 .item:hover {
-  background: #63695B;
+  background: #ddd;
 }
 
 .item:active,
 .item.active {
-  background: #E9EAEA;
-  color: #30414E;
+  background: #e9eaea;
+  color: #30414e;
 }

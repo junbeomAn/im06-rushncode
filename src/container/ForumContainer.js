@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import Forum from '../components/routes/Forum';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchforums } from '../store/actions/forumAction';
 
 class ForumContainer extends Component {
-  state = {};
+  componentWillMount() {
+    this.props.fetchforums();
+  }
+
   render() {
-    const array = [
-      { title: '포럼1', body: '나는 바디1' },
-      { title: '포럼2', body: '나는 바디2' },
-      { title: '포럼3', body: '나는 바디3' },
-      { title: '포럼4', body: '나는 바디4' },
-      { title: '포럼5', body: '나는 바디4' },
-      { title: '포럼6', body: '나는 바디4' },
-      { title: '포럼7', body: '나는 바디4' },
-      { title: '포럼8', body: '나는 바디4' },
-    ];
-    return <Forum data={array} />;
+    const forums = this.props.forums;
+    return <Forum forums={forums} />;
   }
 }
 
-export default ForumContainer;
+ForumContainer.propTypes = {
+  fetchforums: PropTypes.func.isRequired,
+  forums: PropTypes.array.isRequired,
+};
+
+// 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
+const mapStateToProps = state => ({
+  forums: state.forums.items,
+});
+
+// export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
+export default connect(mapStateToProps, { fetchforums })(ForumContainer);
