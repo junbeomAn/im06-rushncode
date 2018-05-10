@@ -1,5 +1,5 @@
-import { FETCH_FORUMS, FETCH_ONE_FORUM } from './types';
 import axios from 'axios';
+import { FETCH_FORUMS, FETCH_ONE_FORUM } from './types';
 
 export const fetchforums = () => (dispatch) => {
   axios

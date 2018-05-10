@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Forum from '../components/routes/Forum';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Forum from '../components/routes/Forum';
 import { fetchforums } from '../store/actions/forumAction';
 
 class ForumContainer extends Component {
@@ -10,7 +10,7 @@ class ForumContainer extends Component {
   }
 
   render() {
-    const forums = this.props.forums;
+    const { forums } = this.props;
     return <Forum forums={forums} />;
   }
 }
