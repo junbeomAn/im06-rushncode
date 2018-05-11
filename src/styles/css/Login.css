@@ -1,0 +1,17 @@
+.loginBtn {
+  width: 100%; }
+
+.homeInputContainer {
+  width: 42%;
+  float: right;
+  padding-right: 50px; }
+
+.buttonContainer {
+  align-items: center;
+  margin-bottom: 10px; }
+
+.homeInputTitleTag {
+  height: 38px;
+  width: 90px; }
+
+/*# sourceMappingURL=Login.css.map */

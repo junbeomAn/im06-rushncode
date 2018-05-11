@@ -1,5 +1,5 @@
-import { FETCH_QUESTIONS, FETCH_ONE_QUESTION } from './types';
 import axios from 'axios';
+import { FETCH_QUESTIONS, FETCH_ONE_QUESTION } from './types';
 
 export const fetchQuestions = () => (dispatch) => {
   axios

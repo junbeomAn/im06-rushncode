@@ -1,19 +1,15 @@
 .upper {
   height: 350px;
-  background-color: lightblue;
+  background-image: url("./img/campfire.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   padding-top: 30px;
+  filter: grayscale(40%);
 }
 
 .lower {
-  // height: 2000px;
   background-color: white;
   display: inline;
-}
-
-.homeInputContainer {
-  width: 42%;
-  float: right;
-  padding-right: 50px;
 }
 
 .upper-content {
@@ -21,9 +17,21 @@
   display: inline-block;
   width: 50%;
   height: 80%;
-  background-color: floralwhite;
+  background-color: transparent;
+  color: ghostwhite;
+  text-align: center;
+  h1 {
+    font-size: 32px;
+  }
+  p {
+    padding-top: 26px;
+    font-size: 20px;
+    letter-spacing: 0.1rem;
+  }
 }
-
+.qHeader {
+  width: 70%;
+}
 .lowerLeft {
   padding-top: 10px;
   width: 70%;
@@ -53,9 +61,12 @@
   top: 30%;
 }
 
-.buttonContainer {
-  align-items: center;
-}
 hr {
+  border: 0;
+  clear: both;
+  display: block;
   width: 90%;
+  border-width: 0.5px;
+  background-color: lightgray;
+  height: 1px;
 }
