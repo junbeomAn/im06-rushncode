@@ -1,34 +1,53 @@
+@import "color";
+
+.homeContainer {
+}
+
 .upper {
-  height: 350px;
-  background-image: url("./img/campfire.jpg");
+  height: 500px;
+  background-image: url("./img/city3.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+  background-size: cover;
   padding-top: 30px;
-  filter: grayscale(40%);
+  opacity: 0.8;
+  text-align: center;
+  filter: grayscale(50%);
 }
 
 .lower {
-  background-color: white;
-  display: inline;
+  background-color: ghostwhite;
 }
 
-.upper-content {
-  margin-left: 30px;
-  display: inline-block;
+.HomeJumbotron {
   width: 50%;
-  height: 80%;
+  padding-top: 90px;
+  padding-left: 50px;
+  display: inline-block;
   background-color: transparent;
-  color: ghostwhite;
+  text-transform: uppercase;
+  color: #fff;
   text-align: center;
   h1 {
-    font-size: 32px;
+    font-size: 40px;
+    letter-spacing: 0.2rem;
   }
   p {
-    padding-top: 26px;
+    padding-top: 20px;
     font-size: 20px;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+  .homeLBtn {
+    padding-right: 15px;
+  }
+  .homeRBtn {
+    padding-left: 15px;
   }
 }
+
 .qHeader {
   width: 70%;
 }

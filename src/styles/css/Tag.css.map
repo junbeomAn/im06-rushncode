@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,aAAc;EACZ,MAAM,EAAE,KAAK;;AAEf,kBAAmB;EACjB,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM",
+"mappings": "AAEA,aAAc;EACZ,MAAM,EAAE,KAAK;;AAEf,kBAAmB;EACjB,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM",
 "sources": ["../scss/Tag.scss"],
 "names": [],
 "file": "Tag.css"

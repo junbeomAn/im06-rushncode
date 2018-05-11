@@ -1,17 +1,21 @@
-.Container {
+@import 'color';
+
+.ForumMain {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: ghostwhite;
 }
 
 .Forum {
-  border-bottom: 1px solid grey;
-  width: 70%;
-}
-
-.button {
-  background-color: black;
-  color: azure;
+  border-bottom: 1px solid #e4e6e8;
+  padding: 10px 15px;
+  h2 {
+    color: #333;
+  }
+  p {
+    color: #777;
+  }
 }

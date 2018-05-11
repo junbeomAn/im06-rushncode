@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// SEMANTIC UI
-import { Container } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './store/store';
@@ -25,6 +22,7 @@ import {
   QuestContainer,
   ForumContainer,
 } from './container';
+import './styles/css/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -36,10 +34,8 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <div className="header">
-              <Header />
-            </div>
-            <Container className="container">
+            <Header />
+            <div className="middle">
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/forum/:id" component={ForumContainer} />
@@ -55,10 +51,8 @@ class App extends Component {
                 <Route path="/helpdesk" component={HelpDesk} />
                 <Route component={NoMatch} />
               </Switch>
-            </Container>
-            <div className="footer">
-              <Footer />
             </div>
+            <Footer />
           </div>
         </Router>
       </Provider>
@@ -67,17 +61,3 @@ class App extends Component {
 }
 
 export default App;
-
-// componentDidMount() {
-//   this.getData();
-// }
-
-// getData = () => {
-//   axios
-//     .get('http://localhost:3300/data')
-//     .then(res =>
-//       this.setState({
-//         data: res.data,
-//       }))
-//     .catch(err => console.log(err));
-// };

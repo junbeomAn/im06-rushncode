@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Divider, Icon } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 // import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Home.css';
 import Login from './../../container/Login';
@@ -7,17 +7,29 @@ import Login from './../../container/Login';
 const arr = [1, 2, 3, 4, 5, 6];
 
 const Home = () => (
-  <div className="container">
+  <div className="homeContainer">
     <div className="upper">
-      <div className="upper-content">
-        <h1>HELLO FUCKERS</h1>
+      <div className="jumbotron HomeJumbotron">
+        <h1>Hello Fuckers</h1>
         <p>
-          At Palantir, we work for the common good—within our organization and with other
-          organizations around the world. We’re building a future where data can be leveraged to
-          serve people, create value, and improve quality of life.
+          This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+          to featured content or information.
         </p>
+        <span className="homeLBtn">
+          <NavLink to="/question" className="item">
+            <button type="button" className="btn btn-outline-light btn-lg">
+              질문하기
+            </button>
+          </NavLink>
+        </span>
+        <span className="homeRBtn">
+          <NavLink to="/auth" className="item">
+            <button type="button" className="btn btn-outline-light btn-lg">
+              회원가입
+            </button>
+          </NavLink>
+        </span>
       </div>
-      <Login />
     </div>
     <div className="lower">
       <div className="qHeader">questions header</div>
@@ -34,9 +46,6 @@ const Home = () => (
         ))}
       </div>
       <div className="lowerRight">
-        <div className="lowerRightContent">aaa</div>
-        <div className="lowerRightContent">aaa</div>
-        <div className="lowerRightContent">aaa</div>
         <div className="lowerRightContent">aaa</div>
         <div className="lowerRightContent">aaa</div>
       </div>

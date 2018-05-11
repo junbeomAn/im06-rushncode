@@ -1,28 +1,42 @@
-.header {
-  background: whitesmoke;
-  display: flex;
-  table-layout: fixed;
-  width: 100%;
+@import "color";
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: transparent !important;
 }
 
-.item {
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-left: 100px;
-  display: block;
-  width: 70%;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.1rem;
+.itembox {
+  justify-content: flex-end;
 }
 
-.item:hover {
-  background: #ddd;
+.navbar-brand {
+  // 위 오른 아래 왼
+  padding: 10px 15px 5px 15px;
+  h1 {
+    font-size: 24px;
+    color: ghostwhite;
+  }
 }
 
-.item:active,
-.item.active {
-  background: #e9eaea;
-  color: #30414e;
+.navbar-nav {
+  li {
+    .item {
+      color: ghostwhite;
+      padding-right: 15px;
+      text-decoration-style: none;
+      &:hover {
+        color: lightyellow;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.navbar-container {
+  padding: 20px 0 20px 0;
 }
