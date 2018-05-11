@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 
 import '../../../styles/css/Question.css';
 
-const QuestList = ({ posts }) => (
-  <div className="Question_main">
-    {posts.map(post => (
-      <div className="Question" key={post.id}>
-        <Link to={`question/${post.id}`} href>
-          <h2>{post.title}</h2>
-        </Link>
-      </div>
-    ))}
-  </div>
-);
+const QuestList = ({ posts }) => {
+  const post = posts.map(item => (
+    <div className="Question" key={item.id}>
+      <Link to={`question/${item.id}`} href>
+        <h2>{item.title}</h2>
+      </Link>
+      <p>{item.body}</p>
+    </div>
+  ));
+  return <div className="QuestionMain">{post}</div>;
+};
 
 QuestList.propTypes = {
   posts: PropTypes.array.isRequired,
