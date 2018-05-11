@@ -3,10 +3,19 @@
 .authInputContainer {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin-left: 37%;
+  width: 33%;
+  margin-left: 35%;
   margin-top: 10%;
-  padding-right: 50px;
+  padding: 20px;
+}
+.authOptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
 }
 .connectLogin {
   margin-top: 10px;
@@ -18,10 +27,20 @@
 .authButtonContainer {
   flex: 1;
   margin-top: 10px;
+  width: 100%;
 }
 .authDivider {
   flex: 0.5;
 }
 .authFormContainer {
   flex: 1;
+}
+.authInputTitleTag {
+  width: 80px;
+}
+.authBtn {
+  width: 100%;
+}
+.authSubmitBtn {
+  float: right;
 }
