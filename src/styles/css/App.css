@@ -1,0 +1,11 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #edf0f2; }
+
+.middle {
+  width: 90%;
+  margin: auto; }
+
+/*# sourceMappingURL=App.css.map */

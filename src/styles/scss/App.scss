@@ -1,0 +1,13 @@
+@import "color";
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $background;
+}
+
+.middle {
+  width: 90%;
+  margin: auto;
+}

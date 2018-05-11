@@ -6,15 +6,18 @@ import '../../styles/css/Home.css';
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const Home = () => (
-  <div className="container">
+  <div className="homeContainer">
     <div className="upper">
-      <div className="upper-content">
-        <h1>HELLO FUCKERS</h1>
+      <div className="darkbackground" />
+      <div className="jumbotron HomeJumbotron">
+        <h1>Hello Fuckers</h1>
         <p>
-        At Palantir, we work for the common good—within our
-        organization and with other organizations around the world. We’re building a future where
-        data can be leveraged to serve people, create value, and improve quality of life.
+          This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+          to featured content or information.
         </p>
+        <button type="button" className="btn btn-outline-light btn-lg">
+          Read More
+        </button>
       </div>
       <div className="homeInputContainer">
         <div className="buttonContainer">
