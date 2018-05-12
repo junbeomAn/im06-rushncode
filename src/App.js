@@ -21,6 +21,7 @@ import {
   ForumListContainer,
   QuestContainer,
   ForumContainer,
+  SignUp,
 } from './container';
 import './styles/css/App.css';
 
@@ -49,6 +50,7 @@ class App extends Component {
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Information} />
                 <Route path="/helpdesk" component={HelpDesk} />
+                <Route path="/signup" component={SignUp} />
                 <Route component={NoMatch} />
               </Switch>
             </div>
