@@ -1,13 +1,28 @@
 import React from 'react';
+import axios from 'axios';
 import { Divider, Button, Icon } from 'semantic-ui-react';
+// import { Route, Redirect } from 'react-router';
 // import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Auth.css';
 
-// import '../../../bower_components/bootstrap-social/bootstrap-social.css';
+const login = (history) => {  
+  const userInfo = {};
+  userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
+  userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
+  const signInUrl = 'http://localhost:3001/api/auth/signin';
 
-const Auth = () => (
+  axios
+    .post(signInUrl, userInfo)
+    .then((res) => {     
+      localStorage.setItem('token', res.data.token);
+      history.push('/');
+    })
+    .catch(err => alert(err));  
+};
+
+const Auth = ({ history }) => (
   <div className="authContainer">
     <div className="authInputContainer border rounded">
       <div className="authButtonContainer">
@@ -20,44 +35,40 @@ const Auth = () => (
       </div>
       <Divider horizontal>OR</Divider>
       <div className="authFormContainer">
-        <form action="http://localhost:3001/api/auth/signin" method="post">
-          <div className="form-group">
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text authInputTitleTag" id="basic-addon1">
-                  E-mail
-                </span>
-              </div>
-              <input
-                type="email"
-                className="form-control"
-                name="email"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-              />
+        <div className="form-group">
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text authInputTitleTag" id="basic-addon1">
+                E-mail
+              </span>
             </div>
+            <input
+              type="email"
+              className="form-control inputEmail"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
           </div>
-          <div className="form-group">
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text authInputTitleTag" id="basic-addon1">
-                  password
-                </span>
-              </div>
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                id="exampleInputPassword1"
-                placeholder="Password"
-              />
+        </div>
+        <div className="form-group">
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text authInputTitleTag" id="basic-addon1">
+                password
+              </span>
             </div>
+            <input
+              type="password"
+              className="form-control inputPwd"
+              name="password"
+              placeholder="Password"
+            />
           </div>
-          <button type="submit" className="btn btn-primary authSubmitBtn">
-            login
-          </button>
-        </form>
+        </div>
+        <button onClick={() => {login(history); }} className="btn btn-primary authSubmitBtn" >
+          로그인
+        </button>        
       </div>
     </div>
     <div className="border rounded authOptionContainer">

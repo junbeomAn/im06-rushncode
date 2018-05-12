@@ -23,7 +23,7 @@ const Home = () => (
           </NavLink>
         </span>
         <span className="homeRBtn">
-          <NavLink to="/auth" className="item">
+          <NavLink to="/signup" className="item">
             <button type="button" className="btn btn-outline-light btn-lg">
               회원가입
             </button>
