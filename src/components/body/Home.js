@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 // import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Home.css';
-import Login from './../../container/Login';
 
 const arr = [1, 2, 3, 4, 5, 6];
 
@@ -23,7 +22,7 @@ const Home = () => (
           </NavLink>
         </span>
         <span className="homeRBtn">
-          <NavLink to="/auth" className="item">
+          <NavLink to="/signup" className="item">
             <button type="button" className="btn btn-outline-light btn-lg">
               회원가입
             </button>

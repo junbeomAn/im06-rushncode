@@ -12,9 +12,10 @@
     justify-content: center;
     padding: 10px 10px 0px 10px; }
     .questionMain .questionPost .first {
+      padding-left: 10px;
+      width: 90px;
       color: #777;
-      padding-bottom: 4px;
-      padding-right: 10px; }
+      padding-bottom: 6px; }
     .questionMain .questionPost .second {
       width: 80%;
       padding: 10px 15px;
@@ -51,6 +52,8 @@
         background: #fff;
         color: #0f240f; }
     .questionMain .questionPost .fourth {
+      width: 125px;
+      padding-right: 10px;
       color: #777;
       text-align: center; }
       .questionMain .questionPost .fourth .username {

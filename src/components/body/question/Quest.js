@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 import '../../../styles/css/Quest.css';
+import Answer from './Answer';
 
 const Quest = ({ title, body }) => (
   <div className="questContainer">
@@ -46,9 +46,10 @@ const Quest = ({ title, body }) => (
           </button>
         </div>
       </div>
+      
       <div className="questMain">
         <div className="questMainFirst">good</div>
-        <div className="questMainSecond">qBody</div>
+        <div className="questMainSecond">{body}</div>
         <div className="questMainThird">
           <div>
             <p>
@@ -58,14 +59,23 @@ const Quest = ({ title, body }) => (
           <div>보상액 reward</div>
         </div>
       </div>
+
+      <div className="questMain">
+        <div className="questMainFirst">good</div>
+        <div className="questMainSecond">
+          <Answer />
+        </div>
+        <div className="questMainThird">
+          <div> Add component </div>
+        </div>
+      </div>
     </div>
   </div>
 );
 
 Quest.propTypes = {
-  posts: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  body: PropTypes.string,
 };
 
 export default Quest;

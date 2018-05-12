@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../styles/css/Header.css';
+import Verify from './../body/Verify';
 
 const Headers = () => (
+  // Verify()
   <nav className="navbar navbar-expand-lg navbar-light bg-dark Header">
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <span className="navbar-brand title">
@@ -13,7 +15,7 @@ const Headers = () => (
       <div className="collapse navbar-collapse itembox" id="navbarSupportedContent">
         <ul className="nav navbar-nav navbar-right">
           <li className="nav-item">
-            <NavLink to="/forum" className="item">
+            <NavLink to={Verify() ? '/forum' : '/auth'} className="item">
               포럼
             </NavLink>
           </li>

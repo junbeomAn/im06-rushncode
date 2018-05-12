@@ -30,7 +30,7 @@
     .quest .questMain .questMainSecond {
       width: 75%;
       border: 1px solid black;
-      padding-left: 20px; }
+      padding: 0px 20px; }
     .quest .questMain .questMainThird {
       width: 15%;
       border: 1px solid black;

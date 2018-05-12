@@ -3,22 +3,11 @@ import axios from 'axios';
 import 'semantic-ui-css/semantic.min.css';
 import './../styles/css/Login.css';
 
-class Login extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.logout = this.logout.bind(this);
     this.signUp = this.signUp.bind(this);
-    this.verify = this.verify.bind(this);
-  }
-
-  logout() {
-    console.log(this);
-    const token = localStorage.getItem('token');
-    if (token) {
-      localStorage.removeItem('token');
-    }
-    console.log('redirect logged out home');
   }
 
   signUp(e) {
@@ -38,30 +27,6 @@ class Login extends Component {
     e.preventDefault();
   }
 
-  async verify(e) {
-    console.log(this);
-    let verified = false;
-    // verify function./....
-    const verifyUrl = 'http://localhost:3001/api/auth/verify';
-    const token = localStorage.getItem('token');
-    const config = {
-      headers: { 'x-access-token': token },
-    };
-
-    await axios
-      .get(verifyUrl, config)
-      .then((res) => {
-        if (res.data.success) {
-          console.log(res.data.success);
-          verified = res.data.success;
-        } else { // no token
-          console.log('alert to suggest login, redirect to login');
-        }
-      })
-      .catch(err => console.log(err));
-    return verified;
-  }
-
   render() {
     return (
       <div className="homeInputContainer">
@@ -79,7 +44,7 @@ class Login extends Component {
           </div>
         </div>
         <div className="authFormContainer">
-          <form onSubmit={this.login}>
+          <form onSubmit={this.signUp}>
             <div className="form-group">
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
@@ -125,11 +90,12 @@ class Login extends Component {
                 />
               </div>
             </div>
-            <input
-              type="submit"
-              value="Sign up"
-              className="btn btn-outline-light btn-lg signUpBtn"
-            />
+            <button
+              onClick={this.signUp}
+              // className="btn btn-outline-light btn-lg signUpBtn"
+            >
+            Sign up
+            </button>
           </form>
         </div>
       </div>
@@ -137,4 +103,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUp;

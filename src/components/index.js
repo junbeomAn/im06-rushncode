@@ -9,6 +9,7 @@ import Clause from './body/Clause';
 import Information from './body/Information';
 import HelpDesk from './body/HelpDesk';
 import NoMatch from './body/NoMatch';
+import Verify from './body/Verify';
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   Information,
   HelpDesk,
   NoMatch,
+  Verify,
 };

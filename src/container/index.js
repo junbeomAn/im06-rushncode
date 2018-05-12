@@ -4,6 +4,7 @@ import QuestContainer from './question/QuestContainer';
 import ForumContainer from './forum/ForumContainer';
 import QuestWriteContainer from './question/QuestWriteContainer';
 import Login from './Login';
+import SignUp from './SignUp';
 
 export {
   QuestListContainer,
@@ -12,4 +13,5 @@ export {
   ForumContainer,
   QuestWriteContainer,
   Login,
+  SignUp,
 };

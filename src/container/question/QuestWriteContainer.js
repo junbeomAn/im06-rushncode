@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, RichUtils } from 'draft-js';
+import { Editor, EditorState } from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
 export class QuestWrite extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = { editorState: EditorState.createEmpty() };
   }
-  handleKeyCommand = (command) => {
-    const newState = RichUtils.handleKeyCommand(this.state.editorState, command);
-
-    if (newState) {
-      this.onchange(newState);
-      return 'handled';
-    }
-    return 'not-handled';
-  };
-
   render() {
     return (
       <div>
-        <h1>Write Page</h1>
+        <h1>11</h1>
+        <Editor editorState={this.state.editorState} />
       </div>
     );
   }
