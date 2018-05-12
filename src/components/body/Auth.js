@@ -5,7 +5,6 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Auth.css';
 
-require('bootstrap-social');
 // import '../../../bower_components/bootstrap-social/bootstrap-social.css';
 
 const Auth = () => (
