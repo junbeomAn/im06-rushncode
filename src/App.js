@@ -21,6 +21,7 @@ import {
   ForumListContainer,
   QuestContainer,
   ForumContainer,
+  QuestWriteContainer,
 } from './container';
 import './styles/css/App.css';
 
@@ -40,6 +41,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/forum/:id" component={ForumContainer} />
                 <Route path="/forum" component={ForumListContainer} />
+                <Route path="/question/write" component={QuestWriteContainer} />
                 <Route path="/question/:id" component={QuestContainer} />
                 <Route path="/question" component={QuestListContainer} />
                 <Route path="/tag" component={Tag} />

@@ -47,9 +47,9 @@ const QuestList = ({ posts }) => {
             attention to featured content or information.
           </p>
           <span className="homeLBtn">
-            <NavLink to="/mywallet" className="item">
+            <NavLink to="/question/write" className="item">
               <button type="button" className="btn btn-outline-light btn-lg">
-                나의 지갑
+                질문 하기
               </button>
             </NavLink>
           </span>

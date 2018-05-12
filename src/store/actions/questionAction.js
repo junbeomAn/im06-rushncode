@@ -3,7 +3,7 @@ import { FETCH_QUESTIONS, FETCH_ONE_QUESTION } from './types';
 
 export const fetchQuestions = () => (dispatch) => {
   axios
-    .get('http://jsonplaceholder.typicode.com/posts')
+    .get('http://localhost:3001/api/question/getlist')
     .then(res => dispatch({ type: FETCH_QUESTIONS, payload: res.data }));
 };
 
