@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../../../styles/css/Question.css';
+// import '../../../styles/css/QuestList.css';
 
 const Forum = ({ title, body }) => (
   <div>

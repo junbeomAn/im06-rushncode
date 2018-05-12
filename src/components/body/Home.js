@@ -9,7 +9,6 @@ const arr = [1, 2, 3, 4, 5, 6];
 const Home = () => (
   <div className="homeContainer">
     <div className="upper">
-    <Login />
       <div className="jumbotron HomeJumbotron">
         <h1>Hello Fuckers</h1>
         <p>
