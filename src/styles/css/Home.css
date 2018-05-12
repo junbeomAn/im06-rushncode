@@ -6,15 +6,15 @@
   background-size: cover;
   padding-top: 30px;
   opacity: 0.8;
+  text-align: center;
   filter: grayscale(50%); }
 
 .lower {
-  height: 1000px;
   background-color: ghostwhite; }
 
 .HomeJumbotron {
   width: 50%;
-  padding-top: 90px;
+  padding-top: 70px;
   padding-left: 50px;
   display: inline-block;
   background-color: transparent;
@@ -30,24 +30,46 @@
     letter-spacing: 0.2rem; }
   .HomeJumbotron .btn {
     margin-top: 20px; }
+  .HomeJumbotron .homeLBtn {
+    padding-right: 15px; }
+  .HomeJumbotron .homeRBtn {
+    padding-left: 15px; }
+
+.qHeader {
+  width: 70%; }
 
 .lowerLeft {
+  padding-top: 10px;
   width: 70%;
-  display: inline-block; }
+  display: inline-block;
+  margin-top: 40px; }
 
 .lowerRight {
-  display: inline-block;
+  float: right;
   width: 30%;
-  height: 100px;
-  background-color: seashell; }
+  height: 1000px; }
+
+.lowerRightContent {
+  margin-top: 80px;
+  height: 200px;
+  background-color: lightblue; }
 
 .post {
-  padding: 10px; }
+  height: 70px;
+  text-align: center; }
 
 .postTitle {
-  text-decoration: none; }
+  text-decoration: none;
+  position: relative;
+  top: 30%; }
 
-.buttonContainer {
-  align-items: center; }
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 90%;
+  border-width: 0.5px;
+  background-color: lightgray;
+  height: 1px; }
 
 /*# sourceMappingURL=Home.css.map */

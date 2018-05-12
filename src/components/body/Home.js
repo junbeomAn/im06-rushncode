@@ -1,79 +1,54 @@
 import React from 'react';
-import { Input, Button, Form, Divider, Segment, Icon } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 // import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Home.css';
+import Login from './../../container/Login';
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const arr = [1, 2, 3, 4, 5, 6];
 
 const Home = () => (
   <div className="homeContainer">
     <div className="upper">
-      <div className="darkbackground" />
       <div className="jumbotron HomeJumbotron">
         <h1>Hello Fuckers</h1>
         <p>
           This is a simple hero unit, a simple jumbotron-style component for calling extra attention
           to featured content or information.
         </p>
-        <button type="button" className="btn btn-outline-light btn-lg">
-          Read More
-        </button>
-      </div>
-      <div className="homeInputContainer">
-        <div className="buttonContainer">
-          <Button.Group widths="3">
-            <Button color="google plus">
-              <Icon name="google plus" /> Google Plus
-            </Button>
-            <Button color="facebook">
-              <Icon name="facebook" /> Facebook
-            </Button>
-            <Button>Sign In</Button>
-          </Button.Group>
-        </div>
-        <Divider horizontal>OR</Divider>
-        <Form action="http://localhost:3001/auth/signup" method="post">
-          <Form.Field>
-            <Input
-              fluid
-              icon="user"
-              name="username"
-              type="text"
-              placeholder="User name"
-              size="large"
-            />
-          </Form.Field>
-          <Form.Field>
-            <Input fluid icon="at" name="email" placeholder="E-mail address" size="large" />
-          </Form.Field>
-          <Form.Field>
-            <Input
-              fluid
-              icon="lock"
-              name="password"
-              type="password"
-              placeholder="password"
-              size="large"
-            />
-          </Form.Field>
-          <Button type="submit">Sign Up dude</Button>
-        </Form>
+        <span className="homeLBtn">
+          <NavLink to="/question" className="item">
+            <button type="button" className="btn btn-outline-light btn-lg">
+              질문하기
+            </button>
+          </NavLink>
+        </span>
+        <span className="homeRBtn">
+          <NavLink to="/auth" className="item">
+            <button type="button" className="btn btn-outline-light btn-lg">
+              회원가입
+            </button>
+          </NavLink>
+        </span>
       </div>
     </div>
     <div className="lower">
-      <Segment className="lowerLeft">
+      <div className="qHeader">questions header</div>
+      <div className="lowerLeft">
         {arr.map(item => (
           <div>
             <div className="post">
-              <a href="/" className="postTitle">
-                {item + item}
-              </a>
+              <span className="postTitle">
+                <a href="/">{item}</a>
+              </span>
             </div>
-            <Divider section />
+            <hr align="center" />
           </div>
         ))}
-      </Segment>
-      <Segment className="lowerRight">aaa</Segment>
+      </div>
+      <div className="lowerRight">
+        <div className="lowerRightContent">aaa</div>
+        <div className="lowerRightContent">aaa</div>
+      </div>
     </div>
   </div>
 );
