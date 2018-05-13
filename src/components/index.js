@@ -10,7 +10,7 @@ import Information from './body/Information';
 import HelpDesk from './body/HelpDesk';
 import NoMatch from './body/NoMatch';
 import Verify from './body/Verify';
-
+import Logout from './body/Logout';
 export {
   Header,
   Footer,
@@ -24,4 +24,5 @@ export {
   HelpDesk,
   NoMatch,
   Verify,
+  Logout,
 };

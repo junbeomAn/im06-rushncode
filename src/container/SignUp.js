@@ -10,7 +10,7 @@ class SignUp extends Component {
     this.signUp = this.signUp.bind(this);
   }
 
-  signUp(e) {
+  signUp(history) {
     console.log(this);
     const userInfo = {};
     userInfo.username = document.getElementsByClassName('inputUname')[0].value;
@@ -20,11 +20,10 @@ class SignUp extends Component {
     axios
       .post(signUpUrl, userInfo)
       .then((res) => {
-        console.log(res);
-        console.log('redirect log-in');
+        // console.log(res);
+        history.push('/auth');
       })
       .catch(err => console.log(err));
-    e.preventDefault();
   }
 
   render() {
@@ -44,59 +43,57 @@ class SignUp extends Component {
           </div>
         </div>
         <div className="authFormContainer">
-          <form onSubmit={this.signUp}>
-            <div className="form-group">
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text homeInputTitleTag" id="basic-addon1">
-                    User name
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  className="form-control inputUname"
-                  aria-describedby="emailHelp"
-                  placeholder="User name"
-                />
+          <div className="form-group">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text homeInputTitleTag" id="basic-addon1">
+                  User name
+                </span>
               </div>
+              <input
+                type="text"
+                className="form-control inputUname"
+                aria-describedby="emailHelp"
+                placeholder="User name"
+              />
             </div>
-            <div className="form-group">
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text homeInputTitleTag" id="basic-addon1">
-                    E-mail
-                  </span>
-                </div>
-                <input
-                  type="email"
-                  className="form-control inputEmail"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                />
+          </div>
+          <div className="form-group">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text homeInputTitleTag" id="basic-addon1">
+                  E-mail
+                </span>
               </div>
+              <input
+                type="email"
+                className="form-control inputEmail"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
             </div>
-            <div className="form-group">
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text homeInputTitleTag" id="basic-addon1">
-                    Password
-                  </span>
-                </div>
-                <input
-                  type="password"
-                  className="form-control inputPwd"
-                  id="exampleInputPassword1"
-                  placeholder="Password"
-                />
+          </div>
+          <div className="form-group">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text homeInputTitleTag" id="basic-addon1">
+                  Password
+                </span>
               </div>
+              <input
+                type="password"
+                className="form-control inputPwd"
+                id="exampleInputPassword1"
+                placeholder="Password"
+              />
             </div>
-            <button
-              onClick={this.signUp}
-              // className="btn btn-outline-light btn-lg signUpBtn"
-            >
-            Sign up
-            </button>
-          </form>
+          </div>
+          <button
+            onClick={() => { this.signUp(this.props.history); }}
+            // className="btn btn-outline-light btn-lg signUpBtn"
+          >
+          Sign up
+          </button>          
         </div>
       </div>
     );
