@@ -6,6 +6,7 @@ import moment from 'moment';
 import '../../../styles/css/QuestList.css';
 
 const QuestList = ({ posts }) => {
+  console.log('POSTS : ', posts);
   const post = posts.map(item => (
     <div className="questionPost">
       <div className="first">

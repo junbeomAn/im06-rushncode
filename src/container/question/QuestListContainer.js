@@ -5,17 +5,18 @@ import QuestList from '../../components/body/question/QuestList';
 import { fetchQuestions } from '../../store/actions/questionAction';
 
 class QuestListContainer extends Component {
-  componentWillMount() {
-    this.props.fetchQuestions();
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  async componentWillMount() {
+    await this.props.fetchQuestions();
   }
 
   render() {
     const posts = this.props.questions;
-    return (
-      <div>
-        <QuestList posts={posts} />
-      </div>
-    );
+    return <div>{posts !== undefined ? <QuestList posts={posts} /> : <h1>Loading...</h1>}</div>;
   }
 }
 
