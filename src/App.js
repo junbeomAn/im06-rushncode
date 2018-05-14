@@ -15,15 +15,7 @@ import {
   Information,
   HelpDesk,
 } from './components';
-import {
-  HeaderContainer,
-  QuestionListContainer,
-  ForumListContainer,
-  QuestionEntryContainer,
-  ForumEntryContainer,
-  QuestionWriteContainer,
-  SignUp,
-} from './containers';
+import { HeaderContainer, Forum, Question, SignUp } from './containers';
 import './styles/css/App.css';
 
 class App extends Component {
@@ -40,11 +32,8 @@ class App extends Component {
             <div className="middle">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/forum/:id" component={ForumEntryContainer} />
-                <Route path="/forum" component={ForumListContainer} />
-                <Route path="/question/write" component={QuestionWriteContainer} />
-                <Route path="/question/:id" component={QuestionEntryContainer} />
-                <Route path="/question" component={QuestionListContainer} />
+                <Route path="/forum" component={Forum} />
+                <Route path="/question" component={Question} />
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />
                 <Route path="/job" component={Job} />
