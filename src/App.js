@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
-import store from './store/store';
+import store from './redux/store';
 import {
-  Header,
   Footer,
   Home,
   Tag,
@@ -17,13 +16,14 @@ import {
   HelpDesk,
 } from './components';
 import {
-  QuestListContainer,
+  HeaderContainer,
+  QuestionListContainer,
   ForumListContainer,
-  QuestContainer,
-  ForumContainer,
-  QuestWriteContainer,
+  QuestionEntryContainer,
+  ForumEntryContainer,
+  QuestionWriteContainer,
   SignUp,
-} from './container';
+} from './containers';
 import './styles/css/App.css';
 
 class App extends Component {
@@ -36,15 +36,15 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Header />
+            <HeaderContainer />
             <div className="middle">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/forum/:id" component={ForumContainer} />
+                <Route path="/forum/:id" component={ForumEntryContainer} />
                 <Route path="/forum" component={ForumListContainer} />
-                <Route path="/question/write" component={QuestWriteContainer} />
-                <Route path="/question/:id" component={QuestContainer} />
-                <Route path="/question" component={QuestListContainer} />
+                <Route path="/question/write" component={QuestionWriteContainer} />
+                <Route path="/question/:id" component={QuestionEntryContainer} />
+                <Route path="/question" component={QuestionListContainer} />
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />
                 <Route path="/job" component={Job} />
