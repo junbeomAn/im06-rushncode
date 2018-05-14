@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_QUESTIONS, FETCH_ONE_QUESTION } from './types';
+import { FETCH_QUESTIONS, FETCH_ONE_QUESTION,  } from './types';
 
 export const fetchQuestions = () => (dispatch) => {
   axios
@@ -12,3 +12,4 @@ export const fetchOne = id => (dispatch) => {
     .get(`http://jsonplaceholder.typicode.com/posts/${id}`)
     .then(res => dispatch({ type: FETCH_ONE_QUESTION, payload: res.data }));
 };
+

@@ -88,12 +88,12 @@ export default Auth;
 //   <div className="authInputContainer">
 //     <Segment>
 //       <div className="authButtonContainer">
-//         <Button fluid color="google plus" className="connectLogin">
+//         <Button fluid color="google plus" className="authConnectLogin">
 //           <Icon name="google plus" /> Google Plus
 //         </Button>
 //       </div>
 //       <div className="authButtonContainer">
-//         <Button fluid color="facebook" className="connectLogin">
+//         <Button fluid color="facebook" className="authConnectLogin">
 //           <Icon name="facebook" /> Facebook
 //         </Button>
 //       </div>

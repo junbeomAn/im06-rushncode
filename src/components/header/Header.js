@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../../styles/css/Header.css';
-import Verify from './../body/Verify';
 import Logout from './../body/Logout';
+import { Verify } from './../../store/actions/verifyAction';
 
 class Headers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      verified: false,
+      isLoggedIn: false,
     };
   }
-  // componentDidMount() {
-  //   this.setVerification(Verify());
-  // }
-
-  setVerification(promise) {
-    promise.then((res) => {
-      if (res !== this.state.verified) {
-        this.setState({ verified: res });
-      }
-      console.log(res);
-    });
+  changeStateToRefresh() {
+    this.props.Verify();
+    // console.log(this.state.isLoggedIn, this.props.isLoggedIn);
+    if (this.state.isLoggedIn !== this.props.isLoggedIn) {
+      this.setState({
+        isLoggedIn: this.props.isLoggedIn,
+      });
+    }    
   }
-
+  
   render() {
-    this.setVerification(Verify());
+    this.changeStateToRefresh();
+    // console.log(this.props);
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-dark Header">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,7 +33,7 @@ class Headers extends Component {
               <h1>러시앤코드</h1>
             </NavLink>
           </span>
-          <div className="collapse navbar-collapse itembox" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse headerItembox" id="navbarSupportedContent">
             <ul className="nav navbar-nav navbar-right">
               <li className="nav-item">
                 <NavLink to="/forum" className="item">
@@ -61,7 +60,7 @@ class Headers extends Component {
                   채용정보
                 </NavLink>
               </li>
-              {!this.state.verified ? (
+              {!this.state.isLoggedIn ? (
                 <li className="nav-item">
                   <NavLink to="/auth" className="item">
                     로그인
@@ -81,59 +80,10 @@ class Headers extends Component {
     );
   }
 }
-// const Headers = () => (
 
-//   <nav className="navbar navbar-expand-lg navbar-light bg-dark Header">
-//     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-//       <span className="navbar-brand title">
-//         <NavLink exact to="/">
-//           <h1>러시앤코드</h1>
-//         </NavLink>
-//       </span>
-//       <div className="collapse navbar-collapse itembox" id="navbarSupportedContent">
-//         <ul className="nav navbar-nav navbar-right">
-//           <li className="nav-item">
-//             <NavLink to="/forum" className="item">
-//               포럼
-//             </NavLink>
-//           </li>
-//           <li className="nav-item">
-//             <NavLink to="/question" className="item">
-//               질문
-//             </NavLink>
-//           </li>
-//           <li className="nav-item">
-//             <NavLink to="/tag" className="item">
-//               태그
-//             </NavLink>
-//           </li>
-//           <li className="nav-item">
-//             <NavLink to="/rank" className="item">
-//               랭크
-//             </NavLink>
-//           </li>
-//           <li className="nav-item">
-//             <NavLink to="/job" className="item">
-//               채용정보
-//             </NavLink>
-//           </li>
-//           {console.log(getSuccess(Verify())) ? (
-//             <li className="nav-item">
-//               <NavLink to="/auth" className="item">
-//                 로그인
-//               </NavLink>
-//             </li>
-//           ) : (
-//             <li className="nav-item">
-//               <NavLink to="/" onClick={Logout} className="item">
-//                 로그아웃
-//               </NavLink>
-//             </li>
-//           )}
-//         </ul>
-//       </div>
-//     </div>
-//   </nav>
-// );
+const mapStateToProps = (state) => {
+  const { isLoggedIn } = state.verify;
+  return { isLoggedIn };
+};
 
-export default Headers;
+export default connect(mapStateToProps, { Verify })(Headers);

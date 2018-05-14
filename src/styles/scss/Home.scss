@@ -1,6 +1,6 @@
 @import "color";
 
-.upper {
+.homeUpper {
   height: 500px;
   background-image: url("./img/city3.jpg");
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   filter: grayscale(50%);
 }
 
-.lower {
+.homeLower {
   background-color: ghostwhite;
 }
 
@@ -45,39 +45,39 @@
   }
 }
 
-.qHeader {
+.homeQHeader {
   width: 70%;
 }
-.lowerLeft {
+.homeLowerLeft {
   padding-top: 10px;
   width: 70%;
   display: inline-block;
   margin-top: 40px;
 }
 
-.lowerRight {
+.homeLowerRight {
   float: right;
   width: 30%;
   height: 1000px;
 }
 
-.lowerRightContent {
+.homeLowerRightContent {
   margin-top: 80px;
   height: 200px;
   background-color: lightblue;
 }
-.post {
+.homePost {
   height: 70px;
   text-align: center;
 }
 
-.postTitle {
+.homePostTitle {
   text-decoration: none;
   position: relative;
   top: 30%;
 }
 
-hr {
+.homeHr {
   border: 0;
   clear: both;
   display: block;

@@ -30,7 +30,9 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
+    console.log(store.getState());
     return (
       <Provider store={store}>
         <Router>

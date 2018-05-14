@@ -1,19 +1,19 @@
-.loginBtn {
+.loginSignInBtn {
   width: 100%;
   height: 40px; }
 
-.homeInputContainer {
+.loginInputContainer {
   width: 40%;
   max-width: 600px;
   float: right;
   padding-top: 90px;
   padding-right: 50px; }
 
-.buttonContainer {
+.loginBtnContainer {
   align-items: center;
   margin-bottom: 40px; }
 
-.homeInputTitleTag {
+.loginInputTitleTag {
   height: 38px;
   width: 90px; }
 
