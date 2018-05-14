@@ -1,4 +1,3 @@
-import Header from './header/Header';
 import Footer from './footer/Footer';
 import Home from './body/Home';
 import Tag from './body/Tag';
@@ -12,7 +11,6 @@ import NoMatch from './body/NoMatch';
 import Verify from './body/Verify';
 
 export {
-  Header,
   Footer,
   Home,
   Tag,

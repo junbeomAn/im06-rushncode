@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../styles/css/Header.css';
-import Verify from './../body/Verify';
+import Verify from '../../components/body/Verify';
 
-const Headers = () => (
+const HeaderContainer = () => (
   // Verify()
   <nav className="navbar navbar-expand-lg navbar-light bg-dark Header">
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,4 +50,4 @@ const Headers = () => (
   </nav>
 );
 
-export default Headers;
+export default HeaderContainer;

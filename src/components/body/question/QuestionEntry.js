@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../../../styles/css/QuestionEntry.css';
+import QuestionAnswer from './QuestionAnswer';
 
-import '../../../styles/css/Quest.css';
-
-const Quest = ({ title, body }) => (
-  <div className="questContainer">
+const QuestionEntry = ({ title, body }) => (
+  <div className="QuestionEntryContainer">
     <div className="upper">
       <div className="jumbotron HomeJumbotron">
         <h1>창 조 경 제</h1>
@@ -29,9 +29,9 @@ const Quest = ({ title, body }) => (
         </span>
       </div>
     </div>
-    <div className="quest">
-      <div className="questHeader">
-        <div className="questHeaderTop">
+    <div className="QuestionEntryQuestion">
+      <div className="QuestionEntryHeader">
+        <div className="QuestionEntryHeaderTop">
           <h1>{title}</h1>
         </div>
         <div className="tags">
@@ -46,10 +46,11 @@ const Quest = ({ title, body }) => (
           </button>
         </div>
       </div>
-      <div className="questMain">
-        <div className="questMainFirst">good</div>
-        <div className="questMainSecond">qBody</div>
-        <div className="questMainThird">
+
+      <div className="QuestionEntryMain">
+        <div className="QuestionEntryMainFirst">good</div>
+        <div className="QuestionEntryMainSecond">{body}</div>
+        <div className="QuestionEntryMainThird">
           <div>
             <p>
               <span className="glyphicon glyphicon-eye-open" /> view
@@ -58,14 +59,23 @@ const Quest = ({ title, body }) => (
           <div>보상액 reward</div>
         </div>
       </div>
+
+      <div className="QuestionEntryMain">
+        <div className="QuestionEntryMainFirst">good</div>
+        <div className="QuestionEntryMainSecond">
+          <QuestionAnswer />
+        </div>
+        <div className="QuestionEntryMainThird">
+          <div> Add component </div>
+        </div>
+      </div>
     </div>
   </div>
 );
 
-Quest.propTypes = {
-  posts: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+QuestionEntry.propTypes = {
+  title: PropTypes.string,
+  body: PropTypes.string,
 };
 
-export default Quest;
+export default QuestionEntry;

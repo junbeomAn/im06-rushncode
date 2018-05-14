@@ -15,9 +15,10 @@
     justify-content: center;
     padding: 10px 10px 0px 10px;
     .first {
+      padding-left: 10px;
+      width: 90px;
       color: $greyfont;
-      padding-bottom: 4px;
-      padding-right: 10px;
+      padding-bottom: 6px;
     }
     .second {
       width: 80%;
@@ -63,6 +64,8 @@
       }
     }
     .fourth {
+      width: 125px;
+      padding-right: 10px;
       color: $greyfont;
       text-align: center;
       .username {

@@ -1,11 +1,11 @@
 @import "color";
 
-.quest {
+.QuestionEntryQuestion {
   height: 1000px;
   background: ghostwhite;
 
   // 헤더
-  .questHeader {
+  .QuestionEntryHeader {
     width: 90%;
     padding-bottom: 20px;
     margin: 0 auto;
@@ -29,22 +29,22 @@
   }
 
   // 미들
-  .questMain {
+  .QuestionEntryMain {
     width: 90%;
     margin: 0 auto;
     display: flex;
     padding-top: 20px;
-    .questMainFirst {
+    .QuestionEntryMainFirst {
       width: 10%;
       border: 1px solid black;
       padding-left: 20px;
     }
-    .questMainSecond {
+    .QuestionEntryMainSecond {
       width: 75%;
       border: 1px solid black;
-      padding-left: 20px;
+      padding: 0px 20px;
     }
-    .questMainThird {
+    .QuestionEntryMainThird {
       width: 15%;
       border: 1px solid black;
       padding-left: 20px;
@@ -52,7 +52,7 @@
   }
 }
 
-.third {
+.QuestionEntrythird {
   width: 90px;
   margin-right: 15px;
   padding: 5px 8px;

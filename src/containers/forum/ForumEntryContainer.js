@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Forum from '../../components/body/forum/Forum';
-import { fetchOne } from '../../store/actions/forumAction';
+import ForumEntry from '../../components/body/forum/ForumEntry';
+import { fetchForumEntry } from '../../redux/actions/forumAction';
 
-class ForumContainer extends Component {
+class ForumEnrtyContainer extends Component {
   componentWillMount() {
     const { id } = this.props.match.params;
-    this.props.fetchOne(id);
+    this.props.fetchForumEntry(id);
   }
 
   render() {
     const { title, body } = this.props.forum;
     return (
       <div>
-        <Forum title={title} body={body} />
+        <ForumEntry title={title} body={body} />
       </div>
     );
   }
 }
 
-ForumContainer.propTypes = {
-  fetchOne: PropTypes.func.isRequired,
+ForumEnrtyContainer.propTypes = {
+  fetchForumEntry: PropTypes.func.isRequired,
   forum: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
 };
@@ -32,4 +32,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchOne })(ForumContainer);
+export default connect(mapStateToProps, { fetchForumEntry })(ForumEnrtyContainer);

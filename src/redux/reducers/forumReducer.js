@@ -1,4 +1,4 @@
-import { FETCH_QUESTIONS, FETCH_ONE_QUESTION } from '../actions/types';
+import { FETCH_FORUM_LIST, FETCH_FORUM_ENTRY } from '../actions/types';
 
 // 모듈의 초기 상태를 정의합니다.
 const initialState = {
@@ -11,12 +11,12 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case FETCH_QUESTIONS:
+    case FETCH_FORUM_LIST:
       return {
         ...state,
         items: action.payload,
       };
-    case FETCH_ONE_QUESTION:
+    case FETCH_FORUM_ENTRY:
       return {
         ...state,
         item: action.payload,
