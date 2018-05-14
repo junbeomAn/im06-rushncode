@@ -1,23 +1,45 @@
-.loginSignInBtn {
-  width: 100%;
-  height: 40px; }
+.authInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 10%;
+  padding: 20px; }
 
-.loginInputContainer {
-  width: 40%;
-  max-width: 600px;
-  float: right;
-  padding-top: 90px;
-  padding-right: 50px; }
+.authOptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center; }
 
-.loginBtnContainer {
-  align-items: center;
-  margin-bottom: 40px; }
+.authConnectLogin {
+  margin-top: 10px; }
 
-.loginInputTitleTag {
-  height: 38px;
-  width: 90px; }
+.authContainer {
+  height: 700px;
+  width: 100%; }
 
-.signUpBtn {
-  left: 50%; }
+.authButtonContainer {
+  flex: 1;
+  margin-top: 10px;
+  width: 100%; }
+
+.authDivider {
+  flex: 0.5; }
+
+.authFormContainer {
+  flex: 1; }
+
+.authInputTitleTag {
+  width: 80px; }
+
+.authBtn {
+  width: 100%; }
+
+.authSubmitBtn {
+  float: right; }
 
 /*# sourceMappingURL=Login.css.map */

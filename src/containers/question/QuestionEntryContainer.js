@@ -11,7 +11,6 @@ class QuestionEntryContainer extends Component {
   }
 
   render() {
-    console.log(this.props.question);
     const { title, body } = this.props.question;
     return (
       <div>

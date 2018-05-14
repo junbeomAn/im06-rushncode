@@ -15,7 +15,7 @@ const ForumList = ({ forums }) => {
   ));
   return (
     <div className="forumContainer">
-      <div className="upper">
+      <div className="homeUpper">
         <div className="jumbotron HomeJumbotron">
           <h1>자 유 게 시 판</h1>
           <p>
