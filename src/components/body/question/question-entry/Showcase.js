@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Showcase = () => (
-  <div className="upper">
+  <div className="homeUpper">
     <div className="jumbotron HomeJumbotron">
       <h1>돈이 곧 명예</h1>
       <p>

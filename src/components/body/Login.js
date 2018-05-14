@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { Divider, Button, Icon } from 'semantic-ui-react';
 // import { Route, Redirect } from 'react-router';
 // import 'react-flexview/lib/flexView.css';
@@ -7,22 +6,8 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import '../../styles/css/Auth.css';
 
-const login = (history) => {  
-  const userInfo = {};
-  userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
-  userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
-  const signInUrl = 'http://localhost:3001/api/auth/signin';
 
-  axios
-    .post(signInUrl, userInfo)
-    .then((res) => {     
-      localStorage.setItem('token', res.data.token);
-      history.push('/');
-    })
-    .catch(err => alert(err));  
-};
-
-const Auth = ({ history }) => (
+const Login = ({ keyPress, login, }) => (
   <div className="authContainer">
     <div className="authInputContainer border rounded">
       <div className="authButtonContainer">
@@ -63,12 +48,20 @@ const Auth = ({ history }) => (
               className="form-control inputPwd"
               name="password"
               placeholder="Password"
+              onKeyPress={(e) => {
+                keyPress(e);
+              }}
             />
           </div>
         </div>
-        <button onClick={() => {login(history); }} className="btn btn-primary authSubmitBtn" >
+        <button
+          onClick={() => {
+            login();
+          }}
+          className="btn btn-primary authSubmitBtn"
+        >
           로그인
-        </button>        
+        </button>
       </div>
     </div>
     <div className="border rounded authOptionContainer">
@@ -82,18 +75,18 @@ const Auth = ({ history }) => (
   </div>
 );
 
-export default Auth;
+export default Login;
 
 // <div className="authContainer">
 //   <div className="authInputContainer">
 //     <Segment>
 //       <div className="authButtonContainer">
-//         <Button fluid color="google plus" className="connectLogin">
+//         <Button fluid color="google plus" className="authConnectLogin">
 //           <Icon name="google plus" /> Google Plus
 //         </Button>
 //       </div>
 //       <div className="authButtonContainer">
-//         <Button fluid color="facebook" className="connectLogin">
+//         <Button fluid color="facebook" className="authConnectLogin">
 //           <Icon name="facebook" /> Facebook
 //         </Button>
 //       </div>

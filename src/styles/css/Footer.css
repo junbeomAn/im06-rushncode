@@ -7,15 +7,15 @@
   align-items: center;
   justify-content: space-between; }
 
-.foot_item {
+.footerItem {
   text-decoration: none;
   color: ghostwhite;
   padding-left: 20px; }
 
-.left {
+.footerLeft {
   padding-left: 30px; }
 
-.right {
+.footerRight {
   padding-right: 30px; }
 
 /*# sourceMappingURL=Footer.css.map */

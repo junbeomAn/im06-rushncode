@@ -1,22 +1,46 @@
-.loginBtn {
+@import 'color';
+
+.authInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 10%;
+  padding: 20px;
+}
+.authOptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.authConnectLogin {
+  margin-top: 10px;
+}
+.authContainer {
+  height: 700px;
   width: 100%;
-  height: 40px;
 }
-.homeInputContainer {
-  width: 40%;
-  max-width: 600px;
+.authButtonContainer {
+  flex: 1;
+  margin-top: 10px;
+  width: 100%;
+}
+.authDivider {
+  flex: 0.5;
+}
+.authFormContainer {
+  flex: 1;
+}
+.authInputTitleTag {
+  width: 80px;
+}
+.authBtn {
+  width: 100%;
+}
+.authSubmitBtn {
   float: right;
-  padding-top: 90px;
-  padding-right: 50px;
-}
-.buttonContainer {
-  align-items: center;
-  margin-bottom: 40px;
-}
-.homeInputTitleTag {
-  height: 38px;
-  width: 90px;
-}
-.signUpBtn {
-  left: 50%;
 }

@@ -7,7 +7,7 @@ const arr = [1, 2, 3, 4, 5, 6];
 
 const Home = () => (
   <div className="homeContainer">
-    <div className="upper">
+    <div className="homeUpper">
       <div className="jumbotron HomeJumbotron">
         <h1>Hello Fuckers</h1>
         <p>
@@ -30,23 +30,23 @@ const Home = () => (
         </span>
       </div>
     </div>
-    <div className="lower">
-      <div className="qHeader">questions header</div>
-      <div className="lowerLeft">
-        {arr.map(item => (
-          <div>
-            <div className="post">
-              <span className="postTitle">
+    <div className="homeLower">
+      <div className="homeQHeader">questions header</div>
+      <div className="homeLowerLeft">
+        {arr.map((item, index) => (
+          <div key={index}>
+            <div className="homePost">
+              <span className="homePostTitle">
                 <a href="/">{item}</a>
               </span>
             </div>
-            <hr align="center" />
+            <hr align="center" className="homeHr" />
           </div>
         ))}
       </div>
-      <div className="lowerRight">
-        <div className="lowerRightContent">aaa</div>
-        <div className="lowerRightContent">aaa</div>
+      <div className="homeLowerRight">
+        <div className="homeLowerRightContent">aaa</div>
+        <div className="homeLowerRightContent">aaa</div>
       </div>
     </div>
   </div>

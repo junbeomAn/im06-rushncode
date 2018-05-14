@@ -4,3 +4,6 @@ export const FETCH_QUESTION_ENTRY = 'questionReducer/FETCH_QUESTION_ENTRY';
 
 export const FETCH_FORUM_LIST = 'questionReducer/FETCH_FORUM_LIST';
 export const FETCH_FORUM_ENTRY = 'questionReducer/FETCH_FORUM_ENTRY';
+
+// verfiy
+export const VERIFICATION = 'VERIFICATION';

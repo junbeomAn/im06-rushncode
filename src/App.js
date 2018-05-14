@@ -9,13 +9,12 @@ import {
   Tag,
   Rank,
   Job,
-  Auth,
   NoMatch,
   Clause,
   Information,
   HelpDesk,
 } from './components';
-import { HeaderContainer, Forum, Question, SignUp } from './containers';
+import { HeaderContainer, Forum, Question, SignUp, Login } from './containers';
 import './styles/css/App.css';
 
 class App extends Component {
@@ -23,7 +22,9 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
+    console.log(store.getState());
     return (
       <Provider store={store}>
         <Router>
@@ -37,7 +38,7 @@ class App extends Component {
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />
                 <Route path="/job" component={Job} />
-                <Route path="/auth" component={Auth} />
+                <Route path="/auth" component={Login} />
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Information} />
                 <Route path="/helpdesk" component={HelpDesk} />
