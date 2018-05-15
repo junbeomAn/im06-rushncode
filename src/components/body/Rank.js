@@ -1,11 +1,14 @@
 import React from 'react';
 import { Segment, Grid, Image } from 'semantic-ui-react';
+import RankShowcase from '../showcases/RankShowcase';
+
 import '../../styles/css/Rank.css';
 
 const arr = [1, 2, 3, 4, 5];
 
 const Rank = () => (
   <div className="rankContainer">
+    <RankShowcase />
     <div className="rankUpper">check your rank dude!!</div>
     <div className="rankSegment">
       {arr.map(() => (

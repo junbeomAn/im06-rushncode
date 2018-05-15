@@ -1,11 +1,6 @@
 .QuestionWriteContainer {
   width: 100%;
   height: 1000px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px 7px;
-  margin: 0 auto;
-  margin-top: 55px;
   background: #fff; }
   .QuestionWriteContainer .QuestionWriteTag {
     width: 100%;

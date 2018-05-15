@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuestionWrite = ({ tags, onChange }) => (
+const QuestionWrite = ({ tags, onTagChange }) => (
   <div>
     {/* 태그 */}
     <div className="input-group-prepend input-group-lg QuestionWriteTag">
@@ -18,7 +18,7 @@ const QuestionWrite = ({ tags, onChange }) => (
                   className="form-check-input"
                   type="checkbox"
                   value={item.tag}
-                  onChange={event => onChange(event)}
+                  onChange={event => onTagChange(event)}
                 />
                 {item.tag}
               </label>
