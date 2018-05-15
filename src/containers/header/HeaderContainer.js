@@ -3,15 +3,22 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../../styles/css/Header.css';
 import Logout from './../../components/body/Logout';
-import { Verify } from './../../redux/actions/verifyAction';
+import { Verify, SignOut } from './../../redux/actions/verifyAction';
 
 class Headers extends Component {
   constructor(props) {
     super(props);
-    this.state = {};    
+    this.state = {
+      signedOut: false,
+    };
+  }
+    
+  componentDidMount() {
+    this.props.Verify();
   }
 
   render() {
+    // this.props.Verify();
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-dark Header">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,7 +62,7 @@ class Headers extends Component {
                 </li>
               ) : (
                 <li className="nav-item">
-                  <NavLink to="/" onClick={Logout} className="item">
+                  <NavLink to="/auth" onClick={this.props.SignOut} className="item">
                     로그아웃
                   </NavLink>
                 </li>
@@ -73,4 +80,4 @@ const mapStateToProps = (state) => {
   return { isLoggedIn };
 };
 
-export default connect(mapStateToProps, { Verify })(Headers);
+export default connect(mapStateToProps, { Verify, SignOut })(Headers);

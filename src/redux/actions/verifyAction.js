@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { VERIFICATION } from './types';
 import { createBrowserHistory } from 'history';
+import { VERIFICATION, SIGNOUT } from './types';
 
 const history = createBrowserHistory();
 
@@ -17,7 +17,7 @@ export const Verify = () => (dispatch) => {
       if (res.data.success) {
         console.log('verified');
         dispatch({ type: VERIFICATION, payload: res.data.success });
-        history.push('/')
+        history.push('/');
       } else {
         console.log('not verified');
         history.push('/auth');
@@ -26,4 +26,15 @@ export const Verify = () => (dispatch) => {
     .catch(err => console.log(err));
 };
 
+// export const SignIn = () => (dispatch) => {
 
+// };
+
+export const SignOut = () => (dispatch) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    localStorage.removeItem('token');
+    dispatch({ type: SIGNOUT });
+    history.push('/auth');
+  }
+};
