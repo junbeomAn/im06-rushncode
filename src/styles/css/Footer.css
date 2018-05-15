@@ -1,9 +1,10 @@
 .footer {
-  background: #0b1b33;
-  display: flex;
   width: 80%;
   margin-left: 10%;
   height: 20rem;
+  background: #0b1b33;
+  opacity: 0.8;
+  display: flex;
   align-items: center;
   justify-content: space-between; }
 

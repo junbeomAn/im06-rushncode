@@ -1,11 +1,12 @@
 @import "color";
 
 .footer {
-  background: $primaryBlue;
-  display: flex;
   width: 80%;
   margin-left: 10%;
   height: 20rem;
+  background: $primaryBlue;
+  opacity: 0.8;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   // background-image: url("./images/unsplash/photo-1424873380396-9580028d74db.jpg");

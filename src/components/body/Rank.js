@@ -13,7 +13,7 @@ const Rank = () => (
           <Grid.Row divided>
             <Grid.Column>
               <Segment>
-                <a href="#">
+                <a href="javascript:void(0);">
                   <Image
                     size="tiny"
                     src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
@@ -23,7 +23,7 @@ const Rank = () => (
             </Grid.Column>
             <Grid.Column>
               <Segment>
-                <a href="#">
+                <a href="javascript:void(0);">
                   <Image
                     size="tiny"
                     src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
@@ -33,7 +33,7 @@ const Rank = () => (
             </Grid.Column>
             <Grid.Column>
               <Segment>
-                <a href="#">
+                <a href="javascript:void(0);">
                   <Image
                     size="tiny"
                     src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
@@ -43,7 +43,7 @@ const Rank = () => (
             </Grid.Column>
             <Grid.Column>
               <Segment>
-                <a href="#">
+                <a href="javascript:void(0);">
                   <Image
                     size="tiny"
                     src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"

@@ -7,7 +7,7 @@
   width: 80%;
   margin: 0 auto;
   z-index: 1;
-  background-color: transparent !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .headerItembox {
@@ -16,18 +16,20 @@
 
 .navbar-brand {
   // 위 오른 아래 왼
-  padding: 10px 15px 5px 15px;
+  padding: 5px 15px 5px 15px;
   h1 {
-    font-size: 24px;
+    font-size: 25px;
     color: ghostwhite;
   }
 }
 
 .navbar-nav {
+  padding-right: 41px;
   li {
     .item {
+      padding-right: 30px;
       color: ghostwhite;
-      padding-right: 15px;
+      font-size: 17px;
       text-decoration-style: none;
       &:hover {
         color: lightyellow;
@@ -39,4 +41,8 @@
 
 .navbar-container {
   padding: 20px 0 20px 0;
+}
+
+.logos {
+  z-index: 2000;
 }

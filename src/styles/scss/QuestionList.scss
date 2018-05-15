@@ -16,12 +16,18 @@
     padding: 10px 10px 0px 10px;
     .first {
       padding-left: 10px;
-      width: 90px;
+      width: 25%;
       color: $greyfont;
       padding-bottom: 6px;
+      display: flex;
+      text-align: center;
+      .firstItem {
+        padding-right: 10px;
+      }
     }
     .second {
       width: 80%;
+      margin: 0;
       padding: 10px 15px;
       border-bottom: 1px solid $divider;
       h2 {
@@ -46,7 +52,7 @@
       }
     }
     .third {
-      width: 90px;
+      width: 20%;
       margin-right: 15px;
       padding: 5px 8px;
       border: solid 1px $greyfont;
