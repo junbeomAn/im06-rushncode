@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Showcase = () => (
+const QuestionEntryShowcase = () => (
   <div className="homeUpper">
     <div className="jumbotron HomeJumbotron">
       <h1>돈이 곧 명예</h1>
@@ -12,14 +12,14 @@ const Showcase = () => (
       <span className="homeLBtn">
         <NavLink to="/question/write" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
-            질문하기
+            질문 작성
           </button>
         </NavLink>
       </span>
       <span className="homeRBtn">
         <NavLink to="/mywallet" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
-            나의지갑
+            나의 지갑
           </button>
         </NavLink>
       </span>
@@ -27,4 +27,4 @@ const Showcase = () => (
   </div>
 );
 
-export default Showcase;
+export default QuestionEntryShowcase;

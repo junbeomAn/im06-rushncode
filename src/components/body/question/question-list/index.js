@@ -4,7 +4,6 @@ import ViewCount from './ViewCount';
 import Tags from './Tags';
 import UpdateTime from './UpdateTime';
 import Pagenation from './Pagenation';
-import Showcase from './Showcase';
 
 export {
   EachQuestion,
@@ -13,5 +12,4 @@ export {
   Tags,
   UpdateTime,
   Pagenation,
-  Showcase,
 };

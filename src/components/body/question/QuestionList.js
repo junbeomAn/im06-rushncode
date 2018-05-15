@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { EachQuestion, Pagenation, Showcase } from './question-list';
+import { EachQuestion, Pagenation } from './question-list';
 import '../../../styles/css/QuestionList.css';
+import QuestionListShowcase from '../../showcases/QuestionListShowcase';
 
 const QuestionList = ({ posts }) => (
   <div className="questContainer">
-    <Showcase />
+    <QuestionListShowcase />
     <div className="questionMain">
       <EachQuestion questions={posts} />
       <Pagenation />

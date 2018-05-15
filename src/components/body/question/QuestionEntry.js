@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../../styles/css/QuestionEntry.css';
-import { Showcase, Answer, LikeCount, ViewCount, Reward, UpdateTime } from './question-entry';
+import { Answer, LikeCount, ViewCount, Reward, UpdateTime } from './question-entry';
 import { Tags } from '../question/question-list';
+import QuestionEntryShowcase from '../../showcases/QuestionEntryShowcase';
 
 const QuestionEntry = ({
   title, qBody, qGood, qView, qReward, qTime, raiseLikeCount,
 }) => (
   <div className="QuestionEntryContainer">
-    <Showcase />
+    <QuestionEntryShowcase />
     <div className="QuestionEntryQuestion">
       <div className="QuestionEntryHeader">
         <div className="QuestionEntryHeaderTop">

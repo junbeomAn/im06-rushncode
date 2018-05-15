@@ -1,11 +1,10 @@
 import React from 'react';
+import JobShowcase from '../showcases/JobShowcase';
 
-const Job = () => {
-  return (
-    <div>
-      Job 페이지 입니다.
-    </div>
-  );
-};
+const Job = () => (
+  <div>
+    <JobShowcase />
+  </div>
+);
 
 export default Job;
