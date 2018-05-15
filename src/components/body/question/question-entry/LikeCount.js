@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import heart from '../../../../styles/css/images/circle-icons/full-color/heart.png';
+import { Icon } from 'semantic-ui-react';
 
-const LikeCount = ({ count }) => (
-  <div className="LikeCountBox">
-    <div className="LikeCountBoxImage">
-      <img src={heart} width="40" height="40" alt="Like" />
+const LikeCount = ({ count, raiseLikeCount }) => (
+  <div className="CountBox">
+    <div className="CountBoxImage">
+      <a className="likeBtn" href="javascript:void(0);" onClick={() => raiseLikeCount()}>
+        <Icon name="heart" size="big" />
+      </a>
     </div>
-    <div className="LikeCountBoxNum">{count}</div>
+    <div className="CountBoxNum">{count}</div>
   </div>
 );
 
 LikeCount.propTypes = {
   count: PropTypes.number.isRequired,
+  qId: PropTypes.number.isRequired,
 };
 
 export default LikeCount;

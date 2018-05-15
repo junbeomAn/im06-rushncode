@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import eye from '../../../../styles/css/images/circle-icons/full-color/eye.png';
+// import shoeprints from '../../../../styles/css/images/circle-icons/one-color/shoeprints.png';
+import { Icon } from 'semantic-ui-react';
 
 const ViewCount = ({ count }) => (
-  <div className="ViewCountBox">
-    <div className="ViewCountBoxImage">
-      <img src={eye} width="40" height="40" alt="Like" />
+  <div className="CountBox">
+    <div className="CountBoxImage">
+      {/* <img src={shoeprints} width="40" height="40" alt="Like" /> */}
+      <Icon name="unhide" size="big" />
     </div>
-    <div className="ViewCountBoxNum">{count}</div>
+    <div className="CountBoxNum">{count}</div>
   </div>
 );
 

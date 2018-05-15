@@ -27,14 +27,16 @@
     .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainFirst {
       width: 10%;
       margin: 0 auto; }
-      .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainFirst .LikeCountBox .LikeCountBoxImage {
-        text-align: center;
-        margin-bottom: 10px; }
-      .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainFirst .LikeCountBox .LikeCountBoxNum {
-        text-align: center;
-        font-size: 25px;
-        padding-right: 2px;
-        color: grey; }
+    .QuestionEntryQuestion .QuestionEntryMain .CountBox .CountBoxImage {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #777; }
+    .QuestionEntryQuestion .QuestionEntryMain .CountBox .CountBoxNum {
+      text-align: center;
+      font-size: 18px;
+      margin: 0 auto;
+      margin-right: 3px;
+      color: grey; }
     .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainSecond {
       width: 70%;
       padding: 0px 20px;
@@ -52,22 +54,13 @@
         font-size: 25px;
         padding-right: 2px;
         color: grey; }
-    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntrythirdReward {
-      width: 90px;
-      margin: 0 auto;
-      margin-top: 10px;
-      padding: 5px 8px;
-      border: solid 1px #777;
-      border: solid 1px #0f240f;
-      background: #0f240f;
-      color: #fff;
-      text-align: center;
-      letter-spacing: 0.1rem;
-      animation-duration: 5s;
-      animation-iteration-count: infinite; }
-      .QuestionEntryQuestion .QuestionEntryMain .QuestionEntrythirdReward:hover {
-        border: solid 1px #0f240f;
-        background: #fff;
-        color: #0f240f; }
+    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainThirdReward {
+      margin-top: 20px; }
+
+.likeBtn {
+  color: #777;
+  border: none; }
+  .likeBtn:hover {
+    color: crimson; }
 
 /*# sourceMappingURL=QuestionEntry.css.map */

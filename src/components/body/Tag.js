@@ -12,28 +12,28 @@ const Tag = () => {
         <Grid.Row divided>
           <Grid.Column>
             <Segment>
-              <a href="#">
+              <a href="javascript:void(0);">
                 1111
               </a>
             </Segment>
           </Grid.Column>
           <Grid.Column>
             <Segment>
-              <a href="#">
+              <a href="javascript:void(0);">
                 2222
               </a>
             </Segment>
           </Grid.Column>
           <Grid.Column>
             <Segment>
-              <a href="#">
+              <a href="javascript:void(0);">
                 3333
               </a>
             </Segment>
           </Grid.Column>
           <Grid.Column>
             <Segment>
-              <a href="#">
+              <a href="javascript:void(0);">
                 4444
               </a>
             </Segment>

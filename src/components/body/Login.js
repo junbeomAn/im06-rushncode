@@ -64,10 +64,10 @@ const Login = ({ keyPress, login }) => (
     </div>
     <div className="border rounded authOptionContainer">
       <p>
-        Did you for get your password? <a href="#">Find</a>
+        Did you for get your password? <a href="javascript:void(0);">Find</a>
       </p>
       <p>
-        Don't you have account? Signup <a href="#">Signup</a>
+        Don't you have account? Signup <a href="javascript:void(0);">Signup</a>
       </p>
     </div>
   </div>

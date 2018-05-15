@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { EditorState } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';

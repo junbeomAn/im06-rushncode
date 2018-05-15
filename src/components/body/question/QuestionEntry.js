@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../../styles/css/QuestionEntry.css';
-import { Showcase, Answer, LikeCount, ViewCount } from './question-entry';
-import { Tags, Reward, UpdateTime } from '../question/question-list';
+import { Showcase, Answer, LikeCount, ViewCount, Reward, UpdateTime } from './question-entry';
+import { Tags } from '../question/question-list';
 
 const QuestionEntry = ({
-  title, qBody, qGood, qView, qReward, qTime,
+  title, qBody, qGood, qView, qReward, qTime, raiseLikeCount,
 }) => (
   <div className="QuestionEntryContainer">
     <Showcase />
@@ -19,18 +19,18 @@ const QuestionEntry = ({
 
       <div className="QuestionEntryMain">
         <div className="QuestionEntryMainFirst">
-          <LikeCount count={qGood} />
+          <LikeCount count={qGood} raiseLikeCount={raiseLikeCount} />
         </div>
         <div className="QuestionEntryMainSecond">{qBody}</div>
         <div className="QuestionEntryMainThird">
           <div className="QuestionEntryMainThirdViewCount">
             <ViewCount count={qView} />
           </div>
-          <div className="QuestionEntryMainThirdViewCount">
-            <UpdateTime time={qTime} />
-          </div>
-          <div className="QuestionEntrythirdReward animated pulse">
+          <div className="QuestionEntryMainThirdReward">
             <Reward reward={qReward} />
+          </div>
+          <div className="QuestionEntryMainThirdReward">
+            <UpdateTime time={qTime} />
           </div>
         </div>
       </div>
@@ -56,6 +56,8 @@ QuestionEntry.propTypes = {
   qGood: PropTypes.number.isRequired,
   qView: PropTypes.number.isRequired,
   qReward: PropTypes.number.isRequired,
+  qTime: PropTypes.string.isRequired,
+  qId: PropTypes.number.isRequired,
 };
 
 export default QuestionEntry;

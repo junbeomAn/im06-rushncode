@@ -38,17 +38,19 @@
     .QuestionEntryMainFirst {
       width: 10%;
       margin: 0 auto;
-      .LikeCountBox {
-        .LikeCountBoxImage {
-          text-align: center;
-          margin-bottom: 10px;
-        }
-        .LikeCountBoxNum {
-          text-align: center;
-          font-size: 25px;
-          padding-right: 2px;
-          color: grey;
-        }
+    }
+    .CountBox {
+      .CountBoxImage {
+        text-align: center;
+        margin-bottom: 10px;
+        color: $greyfont;
+      }
+      .CountBoxNum {
+        text-align: center;
+        font-size: 18px;
+        margin: 0 auto;
+        margin-right: 3px;
+        color: grey;
       }
     }
     .QuestionEntryMainSecond {
@@ -61,7 +63,7 @@
       text-align: center;
       // border: 1px solid black;
     }
-    .QuestionEntryMainThirdViewCount{
+    .QuestionEntryMainThirdViewCount {
       margin: 0 auto;
       .ViewCountBox {
         .ViewCountBoxImage {
@@ -76,25 +78,17 @@
         }
       }
     }
-    .QuestionEntrythirdReward {
-      width: 90px;
-      margin: 0 auto;
-      margin-top: 10px;
-      padding: 5px 8px;
-      border: solid 1px $greyfont;
-      border: solid 1px $primaryGreen;
-      background: $primaryGreen;
-      color: #fff;
-      text-align: center;
-      letter-spacing: 0.1rem;
-      animation-duration: 5s;
-      animation-iteration-count: infinite;
-      &:hover {
-        border: solid 1px $primaryGreen;
-        background: #fff;
-        color: $primaryGreen;
-      }
+    .QuestionEntryMainThirdReward {
+      margin-top: 20px;
     }
+  }
+}
+
+.likeBtn {
+  color: $greyfont;
+  border: none;
+  &:hover {
+    color: crimson;
   }
 }
 
