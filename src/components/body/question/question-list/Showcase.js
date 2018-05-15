@@ -12,14 +12,14 @@ const Showcase = () => (
       <span className="homeLBtn">
         <NavLink to="/question/write" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
-            질문 하기
+            질문하기
           </button>
         </NavLink>
       </span>
       <span className="homeRBtn">
-        <NavLink to="/myquestion" className="item">
+        <NavLink to="/mywallet" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
-            나의 질문
+            나의지갑
           </button>
         </NavLink>
       </span>

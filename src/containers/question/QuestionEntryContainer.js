@@ -11,10 +11,20 @@ class QuestionEntryContainer extends Component {
   }
 
   render() {
-    const { title, body } = this.props.question;
+    const {
+      title, qBody, qGood, qView, qReward, qTime,
+    } = this.props.question;
+
     return (
       <div>
-        <QuestionEntry title={title} body={body} />
+        <QuestionEntry
+          title={title}
+          qBody={qBody}
+          qGood={qGood}
+          qView={qView}
+          qReward={qReward}
+          qTime={qTime}
+        />
       </div>
     );
   }

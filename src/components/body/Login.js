@@ -4,10 +4,8 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 // import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
-import '../../styles/css/Auth.css';
 
-
-const Login = ({ keyPress, login, }) => (
+const Login = ({ keyPress, login }) => (
   <div className="authContainer">
     <div className="authInputContainer border rounded">
       <div className="authButtonContainer">

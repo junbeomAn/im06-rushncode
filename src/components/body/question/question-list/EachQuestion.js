@@ -4,7 +4,7 @@ import { ViewCount, LikeCount, AnswerCount, Reward, Tags, UpdateTime } from '../
 
 const EachQuestion = ({ questions }) => (
   <div>
-    {questions.map(item => (
+    {questions.slice().reverse().map(item => (
       <div className="questionPost">
         <div className="first">
           <ViewCount count={item.view} />

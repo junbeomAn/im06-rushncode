@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import 'semantic-ui-css/semantic.min.css';
 import { Verify } from './../../redux/actions/verifyAction';
-import '../../styles/css/Auth.css';
+import '../../styles/css/Login.css';
 import Login from '../../components/body/Login';
 
 class loginContainer extends Component {
