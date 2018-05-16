@@ -82,6 +82,12 @@ class QuestionWriteContainer extends Component {
       body: 'testing... i am hanyoungjae',
     };
     data.title = document.getElementsByClassName('inputTitle')[0].value;
+
+    // 제목 입력 예외처리
+    if(data.title.length === 0) {
+      alert('제목을 입력해 주세요');
+      return;
+    }
     data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
     data.tags = this.state.options;
     const writingUrl = 'http://localhost:3001/api/question/post';
