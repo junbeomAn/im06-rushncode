@@ -25,8 +25,51 @@
     You need to enable JavaScript to run app!!
   </noscript>
   <div id="root"></div>
-    
+
 
 </body>
+<script>
+  var elHeight = 0,
+    elTop = 0,
+    dHeight = 0,
+    wHeight = 0,
+    wScrollCurrent = 0,
+    wScrollBefore = 0,
+    wScrollDiff = 0;
+
+  window.addEventListener('scroll', function () {
+    element = document.getElementsByClassName('Header')[0];
+    elHeight = element.offsetHeight;
+    dHeight = document.body.offsetHeight;
+    wHeight = window.innerHeight;
+    wScrollCurrent = window.pageYOffset;
+    wScrollDiff = wScrollBefore - wScrollCurrent;
+    elTop = parseInt(window.getComputedStyle(element).getPropertyValue('top')) + wScrollDiff;
+
+    // console.log(element);
+    // console.log(wScrollDiff);
+    if (wScrollCurrent <= 0) {
+      element.style.top = '0px';
+      element.style.color = 'black !important';
+      element.style.background = 'transparent';
+    } else if (wScrollDiff > 0) {
+      element.style.top = (elTop > 0 ? 0 : elTop) + 'px';
+    } else if (wScrollDiff < 0) {
+      element.style.background = 'black';
+      element.style.color = 'black';
+      element.style.opacity = '0.7';
+
+      if (wScrollCurrent + wHeight >= dHeight - elHeight) {
+        element.style.top = ((elTop = wScrollCurrent + wHeight - dHeight) < 0 ? elTop : 0) + 'px';
+      } else {
+        element.style.top = (Math.abs(elTop) > elHeight ? -elHeight : elTop) + 'px';
+        // element.style.background = 'transparent';
+      }
+    }
+
+    wScrollBefore = wScrollCurrent;
+
+  });
+</script>
 
 </html>
