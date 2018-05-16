@@ -1,4 +1,4 @@
-import { VERIFICATION } from '../actions/types';
+import { VERIFICATION, SIGNIN, SIGNOUT } from '../actions/types';
 
 // Reducer
 
@@ -12,6 +12,16 @@ function verifyReducer(state = initialState, action) {
       return {
         ...state,
         isLoggedIn: action.payload,
+      };
+    case SIGNIN:
+      return {
+        ...state,
+        isLoggedIn: true,
+      };
+    case SIGNOUT:
+      return {
+        ...state,
+        isLoggedIn: false,
       };
     default:
       return state;

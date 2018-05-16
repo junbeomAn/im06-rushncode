@@ -11,3 +11,5 @@ export const FETCH_FORUM_ENTRY = 'questionReducer/FETCH_FORUM_ENTRY';
 
 // Verfiy
 export const VERIFICATION = 'VERIFICATION';
+export const SIGNIN = 'SIGNIN';
+export const SIGNOUT = 'SIGNOUT';
