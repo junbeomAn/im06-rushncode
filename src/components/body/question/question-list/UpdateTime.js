@@ -11,7 +11,7 @@ const UpdateTime = ({ time }) => (
 );
 
 UpdateTime.propTypes = {
-  time: PropTypes.instanceOf(Date).isRequired,
+  time: PropTypes.string.isRequired,
 };
 
 export default UpdateTime;

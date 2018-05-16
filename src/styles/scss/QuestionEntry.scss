@@ -34,37 +34,64 @@
     margin: 0 auto;
     display: flex;
     padding-top: 20px;
+    height: 500px;
     .QuestionEntryMainFirst {
       width: 10%;
-      border: 1px solid black;
-      padding-left: 20px;
+      margin: 0 auto;
+    }
+    .CountBox {
+      .CountBoxImage {
+        text-align: center;
+        margin-bottom: 10px;
+        color: $greyfont;
+      }
+      .CountBoxNum {
+        text-align: center;
+        font-size: 18px;
+        margin: 0 auto;
+        margin-right: 3px;
+        color: grey;
+      }
     }
     .QuestionEntryMainSecond {
-      width: 75%;
-      border: 1px solid black;
+      width: 70%;
       padding: 0px 20px;
+      border: 1px solid black;
     }
     .QuestionEntryMainThird {
-      width: 15%;
-      border: 1px solid black;
-      padding-left: 20px;
+      width: 20%;
+      text-align: center;
+      // border: 1px solid black;
+    }
+    .QuestionEntryMainThirdViewCount {
+      margin: 0 auto;
+      .ViewCountBox {
+        .ViewCountBoxImage {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .ViewCountBoxNum {
+          text-align: center;
+          font-size: 25px;
+          padding-right: 2px;
+          color: grey;
+        }
+      }
+    }
+    .QuestionEntryMainThirdReward {
+      margin-top: 20px;
     }
   }
 }
 
-.QuestionEntrythird {
-  width: 90px;
-  margin-right: 15px;
-  padding: 5px 8px;
-  border: solid 1px $greyfont;
+.likeBtn {
   color: $greyfont;
-  text-align: center;
-  letter-spacing: 0.1rem;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
+  border: none;
   &:hover {
-    border: solid 1px $primaryGreen;
-    background: $primaryGreen;
-    color: #fff;
+    color: crimson;
   }
 }
+
+// reward
+
+// reward

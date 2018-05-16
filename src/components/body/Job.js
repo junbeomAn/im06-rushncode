@@ -5,6 +5,7 @@ import AceEditor from 'react-ace';
 
 import './../../ace_editor/aceModes'; 
 import './../../ace_editor/aceThemes';
+import JobShowcase from '../showcases/JobShowcase';
 
 const lang = `javascript,python,java,sass,scss,sql,swift,django,c_cpp,csharp,ejs,css,ruby,mysql,pascal,php,r,scala,xml`.split(',').sort();
 const theme = `ambiance,chaos,chrome,clouds_midnight,clouds,cobalt,crimson_editor,dawn,dracula,dreamweaver,eclipse,github,gob,gruvbox,idle_fingers,iplastic,katzenmilch,kr_theme,kuroir,merbivore_soft,merbivore,mono_industrial,monokai,pastel_on_dark,solarized_dark,solarized_light,sqlserver,terminal,textmate,tomorrow_night_blue,tomorrow_night_bright,tomorrow_night_eighties,tomorrow_night,tomorrow,twilight,vibrant_ink,xcode`.split(',');
@@ -56,6 +57,7 @@ class Job extends Component {
   render() {
     return (
       <div id="editor" style={{ marginTop: '20%' }}>
+        <JobShowcase />
         <select className="custom-select col-md-3" onChange={this.changeLanguage} id="questionLanguageSelect">
           <option defaultValue value="javascript">choose programming language</option>
           {lang.map((item, i) => <option value={item} key={i} >{item}</option>)}
