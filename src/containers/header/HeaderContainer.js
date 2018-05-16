@@ -20,7 +20,7 @@ class Headers extends Component {
   render() {
     // this.props.Verify();
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark Header">
+      <nav className="navbar navbar-expand-lg navbar-light Header">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <span className="navbar-brand title">
             <NavLink exact to="/">
