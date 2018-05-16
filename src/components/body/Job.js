@@ -15,9 +15,11 @@ class Job extends Component {
     this.state = {
       mode: 'javascript',
       theme: 'ambiance',
+      editor: true,
     };
     this.changeLanguage = this.changeLanguage.bind(this);
     this.changeTheme = this.changeTheme.bind(this);
+    this.toggleEditor = this.toggleEditor.bind(this);
   }
 
   onChange() {
@@ -45,10 +47,15 @@ class Job extends Component {
       mode: value,
     });
   }
+  toggleEditor() {
+    this.setState({
+      editor: !(this.state.editor),
+    })
+  }
 
   render() {
     return (
-      <div id="editor">
+      <div id="editor" style={{ marginTop: '20%' }}>
         <select className="custom-select col-md-3" onChange={this.changeLanguage} id="questionLanguageSelect">
           <option defaultValue value="javascript">choose programming language</option>
           {lang.map((item, i) => <option value={item} key={i} >{item}</option>)}
@@ -57,13 +64,18 @@ class Job extends Component {
           <option defaultValue value="ambiance">choose theme you want</option>
           {theme.map((item, i) => <option value={item} key={i} >{item}</option>)}
         </select>
-       
-        <AceEditor
+
+        <button onClick={this.toggleEditor}>
+          toggle editor
+        </button>
+        {this.state.editor ? <AceEditor
           mode={this.state.mode}
           theme={this.state.theme}
           name="ace-editor"
           // onLoad={this.onLoad}
           onChange={this.onChange}
+          height="300px"
+          width="400px"
           enableBasicAutocompletion
           enableLiveAutocompletion
           focus // 둘중하나만
@@ -77,7 +89,8 @@ class Job extends Component {
             showLineNumbers: true,
             tabSize: 2,
           }}
-        />
+        /> : <div>editor off</div> }
+        
 
         {/* <AceEditor
           mode="javascript"
