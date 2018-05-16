@@ -4,6 +4,7 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 // import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
+import '../../styles/css/Login.css';
 
 const Login = ({ keyPress, login }) => (
   <div className="authContainer">
@@ -64,10 +65,10 @@ const Login = ({ keyPress, login }) => (
     </div>
     <div className="border rounded authOptionContainer">
       <p>
-        Did you for get your password? <a href="javascript:void(0);">Find</a>
+        Did you forget your password? <a href="#">Find</a>
       </p>
       <p>
-        Don't you have account? Signup <a href="javascript:void(0);">Signup</a>
+        Don't you have account? <a href="#">Signup</a>
       </p>
     </div>
   </div>

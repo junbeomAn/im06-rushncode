@@ -10,6 +10,7 @@ import NoMatch from './body/NoMatch';
 import Verify from './body/Verify';
 import Login from './body/Login';
 import Logout from './body/Logout';
+import SignUp from './body/SignUp';
 
 export {
   Footer,
@@ -24,4 +25,5 @@ export {
   Verify,
   Login,
   Logout,
+  SignUp,
 };
