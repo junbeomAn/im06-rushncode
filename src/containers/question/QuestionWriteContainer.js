@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
-import { Editor, EditorState } from 'draft-js';
 import RichEditor from './RichEditor';
+import { EditorState, convertToRaw } from 'draft-js';
 
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
@@ -21,6 +20,7 @@ class QuestionWriteContainer extends Component {
       options: [],
       editorState: EditorState.createEmpty(),
     };
+
     this.submit = this.submit.bind(this);
     this.onTagChange = this.onTagChange.bind(this);
   }
@@ -28,6 +28,15 @@ class QuestionWriteContainer extends Component {
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
+
+  // 에디터
+  onChange = (editorState) => {
+    const contentState = editorState.getCurrentContent();
+    console.log('content state', convertToRaw(contentState));
+    this.setState({
+      editorState,
+    });
+  };
 
   // 태그 선택 관련
   onTagChange(e) {
@@ -57,11 +66,20 @@ class QuestionWriteContainer extends Component {
     }
     this.setState({ options });
   }
+  // *************************************************** editor 관련
+  // onChange = (editorState) => {
+  //   const contentState = editorState.getCurrentContent();
+  //   console.log('content state', convertToRaw(contentState));
+  //   this.setState({
+  //     editorState,
+  //   });
+  // };
 
-  // editor 관련
-  onChangeEditor = (editorState) => {
-    this.setState({ editorState });
-  };
+  // this.logState = () => {
+  //   const content = this.state.editorState.getCurrentContent();
+  //   console.log(convertToRaw(content));
+  // };
+  // *************************************************** editor 관련
 
   // 작성 글 제출
   submit() {
@@ -84,7 +102,7 @@ class QuestionWriteContainer extends Component {
     data.title = document.getElementsByClassName('inputTitle')[0].value;
 
     // 제목 입력 예외처리
-    if(data.title.length === 0) {
+    if (data.title.length === 0) {
       alert('제목을 입력해 주세요');
       return;
     }
@@ -98,6 +116,7 @@ class QuestionWriteContainer extends Component {
       })
       .catch(err => alert(err));
   }
+
   render() {
     const { tags } = this.props;
     return (
@@ -105,12 +124,12 @@ class QuestionWriteContainer extends Component {
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
         <div>
-          <Editor
+          {/* <Editor
             className="sample"
             editorState={this.state.editorState}
-            onChange={this.onChangeEditor}
-          />
-          <RichEditor />
+            onChange={this.onChange}
+          /> */}
+          <RichEditor onChange={this.onChange} editorState={this.state.editorState} />
         </div>
         <button
           onClick={() => this.submit()}

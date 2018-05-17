@@ -1,61 +1,101 @@
-.QuestionEntryQuestion {
-  height: 1000px;
-  background: ghostwhite; }
-  .QuestionEntryQuestion .QuestionEntryHeader {
+.QuestionEntryContainer {
+  background: ghostwhite;
+  border: solid 1px red;
+  display: flex;
+  flex-direction: column; }
+  .QuestionEntryContainer .QuestionEntryHeader {
     width: 90%;
     padding-bottom: 20px;
     margin: 0 auto;
     border-bottom: 2px solid #e4e6e8; }
-    .QuestionEntryQuestion .QuestionEntryHeader .questHeaderTop {
+    .QuestionEntryContainer .QuestionEntryHeader .questHeaderTop {
       display: flex; }
-  .QuestionEntryQuestion .tags {
+  .QuestionEntryContainer .tags {
     padding-top: 10px; }
-    .QuestionEntryQuestion .tags .questListBtn {
+    .QuestionEntryContainer .tags .questListBtn {
       height: 25px;
       padding-top: 2px;
       margin-right: 3px; }
-  .QuestionEntryQuestion h1 {
+  .QuestionEntryContainer h1 {
     font-size: 35px;
     margin-bottom: 0;
     padding: 50px 0px 3px 0px; }
-  .QuestionEntryQuestion .QuestionEntryMain {
+  .QuestionEntryContainer .QuestionEntryMain {
+    border: solid 1px blue;
     width: 90%;
     margin: 0 auto;
     display: flex;
     padding-top: 20px;
     height: 500px; }
-    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainFirst {
+    .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainFirst {
       width: 10%;
       margin: 0 auto; }
-    .QuestionEntryQuestion .QuestionEntryMain .CountBox .CountBoxImage {
+    .QuestionEntryContainer .QuestionEntryMain .CountBox .CountBoxImage {
       text-align: center;
       margin-bottom: 10px;
       color: #777; }
-    .QuestionEntryQuestion .QuestionEntryMain .CountBox .CountBoxNum {
+    .QuestionEntryContainer .QuestionEntryMain .CountBox .CountBoxNum {
       text-align: center;
       font-size: 18px;
       margin: 0 auto;
       margin-right: 3px;
       color: grey; }
-    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainSecond {
+    .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainSecond {
       width: 70%;
       padding: 0px 20px;
       border: 1px solid black; }
-    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainThird {
+    .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThird {
       width: 20%;
       text-align: center; }
-    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainThirdViewCount {
+    .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdViewCount {
       margin: 0 auto; }
-      .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainThirdViewCount .ViewCountBox .ViewCountBoxImage {
+      .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdViewCount .ViewCountBox .ViewCountBoxImage {
         text-align: center;
         margin-bottom: 10px; }
-      .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainThirdViewCount .ViewCountBox .ViewCountBoxNum {
+      .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdViewCount .ViewCountBox .ViewCountBoxNum {
         text-align: center;
         font-size: 25px;
         padding-right: 2px;
         color: grey; }
-    .QuestionEntryQuestion .QuestionEntryMain .QuestionEntryMainThirdReward {
+    .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdReward {
       margin-top: 20px; }
+  .QuestionEntryContainer .QuestionEntryAnswer {
+    border: solid 1px blue;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    padding-top: 20px; }
+    .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerFirst {
+      width: 10%;
+      margin: 0 auto; }
+    .QuestionEntryContainer .QuestionEntryAnswer .CountBox .CountBoxImage {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #777; }
+    .QuestionEntryContainer .QuestionEntryAnswer .CountBox .CountBoxNum {
+      text-align: center;
+      font-size: 18px;
+      margin: 0 auto;
+      margin-right: 3px;
+      color: grey; }
+    .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerSecond {
+      width: 70%;
+      padding: 0px 20px;
+      border: 1px solid black; }
+    .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerThird {
+      width: 20%;
+      text-align: center; }
+    .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerThirdViewCount {
+      margin: 0 auto; }
+      .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerThirdViewCount .ViewCountBox .ViewCountBoxImage {
+        text-align: center;
+        margin-bottom: 10px; }
+      .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerThirdViewCount .ViewCountBox .ViewCountBoxNum {
+        text-align: center;
+        font-size: 25px;
+        padding-right: 2px;
+        color: grey; }
 
 .likeBtn {
   color: #777;

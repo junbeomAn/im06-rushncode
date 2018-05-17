@@ -3,10 +3,12 @@ import { Reple } from '../question-entry';
 import '../../../../styles/css/QuestionAnswer.css';
 
 const Answer = () => (
-  <div className="QuestionAnswerContainer">
-    <div className="QuestionAnswerAnswer">Answer Component</div>
-    <div className="QuestionAnswerReple">
-      <Reple />
+  <div>
+    <div className="QuestionAnswerAnswer">
+      Answer Component
+      <div className="QuestionAnswerReple">
+        <Reple />
+      </div>
     </div>
   </div>
 );

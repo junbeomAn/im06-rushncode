@@ -91,6 +91,21 @@
       color: $primaryBlue;
       border: solid 1px $primaryBlue;
       background: transparent;
+
+      &:hover {
+        color: #fff;
+        border: solid 1px $primaryBlue;
+        background: $primaryBlue;
+        opacity: 0.7;
+      }
+    }
+
+    .current {
+      background: $primaryBlue;
+      opacity: 0.7;
+      .page-link {
+        color: white;
+      }
     }
   }
 }
