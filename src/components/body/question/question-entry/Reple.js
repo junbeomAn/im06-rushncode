@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Reple = () => <div>Reply</div>;
+const Reple = () => <div className="QuestionAnswerReple">Reply</div>;
 
 export default Reple;

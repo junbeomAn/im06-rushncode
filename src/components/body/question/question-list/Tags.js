@@ -6,8 +6,8 @@ const Tags = ({ tags }) => (
     {tags
       .slice()
       .reverse()
-      .map(tag => (
-        <button type="button" className="btn btn-outline-secondary questListBtn">
+      .map((tag, index) => (
+        <button type="button" className="btn btn-outline-secondary questListBtn" key={index}>
           {tag}
         </button>
       ))}

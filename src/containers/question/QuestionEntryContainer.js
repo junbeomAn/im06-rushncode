@@ -6,12 +6,16 @@ import QuestionEntry from '../../components/body/question/QuestionEntry';
 import { fetchQuestionEntry } from '../../redux/actions/questionAction';
 
 class QuestionEntryContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   componentWillMount() {
     const { id } = this.props.match.params;
     this.props.fetchQuestionEntry(id);
   }
 
-  raiseLikeCount() {
+  raiseLikeCount = () => {
     console.log('asdfasd', this.props.question);
     const config = {
       headers: {
@@ -41,7 +45,7 @@ class QuestionEntryContainer extends Component {
           qView={qView}
           qReward={qReward}
           qTime={qTime}
-          raiseLikeCount={this.raiseLikeCount.bind(this)}
+          raiseLikeCount={this.raiseLikeCount}
         />
       </div>
     );

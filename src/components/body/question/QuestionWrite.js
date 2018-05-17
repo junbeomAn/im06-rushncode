@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const QuestionWrite = ({ tags, onTagChange }) => (
   <div>
@@ -53,5 +54,10 @@ const QuestionWrite = ({ tags, onTagChange }) => (
     </div>
   </div>
 );
+
+QuestionWrite.propTypes = {
+  tags: PropTypes.array.isRequired,
+  onTagChange: PropTypes.func.isRequired,
+};
 
 export default QuestionWrite;

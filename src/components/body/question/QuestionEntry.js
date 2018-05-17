@@ -10,42 +10,39 @@ const QuestionEntry = ({
 }) => (
   <div className="QuestionEntryContainer">
     <QuestionEntryShowcase />
-    <div className="QuestionEntryQuestion">
-      <div className="QuestionEntryHeader">
-        <div className="QuestionEntryHeaderTop">
-          <h1>{title}</h1>
-        </div>
-        <Tags tags={['javascript', 'c', 'java']} />
+    <div className="QuestionEntryHeader">
+      <div className="QuestionEntryHeaderTop">
+        <h1>{title}</h1>
       </div>
+      <Tags tags={['javascript', 'c', 'java']} />
+    </div>
 
-      <div className="QuestionEntryMain">
-        <div className="QuestionEntryMainFirst">
-          <LikeCount count={qGood} raiseLikeCount={raiseLikeCount} />
+    <div className="QuestionEntryMain">
+      <div className="QuestionEntryMainFirst">
+        <LikeCount count={qGood} raiseLikeCount={raiseLikeCount} />
+      </div>
+      <div className="QuestionEntryMainSecond">{qBody}</div>
+      <div className="QuestionEntryMainThird">
+        <div className="QuestionEntryMainThirdViewCount">
+          <ViewCount count={qView} />
         </div>
-        <div className="QuestionEntryMainSecond">{qBody}</div>
-        <div className="QuestionEntryMainThird">
-          <div className="QuestionEntryMainThirdViewCount">
-            <ViewCount count={qView} />
-          </div>
-          <div className="QuestionEntryMainThirdReward">
-            <Reward reward={qReward} />
-          </div>
-          <div className="QuestionEntryMainThirdReward">
-            <UpdateTime time={qTime} />
-          </div>
+        <div className="QuestionEntryMainThirdReward">
+          <Reward reward={qReward} />
+        </div>
+        <div className="QuestionEntryMainThirdReward">
+          <UpdateTime time={qTime} />
         </div>
       </div>
-
-      <div className="QuestionEntryMain">
-        <div className="QuestionEntryMainFirst">
-          <LikeCount count={0} />
-        </div>
-        <div className="QuestionEntryMainSecond">
-          <Answer />
-        </div>
-        <div className="QuestionEntryMainThird">
-          <div> Add component </div>
-        </div>
+    </div>
+    <div className="QuestionEntryAnswer">
+      <div className="QuestionEntryAnswerFirst">
+        <LikeCount count={0} />
+      </div>
+      <div className="QuestionEntryAnswerSecond">
+        <Answer />
+      </div>
+      <div className="QuestionEntryAnswerThird">
+        <div> Add component </div>
       </div>
     </div>
   </div>
@@ -58,7 +55,7 @@ QuestionEntry.propTypes = {
   qView: PropTypes.number.isRequired,
   qReward: PropTypes.number.isRequired,
   qTime: PropTypes.string.isRequired,
-  qId: PropTypes.number.isRequired,
+  raiseLikeCount: PropTypes.func.isRequired,
 };
 
 export default QuestionEntry;
