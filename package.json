@@ -12,6 +12,7 @@
     "draft-js": "^0.10.5",
     "eslint-config-airbnb": "^16.1.0",
     "history": "^4.7.2",
+    "immutable": "^3.8.2",
     "moment": "^2.22.1",
     "monaco-editor": "^0.13.0",
     "node-sass": "^4.9.0",

@@ -17,7 +17,7 @@ const HomeShowcase = () => (
         </NavLink>
       </span>
       <span className="homeRBtn">
-        <NavLink to="/signup" className="item">
+        <NavLink to="/auth/signup" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
             회원가입
           </button>

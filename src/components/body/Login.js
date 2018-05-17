@@ -4,18 +4,27 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 // import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
-import '../../styles/css/Login.css';
+import './../../styles/css/Auth.css';
+import Facebook from './../Facebook';
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
 
-const Login = ({ keyPress, login }) => (
+const Login = ({ keyPress, login, fbLogin }) => (
   <div className="authContainer">
     <div className="authInputContainer border rounded">
       <div className="authButtonContainer">
-        <Button color="facebook" className="authBtn">
+        {/* <Button color="facebook" onClick={fbLogin} className="authBtn">
           <Icon name="facebook" />Login with Facebook
-        </Button>
-        <Button color="google plus" className="authBtn">
+        </Button> */}
+        <Facebook />
+        <Button color="google plus" onClick={() => {console.log(window.confirm('hello?'))}} className="authBtn">
           <Icon name="google" />Login with Google
         </Button>
+        <a href="https://github.com/login/oauth/authorize?client_id=9eccd23df65b6d3581f9">
+          <Button color="black" className="authBtn">
+            <Icon name="github" />Login with Github
+          </Button>
+        </a>        
       </div>
       <Divider horizontal>OR</Divider>
       <div className="authFormContainer">
@@ -68,7 +77,7 @@ const Login = ({ keyPress, login }) => (
         Did you forget your password? <a href="#">Find</a>
       </p>
       <p>
-        Don't you have account? <a href="#">Signup</a>
+        Don't you have account? <a href="/signup">Signup</a>
       </p>
     </div>
   </div>

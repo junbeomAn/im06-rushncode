@@ -9,6 +9,7 @@ import RichEditor from './RichEditor';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
+import CodeBlockCntr from './../Auth/CodeBlockContainer';
 
 import '../../styles/css/RichEditor.css';
 import '../../styles/css/QuestionWrite.css';
@@ -99,11 +100,7 @@ class QuestionWriteContainer extends Component {
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
         <div>
-          <Editor
-            className="sample"
-            editorState={this.state.editorState}
-            onChange={this.onChangeEditor}
-          />
+          <CodeBlockCntr />
           <RichEditor />
         </div>
         <button

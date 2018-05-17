@@ -42,4 +42,18 @@
 .authSubmitBtn {
   float: right; }
 
-/*# sourceMappingURL=Login.css.map */
+.loginAddText {
+  margin-top: 150px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px; }
+
+.authAddInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 5%;
+  padding: 20px; }
+
+/*# sourceMappingURL=Auth.css.map */

@@ -1,36 +1,29 @@
 import React from 'react';
 import { Divider, Button, Icon } from 'semantic-ui-react';
+// import { Route, Redirect } from 'react-router';
+// import 'react-flexview/lib/flexView.css';
+// import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
 import './../../styles/css/Auth.css';
+import Facebook from './../Facebook';
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
 
-const SignUp = ({ keyPress, signUp }) => (
+const LoginAdd = ({ keyPress, login, fbLogin }) => (
   <div className="authContainer">
-    <div className="authInputContainer border rounded">
+    <div className="loginAddText">You already logged in.<br /><br /> If you need to use another account, use following services.</div>
+    <div className="authAddInputContainer border rounded">
       <div className="authButtonContainer">
-        <Button color="facebook" className="authBtn">
+        {/* <Button color="facebook" onClick={fbLogin} className="authBtn">
           <Icon name="facebook" />Login with Facebook
-        </Button>
-        <Button color="google plus" className="authBtn">
+        </Button> */}
+        <Facebook />
+        <Button color="google plus" onClick={() => {console.log(window.confirm('hello?'))}} className="authBtn">
           <Icon name="google" />Login with Google
         </Button>
       </div>
       <Divider horizontal>OR</Divider>
       <div className="authFormContainer">
-        <div className="form-group">
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text authInputTitleTag" id="basic-addon1">
-                Name
-              </span>
-            </div>
-            <input
-              type="text"
-              className="form-control inputUname "
-              aria-describedby="emailHelp"
-              placeholder="User name"
-            />
-          </div>
-        </div>
         <div className="form-group">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
@@ -51,7 +44,7 @@ const SignUp = ({ keyPress, signUp }) => (
           <div className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text authInputTitleTag" id="basic-addon1">
-                Password
+                password
               </span>
             </div>
             <input
@@ -65,21 +58,19 @@ const SignUp = ({ keyPress, signUp }) => (
             />
           </div>
         </div>
-        <button type="button" className="btn btn-secondary loginBtn">
-              Sign In
-        </button>
         <button
           onClick={() => {
-            signUp();
+            login();
           }}
           className="btn btn-primary authSubmitBtn"
         >
-          Sign up
+          Add Login
         </button>
       </div>
     </div>
+  
   </div>
 );
 
+export default LoginAdd;
 
-export default SignUp;
