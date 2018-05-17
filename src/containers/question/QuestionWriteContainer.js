@@ -19,6 +19,7 @@ class QuestionWriteContainer extends Component {
     this.state = {
       options: [],
       editorState: EditorState.createEmpty(),
+      target: null,
     };
 
     this.submit = this.submit.bind(this);
@@ -29,14 +30,16 @@ class QuestionWriteContainer extends Component {
     await this.props.fetchQuestionTag();
   }
 
-  // 에디터
+  // 에디터 ***********************************************************
   onChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     console.log('content state', convertToRaw(contentState));
     this.setState({
       editorState,
+      target: JSON.stringify(contentState),
     });
   };
+  //* ***************************************************************
 
   // 태그 선택 관련
   onTagChange(e) {
@@ -119,6 +122,7 @@ class QuestionWriteContainer extends Component {
 
   render() {
     const { tags } = this.props;
+    console.log('target : ', this.state.target);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
