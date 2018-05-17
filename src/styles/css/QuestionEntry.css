@@ -97,6 +97,17 @@
         padding-right: 2px;
         color: grey; }
 
+.QuestionEntryUpper {
+  height: 500px;
+  padding-top: 0px;
+  background-image: url("./img/city3.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  opacity: 0.8;
+  text-align: center;
+  filter: grayscale(50%); }
+
 .likeBtn {
   color: #777;
   border: none; }

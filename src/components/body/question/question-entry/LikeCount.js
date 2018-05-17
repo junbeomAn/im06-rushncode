@@ -5,7 +5,7 @@ import { Icon } from 'semantic-ui-react';
 const LikeCount = ({ count, raiseLikeCount }) => (
   <div className="CountBox">
     <div className="CountBoxImage">
-      <a className="likeBtn" href="javascript:void(0);" onClick={() => raiseLikeCount()}>
+      <a className="likeBtn" href="#" onClick={() => raiseLikeCount()}>
         <Icon name="heart" size="big" />
       </a>
     </div>
@@ -15,7 +15,7 @@ const LikeCount = ({ count, raiseLikeCount }) => (
 
 LikeCount.propTypes = {
   count: PropTypes.number.isRequired,
-  qId: PropTypes.number.isRequired,
+  raiseLikeCount: PropTypes.func.isRequired,
 };
 
 export default LikeCount;
