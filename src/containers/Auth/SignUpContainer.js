@@ -12,8 +12,6 @@ class SignUpContainer extends Component {
     this.keyPress = this.keyPress.bind(this);
   }
 
- 
-
   signUp() {
     console.log(this);
     const userInfo = {};
@@ -24,7 +22,7 @@ class SignUpContainer extends Component {
     axios
       .post(signUpUrl, userInfo)
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         this.props.history.push('/auth');
       })
       .catch(err => console.log(err));
@@ -37,78 +35,76 @@ class SignUpContainer extends Component {
   }
 
   render() {
-    return (
-      <SignUp signUp={this.signUp} keyPress={this.keyPress} />
-    );
+    return <SignUp signUp={this.signUp} keyPress={this.keyPress} />;
   }
 }
 
 export default SignUpContainer;
 // <div className="homeInputContainer">
-      //   <div className="buttonContainer">
-      //     <div className="btn-group loginBtn" role="group" aria-label="Basic example">
-      //       <button type="button" onClick={this.verify} className="btn btn-facebook loginBtn">
-      //         Facebook
-      //       </button>
-      //       <button type="button" className="btn btn-google loginBtn">
-      //         Google
-      //       </button>
-      //       <button type="button" className="btn btn-secondary loginBtn">
-      //         Sign In
-      //       </button>
-      //     </div>
-      //   </div>
-      //   <div className="authFormContainer">
-      //     <div className="form-group">
-      //       <div className="input-group mb-3">
-      //         <div className="input-group-prepend">
-      //           <span className="input-group-text homeInputTitleTag" id="basic-addon1">
-      //             User name
-      //           </span>
-      //         </div>
-      //         <input
-      //           type="text"
-      //           className="form-control inputUname col-md-4"
-      //           aria-describedby="emailHelp"
-      //           placeholder="User name"
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="form-group">
-      //       <div className="input-group mb-3">
-      //         <div className="input-group-prepend">
-      //           <span className="input-group-text homeInputTitleTag" id="basic-addon1">
-      //             E-mail
-      //           </span>
-      //         </div>
-      //         <input
-      //           type="email"
-      //           className="form-control inputEmail col-md-4"
-      //           aria-describedby="emailHelp"
-      //           placeholder="Enter email"
-      //         />
-      //       </div>
-      //     </div>
-      //     <div className="form-group">
-      //       <div className="input-group mb-3">
-      //         <div className="input-group-prepend">
-      //           <span className="input-group-text homeInputTitleTag" id="basic-addon1">
-      //             Password
-      //           </span>
-      //         </div>
-      //         <input
-      //           type="password"
-      //           className="form-control inputPwd col-md-4"
-      //           id="exampleInputPassword1"
-      //           placeholder="Password"
-      //         />
-      //       </div>
-      //     </div>
-      //     <button
-      //       onClick={() => { this.signUp(this.props.history); }}
-      //       // className="btn btn-outline-light btn-lg signUpBtn"
-      //     >
-      //     Sign up
-      //     </button>          
-      //   </div>
-      // </div>
+//   <div className="buttonContainer">
+//     <div className="btn-group loginBtn" role="group" aria-label="Basic example">
+//       <button type="button" onClick={this.verify} className="btn btn-facebook loginBtn">
+//         Facebook
+//       </button>
+//       <button type="button" className="btn btn-google loginBtn">
+//         Google
+//       </button>
+//       <button type="button" className="btn btn-secondary loginBtn">
+//         Sign In
+//       </button>
+//     </div>
+//   </div>
+//   <div className="authFormContainer">
+//     <div className="form-group">
+//       <div className="input-group mb-3">
+//         <div className="input-group-prepend">
+//           <span className="input-group-text homeInputTitleTag" id="basic-addon1">
+//             User name
+//           </span>
+//         </div>
+//         <input
+//           type="text"
+//           className="form-control inputUname col-md-4"
+//           aria-describedby="emailHelp"
+//           placeholder="User name"
+//         />
+//       </div>
+//     </div>
+//     <div className="form-group">
+//       <div className="input-group mb-3">
+//         <div className="input-group-prepend">
+//           <span className="input-group-text homeInputTitleTag" id="basic-addon1">
+//             E-mail
+//           </span>
+//         </div>
+//         <input
+//           type="email"
+//           className="form-control inputEmail col-md-4"
+//           aria-describedby="emailHelp"
+//           placeholder="Enter email"
+//         />
+//       </div>
+//     </div>
+//     <div className="form-group">
+//       <div className="input-group mb-3">
+//         <div className="input-group-prepend">
+//           <span className="input-group-text homeInputTitleTag" id="basic-addon1">
+//             Password
+//           </span>
+//         </div>
+//         <input
+//           type="password"
+//           className="form-control inputPwd col-md-4"
+//           id="exampleInputPassword1"
+//           placeholder="Password"
+//         />
+//       </div>
+//     </div>
+//     <button
+//       onClick={() => { this.signUp(this.props.history); }}
+//       // className="btn btn-outline-light btn-lg signUpBtn"
+//     >
+//     Sign up
+//     </button>
+//   </div>
+// </div>

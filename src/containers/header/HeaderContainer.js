@@ -9,9 +9,7 @@ import { Verify, SignOut } from './../../redux/actions/verifyAction';
 class Headers extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      signedOut: false,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -57,13 +55,13 @@ class Headers extends Component {
               </li>
               {!this.props.isLoggedIn ? (
                 <li className="nav-item">
-                  <NavLink to="/auth" className="item">
+                  <NavLink to="/auth/signin" className="item">
                     로그인
                   </NavLink>
                 </li>
               ) : (
                 <li className="nav-item">
-                  <NavLink to="/auth" onClick={this.props.SignOut} className="item">
+                  <NavLink to="/auth/signin" onClick={this.props.SignOut} className="item">
                     로그아웃
                   </NavLink>
                 </li>

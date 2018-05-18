@@ -56,7 +56,7 @@ class Job extends Component {
 
   render() {
     return (
-      <div id="editor" style={{ marginTop: '20%' }}>
+      <div id="editor">
         <JobShowcase />
         <select className="custom-select col-md-3" onChange={this.changeLanguage} id="questionLanguageSelect">
           <option defaultValue value="javascript">choose programming language</option>

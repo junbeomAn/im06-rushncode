@@ -14,8 +14,8 @@ import {
   Information,
   HelpDesk,
 } from './components';
-import { HeaderContainer, Forum, Question, SignUpContainer, LoginContainer } from './containers';
-import './styles/css/App.css';
+import { HeaderContainer, Forum, Question, Auth } from './containers';
+import './styles/styleIndex';
 
 class App extends Component {
   constructor(props) {
@@ -37,11 +37,10 @@ class App extends Component {
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />
                 <Route path="/job" component={Job} />
-                <Route path="/auth" component={LoginContainer} />
+                <Route path="/auth" component={Auth} />
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Information} />
                 <Route path="/helpdesk" component={HelpDesk} />
-                <Route path="/signup" component={SignUpContainer} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import 'semantic-ui-css/semantic.min.css';
 import { Verify } from './../../redux/actions/verifyAction';
 import Login from '../../components/body/Login';
+import LoginAdd from '../../components/body/LoginAdd';
+
 
 class LoginContainer extends Component {
   constructor(props) {
@@ -11,6 +13,10 @@ class LoginContainer extends Component {
     this.state = {};
     this.login = this.login.bind(this);
     this.keyPress = this.keyPress.bind(this);
+  }
+
+  fblogin() {
+
   }
 
   login() {
@@ -22,9 +28,16 @@ class LoginContainer extends Component {
     axios
       .post(signInUrl, userInfo)
       .then((res) => {
-        localStorage.setItem('token', res.data.token);
-        this.props.Verify();
-        this.props.history.push('/');
+        if(res.data.message === 'login success') {
+          // console.log(res);
+          localStorage.setItem('token', res.data.token);
+          this.props.Verify();
+          this.props.history.push('/');
+        } else {// email not exist, incorrect password, check your email
+          alert(res.data.message);
+          // console.log(res);
+          this.props.history.push('/auth');
+        }        
       })
       .catch(err => alert(err));
   }
@@ -33,11 +46,16 @@ class LoginContainer extends Component {
     if (e.key === 'Enter') {
       this.login();
     }
-  }
-
+  } 
+  
   render() {
     return (
-      <Login login={this.login} keyPress={this.keyPress} />
+      <div>
+        {this.props.isLoggedIn ? 
+          <LoginAdd login={this.login} keyPress={this.keyPress} /> : 
+          <Login login={this.login} keyPress={this.keyPress} />} 
+      </div>
+      
     );
   }
 }
