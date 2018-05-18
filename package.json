@@ -36,7 +36,7 @@
     "semantic-ui-react": "^0.80.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "sass": "sass --watch src/styles/scss:src/styles/css",

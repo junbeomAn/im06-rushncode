@@ -7,6 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 import './../../styles/css/Auth.css';
 import Facebook from './../Facebook';
 import { createBrowserHistory } from 'history';
+
 const history = createBrowserHistory();
 
 const LoginAdd = ({ keyPress, login, fbLogin }) => (

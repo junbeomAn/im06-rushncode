@@ -14,8 +14,8 @@ import {
   Information,
   HelpDesk,
 } from './components';
-import { HeaderContainer, Forum, Question, SignUpContainer, Auth } from './containers';
-import './styleIndex';
+import { HeaderContainer, Forum, Question, Auth } from './containers';
+import './styles/styleIndex';
 
 class App extends Component {
   constructor(props) {
