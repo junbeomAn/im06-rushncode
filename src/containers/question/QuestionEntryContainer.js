@@ -10,7 +10,6 @@ class QuestionEntryContainer extends Component {
     super(props);
     this.state = {
       first: true,
-      questionReply: [],
     };
   }
   componentDidMount() {
@@ -32,8 +31,8 @@ class QuestionEntryContainer extends Component {
     };
     const data = {
       questionID: id,
-      body: 'testing',
     };
+    data.body = document.getElementsByClassName('questionReplyBody')[0].value;
     axios
       .post('http://localhost:3001/api/question/reply/', data, config)
       .then((message) => {
@@ -85,7 +84,7 @@ class QuestionEntryContainer extends Component {
     const {
       title, qBody, qGood, qView, qReward, qTime, qID, replies,
     } = this.props.question;
-    const { first, questionReply } = this.state;
+    const { first} = this.state;
     return (
       <div>
         {this.props.loading ? (
@@ -104,7 +103,6 @@ class QuestionEntryContainer extends Component {
             replies={replies}
             raiseLikeCount={this.raiseLikeCount}
             postQuestionReply={this.postQuestionReply}
-            questionReply={questionReply}
             postAnswerReply={this.postAnswerReply}
           />
         )}

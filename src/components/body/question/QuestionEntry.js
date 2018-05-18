@@ -22,7 +22,6 @@ const QuestionEntry = ({
   replies,
   raiseLikeCount,
   postQuestionReply,
-  questionReply,
   postAnswerReply,
 }) => (
   <div className="QuestionEntryContainer">
@@ -42,14 +41,14 @@ const QuestionEntry = ({
         {qBody}
         <div className="QuestionEntryMainSecondReplyTitle">댓글</div>
         <div className="QuestionEntryMainSecondReply">
-          {replies.map(reply=>(
-            <Reply body={reply.rBody} time={reply.rTime} />
+          {replies.map((reply, index) => (
+            <Reply body={reply.rBody} time={reply.rTime} key={index} />
           ))}
         </div>
         <div className="QuestionEntryAnswerSecondReplyAdd">
           <div className="form-group QuestionEntryAnswerSecondReplyAddInput">
             <label htmlFor="exampleFormControlTextarea1">add a comment</label>
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" />
+            <textarea className="form-control questionReplyBody" id="exampleFormControlTextarea1" rows="3" />
           </div>
           <div className="QuestionEntryAnswerSecondReplyAddBtn">
             <button onClick={() => postQuestionReply(qID)} className="btn btn-primary mb-2">
