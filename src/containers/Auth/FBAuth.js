@@ -20,13 +20,15 @@ class Facebook extends Component {
 
     const facebookUrl = 'http://localhost:3001/api/auth/facebook';
     const data = {
-      code: code,
-    }
+      code,
+    };
+    
     axios
       .post(facebookUrl, data)
       .then((res) => {
         if (res.data.message === 'login success') {
           localStorage.setItem('token', res.data.token);
+          console.log('facebook login success');
           this.props.Verify();
           this.props.history.push('/');
         } else {

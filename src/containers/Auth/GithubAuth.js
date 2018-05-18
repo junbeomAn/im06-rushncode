@@ -17,8 +17,9 @@ class Github extends Component {
   sendGithubLoginReq(code) {
     console.log(this); // 지워야함@@@@@@@@@@@@@@@@@@@@@@@@@@@
     const data = {
-      code: code,
-    }
+      code,
+    };
+    
     const githubUrl = 'http://localhost:3001/api/auth/github';
     axios
       .post(githubUrl, data)
