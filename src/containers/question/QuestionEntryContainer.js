@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { convertFromRaw } from 'draft-js';
 import QuestionEntry from '../../components/body/question/QuestionEntry';
 import { fetchQuestionEntry } from '../../redux/actions/questionAction';
 
@@ -23,7 +22,6 @@ class QuestionEntryContainer extends Component {
 
   postQuestionReply = () => {
     const { id } = this.props.match.params;
-    console.log('this.props.match.params : ', id);
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
