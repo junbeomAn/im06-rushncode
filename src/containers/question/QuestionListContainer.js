@@ -9,15 +9,20 @@ class QuestionListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      first: true,
       currentPage: 1,
       start: 0,
       end: 10,
     };
-    this.props.fetchQuestionList.bind(this);
+    // this.props.fetchQuestionList.bind(this);
   }
 
   componentDidMount() {
     this.makeAsync(1);
+  }
+
+  componentWillReceiveProps() {
+    if (!this.props.loading) this.setState({ first: false });
   }
 
   updateStartEndPage = (start, end) => {
@@ -40,18 +45,24 @@ class QuestionListContainer extends Component {
   };
 
   makeAsync = async (index) => {
-    await this.props.fetchQuestionList(index);
+    await this.props.fetchQuestionList.bind(this, index)();
     this.updateCurrentPage(index);
   };
 
   render() {
     const { loading, questions } = this.props;
-    const { currentPage, start, end } = this.state;
+    const {
+      currentPage, start, end, first,
+    } = this.state;
+    console.log(loading);
     return (
       <div>
         {loading ? (
           <h1>Loading...</h1>
+        ) : first ? (
+          <h1>Loading...</h1>
         ) : (
+          console.log('check : ', questions),
           <QuestionList
             posts={questions}
             makeAsync={this.makeAsync}

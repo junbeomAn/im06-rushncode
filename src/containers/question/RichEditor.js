@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Editor, EditorState, RichUtils, getDefaultKeyBinding, convertToRaw } from 'draft-js';
+import { Editor, RichUtils, getDefaultKeyBinding } from 'draft-js';
 
 class RichEditorExample extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class RichEditorExample extends Component {
   _handleKeyCommand(command, editorState) {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
-      this.onChange(newState);
+      this.props.onChange(newState);
       return true;
     }
     return false;
@@ -26,18 +26,18 @@ class RichEditorExample extends Component {
   _mapKeyToEditorCommand(e) {
     if (e.keyCode === 9 /* TAB */) {
       const newEditorState = RichUtils.onTab(e, this.state.editorState, 4 /* maxDepth */);
-      if (newEditorState !== this.state.editorState) {
-        this.onChange(newEditorState);
+      if (newEditorState !== this.props.editorState) {
+        this.props.onChange(newEditorState);
       }
       return;
     }
     return getDefaultKeyBinding(e);
   }
   _toggleBlockType(blockType) {
-    this.onChange(RichUtils.toggleBlockType(this.state.editorState, blockType));
+    this.props.onChange(RichUtils.toggleBlockType(this.props.editorState, blockType));
   }
   _toggleInlineStyle(inlineStyle) {
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, inlineStyle));
+    this.props.onChange(RichUtils.toggleInlineStyle(this.props.editorState, inlineStyle));
   }
   render() {
     const { editorState } = this.props;
