@@ -2,7 +2,9 @@ import React from 'react';
 import { Icon } from 'semantic-ui-react';
 import { Writer, LikeCount, Answer } from '../question-entry';
 
-const QuestionAnswer = ({ count, raiseLikeCount }) => (
+/* eslint jsx-a11y/no-static-element-interactions: 0 */
+/* eslint jsx-a11y/click-events-have-key-events: 0 */
+const QuestionAnswer = ({ count, raiseLikeCount, postAnswerReply }) => (
   <div className="QuestionEntryAnswerEntry">
     <div className="QuestionEntryAnswerFirst">
       <div className="QuestionEntryAnswerFirstLike">
@@ -10,15 +12,20 @@ const QuestionAnswer = ({ count, raiseLikeCount }) => (
       </div>
     </div>
     <div className="QuestionEntryAnswerSecond">
-      <Answer />
+      <Answer postAnswerReply={postAnswerReply} />
     </div>
     <div className="QuestionEntryAnswerThird">
       <div className="QuestionEntryAnswerThirdCheck">
         <div className="ItemBox">
           <div className="ItemBoxImage">
-            <a className="likeBtn" href="#" onClick={() => {window.confirm('선택하시겠습니까?')}}>
+            <div
+              className="likeBtn"
+              onClick={() => {
+                window.confirm('선택하시겠습니까?');
+              }}
+            >
               <Icon name="check" size="big" />
-            </a>
+            </div>
           </div>
           <div className="ItemBoxNum">채택</div>
         </div>

@@ -23,7 +23,7 @@ class SignUpContainer extends Component {
       .post(signUpUrl, userInfo)
       .then((res) => {
         console.log(res);
-        this.props.history.push('/auth');
+        this.props.history.push('/auth/signup');
       })
       .catch(err => console.log(err));
   }

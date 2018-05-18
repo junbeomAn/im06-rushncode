@@ -1,7 +1,6 @@
 import createHistory from 'history/createBrowserHistory';
  
 const history = createHistory();
-
 const Logout = () => {
   const token = localStorage.getItem('token');
   if (token) {

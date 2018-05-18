@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { EditorState, convertToRaw } from 'draft-js';
 import RichEditor from './RichEditor';
@@ -9,8 +8,6 @@ import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
 import CodeBlockCntr from './../Auth/CodeBlockContainer';
 
-import '../../styles/css/RichEditor.css';
-import '../../styles/css/QuestionWrite.css';
 import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 class QuestionWriteContainer extends Component {
@@ -136,11 +133,6 @@ class QuestionWriteContainer extends Component {
     );
   }
 }
-
-QuestionWriteContainer.propTypes = {
-  fetchQuestionTag: PropTypes.func.isRequired,
-  tags: PropTypes.array.isRequired,
-};
 
 // 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
 const mapStateToProps = state => ({

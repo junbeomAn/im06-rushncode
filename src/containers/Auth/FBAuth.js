@@ -3,7 +3,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Verify } from './../../redux/actions/verifyAction';
 
-
 class Facebook extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +21,7 @@ class Facebook extends Component {
     const data = {
       code,
     };
-    
+
     axios
       .post(facebookUrl, data)
       .then((res) => {
@@ -38,7 +37,7 @@ class Facebook extends Component {
       })
       .catch(err => alert(err));
     // const getAccessTokenUrl = `https://graph.facebook.com/v3.0/oauth/access_token?client_id=235916540497077&redirect_uri=https://www.facebook.com/v3.0/dialog/oauth?client_id=235916540497077&redirect_uri=https://localhost:3000/auth/facebook&state=st=state123abc,ds=123456789&response_type=code&client_secret=9d32080a7858a054d18cf86dacb06957&code=${code}`;
-      
+
     // console.log(getAccessTokenUrl);
     // console.log('where is my response!!!!!!!!!!');
     // axios
@@ -58,7 +57,7 @@ class Facebook extends Component {
         <h1>Verifying FB information...</h1>
       </div>
     );
-  };
+  }
 }
 
 const mapStateToProps = (state) => {

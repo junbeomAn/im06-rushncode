@@ -6,7 +6,6 @@ import { Verify } from './../../redux/actions/verifyAction';
 import Login from '../../components/body/Login';
 import LoginAdd from '../../components/body/LoginAdd';
 
-
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
@@ -15,29 +14,26 @@ class LoginContainer extends Component {
     this.keyPress = this.keyPress.bind(this);
   }
 
-  fblogin() {
-
-  }
-
   login() {
     const userInfo = {};
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
     const signInUrl = 'http://localhost:3001/api/auth/signin';
-  
+
     axios
       .post(signInUrl, userInfo)
       .then((res) => {
-        if(res.data.message === 'login success') {
-          // console.log(res);
+        console.log(res);
+        if (res.data.message === 'login success') {
           localStorage.setItem('token', res.data.token);
           this.props.Verify();
           this.props.history.push('/');
-        } else {// email not exist, incorrect password, check your email
+        } else {
+          // email not exist, incorrect password, check your email
           alert(res.data.message);
           // console.log(res);
-          this.props.history.push('/auth');
-        }        
+          this.props.history.push('/auth/signin');
+        }
       })
       .catch(err => alert(err));
   }
@@ -46,24 +42,21 @@ class LoginContainer extends Component {
     if (e.key === 'Enter') {
       this.login();
     }
-  } 
-  
+  }
+
   render() {
     return (
       <div>
-        {this.props.isLoggedIn ? 
-          <LoginAdd login={this.login} keyPress={this.keyPress} /> : 
-          <Login login={this.login} keyPress={this.keyPress} />} 
+        {this.props.isLoggedIn ? (
+          <LoginAdd login={this.login} keyPress={this.keyPress} />
+        ) : (
+          <Login login={this.login} keyPress={this.keyPress} />
+        )}
       </div>
-      
     );
   }
 }
 
-// loginContainer.propTypes = {
-//   Verify: PropTypes.func.isRequired,
-  // history: PropTypes.object.isRequired,
-// };
 
 const mapStateToProps = (state) => {
   const { isLoggedIn } = state.verify;
