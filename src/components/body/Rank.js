@@ -6,9 +6,7 @@ import '../../styles/css/Rank.css';
 
 const arr = [1, 2, 3, 4, 5];
 
-const Rank = () => (
-  <MarkDown />
-);
+const Rank = () => <MarkDown />;
 
 export default Rank;
 //  <div className="rankContainer">

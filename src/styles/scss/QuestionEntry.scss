@@ -19,7 +19,7 @@
     }
   }
   .tags {
-    padding-top: 5px;
+    padding-top: 7px;
     .questListBtn {
       height: 25px;
       padding-top: 2px;
@@ -27,7 +27,7 @@
     }
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 0;
     padding: 50px 0px 3px 0px;
   }
@@ -63,9 +63,39 @@
       height: auto;
       padding: 0px 20px;
       font-size: 1.2rem;
-      line-height: 1.4;
+      line-height: 1.6;
       // border: 1px solid darkcyan;
       overflow-wrap: break-word;
+      .QuestionEntryMainSecondReplyTitle {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $divider;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .QuestionEntryMainSecondReply {
+        padding-top: 10px;
+        .QuestionEntryMainSecondReplyEntry {
+          height: auto;
+          padding-bottom: 5px;
+          margin-top: 5px;
+          border-bottom: 1px solid $divider;
+          overflow: hidden;
+          font-size: 1.05rem;
+        }
+      }
+      .QuestionEntryAnswerSecondReplyAdd {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: $greyfont;
+        .QuestionEntryAnswerSecondReplyAddInput {
+          margin-bottom: 8px;
+        }
+        .QuestionEntryAnswerSecondReplyAddBtn {
+          text-align: right;
+        }
+      }
     }
     .QuestionEntryMainThird {
       width: 10%;
@@ -83,7 +113,7 @@
         }
         .ItemBoxNum {
           text-align: center;
-          font-size: 20px;
+          font-size: 1.2rem;
           padding-right: 2px;
           color: grey;
         }
@@ -116,7 +146,7 @@
         width: 80%;
         padding: 0px 20px;
         font-size: 1.2rem;
-        line-height: 1.4;
+        line-height: 1.6;
         // border: 1px solid black;
         .QuestionEntryAnswerSecondReplyTitle {
           padding-top: 20px;
@@ -161,7 +191,7 @@
           }
           .ItemBoxNum {
             text-align: center;
-            font-size: 20px;
+            font-size: 1.2rem;
             padding-right: 2px;
             color: grey;
           }
@@ -205,9 +235,3 @@
     color: crimson;
   }
 }
-
-// itemBox
-
-// reward
-
-// reward

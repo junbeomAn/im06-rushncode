@@ -10,24 +10,29 @@ class MarkDown extends Component {
   }
 
   changeValue = (e) => {
-    
     e.preventDefault();
     this.setState({
       src: e.target.value,
     });
-  }
+  };
 
   render() {
     console.log(document.getElementById('markdownvalue'));
     return (
       <div>
-        <textarea name="content" onChange={e => this.changeValue(e)} id="markdownvalue" cols="30" rows="10" >hello</textarea>
+        <textarea
+          name="content"
+          onChange={e => this.changeValue(e)}
+          id="markdownvalue"
+          cols="30"
+          rows="10"
+        >
+          hello
+        </textarea>
         <ReactMarkDown source={this.state.src} />
       </div>
-      
     );
   }
 }
 
 export default MarkDown;
-

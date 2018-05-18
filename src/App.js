@@ -3,18 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import {
-  Footer,
-  Home,
-  Tag,
-  Rank,
-  Job,
-  NoMatch,
-  Clause,
-  Information,
-  HelpDesk,
-} from './components';
-import { HeaderContainer, Forum, Question, Auth } from './containers';
+import { Footer, Home, Tag, Rank, Job, NoMatch, Clause, Information, HelpDesk } from './components';
+import { HeaderContainer, Question, Auth } from './containers';
 import './styles/styleIndex';
 
 class App extends Component {
@@ -32,7 +22,6 @@ class App extends Component {
             <div className="middle">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/forum" component={Forum} />
                 <Route path="/question" component={Question} />
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />

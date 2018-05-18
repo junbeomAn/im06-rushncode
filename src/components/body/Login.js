@@ -4,31 +4,32 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 // import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
-import './../../styles/css/Auth.css';
 import Facebook from './../Facebook';
 import { createBrowserHistory } from 'history';
+
 const history = createBrowserHistory();
 
 const Login = ({ keyPress, login, fbLogin }) => (
   <div className="authContainer">
     <div className="authInputContainer border rounded">
       <div className="authButtonContainer">
-      
-        <a href={`https://www.facebook.com/v3.0/dialog/oauth?client_id=235916540497077&redirect_uri=https://localhost:3000/auth/facebook&state=st=state123abc,ds=123456789&response_type=code&scope=email,public_profile`}>
+        {/* <a
+          href="https://www.facebook.com/v3.0/dialog/oauth?client_id=235916540497077&redirect_uri=https://localhost:3000/auth/facebook&state=st=state123abc,ds=123456789&response_type=code&scope=email,public_profile"
+        >
           <Button color="facebook" className="authBtn">
             <Icon name="facebook" />Login with Facebook
           </Button>
-        </a>
-        <a href={`https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=https://localhost:3000/auth/google&response_type=code&client_id=1057319403388-ng0dluqb41b5kk4gt37bot92piirjiu6.apps.googleusercontent.com`}>
+        </a> */}
+        <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=http://localhost:3000/auth/google&response_type=code&client_id=1057319403388-ng0dluqb41b5kk4gt37bot92piirjiu6.apps.googleusercontent.com">
           <Button color="google plus" className="authBtn">
             <Icon name="google" />Login with Google
           </Button>
-        </a>        
+        </a>
         <a href="https://github.com/login/oauth/authorize?client_id=9eccd23df65b6d3581f9">
           <Button color="black" className="authBtn">
             <Icon name="github" />Login with Github
           </Button>
-        </a>        
+        </a>
       </div>
       <Divider horizontal>OR</Divider>
       <div className="authFormContainer">
@@ -81,7 +82,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
         Did you forget your password? <a href="#">Find</a>
       </p>
       <p>
-        Don't you have account? <a href="/signup">Signup</a>
+        Don't you have account? <a href="/auth/signup">Signup</a>
       </p>
     </div>
   </div>

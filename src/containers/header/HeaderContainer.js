@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../../styles/css/Header.css';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 
@@ -28,11 +27,6 @@ class Headers extends Component {
           </span>
           <div className="collapse navbar-collapse headerItembox" id="navbarSupportedContent">
             <ul className="nav navbar-nav navbar-right">
-              <li className="nav-item">
-                <NavLink to="/forum" className="item">
-                  포럼
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink to="/question" className="item">
                   질문

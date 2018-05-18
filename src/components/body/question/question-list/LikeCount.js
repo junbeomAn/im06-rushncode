@@ -1,18 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 
 const LikeCount = ({ count }) => (
-  <div className="CountBox">
-    <div className="CountBoxImage">
+  <div className="ItemBox">
+    <div className="ItemBoxImage">
       <Icon name="heart" size="big" />
     </div>
-    <div className="CountBoxNum">{count}</div>
+    <div className="ItemBoxNum">{count}</div>
   </div>
 );
-
-LikeCount.propTypes = {
-  count: PropTypes.number.isRequired,
-};
 
 export default LikeCount;

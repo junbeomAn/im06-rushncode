@@ -1,7 +1,7 @@
 import React from 'react';
 import { Reply } from '../question-entry';
 
-const Answer = () => (
+const Answer = ({ postAnswerReply }) => (
   <div className="QuestionEntryAnswerSecondAnswerBox">
     <div className="QuestionEntryAnswerSecondAnswerEntry">
       Answer 답변 내용 입니다Answer 답변 내용 입니다Answer 답변 내용 입니다Answer 답변 내용
@@ -45,7 +45,7 @@ const Answer = () => (
           <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" />
         </div>
         <div className="QuestionEntryAnswerSecondReplyAddBtn">
-          <button type="submit" className="btn btn-primary mb-2">
+          <button onClick={() => postAnswerReply()} className="btn btn-primary mb-2">
             확인
           </button>
         </div>

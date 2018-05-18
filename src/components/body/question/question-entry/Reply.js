@@ -1,9 +1,15 @@
 import React from 'react';
+import moment from 'moment';
 
-const Reply = () => (
-  <div className="QuestionEntryAnswerSecondReplyEntry">
-    댓글 입니다. 제 생각은 당신은 너무 바보입니다. 이런 답변을 왜 다셨나요? 정말 답답합니다. 댓글
-    입니다. 제 생각은 당신은 너무 바보입니다. 이런 답변을 왜 다셨나요? 정말 답답합니다. 댓글 입니다.
+const Reply = ({ body, time }) => (
+  <div className="QuestionEntryAnswerSecondReplyEntry QuestionEntryMainSecondReplyEntry">
+    <span>{body} </span>
+    <span>
+      [
+      {moment(time)
+        .startOf()
+        .fromNow()}]
+    </span>
   </div>
 );
 

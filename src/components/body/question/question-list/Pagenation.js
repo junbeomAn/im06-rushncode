@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Pagenation = ({
   updateStartEndPage,
@@ -88,15 +87,6 @@ const Pagenation = ({
       </ul>
     </div>
   );
-};
-
-Pagenation.propTypes = {
-  updateStartEndPage: PropTypes.func.isRequired,
-  makeAsync: PropTypes.func.isRequired,
-  currentPage: PropTypes.number.isRequired,
-  count: PropTypes.number.isRequired,
-  start: PropTypes.number.isRequired,
-  end: PropTypes.number.isRequired,
 };
 
 export default Pagenation;

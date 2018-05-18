@@ -10,9 +10,9 @@ const HomeShowcase = () => (
         to featured content or information.
       </p>
       <span className="homeLBtn">
-        <NavLink to="/question" className="item">
+        <NavLink to="/question/write" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
-            질문목록
+            질문하기
           </button>
         </NavLink>
       </span>
