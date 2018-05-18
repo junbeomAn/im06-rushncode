@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { convertFromRaw } from 'draft-js';
 import '../../../styles/css/QuestionEntry.css';
-import { Answer, LikeCount, ViewCount, Reward, UpdateTime } from './question-entry';
+import { QuestionAnswer, LikeCount, ViewCount, Reward, UpdateTime, Writer } from './question-entry';
 import { Tags } from '../question/question-list';
 import QuestionEntryShowcase from '../../showcases/QuestionEntryShowcase';
 
@@ -29,27 +29,29 @@ const QuestionEntry = ({
         </div>
         <div className="QuestionEntryMainSecond">{qBody}</div>
         <div className="QuestionEntryMainThird">
-          <div className="QuestionEntryMainThirdViewCount">
+          <div className="QuestionEntryMainThirdItemBox">
             <ViewCount count={qView} />
           </div>
-          <div className="QuestionEntryMainThirdReward">
+          <div className="QuestionEntryMainThirdItemBox">
             <Reward reward={qReward} />
           </div>
-          <div className="QuestionEntryMainThirdReward">
+          <div className="QuestionEntryMainThirdItemBox">
             <UpdateTime time={qTime} />
+          </div>
+          <div className="QuestionEntryMainThirdItemBox">
+            <Writer />
           </div>
         </div>
       </div>
+      <div className="QuestionEntryHeader">
+        <div className="QuestionEntryHeaderTop">
+          <h1>답변 [갯수]</h1>
+        </div>
+      </div>
       <div className="QuestionEntryAnswer">
-        <div className="QuestionEntryAnswerFirst">
-          <LikeCount count={0} raiseLikeCount={raiseLikeCount} />
-        </div>
-        <div className="QuestionEntryAnswerSecond">
-          <Answer />
-        </div>
-        <div className="QuestionEntryAnswerThird">
-          <div> Add component </div>
-        </div>
+        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} />
+        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} />
+        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} />
       </div>
     </div>
   );
@@ -66,3 +68,7 @@ QuestionEntry.propTypes = {
 };
 
 export default QuestionEntry;
+
+/* <div className="QuestionEntryAnswer">
+  <Answer count={7} raiseLikeCount={raiseLikeCount} />
+</div>; */

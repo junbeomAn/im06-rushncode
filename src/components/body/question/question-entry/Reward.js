@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 
 const Reward = ({ reward }) => (
-  <div className="CountBox">
-    <div className="CountBoxImage">
+  <div className="ItemBox">
+    <div className="ItemBoxImage">
       {/* <img src={trophy} width="40" height="40" alt="Like" /> */}
       <Icon name="money" size="big" />
     </div>
-    <div className="CountBoxNum">{reward}</div>
+    <div className="ItemBoxNum">{reward}</div>
   </div>
 );
 

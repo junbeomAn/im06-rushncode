@@ -5,12 +5,11 @@ import moment from 'moment';
 import { Icon } from 'semantic-ui-react';
 
 const UpdateTime = ({ time }) => (
-  <div className="CountBox">
-    <div className="CountBoxImage">
-      {/* <img src={clock} width="40" height="40" alt="Like" /> */}
+  <div className="ItemBox">
+    <div className="ItemBoxImage">
       <Icon name="clock" size="big" />
     </div>
-    <div className="CountBoxNum">
+    <div className="ItemBoxNum">
       {moment(time)
         .startOf()
         .fromNow()}
