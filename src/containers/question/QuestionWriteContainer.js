@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { EditorState, convertToRaw } from 'draft-js';
-import RichEditor from './RichEditor';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
-import CodeBlockCntr from './../Auth/CodeBlockContainer';
-
-import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       options: [],
-      editorState: EditorState.createEmpty(),
-      target: null,
     };
   }
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
-
-  // 에디터 ***********************************************************
-  onChange = (editorState) => {
-    const contentState = editorState.getCurrentContent();
-    console.log('content state', convertToRaw(contentState));
-    this.setState({
-      editorState,
-      target: JSON.stringify(convertToRaw(contentState)),
-    });
-    // console.log('asdfasdaf', JSON.parse(this.state.target));
-  };
 
   // 태그 선택 관련
   onTagChange = (e) => {
@@ -63,20 +45,6 @@ class QuestionWriteContainer extends Component {
     }
     this.setState({ options });
   };
-  // *************************************************** editor 관련
-  // onChange = (editorState) => {
-  //   const contentState = editorState.getCurrentContent();
-  //   console.log('content state', convertToRaw(contentState));
-  //   this.setState({
-  //     editorState,
-  //   });
-  // };
-
-  // this.logState = () => {
-  //   const content = this.state.editorState.getCurrentContent();
-  //   console.log(convertToRaw(content));
-  // };
-  // *************************************************** editor 관련
 
   // 작성 글 제출
   submit = () => {
@@ -99,7 +67,7 @@ class QuestionWriteContainer extends Component {
     // 금액 담기
     data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
     // 내용 담기
-    data.body = this.state.target;
+    data.body = '마크다운 자료 들어가야 함';
     axios
       .post(writingUrl, data, config)
       .then((res) => {
@@ -110,19 +78,11 @@ class QuestionWriteContainer extends Component {
 
   render() {
     const { tags } = this.props;
-    console.log('target : ', this.state.target);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
-        <div>
-          {/* <Editor
-            className="sample"
-            editorState={this.state.editorState}
-            onChange={this.onChange}
-          /> */}
-          <RichEditor onChange={this.onChange} editorState={this.state.editorState} />
-        </div>
+        <div>마크다운 들어갈 자리</div>
         <button
           onClick={() => this.submit()}
           className="btn btn-primary authSubmitBtn QuestionWriteButton"
