@@ -4,8 +4,7 @@
   left: 10%;
   width: 80%;
   margin: 0 auto;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.7) !important; }
+  z-index: 1; }
 
 .headerItembox {
   justify-content: flex-end; }

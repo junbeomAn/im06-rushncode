@@ -15,7 +15,7 @@ class Question extends Component {
       <Switch>
         <Route component={QuestionWriteContainer} path={`${match.path}/write`} />
         <Route component={QuestionEntryContainer} path={`${match.path}/:id`} />
-        <Route component={QuestionListContainer} path={`${match.path}`} />
+        <Route component={QuestionListContainer} path={`${match.path}/`} />
       </Switch>
     );
   }

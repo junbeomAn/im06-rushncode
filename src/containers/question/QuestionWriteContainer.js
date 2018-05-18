@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
-import { Editor, EditorState } from 'draft-js';
+import { EditorState, convertToRaw } from 'draft-js';
 import RichEditor from './RichEditor';
-
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
@@ -21,21 +19,31 @@ class QuestionWriteContainer extends Component {
     this.state = {
       options: [],
       editorState: EditorState.createEmpty(),
+      target: null,
     };
-    this.submit = this.submit.bind(this);
-    this.onTagChange = this.onTagChange.bind(this);
   }
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
 
+  // 에디터 ***********************************************************
+  onChange = (editorState) => {
+    const contentState = editorState.getCurrentContent();
+    console.log('content state', convertToRaw(contentState));
+    this.setState({
+      editorState,
+      target: JSON.stringify(convertToRaw(contentState)),
+    });
+    // console.log('asdfasdaf', JSON.parse(this.state.target));
+  };
+
   // 태그 선택 관련
-  onTagChange(e) {
+  onTagChange = (e) => {
     // current array of options
     const { options } = this.state;
     let index;
-    console.log(e.target);
+    // console.log(e.target);
 
     // Tag 3개 까지 선택
     if (e.target.checked) {
@@ -57,51 +65,66 @@ class QuestionWriteContainer extends Component {
       console.log('options : ', options);
     }
     this.setState({ options });
-  }
-
-  // editor 관련
-  onChangeEditor = (editorState) => {
-    this.setState({ editorState });
   };
+  // *************************************************** editor 관련
+  // onChange = (editorState) => {
+  //   const contentState = editorState.getCurrentContent();
+  //   console.log('content state', convertToRaw(contentState));
+  //   this.setState({
+  //     editorState,
+  //   });
+  // };
+
+  // this.logState = () => {
+  //   const content = this.state.editorState.getCurrentContent();
+  //   console.log(convertToRaw(content));
+  // };
+  // *************************************************** editor 관련
 
   // 작성 글 제출
-  submit() {
-    console.log('무시', this);
-
-    if (this.state.options.length === 0) {
-      alert('태그를 선택해 주세요');
-      return;
-    }
-
+  submit = () => {
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
         'Content-Type': 'application/json',
       },
     };
-    const data = {
-      body: 'testing... i am hanyoungjae',
-    };
-    data.title = document.getElementsByClassName('inputTitle')[0].value;
-    data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
-    data.tags = this.state.options;
     const writingUrl = 'http://localhost:3001/api/question/post';
+
+    // 글 작성 정보 모두 담는 그릇 설정
+    const data = {};
+    // 태그 정보 담기 및  태그 선택 안할 시 예외 처리
+    if (this.state.options.length === 0) return alert('태그를 선택해 주세요');
+    data.tags = this.state.options;
+    // 제목 담기 및 제목 없을 시 예외 처리
+    data.title = document.getElementsByClassName('inputTitle')[0].value;
+    if (data.title.length === 0) return alert('제목을 입력해 주세요');
+    // 금액 담기
+    data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
+    // 내용 담기
+    data.body = this.state.target;
     axios
       .post(writingUrl, data, config)
       .then((res) => {
         this.props.history.push('/question');
       })
       .catch(err => alert(err));
-  }
+  };
+
   render() {
     const { tags } = this.props;
+    console.log('target : ', this.state.target);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
         <div>
-          <CodeBlockCntr />
-          <RichEditor />
+          {/* <Editor
+            className="sample"
+            editorState={this.state.editorState}
+            onChange={this.onChange}
+          /> */}
+          <RichEditor onChange={this.onChange} editorState={this.state.editorState} />
         </div>
         <button
           onClick={() => this.submit()}

@@ -4,7 +4,6 @@ import { Map } from 'immutable';
 import CodeBlockCntr from './../Auth/CodeBlockContainer';
 
 
-
 // Custom overrides for "code" style.
 const styleMap = {
   CODE: {

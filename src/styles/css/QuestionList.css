@@ -74,5 +74,15 @@
       color: #0b1b33;
       border: solid 1px #0b1b33;
       background: transparent; }
+      .questionMain .questionPagenation .page-link:hover {
+        color: #fff;
+        border: solid 1px #0b1b33;
+        background: #0b1b33;
+        opacity: 0.7; }
+    .questionMain .questionPagenation .current {
+      background: #0b1b33;
+      opacity: 0.7; }
+      .questionMain .questionPagenation .current .page-link {
+        color: white; }
 
 /*# sourceMappingURL=QuestionList.css.map */

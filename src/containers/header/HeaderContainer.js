@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../../styles/css/Header.css';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
@@ -18,7 +19,7 @@ class Headers extends Component {
   render() {
     // this.props.Verify();
     return (
-      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-dark Header">
+      <nav className="navbar navbar-expand-lg navbar-light Header">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <span className="navbar-brand title">
             <NavLink exact to="/">
@@ -83,6 +84,10 @@ class Headers extends Component {
     );
   }
 }
+
+Headers.propTypes = {
+  SignOut: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => {
   const { isLoggedIn } = state.verify;

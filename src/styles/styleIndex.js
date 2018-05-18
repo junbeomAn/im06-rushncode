@@ -6,7 +6,6 @@ import './css/Footer.css';
 import './css/Forum.css';
 import './css/Header.css';
 import './css/Home.css';
-import './css/QuestionAnswer.css';
 import './css/QuestionEntry.css';
 import './css/QuestionList.css';
 import './css/QuestionWrite.css';
