@@ -61,17 +61,14 @@ class QuestionListContainer extends Component {
         ) : first ? (
           <h1>Loading...</h1>
         ) : (
-          (console.log('check : ', questions),
-          (
-            <QuestionList
-              posts={questions}
-              makeAsync={this.makeAsync}
-              updateStartEndPage={this.updateStartEndPage}
-              currentPage={currentPage}
-              start={start}
-              end={end}
-            />
-          ))
+          <QuestionList
+            posts={questions}
+            makeAsync={this.makeAsync}
+            updateStartEndPage={this.updateStartEndPage}
+            currentPage={currentPage}
+            start={start}
+            end={end}
+          />
         )}
       </div>
     );
