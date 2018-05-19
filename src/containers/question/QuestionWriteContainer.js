@@ -112,7 +112,6 @@ class QuestionWriteContainer extends Component {
   }
 }
 
-
 // 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
 const mapStateToProps = state => ({
   tags: state.questions.tags,

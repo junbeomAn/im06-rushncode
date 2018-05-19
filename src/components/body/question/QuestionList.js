@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { EachQuestion, Pagenation } from './question-list';
-import '../../../styles/css/QuestionList.css';
 import QuestionListShowcase from '../../showcases/QuestionListShowcase';
 
 // require('bootstrap/less/bootstrap.less');
@@ -29,6 +28,5 @@ const QuestionList = ({
     </div>
   </div>
 );
-
 
 export default QuestionList;

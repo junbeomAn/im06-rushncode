@@ -18,8 +18,7 @@ export const Verify = () => (dispatch) => {
         console.log('verified'); // 여기선 push 를 해도 바뀌지않음. 리덕스와 연결되어 있지 않아서...
         dispatch({ type: VERIFICATION, payload: res.data.success });
       } else {
-        console.log('not verified');
-        
+        console.log('not verified');       
       }
     })
     .catch(err => console.log(err));

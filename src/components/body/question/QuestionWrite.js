@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const QuestionWrite = ({ tags, onTagChange }) => (
   <div>
@@ -14,7 +13,7 @@ const QuestionWrite = ({ tags, onTagChange }) => (
         <div className="form-check form-check-inline QuestionWriteTagInputBox">
           <form>
             {tags.map(item => (
-              <label className="form-check-label QuestionWriteTagInput" htmlFor={item.tag}>
+              <label className="form-check-label QuestionWriteTagInput" htmlFor={item.tag} key={item.id}>
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -54,10 +53,5 @@ const QuestionWrite = ({ tags, onTagChange }) => (
     </div>
   </div>
 );
-
-QuestionWrite.propTypes = {
-  tags: PropTypes.array.isRequired,
-  onTagChange: PropTypes.func.isRequired,
-};
 
 export default QuestionWrite;

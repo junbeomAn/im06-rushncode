@@ -13,13 +13,20 @@
     padding: 10px 10px 0px 10px; }
     .questionMain .questionPost .first {
       padding-left: 10px;
+      padding-right: 10px;
       width: 25%;
       color: #777;
       padding-bottom: 6px;
       display: flex;
       text-align: center; }
       .questionMain .questionPost .first .firstItem {
-        padding-right: 10px; }
+        width: 100px; }
+        .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxImage {
+          color: grey; }
+        .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+          text-align: center;
+          padding-right: 3px;
+          color: grey; }
     .questionMain .questionPost .second {
       width: 80%;
       margin: 0;

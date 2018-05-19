@@ -1,7 +1,6 @@
 import React from 'react';
 import { Divider, Button, Icon } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import './../../styles/css/Auth.css';
 
 const SignUp = ({ keyPress, signUp }) => (
   <div className="authContainer">

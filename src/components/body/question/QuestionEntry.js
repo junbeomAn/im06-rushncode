@@ -1,14 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-// import { convertFromRaw } from 'draft-js';
 import ReactMarkDown from 'react-markdown';
 import '../../../styles/css/QuestionEntry.css';
-import { QuestionAnswer, LikeCount, ViewCount, Reward, UpdateTime, Writer } from './question-entry';
+import { QuestionAnswer, LikeCount, ViewCount, Reward, UpdateTime, Writer, Reply } from './question-entry';
 import { Tags } from '../question/question-list';
 import QuestionEntryShowcase from '../../showcases/QuestionEntryShowcase';
 
 const QuestionEntry = ({
-  title, qBody, qGood, qView, qReward, qTime, raiseLikeCount,
+  title, qBody, qGood, qView, qReward, qTime, raiseLikeCount, replies, qID, postQuestionReply, postAnswerReply,
 }) => {
   console.log('타이틀 : ', qBody.replace(/(?:\r↵|\r|↵)/g, '\n'));
   // console.log('그냥 파싱 된 것', JSON.parse(qBody));
@@ -30,6 +28,23 @@ const QuestionEntry = ({
         </div>
         <div className="QuestionEntryMainSecond">
           <ReactMarkDown source={qBody.replace(/(?:\r↵|\r|↵)/g, '\n')}/>
+          <div className="QuestionEntryMainSecondReplyTitle">댓글</div>
+          <div className="QuestionEntryMainSecondReply">
+            {replies.map((reply, index) => (
+              <Reply body={reply.rBody} time={reply.rTime} key={index} />
+            ))}
+          </div>
+          <div className="QuestionEntryAnswerSecondReplyAdd">
+            <div className="form-group QuestionEntryAnswerSecondReplyAddInput">
+              <label htmlFor="exampleFormControlTextarea1">add a comment</label>
+              <textarea className="form-control questionReplyBody" id="exampleFormControlTextarea1" rows="3" />
+            </div>
+            <div className="QuestionEntryAnswerSecondReplyAddBtn">
+              <button onClick={() => postQuestionReply(qID)} className="btn btn-primary mb-2">
+                확인
+              </button>
+            </div>
+          </div>
         </div>
         <div className="QuestionEntryMainThird">
           <div className="QuestionEntryMainThirdItemBox">
@@ -52,23 +67,13 @@ const QuestionEntry = ({
         </div>
       </div>
       <div className="QuestionEntryAnswer">
-        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} />
-        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} />
-        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} />
+        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} postAnswerReply={postAnswerReply} />
+        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} postAnswerReply={postAnswerReply} />
+        <QuestionAnswer count={7} raiseLikeCount={raiseLikeCount} postAnswerReply={postAnswerReply} />
       </div>
     </div>
   );
-};
-
-QuestionEntry.propTypes = {
-  title: PropTypes.string.isRequired,
-  qBody: PropTypes.string.isRequired,
-  qGood: PropTypes.number.isRequired,
-  qView: PropTypes.number.isRequired,
-  qReward: PropTypes.number.isRequired,
-  qTime: PropTypes.string.isRequired,
-  raiseLikeCount: PropTypes.func.isRequired,
-};
+}
 
 export default QuestionEntry;
 

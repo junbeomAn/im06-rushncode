@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { convertFromRaw } from 'draft-js';
 import QuestionEntry from '../../components/body/question/QuestionEntry';
 import { fetchQuestionEntry } from '../../redux/actions/questionAction';
 
@@ -21,8 +20,50 @@ class QuestionEntryContainer extends Component {
     if (!this.props.loading) this.setState({ first: false });
   }
 
+  postQuestionReply = () => {
+    const { id } = this.props.match.params;
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    const data = {
+      questionID: id,
+    };
+    data.body = document.getElementsByClassName('questionReplyBody')[0].value;
+    axios
+      .post('http://localhost:3001/api/question/reply/', data, config)
+      .then((message) => {
+        alert(message);
+        this.props.fetchQuestionEntry(id);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+
+  postAnswerReply = () => {
+    console.log('postAnswerReply');
+    // const config = {
+    //   headers: {
+    //     'x-access-token': localStorage.getItem('token'),
+    //   },
+    // };
+    // const data = {
+    //   answerId,
+    //   body: 'aa',
+    // };
+    // axios
+    //   .post('http://localhost:3001/api/question/chanswer/', data, config)
+    //   .then((message) => {
+    //     alert(message);
+    //     const { id } = this.props.match.params;
+    //     this.props.fetchQuestionEntry(id);
+    //   })
+    //   .catch(err => console.log(err));
+  };
+
   raiseLikeCount = () => {
-    console.log('asdfasd', this.props.question);
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
@@ -39,10 +80,9 @@ class QuestionEntryContainer extends Component {
 
   render() {
     const {
-      title, qBody, qGood, qView, qReward, qTime,
+      title, qBody, qGood, qView, qReward, qTime, qID, replies,
     } = this.props.question;
-    const { first } = this.state;
-    console.log(this.props.loading);
+    const { first} = this.state;
     return (
       <div>
         {this.props.loading ? (
@@ -50,22 +90,24 @@ class QuestionEntryContainer extends Component {
         ) : first ? (
           <h1>Loading...</h1>
         ) : (
-          // console.log('check : ', this.props.question),
           <QuestionEntry
             title={title}
+            qID={qID}
             qBody={qBody}
             qGood={qGood}
             qView={qView}
             qReward={qReward}
             qTime={qTime}
+            replies={replies}
             raiseLikeCount={this.raiseLikeCount}
+            postQuestionReply={this.postQuestionReply}
+            postAnswerReply={this.postAnswerReply}
           />
         )}
       </div>
     );
   }
 }
-
 
 // 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
 const mapStateToProps = state => ({

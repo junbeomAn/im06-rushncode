@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 
 const LikeCount = ({ count, raiseLikeCount }) => (
@@ -12,10 +11,5 @@ const LikeCount = ({ count, raiseLikeCount }) => (
     <div className="CountBoxNum">{count}</div>
   </div>
 );
-
-LikeCount.propTypes = {
-  count: PropTypes.number.isRequired,
-  raiseLikeCount: PropTypes.func.isRequired,
-};
 
 export default LikeCount;
