@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 import { Verify } from './../../redux/actions/verifyAction';
+
 
 class Google extends Component {
   componentWillMount() {
@@ -22,7 +24,7 @@ class Google extends Component {
           localStorage.setItem('token', res.data.token);
           console.log('google login success');
           this.props.Verify();
-          this.props.history.push('/');
+          this.props.history.push('/'); 
         } else {
           alert(res.data.message);
           this.props.history.push('/auth/signin');
@@ -36,7 +38,9 @@ class Google extends Component {
   render() {
     return (
       <div className="OAuthText">
-        <h1>Verifying Google information...</h1>
+        <Dimmer active>
+          <Loader><h1>Verifying Google information...</h1></Loader>
+        </Dimmer>
       </div>
     );
   }

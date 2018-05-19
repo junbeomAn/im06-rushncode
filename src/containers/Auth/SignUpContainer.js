@@ -8,12 +8,9 @@ class SignUpContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.signUp = this.signUp.bind(this);
-    this.keyPress = this.keyPress.bind(this);
   }
 
-  signUp() {
-    console.log(this);
+  signUp = () => {  
     const userInfo = {};
     userInfo.username = document.getElementsByClassName('inputUname')[0].value;
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
@@ -22,13 +19,18 @@ class SignUpContainer extends Component {
     axios
       .post(signUpUrl, userInfo)
       .then((res) => {
-        console.log(res);
-        this.props.history.push('/auth/signup');
+        if (res.data.message === 'complete signup') {
+          alert('Now CHECK your EMAIL to verify.');
+          this.props.history.push('/');
+        } else {
+          alert(res.data.message);
+          this.props.history.push('/auth/signup');
+        }
       })
       .catch(err => console.log(err));
   }
 
-  keyPress(e) {
+  keyPress = (e) => {
     if (e.key === 'Enter') {
       this.signUp();
     }
