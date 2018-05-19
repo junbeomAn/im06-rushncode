@@ -87,10 +87,9 @@ class QuestionWriteContainer extends Component {
       })
       .catch(err => alert(err));
   };
-
   render() {
     const { tags } = this.props;
-    console.log('src : ', this.state.src);
+    // console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
