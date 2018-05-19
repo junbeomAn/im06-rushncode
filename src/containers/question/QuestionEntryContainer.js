@@ -78,11 +78,12 @@ class QuestionEntryContainer extends Component {
       .catch(err => console.log(err));
   };
 
+  /* eslint no-nested-ternary: 0 */
   render() {
     const {
       title, qBody, qGood, qView, qReward, qTime, qID, replies,
     } = this.props.question;
-    const { first} = this.state;
+    const { first } = this.state;
     return (
       <div>
         {this.props.loading ? (
@@ -117,46 +118,3 @@ const mapStateToProps = state => ({
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
 export default connect(mapStateToProps, { fetchQuestionEntry })(QuestionEntryContainer);
-
-// return (
-//   <div>
-//     {this.props.loading ? (
-//       <h1>Loading...</h1>
-//     ) : first ? (
-//       (<h1>Loading...</h1>, this.setState({ first: false }))
-//     ) : (
-//       <QuestionEntry
-//         title={title}
-//         qBody={qBody}
-//         qGood={qGood}
-//         qView={qView}
-//         qReward={qReward}
-//         qTime={qTime}
-//         raiseLikeCount={this.raiseLikeCount}
-//       />
-//     )}
-//   </div>
-// );
-
-// return (
-//   <div>
-//     {this.props.loading ? (
-//       <h1>Loading...</h1>
-//     ) : (
-//       (console.log('check : ', this.props.question),
-//       (
-//         <div>
-//           <QuestionEntry
-//             title={title}
-//             qBody={qBody}
-//             qGood={qGood}
-//             qView={qView}
-//             qReward={qReward}
-//             qTime={qTime}
-//             raiseLikeCount={this.raiseLikeCount}
-//           />
-//         </div>
-//       ))
-//     )}
-//   </div>
-// );

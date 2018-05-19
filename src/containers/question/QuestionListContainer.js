@@ -48,6 +48,7 @@ class QuestionListContainer extends Component {
     this.updateCurrentPage(index);
   };
 
+  /* eslint no-nested-ternary: 0 */
   render() {
     const { loading, questions } = this.props;
     const {
