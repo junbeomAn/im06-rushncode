@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { EditorState, convertToRaw } from 'draft-js';
-import RichEditor from './RichEditor';
+import ReactMarkDown from 'react-markdown';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
-import CodeBlockCntr from './../Auth/CodeBlockContainer';
 
-import '../../styles/css/RichEditor.css';
 import '../../styles/css/QuestionWrite.css';
-import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       options: [],
-      editorState: EditorState.createEmpty(),
       target: null,
+      src: '',
     };
   }
 
@@ -27,16 +22,7 @@ class QuestionWriteContainer extends Component {
     await this.props.fetchQuestionTag();
   }
 
-  // 에디터 ***********************************************************
-  onChange = (editorState) => {
-    const contentState = editorState.getCurrentContent();
-    console.log('content state', convertToRaw(contentState));
-    this.setState({
-      editorState,
-      target: JSON.stringify(convertToRaw(contentState)),
-    });
-    // console.log('asdfasdaf', JSON.parse(this.state.target));
-  };
+ 
 
   // 태그 선택 관련
   onTagChange = (e) => {
@@ -66,20 +52,13 @@ class QuestionWriteContainer extends Component {
     }
     this.setState({ options });
   };
-  // *************************************************** editor 관련
-  // onChange = (editorState) => {
-  //   const contentState = editorState.getCurrentContent();
-  //   console.log('content state', convertToRaw(contentState));
-  //   this.setState({
-  //     editorState,
-  //   });
-  // };
 
-  // this.logState = () => {
-  //   const content = this.state.editorState.getCurrentContent();
-  //   console.log(convertToRaw(content));
-  // };
-  // *************************************************** editor 관련
+  changeValue = (e) => {
+    e.preventDefault();
+    this.setState({
+      src: e.target.value,
+    });
+  }
 
   // 작성 글 제출
   submit = () => {
@@ -102,7 +81,7 @@ class QuestionWriteContainer extends Component {
     // 금액 담기
     data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
     // 내용 담기
-    data.body = this.state.target;
+    data.body = this.state.src;
     axios
       .post(writingUrl, data, config)
       .then((res) => {
@@ -113,18 +92,14 @@ class QuestionWriteContainer extends Component {
 
   render() {
     const { tags } = this.props;
-    console.log('target : ', this.state.target);
+    console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
-        <div>
-          {/* <Editor
-            className="sample"
-            editorState={this.state.editorState}
-            onChange={this.onChange}
-          /> */}
-          <RichEditor onChange={this.onChange} editorState={this.state.editorState} />
+        <div id="markdown">
+          <textarea className="input_mark_down" placeholder="hello" name="content" onChange={e => this.changeValue(e)} id="markdownvalue" cols="70" rows="30" />
+          <ReactMarkDown className="mark_down_view" source={this.state.src} />
         </div>
         <button
           onClick={() => this.submit()}
@@ -137,10 +112,6 @@ class QuestionWriteContainer extends Component {
   }
 }
 
-QuestionWriteContainer.propTypes = {
-  fetchQuestionTag: PropTypes.func.isRequired,
-  tags: PropTypes.array.isRequired,
-};
 
 // 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
 const mapStateToProps = state => ({

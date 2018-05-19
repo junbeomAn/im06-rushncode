@@ -36,7 +36,7 @@ class LoginContainer extends Component {
         } else {// email not exist, incorrect password, check your email
           alert(res.data.message);
           // console.log(res);
-          this.props.history.push('/auth');
+          this.props.history.push('/auth/signin');
         }        
       })
       .catch(err => alert(err));
@@ -59,11 +59,6 @@ class LoginContainer extends Component {
     );
   }
 }
-
-// loginContainer.propTypes = {
-//   Verify: PropTypes.func.isRequired,
-  // history: PropTypes.object.isRequired,
-// };
 
 const mapStateToProps = (state) => {
   const { isLoggedIn } = state.verify;

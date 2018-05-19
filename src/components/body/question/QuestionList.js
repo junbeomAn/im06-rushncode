@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { EachQuestion, Pagenation } from './question-list';
 import '../../../styles/css/QuestionList.css';
@@ -31,13 +30,5 @@ const QuestionList = ({
   </div>
 );
 
-QuestionList.propTypes = {
-  updateStartEndPage: PropTypes.func.isRequired,
-  makeAsync: PropTypes.func.isRequired,
-  currentPage: PropTypes.number.isRequired,
-  posts: PropTypes.array.isRequired,
-  start: PropTypes.number.isRequired,
-  end: PropTypes.number.isRequired,
-};
 
 export default QuestionList;

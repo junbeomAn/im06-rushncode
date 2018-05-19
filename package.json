@@ -4,11 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.1",
     "bootstrap-social": "^5.1.1",
-    "brace": "^0.11.1",
-    "draft-js": "^0.10.5",
     "eslint-config-airbnb": "^16.1.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
@@ -16,12 +13,9 @@
     "node-sass": "^4.9.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-ace": "^6.1.1",
     "react-dom": "^16.3.2",
-    "react-draft-wysiwyg": "^1.12.13",
     "react-facebook-login": "^4.0.1",
     "react-markdown": "^3.3.2",
-    "react-monaco-editor": "^0.16.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
@@ -35,7 +29,7 @@
     "semantic-ui-react": "^0.80.0"
   },
   "scripts": {
-    "start": "set HTTPS=true&&react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "sass": "sass --watch src/styles/scss:src/styles/css",

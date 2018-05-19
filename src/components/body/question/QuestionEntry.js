@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { convertFromRaw } from 'draft-js';
+// import { convertFromRaw } from 'draft-js';
+import ReactMarkDown from 'react-markdown';
 import '../../../styles/css/QuestionEntry.css';
 import { QuestionAnswer, LikeCount, ViewCount, Reward, UpdateTime, Writer } from './question-entry';
 import { Tags } from '../question/question-list';
@@ -9,7 +10,7 @@ import QuestionEntryShowcase from '../../showcases/QuestionEntryShowcase';
 const QuestionEntry = ({
   title, qBody, qGood, qView, qReward, qTime, raiseLikeCount,
 }) => {
-  console.log('타이틀 : ', qBody);
+  console.log('타이틀 : ', qBody.replace(/(?:\r↵|\r|↵)/g, '\n'));
   // console.log('그냥 파싱 된 것', JSON.parse(qBody));
   // console.log('convertFromRaw 파싱 된 것', convertFromRaw(JSON.parse(qBody)));
   // console.log('파싱', JSON.parse(qBody));
@@ -27,7 +28,9 @@ const QuestionEntry = ({
         <div className="QuestionEntryMainFirst">
           <LikeCount count={qGood} raiseLikeCount={raiseLikeCount} />
         </div>
-        <div className="QuestionEntryMainSecond">{qBody}</div>
+        <div className="QuestionEntryMainSecond">
+          <ReactMarkDown source={qBody.replace(/(?:\r↵|\r|↵)/g, '\n')}/>
+        </div>
         <div className="QuestionEntryMainThird">
           <div className="QuestionEntryMainThirdItemBox">
             <ViewCount count={qView} />

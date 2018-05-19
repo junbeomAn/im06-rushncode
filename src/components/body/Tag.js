@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input, Grid, Segment } from 'semantic-ui-react';
 import TagShowcase from '../showcases/TagShowcase';
-import Markdown from './markdownex';
 import '../../styles/css/Tag.css';
 
 const Tag = () => (

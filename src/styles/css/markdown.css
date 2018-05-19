@@ -1,0 +1,20 @@
+#markdown {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px; }
+  #markdown .input_mark_down {
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-block; }
+  #markdown pre {
+    background-color: #4b4949;
+    color: ghostwhite;
+    padding: 20px;
+    width: 200px; }
+  #markdown .mark_down_view {
+    display: inline-block;
+    float: right;
+    position: absolute;
+    right: 20%; }
+
+/*# sourceMappingURL=markdown.css.map */

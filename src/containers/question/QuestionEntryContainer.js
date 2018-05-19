@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { convertFromRaw } from 'draft-js';
@@ -67,12 +66,6 @@ class QuestionEntryContainer extends Component {
   }
 }
 
-QuestionEntryContainer.propTypes = {
-  fetchQuestionEntry: PropTypes.func.isRequired,
-  question: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
-  match: PropTypes.object.isRequired,
-};
 
 // 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
 const mapStateToProps = state => ({
