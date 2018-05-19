@@ -1,6 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import WriteButton from './../../containers/showcase/writeButton';
 
+const func = () => {
+  return false;
+}
 const HomeShowcase = () => (
   <div className="homeUpper">
     <div className="jumbotron HomeJumbotron">
@@ -10,11 +14,7 @@ const HomeShowcase = () => (
         to featured content or information.
       </p>
       <span className="homeLBtn">
-        <NavLink to="/question/write" className="item">
-          <button type="button" className="btn btn-outline-light btn-lg">
-            질문하기
-          </button>
-        </NavLink>
+        <WriteButton />
       </span>
       <span className="homeRBtn">
         <NavLink to="/auth/signup" className="item">
