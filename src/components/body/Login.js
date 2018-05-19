@@ -24,7 +24,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
             <Icon name="google" />Login with Google
           </Button>
         </a>
-        <a href="http://github.com/login/oauth/authorize?client_id=9eccd23df65b6d3581f9">
+        <a href="https://github.com/login/oauth/authorize?client_id=9eccd23df65b6d3581f9">
           <Button color="black" className="authBtn">
             <Icon name="github" />Login with Github
           </Button> 
