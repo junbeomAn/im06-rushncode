@@ -64,7 +64,6 @@
       padding: 0px 20px;
       font-size: 1.2rem;
       line-height: 1.6;
-      // border: 1px solid darkcyan;
       overflow-wrap: break-word;
       .QuestionEntryMainSecondReplyTitle {
         padding-top: 20px;
@@ -130,7 +129,7 @@
     width: 90%;
     margin: 0 auto;
     margin-bottom: 30px;
-
+    overflow-wrap: break-word;
     .QuestionEntryAnswerEntry {
       margin-top: 20px;
       margin-bottom: 10px;

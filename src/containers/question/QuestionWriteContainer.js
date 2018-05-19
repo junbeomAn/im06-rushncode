@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import ReactMarkDown from 'react-markdown';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
+
+import '../../styles/css/QuestionWrite.css';
 
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       options: [],
+      target: null,
+      src: '',
     };
   }
 
@@ -46,6 +51,13 @@ class QuestionWriteContainer extends Component {
     this.setState({ options });
   };
 
+  changeValue = (e) => {
+    e.preventDefault();
+    this.setState({
+      src: e.target.value,
+    });
+  };
+
   // 작성 글 제출
   submit = () => {
     const config = {
@@ -67,7 +79,7 @@ class QuestionWriteContainer extends Component {
     // 금액 담기
     data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
     // 내용 담기
-    data.body = '마크다운 자료 들어가야 함';
+    data.body = this.state.src;
     axios
       .post(writingUrl, data, config)
       .then((res) => {
@@ -78,17 +90,37 @@ class QuestionWriteContainer extends Component {
 
   render() {
     const { tags } = this.props;
+    console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
-        <div>마크다운 들어갈 자리</div>
-        <button
-          onClick={() => this.submit()}
-          className="btn btn-primary authSubmitBtn QuestionWriteButton"
-        >
-          질문 작성하기
-        </button>
+        <div id="markdown">
+          <div className="mark_down_box">
+            <div className="mark_down_input">
+              <h2>입력창</h2>
+              <textarea
+                className="mark_down_input_item"
+                placeholder="질문을 입력 하세요"
+                name="content"
+                onChange={e => this.changeValue(e)}
+                id="markdownvalue"
+                cols="70"
+                rows="30"
+              />
+            </div>
+            <div className="mark_down_view">
+              <h2>미리보기</h2>
+              <ReactMarkDown className="mark_down_view_item" source={this.state.src} />
+            </div>
+          </div>
+
+          <div className="mark_down_btn">
+            <button onClick={() => this.submit()} className="btn btn-primary mark_down_btn_item">
+              질문작성
+            </button>
+          </div>
+        </div>
       </div>
     );
   }

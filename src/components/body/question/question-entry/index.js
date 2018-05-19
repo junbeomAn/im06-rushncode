@@ -1,6 +1,7 @@
 import Showcase from './Showcase';
 import Answer from './Answer';
 import Reply from './Reply';
+import LikeCountAnswer from './LikeCountAnswer';
 import LikeCount from './LikeCount';
 import ViewCount from './ViewCount';
 import AnswerCount from './AnswerCount';
@@ -13,6 +14,7 @@ export {
   Showcase,
   Answer,
   Reply,
+  LikeCountAnswer,
   LikeCount,
   ViewCount,
   AnswerCount,

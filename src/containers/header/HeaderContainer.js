@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 
@@ -79,9 +78,6 @@ class Headers extends Component {
   }
 }
 
-Headers.propTypes = {
-  SignOut: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = (state) => {
   const { isLoggedIn } = state.verify;
