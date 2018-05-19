@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Verify } from './../../redux/actions/verifyAction';
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 
 
 class Github extends Component {
@@ -39,7 +40,10 @@ class Github extends Component {
   render() {
     return (
       <div className="OAuthText">
-        <h1>Verifying github information...</h1>
+        <Dimmer active>
+          <Loader><h1>Verifying github information...</h1></Loader>
+        </Dimmer>
+        
       </div>
     );
   };
