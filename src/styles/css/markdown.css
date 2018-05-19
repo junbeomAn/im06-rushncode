@@ -1,20 +1,70 @@
 #markdown {
-  background-color: white;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px; }
+  #markdown h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #777; }
+  #markdown .mark_down_box {
+    height: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #markdown .mark_down_box .mark_down_input {
+      width: 48%;
+      height: 100%;
+      border: solid 1px #e4e6e8;
+      background: #0b1b33;
+      opacity: 0.8;
+      border-radius: 3px; }
+      #markdown .mark_down_box .mark_down_input textarea {
+        margin: 0;
+        padding: 0;
+        border: none; }
+      #markdown .mark_down_box .mark_down_input h2 {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        font-weight: normal;
+        color: white; }
+      #markdown .mark_down_box .mark_down_input .mark_down_input_item {
+        width: 100%;
+        height: 600px;
+        padding: 10px 15px; }
+    #markdown .mark_down_box .mark_down_view {
+      width: 48%;
+      height: 100%;
+      background: #0b1b33;
+      opacity: 0.8;
+      border: solid 1px #e4e6e8;
+      border-radius: 3px;
+      overflow-wrap: break-word; }
+      #markdown .mark_down_box .mark_down_view h2 {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        font-weight: normal;
+        color: white; }
+      #markdown .mark_down_box .mark_down_view .mark_down_view_item {
+        width: 100%;
+        min-height: 600px;
+        padding: 10px 15px;
+        background: white; }
+  #markdown .mark_down_btn {
+    text-align: right; }
+
+pre {
+  background-color: #4b4949;
+  color: ghostwhite;
   padding: 20px;
-  border-radius: 5px; }
-  #markdown .input_mark_down {
-    border-radius: 10px;
-    padding: 5px;
-    display: inline-block; }
-  #markdown pre {
-    background-color: #4b4949;
-    color: ghostwhite;
-    padding: 20px;
-    width: 200px; }
-  #markdown .mark_down_view {
-    display: inline-block;
-    float: right;
-    position: absolute;
-    right: 20%; }
+  width: 200px; }
 
 /*# sourceMappingURL=markdown.css.map */

@@ -8,4 +8,22 @@
   width: 80%;
   margin: auto; }
 
+.timeStamp {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: right; }
+
+.timeStampReplyDot {
+  margin: 0px 5px;
+  font-size: 0.9rem;
+  color: #777; }
+
+.timeStampReplyName {
+  margin-left: 10px; }
+
+.timeStampReply {
+  margin-left: 3px;
+  font-size: 0.9rem;
+  color: #777; }
+
 /*# sourceMappingURL=App.css.map */

@@ -10,6 +10,7 @@
   filter: grayscale(50%); }
 
 .homeLower {
+  height: 1200px;
   background-color: ghostwhite; }
 
 .HomeJumbotron {

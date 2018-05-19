@@ -1,18 +1,33 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import { Writer, LikeCount, Answer } from '../question-entry';
+import { Writer, LikeCountAnswer, Answer } from '../question-entry';
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
-const QuestionAnswer = ({ count, raiseLikeCount, postAnswerReply }) => (
+const QuestionAnswer = ({
+  aID,
+  username,
+  count,
+  body,
+  time,
+  chAnswers,
+  raiseLikeCount,
+  postAnswerReply,
+}) => (
   <div className="QuestionEntryAnswerEntry">
     <div className="QuestionEntryAnswerFirst">
       <div className="QuestionEntryAnswerFirstLike">
-        <LikeCount count={count} raiseLikeCount={raiseLikeCount} />
+        <LikeCountAnswer count={count} raiseLikeCount={raiseLikeCount} aID={aID} />
       </div>
     </div>
     <div className="QuestionEntryAnswerSecond">
-      <Answer postAnswerReply={postAnswerReply} />
+      <Answer
+        body={body}
+        time={time}
+        postAnswerReply={postAnswerReply}
+        aID={aID}
+        chAnswers={chAnswers}
+      />
     </div>
     <div className="QuestionEntryAnswerThird">
       <div className="QuestionEntryAnswerThirdCheck">
@@ -31,7 +46,7 @@ const QuestionAnswer = ({ count, raiseLikeCount, postAnswerReply }) => (
         </div>
       </div>
       <div className="QuestionEntryAnswerThirdReward">
-        <Writer />
+        <Writer username={username} />
       </div>
     </div>
   </div>

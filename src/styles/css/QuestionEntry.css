@@ -87,7 +87,8 @@
   .QuestionEntryContainer .QuestionEntryAnswer {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    overflow-wrap: break-word; }
     .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry {
       margin-top: 20px;
       margin-bottom: 10px;

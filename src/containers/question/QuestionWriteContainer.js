@@ -22,8 +22,6 @@ class QuestionWriteContainer extends Component {
     await this.props.fetchQuestionTag();
   }
 
- 
-
   // 태그 선택 관련
   onTagChange = (e) => {
     // current array of options
@@ -58,7 +56,7 @@ class QuestionWriteContainer extends Component {
     this.setState({
       src: e.target.value,
     });
-  }
+  };
 
   // 작성 글 제출
   submit = () => {
@@ -89,24 +87,39 @@ class QuestionWriteContainer extends Component {
       })
       .catch(err => alert(err));
   };
-
   render() {
     const { tags } = this.props;
-    console.log('src : ', this.state.src);
+    // console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
         <div id="markdown">
-          <textarea className="input_mark_down" placeholder="hello" name="content" onChange={e => this.changeValue(e)} id="markdownvalue" cols="70" rows="30" />
-          <ReactMarkDown className="mark_down_view" source={this.state.src} />
+          <div className="mark_down_box">
+            <div className="mark_down_input">
+              <h2>입력창</h2>
+              <textarea
+                className="mark_down_input_item"
+                placeholder="질문을 입력 하세요"
+                name="content"
+                onChange={e => this.changeValue(e)}
+                id="markdownvalue"
+                cols="70"
+                rows="30"
+              />
+            </div>
+            <div className="mark_down_view">
+              <h2>미리보기</h2>
+              <ReactMarkDown className="mark_down_view_item" source={this.state.src} />
+            </div>
+          </div>
+
+          <div className="mark_down_btn">
+            <button onClick={() => this.submit()} className="btn btn-primary mark_down_btn_item">
+              질문작성
+            </button>
+          </div>
         </div>
-        <button
-          onClick={() => this.submit()}
-          className="btn btn-primary authSubmitBtn QuestionWriteButton"
-        >
-          질문 작성하기
-        </button>
       </div>
     );
   }

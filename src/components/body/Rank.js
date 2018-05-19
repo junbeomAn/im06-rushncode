@@ -68,8 +68,7 @@ const Rank = () => (
           ))}
       </Segment.Group> */}
     </div>
-  </div>  
+  </div>
 );
 
 export default Rank;
- 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
 import QuestionEntry from '../../components/body/question/QuestionEntry';
 import { fetchQuestionEntry } from '../../redux/actions/questionAction';
@@ -9,6 +10,7 @@ class QuestionEntryContainer extends Component {
     super(props);
     this.state = {
       first: true,
+      src: '',
     };
   }
   componentDidMount() {
@@ -19,6 +21,37 @@ class QuestionEntryContainer extends Component {
   componentWillReceiveProps() {
     if (!this.props.loading) this.setState({ first: false });
   }
+
+  changeValue = (e) => {
+    e.preventDefault();
+    this.setState({
+      src: e.target.value,
+    });
+  };
+
+  postAnswer = () => {
+    const { id } = this.props.match.params;
+    const { src } = this.state;
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    const data = {
+      questionID: id,
+      body: src,
+    };
+    if (!data.body) return alert('내용을 입력해주세요');
+    axios
+      .post('http://localhost:3001/api/question/answer/', data, config)
+      .then((res) => {
+        console.log('답변 제출 응답 : ', res);
+        this.props.fetchQuestionEntry(id);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
 
   postQuestionReply = () => {
     const { id } = this.props.match.params;
@@ -31,6 +64,7 @@ class QuestionEntryContainer extends Component {
       questionID: id,
     };
     data.body = document.getElementsByClassName('questionReplyBody')[0].value;
+    if (!data.body) return alert('내용을 입력해주세요');
     axios
       .post('http://localhost:3001/api/question/reply/', data, config)
       .then((res) => {
@@ -42,47 +76,70 @@ class QuestionEntryContainer extends Component {
       });
   };
 
-  postAnswerReply = () => {
+  postAnswerReply = (answerID) => {
     console.log('postAnswerReply');
-    // const config = {
-    //   headers: {
-    //     'x-access-token': localStorage.getItem('token'),
-    //   },
-    // };
-    // const data = {
-    //   answerId,
-    //   body: 'aa',
-    // };
-    // axios
-    //   .post('http://localhost:3001/api/question/chanswer/', data, config)
-    //   .then((message) => {
-    //     alert(message);
-    //     const { id } = this.props.match.params;
-    //     this.props.fetchQuestionEntry(id);
-    //   })
-    //   .catch(err => console.log(err));
-  };
-
-  raiseLikeCount = () => {
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
       },
     };
+    const data = {
+      answerID,
+    };
+    data.body = document.getElementsByClassName(`answerReplyBody${answerID}`)[0].value;
+    console.log(data.body);
+    if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post(`http://localhost:3001/api/question/good/${this.props.question.qID}`, {}, config)
-      .then(() => {
+      .post('http://localhost:3001/api/question/chanswer/', data, config)
+      .then((message) => {
+        alert(message);
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })
       .catch(err => console.log(err));
   };
 
+  raiseLikeCount = (answerID) => {
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    if (!answerID) {
+      axios
+        .post(`http://localhost:3001/api/question/good/${this.props.question.qID}`, {}, config)
+        .then(() => {
+          const { id } = this.props.match.params;
+          this.props.fetchQuestionEntry(id);
+        })
+        .catch(err => console.log(err));
+    } else {
+      axios
+        .post(`http://localhost:3001/api/question/goodanswer/${answerID}`, {}, config)
+        .then(() => {
+          const { id } = this.props.match.params;
+          this.props.fetchQuestionEntry(id);
+        })
+        .catch(err => console.log(err));
+    }
+  };
+
+  /* eslint no-nested-ternary: 0 */
   render() {
     const {
-      title, qBody, qGood, qView, qReward, qTime, qID, replies,
+      username,
+      title,
+      qBody,
+      qGood,
+      qView,
+      qReward,
+      qTime,
+      qID,
+      replies,
+      answers,
     } = this.props.question;
-    const { first} = this.state;
+    console.log(this.props.question);
+    const { first } = this.state;
     return (
       <div>
         {this.props.loading ? (
@@ -90,19 +147,53 @@ class QuestionEntryContainer extends Component {
         ) : first ? (
           <h1>Loading...</h1>
         ) : (
-          <QuestionEntry
-            title={title}
-            qID={qID}
-            qBody={qBody}
-            qGood={qGood}
-            qView={qView}
-            qReward={qReward}
-            qTime={qTime}
-            replies={replies}
-            raiseLikeCount={this.raiseLikeCount}
-            postQuestionReply={this.postQuestionReply}
-            postAnswerReply={this.postAnswerReply}
-          />
+          <div className="QuestionEntryContainer">
+            <QuestionEntry
+              username={username}
+              title={title}
+              qID={qID}
+              qBody={qBody}
+              qGood={qGood}
+              qView={qView}
+              qReward={qReward}
+              qTime={qTime}
+              replies={replies}
+              answers={answers}
+              raiseLikeCount={this.raiseLikeCount}
+              postQuestionReply={this.postQuestionReply}
+              postAnswerReply={this.postAnswerReply}
+            />
+            <div id="markdown">
+              <h1> add an answer </h1>
+              <div className="mark_down_box">
+                <div className="mark_down_input">
+                  <h2>입력창</h2>
+                  <textarea
+                    className="mark_down_input_item"
+                    placeholder="답변을 입력 하세요"
+                    name="content"
+                    onChange={e => this.changeValue(e)}
+                    id="markdownvalue"
+                    cols="70"
+                    rows="30"
+                  />
+                </div>
+                <div className="mark_down_view">
+                  <h2>미리보기</h2>
+                  <ReactMarkDown className="mark_down_view_item" source={this.state.src} />
+                </div>
+              </div>
+
+              <div className="mark_down_btn">
+                <button
+                  onClick={() => this.postAnswer()}
+                  className="btn btn-primary mark_down_btn_item"
+                >
+                  답변하기
+                </button>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     );
@@ -117,46 +208,3 @@ const mapStateToProps = state => ({
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
 export default connect(mapStateToProps, { fetchQuestionEntry })(QuestionEntryContainer);
-
-// return (
-//   <div>
-//     {this.props.loading ? (
-//       <h1>Loading...</h1>
-//     ) : first ? (
-//       (<h1>Loading...</h1>, this.setState({ first: false }))
-//     ) : (
-//       <QuestionEntry
-//         title={title}
-//         qBody={qBody}
-//         qGood={qGood}
-//         qView={qView}
-//         qReward={qReward}
-//         qTime={qTime}
-//         raiseLikeCount={this.raiseLikeCount}
-//       />
-//     )}
-//   </div>
-// );
-
-// return (
-//   <div>
-//     {this.props.loading ? (
-//       <h1>Loading...</h1>
-//     ) : (
-//       (console.log('check : ', this.props.question),
-//       (
-//         <div>
-//           <QuestionEntry
-//             title={title}
-//             qBody={qBody}
-//             qGood={qGood}
-//             qView={qView}
-//             qReward={qReward}
-//             qTime={qTime}
-//             raiseLikeCount={this.raiseLikeCount}
-//           />
-//         </div>
-//       ))
-//     )}
-//   </div>
-// );
