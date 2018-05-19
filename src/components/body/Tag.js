@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input, Grid, Segment } from 'semantic-ui-react';
 import TagShowcase from '../showcases/TagShowcase';
-import Markdown from './markdownex';
 
 const Tag = () => (
   <div className="tagContainer">

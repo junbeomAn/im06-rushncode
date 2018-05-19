@@ -33,8 +33,8 @@ class QuestionEntryContainer extends Component {
     data.body = document.getElementsByClassName('questionReplyBody')[0].value;
     axios
       .post('http://localhost:3001/api/question/reply/', data, config)
-      .then((message) => {
-        alert(message);
+      .then((res) => {
+        // console.log(res.data);
         this.props.fetchQuestionEntry(id);
       })
       .catch((err) => {

@@ -32,7 +32,7 @@ class Facebook extends Component {
           this.props.history.push('/');
         } else {
           alert(res.data.message);
-          this.props.history.push('/auth');
+          this.props.history.push('/auth/signin');
         }
       })
       .catch(err => alert(err));

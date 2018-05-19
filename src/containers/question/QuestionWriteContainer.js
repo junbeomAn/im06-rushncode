@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import ReactMarkDown from 'react-markdown';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
+
+import '../../styles/css/QuestionWrite.css';
 
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       options: [],
+      target: null,
+      src: '',
     };
   }
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
+
+ 
 
   // 태그 선택 관련
   onTagChange = (e) => {
@@ -46,6 +53,13 @@ class QuestionWriteContainer extends Component {
     this.setState({ options });
   };
 
+  changeValue = (e) => {
+    e.preventDefault();
+    this.setState({
+      src: e.target.value,
+    });
+  }
+
   // 작성 글 제출
   submit = () => {
     const config = {
@@ -67,7 +81,7 @@ class QuestionWriteContainer extends Component {
     // 금액 담기
     data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
     // 내용 담기
-    data.body = '마크다운 자료 들어가야 함';
+    data.body = this.state.src;
     axios
       .post(writingUrl, data, config)
       .then((res) => {
@@ -78,11 +92,15 @@ class QuestionWriteContainer extends Component {
 
   render() {
     const { tags } = this.props;
+    console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
-        <div>마크다운 들어갈 자리</div>
+        <div id="markdown">
+          <textarea className="input_mark_down" placeholder="hello" name="content" onChange={e => this.changeValue(e)} id="markdownvalue" cols="70" rows="30" />
+          <ReactMarkDown className="mark_down_view" source={this.state.src} />
+        </div>
         <button
           onClick={() => this.submit()}
           className="btn btn-primary authSubmitBtn QuestionWriteButton"
