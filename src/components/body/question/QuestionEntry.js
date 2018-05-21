@@ -29,6 +29,7 @@ const QuestionEntry = ({
   postAnswerReply,
 }) => {
   console.log('타이틀 : ', qBody.replace(/(?:\r↵|\r|↵)/g, '\n'));
+  answers = answers || [];
   return (
     <div>
       <QuestionEntryShowcase />

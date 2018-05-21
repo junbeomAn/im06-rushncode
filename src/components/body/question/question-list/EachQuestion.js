@@ -5,7 +5,7 @@ import { ViewCount, AnswerCount, Reward } from '../question-entry';
 
 const EachQuestion = ({ questions }) => (
   <div>
-    {questions.map(item => (
+    {questions.map(item => (      
       <div className="questionPost" key={item.id}>
         <div className="first">
           <div className="firstItem">

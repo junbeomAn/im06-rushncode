@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { Prompt } from 'react-router';
 import ReactMarkDown from 'react-markdown';
+
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import { fetchQuestionTag } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
@@ -22,6 +24,7 @@ class QuestionWriteContainer extends Component {
     await this.props.fetchQuestionTag();
   }
 
+  
   // 태그 선택 관련
   onTagChange = (e) => {
     // current array of options
@@ -92,6 +95,7 @@ class QuestionWriteContainer extends Component {
     // console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
+        <Prompt when={this.state.src !== '' && this.state.options.length !== 0} message="작성 중인 글이 있습니다. 나가시겠습니까?" />
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
         <div id="markdown">
@@ -132,3 +136,4 @@ const mapStateToProps = state => ({
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
 export default connect(mapStateToProps, { fetchQuestionTag })(QuestionWriteContainer);
+
