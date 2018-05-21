@@ -1,16 +1,30 @@
 import React from 'react';
 import moment from 'moment';
+import { TenaryOption } from '../question-entry';
 
-const Reply = ({ username, body, time }) => (
+const Reply = ({ userID, username, body, time }) => (
   <div className="QuestionEntryAnswerSecondReplyEntry QuestionEntryMainSecondReplyEntry">
-    <span>{body}</span>
-    <span className="timeStampReply">
-      <span className="timeStampReplyName">{username}</span>
-      <span className="timeStampReplyDot">&middot;</span>
-      {moment(time)
-        .startOf()
-        .fromNow()}
-    </span>
+    <div className="reply-top">
+      <div className="reply-top-left">
+        <a
+          className="timeStampReplyName"
+          href={`/mypage/${username}`}
+          onClick={() => console.log('username')}
+        >
+          {username}
+        </a>
+      </div>
+      <div className="reply-top-right write-info">
+        {moment(time)
+          .startOf()
+          .fromNow()}
+        <TenaryOption />
+      </div>
+    </div>
+
+    <div className="reply-down">
+      <span>{body}</span>
+    </div>
   </div>
 );
 

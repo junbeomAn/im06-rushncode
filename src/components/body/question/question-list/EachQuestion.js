@@ -15,7 +15,7 @@ const EachQuestion = ({ questions }) => (
             <LikeCount count={item.good} />
           </div>
           <div className="firstItem">
-            <AnswerCount count={0} />
+            <AnswerCount count={item.countAnswers} />
           </div>
           <div className="firstItem">
             <Reward reward={item.reward} />

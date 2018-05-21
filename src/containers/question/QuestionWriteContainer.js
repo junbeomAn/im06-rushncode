@@ -94,6 +94,7 @@ class QuestionWriteContainer extends Component {
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
+        <div className="write-title">내용</div>
         <div id="markdown">
           <div className="mark_down_box">
             <div className="mark_down_input">

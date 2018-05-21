@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactMarkDown from 'react-markdown';
+import moment from 'moment';
 import '../../../styles/css/QuestionEntry.css';
 import {
   QuestionAnswer,
   LikeCount,
   ViewCount,
   Reward,
-  UpdateTime,
   Writer,
   Reply,
+  TenaryOption,
 } from './question-entry';
 import { Tags } from '../question/question-list';
 import QuestionEntryShowcase from '../../showcases/QuestionEntryShowcase';
@@ -45,6 +46,12 @@ const QuestionEntry = ({
         </div>
         <div className="QuestionEntryMainSecond">
           <ReactMarkDown source={qBody.replace(/(?:\r↵|\r|↵)/g, '\n')} />
+          <div className="write-info">
+            {moment(qTime)
+              .startOf()
+              .fromNow()}에 작성 되었습니다
+            <TenaryOption />
+          </div>
           <div className="QuestionEntryMainSecondReplyTitle">댓글</div>
           <div className="QuestionEntryMainSecondReply">
             {replies.map((reply, index) => (
@@ -73,9 +80,6 @@ const QuestionEntry = ({
           </div>
           <div className="QuestionEntryMainThirdItemBox">
             <Reward reward={qReward} />
-          </div>
-          <div className="QuestionEntryMainThirdItemBox">
-            <UpdateTime time={qTime} />
           </div>
           <div className="QuestionEntryMainThirdItemBox">
             <Writer username={username} />

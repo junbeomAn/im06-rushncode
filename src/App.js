@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { Footer, Home, Tag, Rank, Job, NoMatch, Clause, Information, HelpDesk } from './components';
-import { HeaderContainer, Question, Auth } from './containers';
+import { HeaderContainer, Question, Auth, MyPage } from './containers';
 import './styles/styleIndex';
 
 class App extends Component {
@@ -22,6 +22,7 @@ class App extends Component {
             <div className="middle">
               <Switch>
                 <Route exact path="/" component={Home} />
+                <Route path="/mypage/:username" component={MyPage} />
                 <Route path="/question" component={Question} />
                 <Route path="/tag" component={Tag} />
                 <Route path="/rank" component={Rank} />
