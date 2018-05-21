@@ -8,22 +8,51 @@
   width: 80%;
   margin: auto; }
 
-.timeStamp {
+.write-info {
   font-size: 0.9rem;
   color: #777;
   text-align: right; }
+  .write-info .ternary-option-middot {
+    margin: 0px 5px; }
+  .write-info .modify,
+  .write-info .delete {
+    cursor: pointer; }
+    .write-info .modify:hover,
+    .write-info .delete:hover {
+      color: crimson; }
 
-.timeStampReplyDot {
-  margin: 0px 5px;
-  font-size: 0.9rem;
-  color: #777; }
+.reply-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3px; }
+  .reply-top .reply-top-left .timeStampReplyDot,
+  .reply-top .reply-top-left .timeStampReplyTime {
+    margin-left: px;
+    font-size: 0.9rem;
+    color: #777; }
+  .reply-top .reply-top-right .modify,
+  .reply-top .reply-top-right .delete {
+    font-size: 0.9rem;
+    color: #777;
+    cursor: pointer; }
+    .reply-top .reply-top-right .modify:hover,
+    .reply-top .reply-top-right .delete:hover {
+      color: crimson; }
 
 .timeStampReplyName {
-  margin-left: 10px; }
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: right;
+  cursor: pointer; }
 
 .timeStampReply {
   margin-left: 3px;
   font-size: 0.9rem;
   color: #777; }
+
+.likeBtn {
+  cursor: pointer; }
 
 /*# sourceMappingURL=App.css.map */

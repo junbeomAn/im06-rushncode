@@ -1,3 +1,5 @@
+@import "color";
+
 .QuestionWriteContainer {
   width: 100%;
   height: auto;
@@ -6,26 +8,28 @@
   // padding: 20px 7px;
   // margin: 0 auto;
   // margin-top: 55px;
-  background: #fff;
+  background: ghostwhite;
 
   .QuestionWriteTag {
-    width: 100%;
-    height: 160px;
+    width: 90%;
+    height: auto;
     margin: 0px auto;
-    
+    margin-bottom: 30px;
+    background: white;
+
     .QuestionWriteTagTitle {
       align-items: center;
       justify-content: center;
-      font-size: 18px;
-      background: lightcoral;
+      font-size: 1.2rem;
+      background: $primaryBlue;
+      opacity: 0.8;
       color: ghostwhite;
     }
     .QuestionWriteTagInputBox {
       padding: 10px 15px;
       margin: 0px auto;
-      background: #f4f4f4;
       border: solid 1px lightgrey;
-      font-size: 15px;
+      font-size: 1rem;
       .QuestionWriteTagInput {
         width: 100px;
         margin-left: 40px;
@@ -34,25 +38,29 @@
   }
 
   .QuestionWriteInput {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
-    .QuestionWriteInputTitle {
-      font-size: 18px;
-      width: 60px;
-      background: lightcoral;
-      color: ghostwhite;
+    .inputTitle{
+      font-size: 1.1rem;
     }
   }
 
   .QuestionWriteMoney {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
-    .QuestionWriteMoneyTitle {
-      font-size: 18px;
-      width: 60px;
-      background: lightcoral;
-      color: ghostwhite;
+    .inputReward {
+      font-size: 1.1rem;
     }
   }
+}
+
+.write-title {
+  // border: solid 1px red;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }

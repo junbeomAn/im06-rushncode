@@ -81,7 +81,7 @@
           margin-top: 5px;
           border-bottom: 1px solid $divider;
           overflow: hidden;
-          font-size: 1.05rem;
+          font-size: 1rem;
         }
       }
       .QuestionEntryAnswerSecondReplyAdd {
@@ -162,7 +162,9 @@
             margin-top: 5px;
             border-bottom: 1px solid $divider;
             overflow: hidden;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
           }
         }
         .QuestionEntryAnswerSecondReplyAdd {

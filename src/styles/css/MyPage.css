@@ -1,0 +1,98 @@
+.mypage-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #0b1b33;
+  opacity: 0.8;
+  padding: 200px 50px 0px 50px; }
+  .mypage-container .mypage-inner-container {
+    padding: 20px 30px;
+    background: ghostwhite;
+    height: auto;
+    display: flex;
+    flex-direction: column; }
+    .mypage-container .mypage-inner-container .first {
+      border-bottom: solid 2px #e4e6e8;
+      height: 250px;
+      padding: 10px 20px;
+      display: flex; }
+      .mypage-container .mypage-inner-container .first .first-image {
+        border: solid 1px blue;
+        width: 250px; }
+      .mypage-container .mypage-inner-container .first .first-userinfo {
+        margin-left: 20px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .username {
+          font-size: 4rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .email {
+          padding-left: 20px;
+          margin-top: 30px;
+          font-size: 1.5rem;
+          letter-spacing: 1.1px; }
+    .mypage-container .mypage-inner-container .second {
+      border-bottom: solid 2px #e4e6e8;
+      height: 250px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between; }
+      .mypage-container .mypage-inner-container .second .second-one {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        box-shadow: 2px 1px 2px 1px silver;
+        border-top: solid 4px #5b7e8c; }
+        .mypage-container .mypage-inner-container .second .second-one .second-one-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .second .second-one .second-one-score {
+          margin-bottom: 15px;
+          font-weight: 900;
+          font-size: 1.8rem;
+          letter-spacing: 1.1px; }
+      .mypage-container .mypage-inner-container .second .second-two {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        box-shadow: 2px 1px 2px 1px silver;
+        border-top: solid 4px #5b7e8c; }
+        .mypage-container .mypage-inner-container .second .second-two .second-two-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .second .second-two .second-two-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px; }
+          .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner {
+            width: 100px;
+            text-align: center; }
+            .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px; }
+              .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner .count .blue {
+                color: blue;
+                opacity: 0.7; }
+              .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner .count .red {
+                color: red;
+                opacity: 0.7; }
+      .mypage-container .mypage-inner-container .second .second-three {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        box-shadow: 2px 1px 2px 1px silver;
+        border-top: solid 4px #5b7e8c; }
+        .mypage-container .mypage-inner-container .second .second-three .second-three-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
+    .mypage-container .mypage-inner-container .third {
+      height: 250px;
+      padding: 10px 20px; }
+
+/*# sourceMappingURL=MyPage.css.map */

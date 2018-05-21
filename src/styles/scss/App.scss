@@ -1,5 +1,4 @@
 @import "color";
-
 .App {
   min-height: 100vh;
   display: flex;
@@ -12,21 +11,65 @@
   margin: auto;
 }
 
-.timeStamp {
+.write-info {
   font-size: 0.9rem;
   color: $greyfont;
   text-align: right;
+  .ternary-option-middot {
+    margin: 0px 5px;
+  }
+  .modify,
+  .delete {
+    cursor: pointer;
+    &:hover {
+      color: crimson;
+    }
+  }
 }
-.timeStampReplyDot {
-  margin: 0px 5px;
-  font-size: 0.9rem;
-  color: $greyfont;
+
+.reply-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3px;
+  .reply-top-left {
+    .timeStampReplyDot,
+    .timeStampReplyTime {
+      margin-left: px;
+      font-size: 0.9rem;
+      color: $greyfont;
+    }
+  }
+  .reply-top-right {
+    .modify,
+    .delete {
+      font-size: 0.9rem;
+      color: $greyfont;
+      cursor: pointer;
+      &:hover {
+        color: crimson;
+      }
+    }
+  }
 }
-.timeStampReplyName{
-  margin-left: 10px;
+
+.timeStamp {
 }
+
+.timeStampReplyName {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: right;
+  cursor: pointer;
+}
+
 .timeStampReply {
   margin-left: 3px;
   font-size: 0.9rem;
   color: $greyfont;
+}
+
+.likeBtn {
+  cursor: pointer;
 }

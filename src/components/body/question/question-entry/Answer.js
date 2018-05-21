@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Reply } from '../question-entry';
+import { Reply, TenaryOption } from '../question-entry';
 
 const Answer = ({
   aID, body, time, chAnswers, postAnswerReply,
@@ -8,16 +8,17 @@ const Answer = ({
   <div className="QuestionEntryAnswerSecondAnswerBox">
     <div className="QuestionEntryAnswerSecondAnswerEntry">
       {body}
-      <div className="timeStamp">
-        <br />
-        -{' '}
+      <div className="write-info">
         {moment(time)
           .startOf()
-          .fromNow()}에 작성 되었습니다 -
+          .fromNow()}에 작성 되었습니다
+        <TenaryOption />
       </div>
       <div className="QuestionEntryAnswerSecondReplyTitle">댓글</div>
       <div className="QuestionEntryAnswerSecondReply">
-        {chAnswers.map(reply => <Reply username={reply.username} body={reply.cBody} time={reply.cTime} key={reply.cID} />)}
+        {chAnswers.map(reply => (
+          <Reply username={reply.username} body={reply.cBody} time={reply.cTime} key={reply.cID} />
+        ))}
       </div>
       <div className="QuestionEntryAnswerSecondReplyAdd">
         <div className="form-group QuestionEntryAnswerSecondReplyAddInput">
