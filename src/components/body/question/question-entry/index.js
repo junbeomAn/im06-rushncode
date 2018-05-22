@@ -9,6 +9,7 @@ import Reward from './Reward';
 import UpdateTime from './UpdateTime';
 import Writer from './Writer';
 import QuestionAnswer from './QuestionAnswer';
+import TenaryOption from './TenaryOption';
 
 export {
   Showcase,
@@ -22,4 +23,5 @@ export {
   UpdateTime,
   Writer,
   QuestionAnswer,
+  TenaryOption,
 };

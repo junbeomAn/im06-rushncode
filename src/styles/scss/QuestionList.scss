@@ -1,8 +1,15 @@
 @import "color";
 
-.QuestContainer {
+.questContainer {
   width: 100%;
   background: ghostwhite;
+  .search-form{
+    margin-top: 80px;
+    .input-form {
+      width: 60%;
+    }
+  }
+  
 }
 .questionMain {
   width: 100%;

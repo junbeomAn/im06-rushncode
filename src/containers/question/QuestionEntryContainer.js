@@ -91,8 +91,8 @@ class QuestionEntryContainer extends Component {
     if (!data.body) return alert('내용을 입력해주세요');
     axios
       .post('http://localhost:3001/api/question/chanswer/', data, config)
-      .then((message) => {
-        alert(message);
+      .then((res) => {
+        console.log(res.data);
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })

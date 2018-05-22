@@ -1,10 +1,54 @@
+// import React, { Component } from 'react';
+// import axios from 'axios';
+
+
+// class Search extends React.Component {
+//   state = {
+//     data: '',
+//   };
+
+//   componentWillMount() {
+//     const keyword = window.location.href.split('?q=')[1];
+//     console.log(keyword);
+//     // const searchUrl = 'http://localhost:3001/api/sort/search';
+//     // const data = {
+//     //   keyword: keyword,
+//     // }
+//     // axios
+//     //   .post(searchUrl, data)
+//     //   .then(res => console.log(res))
+//     //   .catch(err => console.log(err));
+//     axios
+//       .get('http://localhost:3001/api/question/getlist/1')
+//       .then(res => this.setState({
+//         data: res.data.data,
+//       }))
+//       .catch(err => console.log(err));
+//   }
+
+//   render() {
+//     const { data } = this.state;
+//     console.log(data);
+//     return (
+//       <div>
+//         {typeof data !== 'string' && data.map(item => <span>{item.title}</span>)}
+//       </div>
+//     );
+//   }
+// }
+
+// export default Search;
+
+
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
-import QuestionList from '../../components/body/question/QuestionList';
+import SearchQuestionList from '../../components/body/Search/SearchQuestionList';
 import { fetchQuestionList } from '../../redux/actions/questionAction';
 
-class QuestionListContainer extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +56,7 @@ class QuestionListContainer extends Component {
       currentPage: 1,
       start: 0,
       end: 10,
+      data: '',
     };
     // this.props.fetchQuestionList.bind(this);
   }
@@ -22,6 +67,20 @@ class QuestionListContainer extends Component {
 
   componentWillReceiveProps() {
     if (!this.props.loading) this.setState({ first: false });
+  }
+
+  componentWillMount() {
+    const keyword = window.location.href.split('?q=')[1];
+    console.log(keyword);
+    const searchUrl = 'http://localhost:3001/api/sort/search';
+    const data = {
+      data: keyword,
+    };
+    axios
+      .post(searchUrl, data)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+    this.updateCurrentPage(1);
   }
 
   updateStartEndPage = (start, end) => {
@@ -62,7 +121,7 @@ class QuestionListContainer extends Component {
         ) : first ? (
           <h1>Loading...</h1>
         ) : (
-          <QuestionList
+          <SearchQuestionList
             posts={questions}
             makeAsync={this.makeAsync}
             updateStartEndPage={this.updateStartEndPage}
@@ -84,4 +143,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionList })(QuestionListContainer);
+export default connect(mapStateToProps, { fetchQuestionList })(Search);

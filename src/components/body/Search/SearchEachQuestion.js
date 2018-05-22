@@ -1,16 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Tags, UpdateTime, LikeCount } from '../question-list';
-import { ViewCount, AnswerCount, Reward } from '../question-entry';
+import { Tags, UpdateTime, LikeCount } from './../question/question-list';
+import {AnswerCount, Reward } from './../question/question-entry';
 
-const EachQuestion = ({ questions }) => (
+const SearchEachQuestion = ({ questions }) => (
   <div>
     {questions.map(item => (      
       <div className="questionPost" key={item.id}>
         <div className="first">
-          <div className="firstItem">
-            <ViewCount count={item.view} />
-          </div>
           <div className="firstItem">
             <LikeCount count={item.good} />
           </div>
@@ -36,4 +33,4 @@ const EachQuestion = ({ questions }) => (
   </div>
 );
 
-export default EachQuestion;
+export default SearchEachQuestion;

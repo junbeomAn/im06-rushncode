@@ -3,6 +3,7 @@ import React from 'react';
 const QuestionWrite = ({ tags, onTagChange, onTitleChange, onRewardChange }) => (
   <div>
     {/* 태그 */}
+    <div className="write-title">태그</div>
     <div className="input-group-prepend input-group-lg QuestionWriteTag">
       <div>
         <div className="QuestionWriteTagTitle">
@@ -13,7 +14,11 @@ const QuestionWrite = ({ tags, onTagChange, onTitleChange, onRewardChange }) => 
         <div className="form-check form-check-inline QuestionWriteTagInputBox">
           <form>
             {tags.map(item => (
-              <label className="form-check-label QuestionWriteTagInput" htmlFor={item.tag} key={item.id}>
+              <label
+                className="form-check-label QuestionWriteTagInput"
+                htmlFor={item.tag}
+                key={item.id}
+              >
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -29,10 +34,8 @@ const QuestionWrite = ({ tags, onTagChange, onTitleChange, onRewardChange }) => 
     </div>
 
     {/* 입력 폼 */}
+    <div className="write-title">제목</div>
     <div className="input-group-prepend input-group-lg QuestionWriteInput">
-      <span className="input-group-text QuestionWriteInputTitle" id="basic-addon1">
-        제목
-      </span>
       <input
         type="text"
         className="form-control inputTitle"
@@ -41,10 +44,8 @@ const QuestionWrite = ({ tags, onTagChange, onTitleChange, onRewardChange }) => 
         onChange={event => onTitleChange(event)}
       />
     </div>
+    <div className="write-title">금액</div>
     <div className="input-group-prepend input-group-lg QuestionWriteMoney">
-      <span className="input-group-text QuestionWriteMoneyTitle" id="basic-addon1">
-        금액
-      </span>
       <input
         type="text"
         className="form-control inputReward"

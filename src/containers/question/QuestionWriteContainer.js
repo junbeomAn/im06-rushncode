@@ -118,6 +118,7 @@ class QuestionWriteContainer extends Component {
         <Prompt when={pageLeaveCondition} message="작성 중인 글이 있습니다. 나가시겠습니까?" />
         <QuestionWriteShowcase />
         <QuestionWrite tags={tags} onTagChange={this.onTagChange} onTitleChange={this.changeTitleValue} onRewardChange={this.changeRewardValue} />
+        <div className="write-title">내용</div>
         <div id="markdown">
           <div className="mark_down_box">
             <div className="mark_down_input">
