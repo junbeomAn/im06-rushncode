@@ -14,6 +14,8 @@ class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: '',
+      reward: '',
       options: [],
       target: null,
       src: '',
@@ -54,11 +56,28 @@ class QuestionWriteContainer extends Component {
     this.setState({ options });
   };
 
+  changeTitleValue = (e) => {
+    e.preventDefault();
+    this.setState({
+      title: e.target.value,
+    });
+    console.log(e.target.value);
+  }
+
+  changeRewardValue = (e) => {
+    e.preventDefault();
+    this.setState({
+      reward: e.target.reward,
+    });
+    console.log(e.target.value);
+  }
+
   changeValue = (e) => {
     e.preventDefault();
     this.setState({
       src: e.target.value,
     });
+    console.log(e.target.value);
   };
 
   // 작성 글 제출
@@ -92,12 +111,13 @@ class QuestionWriteContainer extends Component {
   };
   render() {
     const { tags } = this.props;
+    const pageLeaveCondition = this.state.src !== '' || this.state.options.length !== 0 || this.state.title !== '' || this.state.reward !== '';
     // console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
-        <Prompt when={this.state.src !== '' && this.state.options.length !== 0} message="작성 중인 글이 있습니다. 나가시겠습니까?" />
+        <Prompt when={pageLeaveCondition} message="작성 중인 글이 있습니다. 나가시겠습니까?" />
         <QuestionWriteShowcase />
-        <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
+        <QuestionWrite tags={tags} onTagChange={this.onTagChange} onTitleChange={this.changeTitleValue} onRewardChange={this.changeRewardValue} />
         <div id="markdown">
           <div className="mark_down_box">
             <div className="mark_down_input">

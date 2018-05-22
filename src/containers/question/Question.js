@@ -21,11 +21,7 @@ class Question extends Component {
     console.log(this.props.isLoggedIn);
     return (
       <Switch>
-        <Route
-          path={`${match.path}/write`}
-          render={(props) => {
-            return this.props.isLoggedIn ? <QuestionWriteContainer {...props} /> : <Redirect to="/auth/signin" />;
-          }} />
+        <Route component={QuestionWriteContainer} path={`${match.path}/write`} />
         <Route component={QuestionEntryContainer} path={`${match.path}/:id`} />
         <Route component={QuestionListContainer} path={`${match.path}/`} />
       </Switch>

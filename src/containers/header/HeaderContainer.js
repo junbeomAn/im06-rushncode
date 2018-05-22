@@ -14,6 +14,10 @@ class Headers extends Component {
     this.props.Verify();
   }
 
+  search = () => {
+
+  }
+
   render() {
     // this.props.Verify();
     return (
