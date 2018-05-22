@@ -32,15 +32,3 @@ export const fetchQuestionTag = () => (dispatch) => {
     .then(res => dispatch({ type: FETCH_QUESTION_TAG, payload: res.data.data }));
 };
 
-// export const fetchQuestionList = page => (dispatch) => {
-//   if (!page) page = 1;
-// axios
-//   .get(`http://localhost:3001/api/question/getlist/${page}`)
-//     .then(res => dispatch({ type: FETCH_QUESTION_LIST, payload: res.data.data }));
-// };
-
-// export const fetchQuestionEntry = id => (dispatch) => {
-//   axios
-//     .get(`http://localhost:3001/api/question/displayq/${id}`)
-//     .then(res => dispatch({ type: FETCH_QUESTION_ENTRY, payload: res.data.data }));
-// };

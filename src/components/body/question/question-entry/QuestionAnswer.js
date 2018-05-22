@@ -6,13 +6,20 @@ import { Writer, LikeCountAnswer, Answer } from '../question-entry';
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 const QuestionAnswer = ({
   aID,
+  myID,
+  questionID,
+  userID,
   username,
+  picked,
   count,
   body,
   time,
   chAnswers,
+  pickAnswer,
   raiseLikeCount,
   postAnswerReply,
+  deleteAnswer,
+  deleteChAnswer,
 }) => (
   <div className="QuestionEntryAnswerEntry">
     <div className="QuestionEntryAnswerFirst">
@@ -22,31 +29,52 @@ const QuestionAnswer = ({
     </div>
     <div className="QuestionEntryAnswerSecond">
       <Answer
+        userID={userID}
         body={body}
+        myID={myID}
         time={time}
         postAnswerReply={postAnswerReply}
         aID={aID}
         chAnswers={chAnswers}
+        deleteAnswer={deleteAnswer}
+        deleteChAnswer={deleteChAnswer}
       />
     </div>
     <div className="QuestionEntryAnswerThird">
       <div className="QuestionEntryAnswerThirdCheck">
-        <div className="ItemBox">
-          <div className="ItemBoxImage">
-            <div
-              className="likeBtn"
-              onClick={() => {
-                window.confirm('선택하시겠습니까?');
-              }}
-            >
-              <Icon name="check" size="big" />
+        {picked ? (
+          <div className="ItemBox picked">
+            <div className="ItemBoxImage">
+              <div className="picked-item">
+                <Icon name="check" size="big" />
+              </div>
+            </div>
+            <div className="ItemBoxNum picked-item">
+              <span>채택됨</span>
             </div>
           </div>
-          <div className="ItemBoxNum">채택</div>
-        </div>
+        ) : (
+          <div className="ItemBox">
+            {myID !== questionID ? null : (
+              <div className="ItemBoxImage">
+                <div
+                  className="likeBtn"
+                  onClick={() => {
+                    if (window.confirm('선택하시겠습니까?')) {
+                      pickAnswer(aID);
+                    }
+                  }}
+                >
+                  <Icon name="check" size="big" />
+                  <div className="ItemBoxNum">채택</div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
       <div className="QuestionEntryAnswerThirdReward">
-        <Writer username={username} />
+        <Writer username={username} userID={userID} />
       </div>
     </div>
   </div>

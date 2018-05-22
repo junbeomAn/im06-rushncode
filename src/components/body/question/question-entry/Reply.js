@@ -1,16 +1,14 @@
 import React from 'react';
 import moment from 'moment';
-import { TenaryOption } from '../question-entry';
+import { TenaryOptionTwo } from '../question-entry';
 
-const Reply = ({ userID, username, body, time }) => (
+const Reply = ({
+  myID, userID, cID, rID, username, body, time, deleteChAnswer, deleteReply,
+}) => (
   <div className="QuestionEntryAnswerSecondReplyEntry QuestionEntryMainSecondReplyEntry">
     <div className="reply-top">
       <div className="reply-top-left">
-        <a
-          className="timeStampReplyName"
-          href={`/mypage/${username}`}
-          onClick={() => console.log('username')}
-        >
+        <a className="timeStampReplyName" href={`/mypage/${userID}`}>
           {username}
         </a>
       </div>
@@ -18,7 +16,16 @@ const Reply = ({ userID, username, body, time }) => (
         {moment(time)
           .startOf()
           .fromNow()}
-        <TenaryOption />
+        <span>
+          {myID === userID ? (
+            <TenaryOptionTwo
+              cID={cID}
+              rID={rID}
+              deleteChAnswer={deleteChAnswer}
+              deleteReply={deleteReply}
+            />
+          ) : null}
+        </span>
       </div>
     </div>
 

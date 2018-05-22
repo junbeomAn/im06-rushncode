@@ -54,7 +54,7 @@ class QuestionListContainer extends Component {
     const {
       currentPage, start, end, first,
     } = this.state;
-    console.log(loading);
+    console.log(questions);
     return (
       <div>
         {loading ? (

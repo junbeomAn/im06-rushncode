@@ -13,8 +13,10 @@ class QuestionWriteContainer extends Component {
     super(props);
     this.state = {
       options: [],
-      target: null,
+      // target: null,
       src: '',
+      title: '',
+      reward: '',
     };
   }
 
@@ -51,7 +53,22 @@ class QuestionWriteContainer extends Component {
     this.setState({ options });
   };
 
-  changeValue = (e) => {
+  // 타이틀
+  onTitleChange = (e) => {
+    this.setState({
+      title: e.target.value,
+    });
+  };
+
+  // 금액
+  onRewardChange = (e) => {
+    this.setState({
+      reward: Number(e.target.value),
+    });
+  };
+
+  // 내용
+  changeBody = (e) => {
     e.preventDefault();
     this.setState({
       src: e.target.value,
@@ -60,6 +77,9 @@ class QuestionWriteContainer extends Component {
 
   // 작성 글 제출
   submit = () => {
+    const {
+      options, title, reward, src,
+    } = this.state;
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
@@ -71,15 +91,17 @@ class QuestionWriteContainer extends Component {
     // 글 작성 정보 모두 담는 그릇 설정
     const data = {};
     // 태그 정보 담기 및  태그 선택 안할 시 예외 처리
-    if (this.state.options.length === 0) return alert('태그를 선택해 주세요');
-    data.tags = this.state.options;
+    if (options.length === 0) return alert('태그를 선택해 주세요');
+    data.tags = options;
     // 제목 담기 및 제목 없을 시 예외 처리
-    data.title = document.getElementsByClassName('inputTitle')[0].value;
+    data.title = title;
     if (data.title.length === 0) return alert('제목을 입력해 주세요');
     // 금액 담기
-    data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
+    data.reward = reward;
+    if (data.reward.length === 0) return alert('금액을 입력해 주세요');
     // 내용 담기
-    data.body = this.state.src;
+    data.body = src;
+    if (data.body.length === 0) return alert('내용을 입력해 주세요');
     axios
       .post(writingUrl, data, config)
       .then((res) => {
@@ -89,11 +111,18 @@ class QuestionWriteContainer extends Component {
   };
   render() {
     const { tags } = this.props;
-    // console.log('src : ', this.state.src);
+    const { title, reward } = this.state;
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
-        <QuestionWrite tags={tags} onTagChange={this.onTagChange} />
+        <QuestionWrite
+          tags={tags}
+          title={title}
+          reward={reward}
+          onTagChange={this.onTagChange}
+          onTitleChange={this.onTitleChange}
+          onRewardChange={this.onRewardChange}
+        />
         <div className="write-title">내용</div>
         <div id="markdown">
           <div className="mark_down_box">
@@ -103,7 +132,7 @@ class QuestionWriteContainer extends Component {
                 className="mark_down_input_item"
                 placeholder="질문을 입력 하세요"
                 name="content"
-                onChange={e => this.changeValue(e)}
+                onChange={e => this.changeBody(e)}
                 id="markdownvalue"
                 cols="70"
                 rows="30"
