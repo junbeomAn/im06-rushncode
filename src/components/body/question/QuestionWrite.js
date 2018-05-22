@@ -1,7 +1,7 @@
 import React from 'react';
 
 const QuestionWrite = ({
-  tags, title, reward, onTagChange, titleChange, rewardChange, valueChange
+  tags, title, reward, onTagChange, onTitleChange, onRewardChange,
 }) => (
   <div>
     {/* 태그 */}
@@ -44,6 +44,7 @@ const QuestionWrite = ({
         name="title"
         value={title}
         placeholder="제목을 입력하세요"
+        onChange={event => onTitleChange(event)}
       />
     </div>
     <div className="write-title">금액</div>
@@ -54,6 +55,7 @@ const QuestionWrite = ({
         name="reward"
         value={reward}
         placeholder="금액을 입력하세요"
+        onChange={event => onRewardChange(event)}
       />
     </div>
   </div>

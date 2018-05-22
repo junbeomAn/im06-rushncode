@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Prompt } from 'react-router';
 import ReactMarkDown from 'react-markdown';
-
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import {
   fetchQuestionTag,
@@ -17,19 +15,14 @@ import QuestionWrite from '../../components/body/question/QuestionWrite';
 import '../../styles/css/QuestionWrite.css';
 
 class QuestionWriteContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      options: [],
-      target: null,
-    };
-  }
+  state = {
+    options: [],
+  };
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
 
-  
   // 태그 선택 관련
   onTagChange = (e) => {
     // current array of options
@@ -98,12 +91,17 @@ class QuestionWriteContainer extends Component {
     const {
       tags, title, reward, body, onTitleChange, onRewardChange, onBodyChange,
     } = this.props;
-    const pageLeaveCondition = this.state.src !== '' || this.state.options.length !== 0 || this.state.title !== '' || this.state.reward !== '';
-    // console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
-        <QuestionWrite tags={tags} title={title} reward={reward} onTagChange={this.onTagChange} />
+        <QuestionWrite
+          tags={tags}
+          title={title}
+          reward={reward}
+          onTagChange={this.onTagChange}
+          onTitleChange={onTitleChange}
+          onRewardChange={onRewardChange}
+        />
         <div className="write-title">내용</div>
         <div id="markdown">
           <div className="mark_down_box">

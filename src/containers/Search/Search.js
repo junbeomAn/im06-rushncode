@@ -1,49 +1,5 @@
-// import React, { Component } from 'react';
-// import axios from 'axios';
-
-
-// class Search extends React.Component {
-//   state = {
-//     data: '',
-//   };
-
-//   componentWillMount() {
-//     const keyword = window.location.href.split('?q=')[1];
-//     console.log(keyword);
-//     // const searchUrl = 'http://localhost:3001/api/sort/search';
-//     // const data = {
-//     //   keyword: keyword,
-//     // }
-//     // axios
-//     //   .post(searchUrl, data)
-//     //   .then(res => console.log(res))
-//     //   .catch(err => console.log(err));
-//     axios
-//       .get('http://localhost:3001/api/question/getlist/1')
-//       .then(res => this.setState({
-//         data: res.data.data,
-//       }))
-//       .catch(err => console.log(err));
-//   }
-
-//   render() {
-//     const { data } = this.state;
-//     console.log(data);
-//     return (
-//       <div>
-//         {typeof data !== 'string' && data.map(item => <span>{item.title}</span>)}
-//       </div>
-//     );
-//   }
-// }
-
-// export default Search;
-
-
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 import SearchQuestionList from '../../components/body/Search/SearchQuestionList';
 import { getSearchResult } from '../../redux/actions/questionAction';
@@ -69,20 +25,6 @@ class Search extends Component {
     if (!this.props.loading) this.setState({ first: false });
   }
 
-  // componentWillMount() {
-  //   const keyword = window.location.href.split('?q=')[1];
-  //   console.log(keyword);
-  //   const searchUrl = 'http://localhost:3001/api/sort/search';
-  //   const data = {
-  //     data: keyword,
-  //   };
-  //   axios
-  //     .post(searchUrl, data)
-  //     .then(res => console.log(res, '@@@@@@@@@@'))
-  //     .catch(err => console.log(err));
-  
-  // }
-
   updateStartEndPage = (start, end) => {
     this.setState({
       start,
@@ -98,7 +40,9 @@ class Search extends Component {
   };
 
   addClassToCurrentPage = (index) => {
+    console.log(index);
     const element = document.getElementById(String(index));
+    console.log(element);
     element.classList.add('current');
   };
 
@@ -114,7 +58,6 @@ class Search extends Component {
     const {
       currentPage, start, end, first,
     } = this.state;
-    console.log(questions)
     console.log(loading);
     return (
       <div>
@@ -123,6 +66,7 @@ class Search extends Component {
         ) : first ? (
           <h1>Loading...</h1>
         ) : (
+          console.log(questions),
           <SearchQuestionList
             posts={questions}
             makeAsync={this.makeAsync}
