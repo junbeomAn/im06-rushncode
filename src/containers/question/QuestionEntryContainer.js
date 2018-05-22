@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
 import QuestionEntry from '../../components/body/question/QuestionEntry';
-import { fetchQuestionEntry, fetchModifyQuestion } from '../../redux/actions/questionAction';
+import {
+  fetchQuestionEntry,
+  fetchModifyQuestion,
+  fetchModifyAnswer,
+} from '../../redux/actions/questionAction';
 import { Verify } from '../../redux/actions/verifyAction';
 
 class QuestionEntryContainer extends Component {
@@ -264,6 +268,7 @@ class QuestionEntryContainer extends Component {
               deleteChAnswer={this.deleteChAnswer}
               deleteReply={this.deleteReply}
               fetchModifyQuestion={this.props.fetchModifyQuestion}
+              fetchModifyAnswer={this.props.fetchModifyAnswer}
             />
             <div id="markdown">
               <h1> add an answer </h1>
@@ -310,4 +315,9 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionEntry, fetchModifyQuestion, Verify })(QuestionEntryContainer);
+export default connect(mapStateToProps, {
+  fetchQuestionEntry,
+  fetchModifyQuestion,
+  fetchModifyAnswer,
+  Verify,
+})(QuestionEntryContainer);

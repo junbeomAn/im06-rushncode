@@ -20,6 +20,7 @@ const QuestionAnswer = ({
   postAnswerReply,
   deleteAnswer,
   deleteChAnswer,
+  fetchModifyAnswer,
 }) => (
   <div className="QuestionEntryAnswerEntry">
     <div className="QuestionEntryAnswerFirst">
@@ -38,6 +39,7 @@ const QuestionAnswer = ({
         chAnswers={chAnswers}
         deleteAnswer={deleteAnswer}
         deleteChAnswer={deleteChAnswer}
+        fetchModifyAnswer={fetchModifyAnswer}
       />
     </div>
     <div className="QuestionEntryAnswerThird">
