@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import QuestionListContainer from './QuestionListContainer';
 import QuestionEntryContainer from './QuestionEntryContainer';
 import QuestionWriteContainer from './QuestionWriteContainer';
+import QuestionModifyContainer from './QuestionModifyContainer';
 import { Verify } from './../../redux/actions/verifyAction';
 
 class Question extends Component {
@@ -21,6 +22,8 @@ class Question extends Component {
     console.log(this.props.isLoggedIn);
     return (
       <Switch>
+        <Route component={QuestionModifyContainer} path={`${match.path}/modify/:id`} />
+        <Route component={QuestionWriteContainer} path={`${match.path}/write/:id`} />
         <Route component={QuestionWriteContainer} path={`${match.path}/write`} />
         <Route component={QuestionEntryContainer} path={`${match.path}/:id`} />
         <Route component={QuestionListContainer} path={`${match.path}/`} />

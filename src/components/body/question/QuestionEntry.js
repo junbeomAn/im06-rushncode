@@ -37,6 +37,7 @@ const QuestionEntry = ({
   deleteChAnswer,
   deleteReply,
   fetchModifyQuestion,
+  fetchModifyAnswer,
 }) => (
   <div>
     <QuestionEntryShowcase />
@@ -138,6 +139,7 @@ const QuestionEntry = ({
           postAnswerReply={postAnswerReply}
           deleteAnswer={deleteAnswer}
           deleteChAnswer={deleteChAnswer}
+          fetchModifyAnswer={fetchModifyAnswer}
           key={answer.aID}
         />
       ))}

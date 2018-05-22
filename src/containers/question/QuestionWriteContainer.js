@@ -9,6 +9,7 @@ import {
   onRewardChange,
   onBodyChange,
   initWriteForm,
+  fetchQuestionEntry,
 } from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
 
@@ -51,6 +52,32 @@ class QuestionWriteContainer extends Component {
     this.setState({ options });
   };
 
+  // 수정 글 제출
+  postModifiedQuestion = () => {
+    const { id } = this.props.match.params;
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    const data = {
+      questionID: id,
+      title: this.props.title,
+      body: this.props.body,
+      reward: this.props.reward,
+    };
+    if (!data.body) return alert('내용을 입력해주세요');
+    axios
+      .post('http://localhost:3001/api/question/modifyquestion', data, config)
+      .then((res) => {
+        console.log('답변 제출 응답 : ', res);
+        this.props.history.push(`/question/${id}`);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+
   // 작성 글 제출
   submit = () => {
     const { options } = this.state;
@@ -89,8 +116,16 @@ class QuestionWriteContainer extends Component {
   };
   render() {
     const {
-      tags, title, reward, body, onTitleChange, onRewardChange, onBodyChange,
+      tags,
+      title,
+      reward,
+      body,
+      onTitleChange,
+      onRewardChange,
+      onBodyChange,
+      match,
     } = this.props;
+    const { id } = match.params;
     return (
       <div className="QuestionWriteContainer">
         <QuestionWriteShowcase />
@@ -98,6 +133,7 @@ class QuestionWriteContainer extends Component {
           tags={tags}
           title={title}
           reward={reward}
+          isModify={id}
           onTagChange={this.onTagChange}
           onTitleChange={onTitleChange}
           onRewardChange={onRewardChange}
@@ -125,9 +161,18 @@ class QuestionWriteContainer extends Component {
           </div>
 
           <div className="mark_down_btn">
-            <button onClick={() => this.submit()} className="btn btn-primary mark_down_btn_item">
-              질문작성
-            </button>
+            {id ? (
+              <button
+                onClick={() => this.postModifiedQuestion()}
+                className="btn btn-primary mark_down_btn_item"
+              >
+                질문수정
+              </button>
+            ) : (
+              <button onClick={() => this.submit()} className="btn btn-primary mark_down_btn_item">
+                질문작성
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -145,6 +190,7 @@ const mapStateToProps = state => ({
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
 export default connect(mapStateToProps, {
+  fetchQuestionEntry,
   fetchQuestionTag,
   onTitleChange,
   onRewardChange,

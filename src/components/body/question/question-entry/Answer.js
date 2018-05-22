@@ -12,6 +12,7 @@ const Answer = ({
   postAnswerReply,
   deleteAnswer,
   deleteChAnswer,
+  fetchModifyAnswer,
 }) => (
   <div className="QuestionEntryAnswerSecondAnswerBox">
     <div className="QuestionEntryAnswerSecondAnswerEntry">
@@ -21,7 +22,13 @@ const Answer = ({
           .startOf()
           .fromNow()}에 작성 되었습니다
         <span>
-          {myID === userID ? <TenaryOption aID={aID} deleteAnswer={deleteAnswer} /> : null}
+          {myID === userID ? (
+            <TenaryOption
+              aID={aID}
+              deleteAnswer={deleteAnswer}
+              fetchModifyAnswer={fetchModifyAnswer}
+            />
+          ) : null}
         </span>
       </div>
       <div className="QuestionEntryAnswerSecondReplyTitle">댓글</div>
