@@ -19,6 +19,20 @@ export function fetchQuestionList(page) {
     return axios
       .get(`http://localhost:3001/api/question/getlist/${page}`)
       .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
+  };  
+}
+
+export function getSearchResult(page, keyword) {
+  return (dispatch) => {
+    dispatch({ type: FETCH_QUESTION_LIST_BEGIN });
+    console.log(keyword);
+    const data = {
+      data: keyword,
+    }
+
+    return axios
+      .post(`http://localhost:3001/api/sort/search/${page}`, data)
+      .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
   };
 }
 

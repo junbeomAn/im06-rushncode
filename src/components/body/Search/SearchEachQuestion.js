@@ -1,16 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Tags, UpdateTime, LikeCount } from '../question-list';
-import { ViewCount, AnswerCount, Reward, Complete } from '../question-entry';
+import { Tags, UpdateTime, LikeCount } from './../question/question-list';
+import {AnswerCount, Reward } from './../question/question-entry';
 
-const EachQuestion = ({ questions }) => (
+const SearchEachQuestion = ({ questions }) => (
   <div>
     {questions.map(item => (      
       <div className="questionPost" key={item.id}>
         <div className="first">
-          <div className="firstItem">
-            <ViewCount count={item.view} />
-          </div>
           <div className="firstItem">
             <LikeCount count={item.good} />
           </div>
@@ -18,7 +15,7 @@ const EachQuestion = ({ questions }) => (
             <AnswerCount count={item.countAnswers} />
           </div>
           <div className="firstItem">
-            {item.exist_picked_ans ? <Complete /> : <Reward reward={item.reward} />}
+            <Reward reward={item.reward} />
           </div>
         </div>
         <div className="second">
@@ -28,9 +25,7 @@ const EachQuestion = ({ questions }) => (
           <Tags tags={item.tags} />
         </div>
         <div className="fourth">
-          <a className="username" href={`/mypage/${item.userID}`}>
-            {item.username}
-          </a>
+          <div className="username">{item.username}</div>
           <UpdateTime time={item.updated_at} />
         </div>
       </div>
@@ -38,4 +33,4 @@ const EachQuestion = ({ questions }) => (
   </div>
 );
 
-export default EachQuestion;
+export default SearchEachQuestion;

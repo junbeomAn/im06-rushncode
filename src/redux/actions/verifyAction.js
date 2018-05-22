@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { createBrowserHistory } from 'history';
+// import { createBrowserHistory } from 'history';
 import { VERIFICATION, SIGNOUT } from './types';
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 export const Verify = () => (dispatch) => {
   const verifyUrl = 'http://localhost:3001/api/auth/verify';
@@ -18,7 +18,7 @@ export const Verify = () => (dispatch) => {
         console.log('verified'); // 여기선 push 를 해도 바뀌지않음. 리덕스와 연결되어 있지 않아서...
         dispatch({ type: VERIFICATION, payload: res.data });
       } else {
-        console.log('not verified');       
+        console.log('not verified');
       }
     })
     .catch(err => console.log(err));

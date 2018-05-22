@@ -8,6 +8,8 @@
 
 .headerItembox {
   justify-content: flex-end; }
+  .headerItembox .form-control {
+    width: 20%; }
 
 .navbar-brand {
   padding: 5px 15px 5px 15px; }

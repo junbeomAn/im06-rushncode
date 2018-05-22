@@ -8,7 +8,7 @@ class WriteButton extends Component {
   state = {};
 
   render() {
-    console.log(this.props.isLoggedIn);
+    // console.log(this.props.isLoggedIn);
     const path = this.props.isLoggedIn ? '/question/write' : '/auth/signin';
     return (
       <NavLink to={path} className="item">

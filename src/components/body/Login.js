@@ -4,7 +4,6 @@ import { Divider, Button, Icon } from 'semantic-ui-react';
 // import 'react-flexview/lib/flexView.css';
 // import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
-import Facebook from './../Facebook';
 import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
@@ -70,7 +69,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
           onClick={() => {
             login();
           }}
-          className="btn btn-primary authSubmitBtn"
+          className="btn btn-primary authBtn"
         >
           로그인
         </button>

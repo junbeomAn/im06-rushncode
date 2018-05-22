@@ -4,14 +4,24 @@ import { NavLink } from 'react-router-dom';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 
+
 class Headers extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchWord: '',
+    };
   }
 
   componentDidMount() {
     this.props.Verify();
+  }
+
+  changeValue = (e) => {
+    this.setState({
+      searchWord: e.target.value,
+    });
+
   }
 
   render() {
@@ -60,17 +70,18 @@ class Headers extends Component {
                 </li>
               )}
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
-                Search
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              onChange={this.changeValue}
+            />
+            <NavLink to={`/search?q=${this.state.searchWord}`} >
+              <button className="btn btn-outline-light my-2 my-sm-0" onClick={this.search} type="submit">
+              Search
               </button>
-            </form>
+            </NavLink>
           </div>
         </div>
       </nav>
