@@ -6,6 +6,11 @@ import {
   FETCH_QUESTION_ENTRY_BEGIN,
   FETCH_QUESTION_ENTRY_SUCCESS,
   FETCH_QUESTION_TAG,
+  ON_TITLE_CHANGE,
+  ON_REWARD_CHANGE,
+  ON_BODY_CHANGE,
+  INIT_WRITE_FORM,
+  FETCH_MODIFY_QUESTION,
 } from '../actions/types';
 
 // 모듈의 초기 상태를 정의합니다.
@@ -15,6 +20,10 @@ const initialState = {
   error: null,
   item: {},
   tags: [],
+  title: '',
+  reward: '',
+  body: '',
+  pickedTag: [],
 };
 
 // handleActions 의 첫번째 파라미터는 액션을 처리하는 함수들로 이뤄진 객체이고
@@ -56,6 +65,36 @@ export default function (state = initialState, action) {
       return {
         ...state,
         tags: action.payload,
+      };
+    case ON_TITLE_CHANGE:
+      return {
+        ...state,
+        title: action.payload,
+      };
+    case ON_REWARD_CHANGE:
+      return {
+        ...state,
+        reward: action.payload,
+      };
+    case ON_BODY_CHANGE:
+      return {
+        ...state,
+        body: action.payload,
+      };
+    case INIT_WRITE_FORM:
+      return {
+        ...state,
+        title: '',
+        reward: '',
+        body: '',
+      };
+    case FETCH_MODIFY_QUESTION:
+      return {
+        ...state,
+        title: action.payload.title,
+        reward: action.payload.qReward,
+        body: action.payload.qBody,
+        pickedTag: action.payload.tags,
       };
     default:
       return state;

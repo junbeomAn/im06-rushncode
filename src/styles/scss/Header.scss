@@ -12,6 +12,9 @@
 
 .headerItembox {
   justify-content: flex-end;
+  .form-control {
+    width: 20%;
+  }
 }
 
 .navbar-brand {
@@ -47,6 +50,6 @@
   z-index: 2000;
 }
 
-.form-control {
-  width: 20%; 
-}
+// .form-control {
+//   width: 20%; 
+// }

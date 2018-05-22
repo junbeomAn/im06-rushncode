@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
 import QuestionEntry from '../../components/body/question/QuestionEntry';
-import { fetchQuestionEntry } from '../../redux/actions/questionAction';
+import { fetchQuestionEntry, fetchModifyQuestion } from '../../redux/actions/questionAction';
+import { Verify } from '../../redux/actions/verifyAction';
 
 class QuestionEntryContainer extends Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class QuestionEntryContainer extends Component {
       src: '',
     };
   }
+  componentWillMount() {
+    this.props.Verify();
+  }
+
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.fetchQuestionEntry(id);
@@ -77,7 +82,6 @@ class QuestionEntryContainer extends Component {
   };
 
   postAnswerReply = (answerID) => {
-    console.log('postAnswerReply');
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
@@ -93,6 +97,22 @@ class QuestionEntryContainer extends Component {
       .post('http://localhost:3001/api/question/chanswer/', data, config)
       .then((res) => {
         console.log(res.data);
+        const { id } = this.props.match.params;
+        this.props.fetchQuestionEntry(id);
+      })
+      .catch(err => console.log(err));
+  };
+
+  pickAnswer = (answerID) => {
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    axios
+      .post(`http://localhost:3001/api/question/pickanswer/${answerID}`, {}, config)
+      .then((res) => {
+        console.log(res);
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })
@@ -124,10 +144,82 @@ class QuestionEntryContainer extends Component {
     }
   };
 
+  changeClassActive = (id) => {
+    if (this.props.userID === id) {
+      const els = document.getElementsByClassName('targeting');
+      console.log(els);
+      for (let i = 0; i < els.length; i++) {
+        els[i].classList.add('inactive');
+        console.log(i);
+      }
+    }
+  };
+
+  deleteQuestion = () => {
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    const { id } = this.props.match.params;
+    axios
+      .post(`http://localhost:3001/api/delete/question/${id}`, {}, config)
+      .then(() => {
+        this.props.history.push('/question');
+      })
+      .catch(err => console.log(err));
+  };
+
+  deleteAnswer = (answerID) => {
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    axios
+      .post(`http://localhost:3001/api/delete/answer/${answerID}`, {}, config)
+      .then(() => {
+        const { id } = this.props.match.params;
+        this.props.fetchQuestionEntry(id);
+      })
+      .catch(err => console.log(err));
+  };
+
+  deleteChAnswer = (cID) => {
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    axios
+      .post(`http://localhost:3001/api/delete/chanswer/${cID}`, {}, config)
+      .then(() => {
+        const { id } = this.props.match.params;
+        this.props.fetchQuestionEntry(id);
+      })
+      .catch(err => console.log(err));
+  };
+
+  deleteReply = (rID) => {
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    axios
+      .post(`http://localhost:3001/api/delete/reply/${rID}`, {}, config)
+      .then(() => {
+        const { id } = this.props.match.params;
+        this.props.fetchQuestionEntry(id);
+      })
+      .catch(err => console.log(err));
+  };
+
   /* eslint no-nested-ternary: 0 */
   render() {
     const {
       username,
+      userID,
       title,
       qBody,
       qGood,
@@ -137,9 +229,10 @@ class QuestionEntryContainer extends Component {
       qID,
       replies,
       answers,
+      exist_picked_ans,
     } = this.props.question;
-    console.log(this.props.question);
     const { first } = this.state;
+    console.log(this.props.question);
     return (
       <div>
         {this.props.loading ? (
@@ -150,6 +243,8 @@ class QuestionEntryContainer extends Component {
           <div className="QuestionEntryContainer">
             <QuestionEntry
               username={username}
+              myID={this.props.myID}
+              userID={userID}
               title={title}
               qID={qID}
               qBody={qBody}
@@ -159,9 +254,16 @@ class QuestionEntryContainer extends Component {
               qTime={qTime}
               replies={replies}
               answers={answers}
+              existPickedAnswer={exist_picked_ans}
+              pickAnswer={this.pickAnswer}
               raiseLikeCount={this.raiseLikeCount}
               postQuestionReply={this.postQuestionReply}
               postAnswerReply={this.postAnswerReply}
+              deleteQuestion={this.deleteQuestion}
+              deleteAnswer={this.deleteAnswer}
+              deleteChAnswer={this.deleteChAnswer}
+              deleteReply={this.deleteReply}
+              fetchModifyQuestion={this.props.fetchModifyQuestion}
             />
             <div id="markdown">
               <h1> add an answer </h1>
@@ -204,7 +306,8 @@ class QuestionEntryContainer extends Component {
 const mapStateToProps = state => ({
   question: state.questions.item,
   loading: state.questions.loading,
+  myID: state.verify.userID,
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionEntry })(QuestionEntryContainer);
+export default connect(mapStateToProps, { fetchQuestionEntry, fetchModifyQuestion, Verify })(QuestionEntryContainer);

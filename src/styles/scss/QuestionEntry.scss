@@ -1,12 +1,9 @@
 @import "color";
 
 .QuestionEntryContainer {
-  // height: 2000px;
   background: ghostwhite;
   display: flex;
   flex-direction: column;
-  // margin: 0 auto;
-  // margin-bottom: 55px;
 
   // 헤더
   .QuestionEntryHeader {
@@ -36,25 +33,32 @@
   .QuestionEntryMain {
     // border: solid 1px blue;
     width: 90%;
+    padding-top: 20px;
     margin: 0 auto;
     display: flex;
-    padding-top: 20px;
     .QuestionEntryMainFirst {
       width: 10%;
       margin: 0 auto;
     }
     .CountBox {
       .CountBoxImage {
-        text-align: center;
         margin-bottom: 10px;
+        text-align: center;
         color: $greyfont;
       }
       .CountBoxNum {
+        margin: 0 auto;
+        margin-top: 8px;
+        margin-right: 4px;
         text-align: center;
         font-size: 18px;
-        margin: 0 auto;
-        margin-right: 3px;
         color: grey;
+      }
+      &:hover {
+        color: coral;
+        .CountBoxNum {
+          color: coral;
+        }
       }
     }
     // q바디
@@ -106,14 +110,15 @@
       margin-bottom: 20px;
       .ItemBox {
         .ItemBoxImage {
+          // margin-bottom: 7px;
           text-align: center;
           color: grey;
-          margin-bottom: 7px;
+          
         }
         .ItemBoxNum {
-          text-align: center;
-          font-size: 1.2rem;
           padding-right: 2px;
+          text-align: center;
+          font-size: 1.1rem;
           color: grey;
         }
       }
@@ -191,10 +196,17 @@
             margin-bottom: 7px;
           }
           .ItemBoxNum {
+            padding-top: 5px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding-right: 2px;
             color: grey;
+          }
+          &:hover {
+            color: coral;
+            .ItemBoxNum {
+              color: coral;
+            }
           }
         }
       }
@@ -210,8 +222,15 @@
           text-align: center;
           font-size: 18px;
           margin: 0 auto;
-          margin-right: 3px;
+          margin-right: 4px;
+          margin-top: 8px;
           color: grey;
+        }
+        &:hover {
+          color: coral;
+          .CountBoxNum {
+            color: coral;
+          }
         }
       }
     }
@@ -233,6 +252,16 @@
   color: $greyfont;
   border: none;
   &:hover {
-    color: crimson;
+    color: coral;
+  }
+}
+.picked {
+  .picked-item {
+    color: coral;
+    span {
+      color: coral;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
   }
 }

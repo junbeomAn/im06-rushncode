@@ -46,7 +46,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import SearchQuestionList from '../../components/body/Search/SearchQuestionList';
-import { fetchQuestionList } from '../../redux/actions/questionAction';
+import { getSearchResult } from '../../redux/actions/questionAction';
 
 class Search extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class Search extends Component {
       currentPage: 1,
       start: 0,
       end: 10,
-      data: '',
+      
     };
     // this.props.fetchQuestionList.bind(this);
   }
@@ -69,19 +69,19 @@ class Search extends Component {
     if (!this.props.loading) this.setState({ first: false });
   }
 
-  componentWillMount() {
-    const keyword = window.location.href.split('?q=')[1];
-    console.log(keyword);
-    const searchUrl = 'http://localhost:3001/api/sort/search';
-    const data = {
-      data: keyword,
-    };
-    axios
-      .post(searchUrl, data)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-    this.updateCurrentPage(1);
-  }
+  // componentWillMount() {
+  //   const keyword = window.location.href.split('?q=')[1];
+  //   console.log(keyword);
+  //   const searchUrl = 'http://localhost:3001/api/sort/search';
+  //   const data = {
+  //     data: keyword,
+  //   };
+  //   axios
+  //     .post(searchUrl, data)
+  //     .then(res => console.log(res, '@@@@@@@@@@'))
+  //     .catch(err => console.log(err));
+  
+  // }
 
   updateStartEndPage = (start, end) => {
     this.setState({
@@ -103,7 +103,8 @@ class Search extends Component {
   };
 
   makeAsync = async (index) => {
-    await this.props.fetchQuestionList.bind(this, index)();
+    const keyword = window.location.href.split('?q=')[1];
+    await this.props.getSearchResult.bind(this, index, keyword)();
     this.updateCurrentPage(index);
   };
 
@@ -113,6 +114,7 @@ class Search extends Component {
     const {
       currentPage, start, end, first,
     } = this.state;
+    console.log(questions)
     console.log(loading);
     return (
       <div>
@@ -143,4 +145,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionList })(Search);
+export default connect(mapStateToProps, { getSearchResult })(Search);

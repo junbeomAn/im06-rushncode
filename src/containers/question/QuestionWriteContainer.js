@@ -5,7 +5,13 @@ import { Prompt } from 'react-router';
 import ReactMarkDown from 'react-markdown';
 
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
-import { fetchQuestionTag } from '../../redux/actions/questionAction';
+import {
+  fetchQuestionTag,
+  onTitleChange,
+  onRewardChange,
+  onBodyChange,
+  initWriteForm,
+} from '../../redux/actions/questionAction';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
 
 import '../../styles/css/QuestionWrite.css';
@@ -14,11 +20,8 @@ class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      reward: '',
       options: [],
       target: null,
-      src: '',
     };
   }
 
@@ -32,7 +35,6 @@ class QuestionWriteContainer extends Component {
     // current array of options
     const { options } = this.state;
     let index;
-    // console.log(e.target);
 
     // Tag 3개 까지 선택
     if (e.target.checked) {
@@ -56,32 +58,11 @@ class QuestionWriteContainer extends Component {
     this.setState({ options });
   };
 
-  changeTitleValue = (e) => {
-    e.preventDefault();
-    this.setState({
-      title: e.target.value,
-    });
-    console.log(e.target.value);
-  }
-
-  changeRewardValue = (e) => {
-    e.preventDefault();
-    this.setState({
-      reward: e.target.reward,
-    });
-    console.log(e.target.value);
-  }
-
-  changeValue = (e) => {
-    e.preventDefault();
-    this.setState({
-      src: e.target.value,
-    });
-    console.log(e.target.value);
-  };
-
   // 작성 글 제출
   submit = () => {
+    const { options } = this.state;
+    const { title, body } = this.props;
+    const reward = Number(this.props.reward);
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
@@ -93,31 +74,36 @@ class QuestionWriteContainer extends Component {
     // 글 작성 정보 모두 담는 그릇 설정
     const data = {};
     // 태그 정보 담기 및  태그 선택 안할 시 예외 처리
-    if (this.state.options.length === 0) return alert('태그를 선택해 주세요');
-    data.tags = this.state.options;
+    if (options.length === 0) return alert('태그를 선택해 주세요');
+    data.tags = options;
     // 제목 담기 및 제목 없을 시 예외 처리
-    data.title = document.getElementsByClassName('inputTitle')[0].value;
+    data.title = title;
     if (data.title.length === 0) return alert('제목을 입력해 주세요');
     // 금액 담기
-    data.reward = Number(document.getElementsByClassName('inputReward')[0].value);
+    data.reward = reward;
+    if (isNaN(data.reward)) return alert('금액은 숫자이어야 합니다');
+    if (data.reward.length === 0) return alert('금액을 입력해 주세요');
     // 내용 담기
-    data.body = this.state.src;
+    data.body = body;
+    if (data.body.length === 0) return alert('내용을 입력해 주세요');
     axios
       .post(writingUrl, data, config)
       .then((res) => {
+        this.props.initWriteForm();
         this.props.history.push('/question');
       })
       .catch(err => alert(err));
   };
   render() {
-    const { tags } = this.props;
+    const {
+      tags, title, reward, body, onTitleChange, onRewardChange, onBodyChange,
+    } = this.props;
     const pageLeaveCondition = this.state.src !== '' || this.state.options.length !== 0 || this.state.title !== '' || this.state.reward !== '';
     // console.log('src : ', this.state.src);
     return (
       <div className="QuestionWriteContainer">
-        <Prompt when={pageLeaveCondition} message="작성 중인 글이 있습니다. 나가시겠습니까?" />
         <QuestionWriteShowcase />
-        <QuestionWrite tags={tags} onTagChange={this.onTagChange} onTitleChange={this.changeTitleValue} onRewardChange={this.changeRewardValue} />
+        <QuestionWrite tags={tags} title={title} reward={reward} onTagChange={this.onTagChange} />
         <div className="write-title">내용</div>
         <div id="markdown">
           <div className="mark_down_box">
@@ -127,7 +113,8 @@ class QuestionWriteContainer extends Component {
                 className="mark_down_input_item"
                 placeholder="질문을 입력 하세요"
                 name="content"
-                onChange={e => this.changeValue(e)}
+                value={body}
+                onChange={e => onBodyChange(e)}
                 id="markdownvalue"
                 cols="70"
                 rows="30"
@@ -135,7 +122,7 @@ class QuestionWriteContainer extends Component {
             </div>
             <div className="mark_down_view">
               <h2>미리보기</h2>
-              <ReactMarkDown className="mark_down_view_item" source={this.state.src} />
+              <ReactMarkDown className="mark_down_view_item" source={body} />
             </div>
           </div>
 
@@ -153,8 +140,16 @@ class QuestionWriteContainer extends Component {
 // 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
 const mapStateToProps = state => ({
   tags: state.questions.tags,
+  title: state.questions.title,
+  reward: state.questions.reward,
+  body: state.questions.body,
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionTag })(QuestionWriteContainer);
-
+export default connect(mapStateToProps, {
+  fetchQuestionTag,
+  onTitleChange,
+  onRewardChange,
+  onBodyChange,
+  initWriteForm,
+})(QuestionWriteContainer);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Tags, UpdateTime, LikeCount } from '../question-list';
-import { ViewCount, AnswerCount, Reward } from '../question-entry';
+import { ViewCount, AnswerCount, Reward, Complete } from '../question-entry';
 
 const EachQuestion = ({ questions }) => (
   <div>
@@ -18,7 +18,7 @@ const EachQuestion = ({ questions }) => (
             <AnswerCount count={item.countAnswers} />
           </div>
           <div className="firstItem">
-            <Reward reward={item.reward} />
+            {item.exist_picked_ans ? <Complete /> : <Reward reward={item.reward} />}
           </div>
         </div>
         <div className="second">
@@ -28,7 +28,9 @@ const EachQuestion = ({ questions }) => (
           <Tags tags={item.tags} />
         </div>
         <div className="fourth">
-          <div className="username">{item.username}</div>
+          <a className="username" href={`/mypage/${item.userID}`}>
+            {item.username}
+          </a>
           <UpdateTime time={item.updated_at} />
         </div>
       </div>

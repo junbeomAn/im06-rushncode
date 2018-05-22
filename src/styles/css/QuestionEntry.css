@@ -21,22 +21,27 @@
     padding: 50px 0px 3px 0px; }
   .QuestionEntryContainer .QuestionEntryMain {
     width: 90%;
+    padding-top: 20px;
     margin: 0 auto;
-    display: flex;
-    padding-top: 20px; }
+    display: flex; }
     .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainFirst {
       width: 10%;
       margin: 0 auto; }
     .QuestionEntryContainer .QuestionEntryMain .CountBox .CountBoxImage {
-      text-align: center;
       margin-bottom: 10px;
+      text-align: center;
       color: #777; }
     .QuestionEntryContainer .QuestionEntryMain .CountBox .CountBoxNum {
+      margin: 0 auto;
+      margin-top: 8px;
+      margin-right: 4px;
       text-align: center;
       font-size: 18px;
-      margin: 0 auto;
-      margin-right: 3px;
       color: grey; }
+    .QuestionEntryContainer .QuestionEntryMain .CountBox:hover {
+      color: coral; }
+      .QuestionEntryContainer .QuestionEntryMain .CountBox:hover .CountBoxNum {
+        color: coral; }
     .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainSecond {
       width: 80%;
       height: auto;
@@ -75,12 +80,11 @@
       margin-bottom: 20px; }
       .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdItemBox .ItemBox .ItemBoxImage {
         text-align: center;
-        color: grey;
-        margin-bottom: 7px; }
+        color: grey; }
       .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdItemBox .ItemBox .ItemBoxNum {
-        text-align: center;
-        font-size: 1.2rem;
         padding-right: 2px;
+        text-align: center;
+        font-size: 1.1rem;
         color: grey; }
     .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdReward {
       margin-top: 20px; }
@@ -137,10 +141,15 @@
             color: grey;
             margin-bottom: 7px; }
           .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .QuestionEntryAnswerThird .ItemBox .ItemBoxNum {
+            padding-top: 5px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding-right: 2px;
             color: grey; }
+          .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .QuestionEntryAnswerThird .ItemBox:hover {
+            color: coral; }
+            .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .QuestionEntryAnswerThird .ItemBox:hover .ItemBoxNum {
+              color: coral; }
       .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox {
         margin-bottom: 20px; }
         .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox .CountBoxImage {
@@ -151,8 +160,13 @@
           text-align: center;
           font-size: 18px;
           margin: 0 auto;
-          margin-right: 3px;
+          margin-right: 4px;
+          margin-top: 8px;
           color: grey; }
+        .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox:hover {
+          color: coral; }
+          .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox:hover .CountBoxNum {
+            color: coral; }
 
 .QuestionEntryUpper {
   height: 500px;
@@ -169,6 +183,13 @@
   color: #777;
   border: none; }
   .likeBtn:hover {
-    color: crimson; }
+    color: coral; }
+
+.picked .picked-item {
+  color: coral; }
+  .picked .picked-item span {
+    color: coral;
+    font-size: 1.3rem;
+    font-weight: 600; }
 
 /*# sourceMappingURL=QuestionEntry.css.map */

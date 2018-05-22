@@ -4,6 +4,7 @@ import { VERIFICATION, SIGNIN, SIGNOUT } from '../actions/types';
 
 const initialState = {
   isLoggedIn: false,
+  userID: '',
 };
 
 function verifyReducer(state = initialState, action) {
@@ -11,7 +12,8 @@ function verifyReducer(state = initialState, action) {
     case VERIFICATION:
       return {
         ...state,
-        isLoggedIn: action.payload,
+        isLoggedIn: action.payload.success,
+        userID: action.payload.userID,
       };
     case SIGNIN:
       return {

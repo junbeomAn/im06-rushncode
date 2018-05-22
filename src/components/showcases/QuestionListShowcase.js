@@ -16,7 +16,7 @@ const QuestionListShowcase = () => (
       <span className="homeRBtn">
         <NavLink to="/mywallet" className="item">
           <button type="button" className="btn btn-outline-light btn-lg">
-            나의 지갑
+            정렬 방법
           </button>
         </NavLink>
       </span>
