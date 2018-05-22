@@ -36,6 +36,7 @@ const QuestionEntry = ({
   deleteAnswer,
   deleteChAnswer,
   deleteReply,
+  fetchModifyQuestion,
 }) => (
   <div>
     <QuestionEntryShowcase />
@@ -61,7 +62,15 @@ const QuestionEntry = ({
           {moment(qTime)
             .startOf()
             .fromNow()}에 작성 되었습니다
-          <span>{myID === userID ? <TenaryOption deleteQuestion={deleteQuestion} /> : null}</span>
+          <span>
+            {myID === userID ? (
+              <TenaryOption
+                deleteQuestion={deleteQuestion}
+                fetchModifyQuestion={fetchModifyQuestion}
+                qID={qID}
+              />
+            ) : null}
+          </span>
         </div>
         <div className="QuestionEntryMainSecondReplyTitle">댓글</div>
         <div className="QuestionEntryMainSecondReply">
