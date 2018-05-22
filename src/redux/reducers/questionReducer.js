@@ -10,6 +10,7 @@ import {
   ON_BODY_CHANGE,
   INIT_WRITE_FORM,
   FETCH_MODIFY_QUESTION,
+  FETCH_MODIFY_ANSWER,
 } from '../actions/types';
 
 // 모듈의 초기 상태를 정의합니다.
@@ -86,6 +87,7 @@ export default function (state = initialState, action) {
         title: '',
         reward: '',
         body: '',
+        pickedTag: '',
       };
     case FETCH_MODIFY_QUESTION:
       return {
@@ -94,6 +96,11 @@ export default function (state = initialState, action) {
         reward: action.payload.qReward,
         body: action.payload.qBody,
         pickedTag: action.payload.tags,
+      };
+    case FETCH_MODIFY_ANSWER:
+      return {
+        ...state,
+        body: action.payload.body,
       };
     default:
       return state;

@@ -10,6 +10,7 @@ import {
   ON_BODY_CHANGE,
   INIT_WRITE_FORM,
   FETCH_MODIFY_QUESTION,
+  FETCH_MODIFY_ANSWER,
 } from './types';
 
 export function fetchQuestionList(page) {
@@ -56,4 +57,10 @@ export const fetchModifyQuestion = id => (dispatch) => {
   axios
     .get(`http://localhost:3001/api/question/displayq/${id}`)
     .then(res => dispatch({ type: FETCH_MODIFY_QUESTION, payload: res.data.data }));
+};
+
+export const fetchModifyAnswer = id => (dispatch) => {
+  axios
+    .get(`http://localhost:3001/api/question/getanswer/${id}`)
+    .then(res => dispatch({ type: FETCH_MODIFY_ANSWER, payload: res.data.data }));
 };

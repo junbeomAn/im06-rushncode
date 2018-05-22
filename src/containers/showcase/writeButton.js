@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Verify } from './../../redux/actions/verifyAction';
+import { initWriteForm } from './../../redux/actions/questionAction';
 
 class WriteButton extends Component {
   state = {};
@@ -11,7 +12,13 @@ class WriteButton extends Component {
     const path = this.props.isLoggedIn ? '/question/write' : '/auth/signin';
     return (
       <NavLink to={path} className="item">
-        <button type="button" onClick={() => { !this.props.isLoggedIn && alert('login is required!'); }} className="btn btn-outline-light btn-lg">
+        <button
+          type="button"
+          onClick={() =>
+            (!this.props.isLoggedIn ? alert('login is required!') : this.props.initWriteForm())
+          }
+          className="btn btn-outline-light btn-lg"
+        >
           질문하기
         </button>
       </NavLink>
@@ -23,5 +30,4 @@ const mapStateToProps = (state) => {
   return { isLoggedIn };
 };
 
-export default connect(mapStateToProps, { Verify })(WriteButton);
-
+export default connect(mapStateToProps, { Verify, initWriteForm })(WriteButton);
