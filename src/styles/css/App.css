@@ -55,4 +55,12 @@
 .likeBtn {
   cursor: pointer; }
 
+.complete {
+  color: coral !important; }
+
+.complete-badge {
+  padding: 3px 10px;
+  background: coral;
+  letter-spacing: 0.4px; }
+
 /*# sourceMappingURL=App.css.map */

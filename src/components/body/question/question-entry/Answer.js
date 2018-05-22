@@ -3,7 +3,15 @@ import moment from 'moment';
 import { Reply, TenaryOption } from '../question-entry';
 
 const Answer = ({
-  aID, body, time, chAnswers, postAnswerReply,
+  aID,
+  userID,
+  body,
+  time,
+  myID,
+  chAnswers,
+  postAnswerReply,
+  deleteAnswer,
+  deleteChAnswer,
 }) => (
   <div className="QuestionEntryAnswerSecondAnswerBox">
     <div className="QuestionEntryAnswerSecondAnswerEntry">
@@ -12,12 +20,23 @@ const Answer = ({
         {moment(time)
           .startOf()
           .fromNow()}에 작성 되었습니다
-        <TenaryOption />
+        <span>
+          {myID === userID ? <TenaryOption aID={aID} deleteAnswer={deleteAnswer} /> : null}
+        </span>
       </div>
       <div className="QuestionEntryAnswerSecondReplyTitle">댓글</div>
       <div className="QuestionEntryAnswerSecondReply">
         {chAnswers.map(reply => (
-          <Reply username={reply.username} body={reply.cBody} time={reply.cTime} key={reply.cID} />
+          <Reply
+            username={reply.username}
+            userID={reply.userID}
+            myID={myID}
+            cID={reply.cID}
+            body={reply.cBody}
+            time={reply.cTime}
+            deleteChAnswer={deleteChAnswer}
+            key={reply.cID}
+          />
         ))}
       </div>
       <div className="QuestionEntryAnswerSecondReplyAdd">
