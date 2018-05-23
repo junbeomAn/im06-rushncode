@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 import { getSearchResult } from './../../redux/actions/questionAction';
 
-
 class Headers extends Component {
   constructor(props) {
     super(props);
@@ -22,8 +21,7 @@ class Headers extends Component {
     this.setState({
       searchWord: e.target.value,
     });
-
-  }
+  };
 
   render() {
     // this.props.Verify();
@@ -40,11 +38,6 @@ class Headers extends Component {
               <li className="nav-item">
                 <NavLink to="/question" className="item">
                   질문
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/tag" className="item">
-                  태그
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -79,9 +72,7 @@ class Headers extends Component {
               onChange={this.changeValue}
             />
             <a href={`/search?q=${this.state.searchWord}`}>
-              <button className="btn btn-outline-light my-2 my-sm-0">
-              Search
-              </button>
+              <button className="btn btn-outline-light my-2 my-sm-0">Search</button>
             </a>
           </div>
         </div>
@@ -89,7 +80,6 @@ class Headers extends Component {
     );
   }
 }
-
 
 const mapStateToProps = (state) => {
   const { isLoggedIn } = state.verify;

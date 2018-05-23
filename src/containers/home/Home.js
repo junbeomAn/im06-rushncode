@@ -27,6 +27,11 @@ export class Home extends Component {
                       금액
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/tag">
+                      태그
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className="home-lower-left-main">left-main</div>
