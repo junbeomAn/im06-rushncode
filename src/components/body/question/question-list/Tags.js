@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tags = ({ tags, fetchSortedByTag, currentPage }) => (
+const Tags = ({ tags }) => (
   <div className="tags">
     {tags.map((tag, index) => (
       <button

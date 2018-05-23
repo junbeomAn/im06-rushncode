@@ -1,4 +1,3 @@
-import Footer from './footer/Footer';
 import Tag from './body/Tag';
 import Rank from './body/Rank';
 import Job from './body/Job';
@@ -12,7 +11,6 @@ import Logout from './body/Logout';
 import SignUp from './body/SignUp';
 
 export {
-  Footer,
   Tag,
   Rank,
   Job,
