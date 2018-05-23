@@ -10,6 +10,10 @@ export const FETCH_QUESTION_ENTRY_SUCCESS = 'questionReducer/FETCH_QUESTION_ENTR
 
 export const FETCH_QUESTION_TAG = 'questionReducer/FETCH_QUESTION_TAG';
 
+// Question + Sorted TAG
+export const FETCH_SORTED_TAG_BEGIN = 'questionReducer/FETCH_SORTED_TAG_BEGIN';
+export const FETCH_SORTED_TAG_SUCCESS = 'questionReducer/FETCH_SORTED_TAG_SUCCESS';
+
 // Question-수정
 export const ON_TITLE_CHANGE = 'questionReducer/ON_TITLE_CHANGE';
 export const ON_REWARD_CHANGE = 'questionReducer/ON_REWARD_CHANGE';
@@ -25,4 +29,3 @@ export const FETCH_FORUM_ENTRY = 'questionReducer/FETCH_FORUM_ENTRY';
 export const VERIFICATION = 'VERIFICATION';
 export const SIGNIN = 'SIGNIN';
 export const SIGNOUT = 'SIGNOUT';
-

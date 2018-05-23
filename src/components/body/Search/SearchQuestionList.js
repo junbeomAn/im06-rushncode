@@ -6,12 +6,7 @@ import SearchPagenation from './SearchPagenation';
 // require('bootstrap/less/bootstrap.less');
 
 const SearchQuestionList = ({
-  posts,
-  updateStartEndPage,
-  makeAsync,
-  currentPage,
-  start,
-  end,
+  posts, updateStartEndPage, makeAsync, currentPage, start, end,
 }) => (
   <div className="questContainer">
     <form className="form-inline search-form">
@@ -21,12 +16,10 @@ const SearchQuestionList = ({
         placeholder="Enter Keywords"
         aria-label="Search"
       />
-      <NavLink to={`/search?q=`} >
-        <button className="btn btn-outline-dark my-2 my-sm-0">
-        Search
-        </button>
+      <NavLink to="/search?q=">
+        <button className="btn btn-outline-dark my-2 my-sm-0">Search</button>
       </NavLink>
-    </form>    
+    </form>
     <div className="questionMain">
       <SearchEachQuestion questions={posts} />
       <SearchPagenation

@@ -1,4 +1,13 @@
 @import "color";
+
+.homeContainer {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background-color: ghostwhite;
+}
+
+// 쇼케이스
 .homeUpper {
   height: 500px;
   background-image: url("./img/city3.jpg");
@@ -9,11 +18,6 @@
   opacity: 0.8;
   text-align: center;
   filter: grayscale(50%);
-}
-
-.homeLower {
-  height: 1200px;
-  background-color: ghostwhite;
 }
 
 .HomeJumbotron {
@@ -45,44 +49,40 @@
   }
 }
 
-.homeQHeader {
-  width: 70%;
-}
-.homeLowerLeft {
-  padding-top: 10px;
-  width: 70%;
-  display: inline-block;
-  margin-top: 40px;
-}
-
-.homeLowerRight {
-  float: right;
-  width: 30%;
-  height: 1000px;
-}
-
-.homeLowerRightContent {
-  margin-top: 80px;
-  height: 200px;
-  background-color: lightblue;
-}
-.homePost {
-  height: 70px;
-  text-align: center;
-}
-
-.homePostTitle {
-  text-decoration: none;
-  position: relative;
-  top: 30%;
-}
-
-.homeHr {
-  border: 0;
-  clear: both;
-  display: block;
+.home-lower-box {
   width: 90%;
-  border-width: 0.5px;
-  background-color: lightgray;
-  height: 1px;
+  margin: 0 auto;
+}
+.home-lower {
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  .home-lower-left {
+    width: 70%;
+    margin-right: 10px;
+    // border: solid 2px blue;
+    display: flex;
+    flex-direction: column;
+    .home-lower-left-header {
+      .active {
+        background: ghostwhite;
+        border-top: $primaryBlue solid 2px;
+        border-bottom: ghostwhite solid 1px;
+      }
+    }
+    .home-lower-left-main {
+      // border: solid 1px coral;
+    }
+  }
+  .home-lower-right {
+    width: 30%;
+    height: auto;
+    margin-left: 10px;
+    border: solid 2px green;
+    .home-lower-right-main {
+      border: solid 1px yellow;
+      height: 400px;
+    }
+  }
 }

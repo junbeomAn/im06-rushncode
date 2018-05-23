@@ -12,11 +12,16 @@ const QuestionList = ({
   currentPage,
   start,
   end,
+  fetchSortedByTag,
 }) => (
   <div className="questContainer">
     <QuestionListShowcase />
     <div className="questionMain">
-      <EachQuestion questions={posts} />
+      <EachQuestion
+        questions={posts}
+        fetchSortedByTag={fetchSortedByTag}
+        currentPage={currentPage}
+      />
       <Pagenation
         updateStartEndPage={updateStartEndPage}
         makeAsync={makeAsync}
