@@ -11,6 +11,8 @@ import {
   INIT_WRITE_FORM,
   FETCH_MODIFY_QUESTION,
   FETCH_MODIFY_ANSWER,
+  FETCH_SORTED_TAG_BEGIN,
+  FETCH_SORTED_TAG_SUCCESS,
 } from './types';
 
 export function fetchQuestionList(page) {
@@ -19,16 +21,15 @@ export function fetchQuestionList(page) {
     return axios
       .get(`http://localhost:3001/api/question/getlist/${page}`)
       .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
-  };  
+  };
 }
 
 export function getSearchResult(page, keyword) {
   return (dispatch) => {
     dispatch({ type: FETCH_QUESTION_LIST_BEGIN });
-    console.log(keyword);
     const data = {
       data: keyword,
-    }
+    };
 
     return axios
       .post(`http://localhost:3001/api/sort/search/${page}`, data)
@@ -88,3 +89,12 @@ export const fetchModifyAnswer = id => (dispatch) => {
     .get(`http://localhost:3001/api/question/getanswer/${id}`)
     .then(res => dispatch({ type: FETCH_MODIFY_ANSWER, payload: res.data.data }));
 };
+
+export function fetchSortedByTag(tag, page) {
+  return (dispatch) => {
+    dispatch({ type: FETCH_SORTED_TAG_BEGIN });
+    return axios
+      .get(`http://localhost:3001/api/sort/tag/${tag}/${page}`)
+      .then(res => dispatch({ type: FETCH_SORTED_TAG_SUCCESS, payload: res.data.data }));
+  };
+}

@@ -1,12 +1,7 @@
 import React from 'react';
 
 const Pagenation = ({
-  updateStartEndPage,
-  makeAsync,
-  count,
-  currentPage,
-  start,
-  end,
+  updateStartEndPage, makeAsync, count, currentPage, start, end,
 }) => {
   const per = 20;
   const total = Math.ceil(count / per);
@@ -14,6 +9,7 @@ const Pagenation = ({
   for (let i = 0; i < total; i++) {
     array.push(i + 1);
   }
+  const keyword = window.location.href.split('?q=')[1];
   const target = array.slice(start, end);
   return (
     <div>
@@ -23,6 +19,7 @@ const Pagenation = ({
             className="item page-link"
             onClick={() => {
               makeAsync(1);
+              console.log(makeAsync);
             }}
           >
             처음
@@ -44,9 +41,8 @@ const Pagenation = ({
             이전
           </button>
         </li>
-
         {target.map(val => (
-          <li id={val} className="page-item" key={val}>
+          <li id={keyword ? `p${keyword}${val}` : `p${val}`} className="page-item" key={val}>
             <button
               className="item page-link"
               onClick={() => {
