@@ -9,7 +9,7 @@ const Pagenation = ({
   for (let i = 0; i < total; i++) {
     array.push(i + 1);
   }
-  const keyword = window.location.href.split('?q=')[1];
+  const keyword = decodeURI(window.location.href).split('?q=')[1];
   const target = array.slice(start, end);
   return (
     <div>

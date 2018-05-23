@@ -46,7 +46,7 @@ class QuestionListContainer extends Component {
   };
 
   makeAsync = async (index) => {
-    const keyword = window.location.href.split('?q=')[1];
+    const keyword = decodeURI(window.location.href).split('?q=')[1];
     if (keyword) {
       await this.props.getSearchResult.bind(this, index, keyword)();
     } else {
