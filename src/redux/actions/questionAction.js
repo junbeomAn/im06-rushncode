@@ -36,6 +36,16 @@ export function getSearchResult(page, keyword) {
   };
 }
 
+export function getSortedResult(page, sortby) {
+  return (dispatch) => {
+    dispatch({ type: FETCH_QUESTION_LIST_BEGIN });
+
+    return axios
+      .get(`http://localhost:3001/api/sort/${sortby}/${page}`)
+      .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
+  };
+}
+
 export function fetchQuestionEntry(id) {
   return (dispatch) => {
     dispatch({ type: FETCH_QUESTION_ENTRY_BEGIN });

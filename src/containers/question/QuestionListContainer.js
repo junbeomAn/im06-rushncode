@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import QuestionList from '../../components/body/question/QuestionList';
-import { fetchQuestionList } from '../../redux/actions/questionAction';
+import { fetchQuestionList, getSearchResult } from '../../redux/actions/questionAction';
 
 class QuestionListContainer extends Component {
   constructor(props) {
@@ -44,9 +44,18 @@ class QuestionListContainer extends Component {
   };
 
   makeAsync = async (index) => {
-    await this.props.fetchQuestionList.bind(this, index)();
+    const keyword = window.location.href.split('?q=')[1];
+    if (keyword) {
+      await this.props.getSearchResult.bind(this, index, keyword)();
+    } else {
+      await this.props.fetchQuestionList.bind(this, index)();
+    }    
     this.updateCurrentPage(index);
   };
+
+  sortBy = () => {
+
+  }
 
   /* eslint no-nested-ternary: 0 */
   render() {
@@ -84,4 +93,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionList })(QuestionListContainer);
+export default connect(mapStateToProps, { fetchQuestionList, getSearchResult })(QuestionListContainer);

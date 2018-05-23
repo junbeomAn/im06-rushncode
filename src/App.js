@@ -31,7 +31,7 @@ class App extends Component {
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Information} />
                 <Route path="/helpdesk" component={HelpDesk} />
-                <Route path="/search" component={Search} />
+                <Route path="/search" component={Question} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

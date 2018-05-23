@@ -78,7 +78,7 @@ class Headers extends Component {
               onChange={this.changeValue}
             />
             <NavLink to={`/search?q=${this.state.searchWord}`} >
-              <button className="btn btn-outline-light my-2 my-sm-0" onClick={this.search} type="submit">
+              <button className="btn btn-outline-light my-2 my-sm-0">
               Search
               </button>
             </NavLink>
