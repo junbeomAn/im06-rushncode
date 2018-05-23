@@ -1,12 +1,7 @@
 import React from 'react';
 
 const Pagenation = ({
-  updateStartEndPage,
-  makeAsync,
-  count,
-  currentPage,
-  start,
-  end,
+  updateStartEndPage, makeAsync, count, currentPage, start, end,
 }) => {
   const per = 20;
   const total = Math.ceil(count / per);
@@ -23,6 +18,7 @@ const Pagenation = ({
             className="item page-link"
             onClick={() => {
               makeAsync(1);
+              console.log(makeAsync);
             }}
           >
             처음

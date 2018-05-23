@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import QuestionList from '../../components/body/question/QuestionList';
-import { fetchQuestionList } from '../../redux/actions/questionAction';
+import { fetchQuestionList, fetchSortedByTag } from '../../redux/actions/questionAction';
 
 class QuestionListContainer extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class QuestionListContainer extends Component {
 
   /* eslint no-nested-ternary: 0 */
   render() {
-    const { loading, questions } = this.props;
+    const { loading, questions, fetchSortedByTag } = this.props;
     const {
       currentPage, start, end, first,
     } = this.state;
@@ -69,6 +69,7 @@ class QuestionListContainer extends Component {
             currentPage={currentPage}
             start={start}
             end={end}
+            fetchSortedByTag={fetchSortedByTag}
           />
         )}
       </div>
@@ -84,4 +85,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionList })(QuestionListContainer);
+export default connect(mapStateToProps, { fetchQuestionList, fetchSortedByTag })(QuestionListContainer);

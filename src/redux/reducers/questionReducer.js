@@ -1,4 +1,3 @@
-
 import {
   FETCH_QUESTION_LIST_BEGIN,
   FETCH_QUESTION_LIST_SUCCESS,
@@ -12,6 +11,8 @@ import {
   INIT_WRITE_FORM,
   FETCH_MODIFY_QUESTION,
   FETCH_MODIFY_ANSWER,
+  FETCH_SORTED_TAG_BEGIN,
+  FETCH_SORTED_TAG_SUCCESS,
 } from '../actions/types';
 
 // 모듈의 초기 상태를 정의합니다.
@@ -102,6 +103,17 @@ export default function (state = initialState, action) {
       return {
         ...state,
         body: action.payload.body,
+      };
+    case FETCH_SORTED_TAG_BEGIN:
+      return {
+        ...state,
+        loading: true,
+      };
+    case FETCH_SORTED_TAG_SUCCESS:
+      return {
+        ...state,
+        items: action.payload,
+        loading: false,
       };
     default:
       return state;
