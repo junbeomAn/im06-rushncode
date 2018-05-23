@@ -10,10 +10,6 @@ export class Footer extends Component {
     this.setState({ modalIsOpen: true });
   };
 
-  // afterOpenModal = () => {
-  //   this.subtitle.style.color = '#f00';
-  // };
-
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
@@ -42,7 +38,7 @@ export class Footer extends Component {
             >
               <div className="helpdesk-container">
                 <div className="helpdesk-title">
-                    <h1>HELP DESK</h1>
+                  <h1>HELP DESK</h1>
                 </div>
                 <div className="helpdesk-body">
                   <div className="helpdesk-body-item">
