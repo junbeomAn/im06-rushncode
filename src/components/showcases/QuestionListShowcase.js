@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import WriteButton from './../../containers/showcase/writeButton';
 
 const QuestionListShowcase = () => (
@@ -23,9 +22,9 @@ const QuestionListShowcase = () => (
           정렬방법
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" href="#">좋아요</a>
-          <a className="dropdown-item" href="#">조회수</a>
-          <a className="dropdown-item" href="#">리워드</a>
+          <a className="dropdown-item" href="/sort/good">좋아요</a>
+          <a className="dropdown-item" href="/sort/view">조회수</a>
+          <a className="dropdown-item" href="/sort/reward">리워드</a>
         </div>
       </span>
     </div>

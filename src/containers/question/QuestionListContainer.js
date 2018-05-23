@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import QuestionList from '../../components/body/question/QuestionList';
-import { fetchQuestionList, fetchSortedByTag, getSearchResult } from '../../redux/actions/questionAction';
+import { fetchQuestionList, fetchSortedByTag, getSearchResult, getSortedResult } from '../../redux/actions/questionAction';
 import { updateCurrPage, updateStartEndPage } from '../../redux/actions/pagenationAction';
 
 class QuestionListContainer extends Component {
@@ -46,9 +46,16 @@ class QuestionListContainer extends Component {
   };
 
   makeAsync = async (index) => {
-    const keyword = decodeURI(window.location.href).split('?q=')[1];
+    const url = window.location.href;
+    const keyword = decodeURI(url).split('?q=')[1];
+    const sortKeyword = url.split('sort/')[1];
+    const sortByTag = url.split('tag/')[1];
     if (keyword) {
       await this.props.getSearchResult.bind(this, index, keyword)();
+    } else if (sortByTag) {
+      await this.props.fetchSortedByTag.bind(this, sortByTag, index)();
+    } else if (sortKeyword) {
+      await this.props.getSortedResult.bind(this, index, sortKeyword)();
     } else {
       await this.props.fetchQuestionList.bind(this, index)();
     }    
@@ -98,4 +105,4 @@ const mapStateToProps = state => ({
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchQuestionList, fetchSortedByTag, getSearchResult, updateCurrPage, updateStartEndPage })(QuestionListContainer);
+export default connect(mapStateToProps, { fetchQuestionList, fetchSortedByTag, getSearchResult, updateCurrPage, updateStartEndPage, getSortedResult })(QuestionListContainer);

@@ -32,7 +32,8 @@ class App extends Component {
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Information} />
                 <Route path="/helpdesk" component={HelpDesk} />
-                <Route path="/search" component={QuestionListContainer} />                
+                <Route path="/search" component={QuestionListContainer} />   
+                <Route path="/sort" component={QuestionListContainer} />    
                 <Route component={NoMatch} />
               </Switch>
             </div>
