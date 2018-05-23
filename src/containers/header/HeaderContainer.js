@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
+import { getSearchResult } from './../../redux/actions/questionAction';
 
 
 class Headers extends Component {
@@ -77,11 +78,11 @@ class Headers extends Component {
               aria-label="Search"
               onChange={this.changeValue}
             />
-            <NavLink to={`/search?q=${this.state.searchWord}`} >
-              <button className="btn btn-outline-light my-2 my-sm-0" onClick={this.search} type="submit">
+            <a href={`/search?q=${this.state.searchWord}`}>
+              <button className="btn btn-outline-light my-2 my-sm-0">
               Search
               </button>
-            </NavLink>
+            </a>
           </div>
         </div>
       </nav>
@@ -95,4 +96,4 @@ const mapStateToProps = (state) => {
   return { isLoggedIn };
 };
 
-export default connect(mapStateToProps, { Verify, SignOut })(Headers);
+export default connect(mapStateToProps, { Verify, SignOut, getSearchResult })(Headers);

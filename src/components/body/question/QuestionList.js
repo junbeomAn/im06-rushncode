@@ -25,7 +25,7 @@ const QuestionList = ({
       <Pagenation
         updateStartEndPage={updateStartEndPage}
         makeAsync={makeAsync}
-        count={posts[0].countQuestions}
+        count={posts[0].countQuestions}        
         currentPage={currentPage}
         start={start}
         end={end}

@@ -21,11 +21,13 @@ export const ON_BODY_CHANGE = 'questionReducer/ON_BODY_CHANGE';
 export const INIT_WRITE_FORM = 'questionReducer/INIT_WRITE_FORM';
 export const FETCH_MODIFY_QUESTION = 'questionReducer/FETCH_MODIFY_QUESTION';
 export const FETCH_MODIFY_ANSWER = 'questionReducer/FETCH_MODIFY_ANSWER';
-// Forum
-export const FETCH_FORUM_LIST = 'questionReducer/FETCH_FORUM_LIST';
-export const FETCH_FORUM_ENTRY = 'questionReducer/FETCH_FORUM_ENTRY';
 
 // Verfiy
 export const VERIFICATION = 'VERIFICATION';
 export const SIGNIN = 'SIGNIN';
 export const SIGNOUT = 'SIGNOUT';
+
+// Pagenation
+export const UPDATE_CURRENT_PAGE = 'pagenationReducer/UPDATE_CURRENT_PAGE';
+export const UPDATE_START_END_PAGE = 'pagenationReducer/UPDATE_START_END_PAGE';
+// export const ADD_CLASS_TO_CURRENT_PAGE = 'pagenationReducer/ADD_CLASS_TO_CURRENT_PAGE';
