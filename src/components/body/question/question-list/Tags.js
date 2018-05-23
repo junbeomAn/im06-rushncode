@@ -7,9 +7,8 @@ const Tags = ({ tags, fetchSortedByTag, currentPage }) => (
         type="button"
         className="btn btn-outline-secondary questListBtn"
         key={`questListBtn-${index * 10}`}
-        onClick={() => fetchSortedByTag(tag, (currentPage = 1))}
       >
-        {tag}
+        <a href={`/sort/tag/${tag}`}>{tag}</a> 
       </button>
     ))}
   </div>

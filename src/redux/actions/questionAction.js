@@ -94,7 +94,7 @@ export function fetchSortedByTag(tag, page) {
   return (dispatch) => {
     dispatch({ type: FETCH_SORTED_TAG_BEGIN });
     return axios
-      .get(`http://localhost:3001/api/sort/tag/${tag}/${page}`)
+      .post(`http://localhost:3001/api/sort/tag/${tag}/${page}`)
       .then(res => dispatch({ type: FETCH_SORTED_TAG_SUCCESS, payload: res.data.data }));
   };
 }
