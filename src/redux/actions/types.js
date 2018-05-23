@@ -21,9 +21,6 @@ export const ON_BODY_CHANGE = 'questionReducer/ON_BODY_CHANGE';
 export const INIT_WRITE_FORM = 'questionReducer/INIT_WRITE_FORM';
 export const FETCH_MODIFY_QUESTION = 'questionReducer/FETCH_MODIFY_QUESTION';
 export const FETCH_MODIFY_ANSWER = 'questionReducer/FETCH_MODIFY_ANSWER';
-// Forum
-export const FETCH_FORUM_LIST = 'questionReducer/FETCH_FORUM_LIST';
-export const FETCH_FORUM_ENTRY = 'questionReducer/FETCH_FORUM_ENTRY';
 
 // Verfiy
 export const VERIFICATION = 'VERIFICATION';
