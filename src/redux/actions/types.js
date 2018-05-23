@@ -26,3 +26,8 @@ export const FETCH_MODIFY_ANSWER = 'questionReducer/FETCH_MODIFY_ANSWER';
 export const VERIFICATION = 'VERIFICATION';
 export const SIGNIN = 'SIGNIN';
 export const SIGNOUT = 'SIGNOUT';
+
+// Pagenation
+export const UPDATE_CURRENT_PAGE = 'pagenationReducer/UPDATE_CURRENT_PAGE';
+export const UPDATE_START_END_PAGE = 'pagenationReducer/UPDATE_START_END_PAGE';
+// export const ADD_CLASS_TO_CURRENT_PAGE = 'pagenationReducer/ADD_CLASS_TO_CURRENT_PAGE';

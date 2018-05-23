@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { Footer, Tag, Rank, Job, NoMatch, Clause, Information, HelpDesk } from './components';
-import { HeaderContainer, Question, Auth, MyPage, Search, Home } from './containers';
+import { HeaderContainer, Question, Auth, MyPage, Home } from './containers';
+import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
 
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Information} />
                 <Route path="/helpdesk" component={HelpDesk} />
-                <Route path="/search" component={Search} />
+                <Route path="/search" component={QuestionListContainer} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

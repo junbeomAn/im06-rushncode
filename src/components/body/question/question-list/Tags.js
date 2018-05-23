@@ -1,15 +1,14 @@
 import React from 'react';
 
-const Tags = ({ tags, fetchSortedByTag, currentPage }) => (
+const Tags = ({ tags }) => (
   <div className="tags">
     {tags.map((tag, index) => (
       <button
         type="button"
         className="btn btn-outline-secondary questListBtn"
         key={`questListBtn-${index * 10}`}
-        onClick={() => fetchSortedByTag(tag, (currentPage = 1))}
       >
-        {tag}
+        <a href={`/question/${tag}`}>{tag}</a>
       </button>
     ))}
   </div>
