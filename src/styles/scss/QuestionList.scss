@@ -33,11 +33,19 @@
         .ItemBox {
           .ItemBoxImage {
             color: grey;
+            font-size: 1.1rem;
+            padding-top: 5px;
+            padding-bottom: 5px;
           }
           .ItemBoxNum {
             text-align: center;
             padding-right: 3px;
             color: grey;
+          }
+        }
+        .ItemBox2 {
+          .ItemBox2Image {
+            margin-top: 1px;
           }
         }
       }

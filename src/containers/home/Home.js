@@ -59,6 +59,8 @@ export class Home extends Component {
                     </a>
                   </div>
                 </nav>
+              </div>
+              <div className="home-lower-left-main">
                 <div className="tab-content" id="nav-tabContent">
                   <div
                     className="tab-pane fade show active"
@@ -93,31 +95,7 @@ export class Home extends Component {
                     태그
                   </div>
                 </div>
-
-                {/* <ul className="nav nav-tabs">
-                  <li className="nav-item">
-                    <a className="nav-link active" href="#">
-                      최신
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      인기
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      금액
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/tag">
-                      태그
-                    </a>
-                  </li>
-                </ul> */}
               </div>
-              <div className="home-lower-left-main">left-main</div>
             </div>
             <div className="home-lower-right">
               <div className="home-lower-right-main">right-main</div>

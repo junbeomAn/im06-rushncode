@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 import { getSearchResult } from './../../redux/actions/questionAction';
+import logo from '../../styles/css/img/logo.png';
 
 class Headers extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class Headers extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <span className="navbar-brand title">
             <NavLink exact to="/">
-              <h1>러시앤코드</h1>
+              <img className="logo-header" src={logo} alt="logo" />
             </NavLink>
           </span>
           <div className="collapse navbar-collapse headerItembox" id="navbarSupportedContent">

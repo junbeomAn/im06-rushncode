@@ -20,7 +20,12 @@
       display: flex;
       .first-image {
         border: solid 1px $greyfont;
-        width: 250px;
+        width: 230px;
+        height: 230px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
       .first-userinfo {
         margin-left: 20px;
@@ -47,8 +52,7 @@
         width: 32%;
         padding: 15px 20px;
         background: #f9f9f9;
-        box-shadow: 2px 1px 2px 1px silver;
-        border-top: solid 4px #5b7e8c;
+        border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
         .second-one-title {
           margin-bottom: 20px;
           font-weight: 600;
@@ -66,8 +70,7 @@
         width: 32%;
         padding: 15px 20px;
         background: #f9f9f9;
-        box-shadow: 2px 1px 2px 1px silver;
-        border-top: solid 4px #5b7e8c;
+        border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
         .second-two-title {
           margin-bottom: 20px;
           font-weight: 600;
@@ -102,8 +105,7 @@
         width: 32%;
         padding: 15px 20px;
         background: #f9f9f9;
-        box-shadow: 2px 1px 2px 1px silver;
-        border-top: solid 4px #5b7e8c;
+        border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
         .second-three-title {
           margin-bottom: 20px;
           font-weight: 600;
@@ -136,8 +138,121 @@
       }
     }
     .third {
-      height: 250px;
+      height: auto;
       padding: 10px 20px;
+      a {
+        color: $greyfont;
+      }
+      .active {
+        background: ghostwhite;
+        border-top: $primaryBlue solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: $primaryBlue;
+        font-weight: bold;
+      }
+      .tab-content {
+        height: auto;
+      }
+      .tab-pane {
+        height: auto;
+        border: none;
+        .container {
+          background: ghostwhite;
+          padding: 0;
+          margin: 0;
+        }
+        .box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 0px 0px 0px;
+          border-bottom: solid 1px $divider;
+          .first {
+            height: auto;
+            width: 25%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 7px;
+            color: $greyfont;
+            display: flex;
+            text-align: center;
+            border: none;
+            .firstItem {
+              width: 100px;
+              .ItemBox {
+                .ItemBoxImage {
+                  color: grey;
+                  padding-top: 5px;
+                  padding-bottom: 5px;
+                  font-size: 1.1rem;
+                  font-weight: 400;
+                }
+                .ItemBoxNum {
+                  padding-right: 3px;
+                  text-align: center;
+                  font-weight: 400;
+                  color: grey;
+                }
+              }
+              .ItemBox2 {
+                .ItemBox2Image {
+                  margin-top: 1px;
+                }
+              }
+            }
+          }
+          .second {
+            height: auto;
+            width: 80%;
+            margin: 0;
+            padding: 10px 15px;
+            border-bottom: none;
+            display: flex;
+            flex-direction: column;
+            h2 {
+              color: $primaryBlue;
+              &:hover {
+                font-size: 25px;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s;
+              }
+            }
+            p {
+              color: $greyfont;
+            }
+            .tags {
+              padding-top: 8px;
+              padding-bottom: 10px;
+              .questListBtn {
+                height: 25px;
+                padding-top: 2px;
+                margin-right: 3px;
+                &:hover {
+                  a {
+                    color: #fff;
+                  }
+                }
+                a {
+                  color: $greyfont;
+                }
+              }
+            }
+          }
+          .fourth {
+            width: 125px;
+            height: auto;
+            padding-right: 10px;
+            color: $greyfont;
+            text-align: center;
+            .username {
+              color: $primaryBlue;
+              font-size: 15px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
     }
   }
 }
