@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Tags, UpdateTime, LikeCount } from '../question-list';
 import { ViewCount, AnswerCount, Reward, Complete } from '../question-entry';
 
-const EachQuestion = ({ questions, fetchSortedByTag, currentPage }) => (
+const EachQuestion = ({ questions, makeAsync, currentPage }) => (
   <div>
     {questions.map(item => (
       <div className="questionPost" key={item.id}>
@@ -22,10 +22,10 @@ const EachQuestion = ({ questions, fetchSortedByTag, currentPage }) => (
           </div>
         </div>
         <div className="second">
-          <NavLink to={`question/${item.id}`}>
+          <NavLink exact to={`question/${item.id}`}>
             <h2>{item.title}</h2>
           </NavLink>
-          <Tags tags={item.tags} fetchSortedByTag={fetchSortedByTag} currentPage={currentPage} />
+          <Tags tags={item.tags} currentPage={currentPage} />
         </div>
         <div className="fourth">
           <a className="username" href={`/mypage/${item.userID}`}>

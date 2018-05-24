@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tags = ({ tags, fetchSortedByTag, currentPage }) => (
+const Tags = ({ tags }) => (
   <div className="tags">
     {tags.map((tag, index) => (
       <button
@@ -8,7 +8,7 @@ const Tags = ({ tags, fetchSortedByTag, currentPage }) => (
         className="btn btn-outline-secondary questListBtn"
         key={`questListBtn-${index * 10}`}
       >
-        <a href={`/sort/tag/${tag}`}>{tag}</a> 
+        <a href={`/sort/tag/${tag}`}>{tag}</a>
       </button>
     ))}
   </div>

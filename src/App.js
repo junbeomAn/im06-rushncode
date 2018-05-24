@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Footer, Tag, Rank, Job, NoMatch, Clause, Information } from './components';
-import { HeaderContainer, Question, Auth, MyPage, Home } from './containers';
+import { Tag, Rank, Job, NoMatch, Clause } from './components';
+import { HeaderContainer, Question, Auth, MyPage, Home, Footer } from './containers';
 import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
 

@@ -16,11 +16,20 @@
     }
   }
   .tags {
-    padding-top: 7px;
+    padding-top: 8px;
+    padding-bottom: 10px;
     .questListBtn {
       height: 25px;
       padding-top: 2px;
       margin-right: 3px;
+      &:hover {
+        a {
+          color: #fff;
+        }
+      }
+      a {
+        color: $greyfont;
+      }
     }
   }
   h1 {

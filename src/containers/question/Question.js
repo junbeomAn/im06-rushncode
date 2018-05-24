@@ -11,7 +11,7 @@ class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }  
+  }
 
   componentDidMount() {
     this.props.Verify();
@@ -38,4 +38,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { Verify })(Question);
-
