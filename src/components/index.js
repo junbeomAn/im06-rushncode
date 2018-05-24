@@ -1,6 +1,5 @@
 import Tag from './body/Tag';
 import Rank from './body/Rank';
-import Job from './body/Job';
 import Clause from './body/Clause';
 import NoMatch from './body/NoMatch';
 import Verify from './body/Verify';
@@ -13,7 +12,6 @@ import HomeEachQuestion from './body/HomeEachQuestion';
 export {
   Tag,
   Rank,
-  Job,
   Clause,
   NoMatch,
   Verify,
