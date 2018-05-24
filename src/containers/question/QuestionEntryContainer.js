@@ -148,17 +148,6 @@ class QuestionEntryContainer extends Component {
     }
   };
 
-  changeClassActive = (id) => {
-    if (this.props.userID === id) {
-      const els = document.getElementsByClassName('targeting');
-      console.log(els);
-      for (let i = 0; i < els.length; i++) {
-        els[i].classList.add('inactive');
-        console.log(i);
-      }
-    }
-  };
-
   deleteQuestion = () => {
     const config = {
       headers: {

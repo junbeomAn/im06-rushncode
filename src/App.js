@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Footer, Tag, Rank, Job, NoMatch, Clause, Information, HelpDesk } from './components';
+import { Footer, Tag, Rank, Job, NoMatch, Clause, Information } from './components';
 import { HeaderContainer, Question, Auth, MyPage, Home } from './containers';
 import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
@@ -30,8 +30,7 @@ class App extends Component {
                 <Route path="/job" component={Job} />
                 <Route path="/auth" component={Auth} />
                 <Route path="/clause" component={Clause} />
-                <Route path="/information" component={Information} />
-                <Route path="/helpdesk" component={HelpDesk} />
+                <Route path="/information" component={Clause} />
                 <Route path="/search" component={QuestionListContainer} />   
                 <Route path="/sort" component={QuestionListContainer} />    
                 <Route component={NoMatch} />

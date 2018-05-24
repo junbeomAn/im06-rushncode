@@ -1,0 +1,78 @@
+@import "color";
+
+.homeContainer {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background-color: ghostwhite;
+}
+
+// 쇼케이스
+.ClauseUpper {
+  height: 200px;
+  background-color: #0b1b33;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding-top: 20px;
+  opacity: 0.8;
+  text-align: left;
+}
+
+.ClauseJumbotron {
+  width: 40%; 
+  padding-left: 20px;
+  display: inline-block;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  h1 {
+    font-size: 40px;
+    margin-top: 20px;
+    letter-spacing: 0.2rem;
+  }
+  p {
+    padding-top: 20px;
+    font-size: 20px;
+    letter-spacing: 0.2rem;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+  .homeLBtn {
+    padding-right: 15px;
+  }
+  .homeRBtn {
+    padding-left: 15px;
+  }
+}
+
+.clause-container {
+ 
+  .clause-wrapper {
+    background-color: ghostwhite;
+    padding: 50px 50px 50px 50px;
+    height: auto;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.5rem;
+    a {
+      color: $greyfont;
+    }
+  }
+  .clause-content {
+    padding-top: 40px;
+    width: 90%;
+    margin: 0 auto;
+    // display:none;
+  }
+  .nav-tabs{
+    .active{
+      background: ghostwhite;
+      border-top: $primaryBlue solid 2px;
+      border-bottom: ghostwhite solid 1px;
+      font-weight: bold;
+    }    
+  }
+}
