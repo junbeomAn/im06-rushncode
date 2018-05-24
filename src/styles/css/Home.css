@@ -56,6 +56,8 @@
       background: ghostwhite;
       border-top: #0b1b33 solid 2px;
       border-bottom: ghostwhite solid 1px; }
+    .home-lower .home-lower-left .home-lower-left-header .tab-pane {
+      border: none; }
   .home-lower .home-lower-right {
     width: 30%;
     height: auto;
