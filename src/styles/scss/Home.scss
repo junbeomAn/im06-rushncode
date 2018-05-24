@@ -65,10 +65,15 @@
     display: flex;
     flex-direction: column;
     .home-lower-left-header {
+      a {
+        color: $greyfont;
+      }
       .active {
         background: ghostwhite;
         border-top: $primaryBlue solid 2px;
         border-bottom: ghostwhite solid 1px;
+        color: $primaryBlue;
+        font-weight: bold;
       }
       .tab-pane {
         border: none;

@@ -52,10 +52,14 @@
     margin-right: 10px;
     display: flex;
     flex-direction: column; }
+    .home-lower .home-lower-left .home-lower-left-header a {
+      color: #777; }
     .home-lower .home-lower-left .home-lower-left-header .active {
       background: ghostwhite;
       border-top: #0b1b33 solid 2px;
-      border-bottom: ghostwhite solid 1px; }
+      border-bottom: ghostwhite solid 1px;
+      color: #0b1b33;
+      font-weight: bold; }
     .home-lower .home-lower-left .home-lower-left-header .tab-pane {
       border: none; }
   .home-lower .home-lower-right {

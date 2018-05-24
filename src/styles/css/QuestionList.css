@@ -26,11 +26,16 @@
       .questionMain .questionPost .first .firstItem {
         width: 100px; }
         .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxImage {
-          color: grey; }
+          color: grey;
+          font-size: 1.1rem;
+          padding-top: 5px;
+          padding-bottom: 5px; }
         .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
           text-align: center;
           padding-right: 3px;
           color: grey; }
+        .questionMain .questionPost .first .firstItem .ItemBox2 .ItemBox2Image {
+          margin-top: 1px; }
     .questionMain .questionPost .second {
       width: 80%;
       margin: 0;

@@ -34,7 +34,7 @@ export class Footer extends Component {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               contentLabel="Example Modal"
-              className="helpdesk-modal"
+              className="helpdesk-modal shadow"
             >
               <div className="helpdesk-container">
                 <div className="helpdesk-title">

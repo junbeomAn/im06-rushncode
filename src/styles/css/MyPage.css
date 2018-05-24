@@ -18,7 +18,11 @@
       display: flex; }
       .mypage-container .mypage-inner-container .first .first-image {
         border: solid 1px #777;
-        width: 250px; }
+        width: 230px;
+        height: 230px; }
+        .mypage-container .mypage-inner-container .first .first-image img {
+          width: 100%;
+          height: 100%; }
       .mypage-container .mypage-inner-container .first .first-userinfo {
         margin-left: 20px;
         margin-top: 10px; }
@@ -40,8 +44,7 @@
         width: 32%;
         padding: 15px 20px;
         background: #f9f9f9;
-        box-shadow: 2px 1px 2px 1px silver;
-        border-top: solid 4px #5b7e8c; }
+        border-top: solid 4px rgba(11, 27, 51, 0.8); }
         .mypage-container .mypage-inner-container .second .second-one .second-one-title {
           margin-bottom: 20px;
           font-weight: 600;
@@ -56,8 +59,7 @@
         width: 32%;
         padding: 15px 20px;
         background: #f9f9f9;
-        box-shadow: 2px 1px 2px 1px silver;
-        border-top: solid 4px #5b7e8c; }
+        border-top: solid 4px rgba(11, 27, 51, 0.8); }
         .mypage-container .mypage-inner-container .second .second-two .second-two-title {
           margin-bottom: 20px;
           font-weight: 600;
@@ -85,8 +87,7 @@
         width: 32%;
         padding: 15px 20px;
         background: #f9f9f9;
-        box-shadow: 2px 1px 2px 1px silver;
-        border-top: solid 4px #5b7e8c; }
+        border-top: solid 4px rgba(11, 27, 51, 0.8); }
         .mypage-container .mypage-inner-container .second .second-three .second-three-title {
           margin-bottom: 20px;
           font-weight: 600;
@@ -111,7 +112,93 @@
                 color: red;
                 opacity: 0.7; }
     .mypage-container .mypage-inner-container .third {
-      height: 250px;
+      height: auto;
       padding: 10px 20px; }
+      .mypage-container .mypage-inner-container .third a {
+        color: #777; }
+      .mypage-container .mypage-inner-container .third .active {
+        background: ghostwhite;
+        border-top: #0b1b33 solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: #0b1b33;
+        font-weight: bold; }
+      .mypage-container .mypage-inner-container .third .tab-content {
+        height: auto; }
+      .mypage-container .mypage-inner-container .third .tab-pane {
+        height: auto;
+        border: none; }
+        .mypage-container .mypage-inner-container .third .tab-pane .container {
+          background: ghostwhite;
+          padding: 0;
+          margin: 0; }
+        .mypage-container .mypage-inner-container .third .tab-pane .box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 0px 0px 0px;
+          border-bottom: solid 1px #e4e6e8; }
+          .mypage-container .mypage-inner-container .third .tab-pane .box .first {
+            height: auto;
+            width: 25%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 7px;
+            color: #777;
+            display: flex;
+            text-align: center;
+            border: none; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem {
+              width: 100px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxImage {
+                color: grey;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: 1.1rem;
+                font-weight: 400; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxNum {
+                padding-right: 3px;
+                text-align: center;
+                font-weight: 400;
+                color: grey; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox2 .ItemBox2Image {
+                margin-top: 1px; }
+          .mypage-container .mypage-inner-container .third .tab-pane .box .second {
+            height: auto;
+            width: 80%;
+            margin: 0;
+            padding: 10px 15px;
+            border-bottom: none;
+            display: flex;
+            flex-direction: column; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .second h2 {
+              color: #0b1b33; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .second h2:hover {
+                font-size: 25px;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .second p {
+              color: #777; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags {
+              padding-top: 8px;
+              padding-bottom: 10px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags .questListBtn {
+                height: 25px;
+                padding-top: 2px;
+                margin-right: 3px; }
+                .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags .questListBtn:hover a {
+                  color: #fff; }
+                .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags .questListBtn a {
+                  color: #777; }
+          .mypage-container .mypage-inner-container .third .tab-pane .box .fourth {
+            width: 125px;
+            height: auto;
+            padding-right: 10px;
+            color: #777;
+            text-align: center; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .fourth .username {
+              color: #0b1b33;
+              font-size: 15px;
+              font-weight: bold; }
 
 /*# sourceMappingURL=MyPage.css.map */
