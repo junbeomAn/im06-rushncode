@@ -8,7 +8,7 @@ const Tags = ({ tags }) => (
         className="btn btn-outline-secondary questListBtn"
         key={`questListBtn-${index * 10}`}
       >
-        <a href={`/sort/tag/${tag}`}>{tag}</a> 
+        <a href={`/sort/tag/${tag}`}>{tag}</a>
       </button>
     ))}
   </div>
