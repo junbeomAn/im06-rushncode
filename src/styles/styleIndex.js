@@ -15,3 +15,4 @@ import './css/OAuth.css';
 import './css/markdown.css';
 import './css/MyPage.css';
 import './css/QuestionModify.css';
+import './css/Clause.css';
