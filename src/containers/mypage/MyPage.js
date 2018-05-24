@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { Grid, Image } from 'semantic-ui-react';
 import MyQuestion from './MyQuestion';
@@ -7,7 +8,7 @@ import image from '../../styles/css/images/testimonials/testimonial3.jpg';
 import { fetchMyQuestion } from '../../redux/actions/mypageAction';
 
 export class MyPage extends Component {
-  state = { first: true };
+  state = { first: true, imageURL: '' };
   componentDidMount() {
     const { userID } = this.props.match.params;
     this.props.fetchMyQuestion(userID);
@@ -16,6 +17,26 @@ export class MyPage extends Component {
   componentWillReceiveProps() {
     if (!this.props.loading) this.setState({ first: false });
   }
+
+  handleUploadImage = (ev) => {
+    ev.preventDefault();
+
+    const data = new FormData();
+    data.append('file', this.uploadInput.files[0]);
+    data.append('filename', this.fileName.value);
+
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    const send = { body: data };
+    axios.post('http://localhost:3001/upload', send, config).then((res) => {
+      res.json().then((body) => {
+        this.setState({ imageURL: `http://localhost:3001/${body.file}` });
+      });
+    });
+  };
 
   /* eslint no-nested-ternary: 0 */
   render() {
@@ -39,20 +60,38 @@ export class MyPage extends Component {
                       label={{
                         as: 'a',
                         color: 'blue',
-                        content: '업로드',
-                        icon: 'camera',
+                        content: '버스기사',
+                        icon: 'bus',
                         ribbon: true,
-                        for: 'ex_file',
+                        onClick: () => {
+                          this.handleUploadImage();
+                        },
                       }}
                       src={image}
+                      // src={this.state.imageURL}
                     />
-                    {/* <input type="file" id="ex_file" /> */}
                   </Grid.Column>
                 </Grid>
               </div>
               <div className="first-userinfo">
                 <div className="username">{user.username}</div>
                 <div className="email">{user.email}</div>
+                <div className="upload">
+                  {/* 사진파일 업로드 */}
+                  <form onSubmit={this.handleUploadImage}>
+                    <div>
+                      <input
+                        ref={(ref) => {
+                          this.uploadInput = ref;
+                        }}
+                        type="file"
+                      />
+                    </div>
+                    <div>
+                      <button id="ex_file">Upload</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
             <div className="second">
