@@ -116,7 +116,7 @@ class QuestionEntryContainer extends Component {
     axios
       .post(`http://localhost:3001/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
-        console.log(res);
+        alert(res.data.message);
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })
@@ -145,15 +145,6 @@ class QuestionEntryContainer extends Component {
           this.props.fetchQuestionEntry(id);
         })
         .catch(err => console.log(err));
-    }
-  };
-
-  changeClassActive = (id) => {
-    if (this.props.userID === id) {
-      const els = document.getElementsByClassName('targeting');
-      for (let i = 0; i < els.length; i++) {
-        els[i].classList.add('inactive');
-      }
     }
   };
 

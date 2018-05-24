@@ -43,7 +43,6 @@ class QuestionListContainer extends Component {
     } else if (sortKeyword) {
       await this.props.getSortedResult.bind(this, index, sortKeyword)();
     } else {
-      console.log('기본!!');
       await this.props.fetchQuestionList.bind(this, index)();
     }
     this.props.updateCurrPage(index);

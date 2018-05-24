@@ -22,7 +22,7 @@ const EachQuestion = ({ questions, makeAsync, currentPage }) => (
           </div>
         </div>
         <div className="second">
-          <NavLink to={`question/${item.id}`}>
+          <NavLink exact to={`question/${item.id}`}>
             <h2>{item.title}</h2>
           </NavLink>
           <Tags tags={item.tags} currentPage={currentPage} />
