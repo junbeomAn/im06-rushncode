@@ -48,50 +48,41 @@
   padding-bottom: 20px;
   display: flex; }
   .home-lower .home-lower-left {
-    width: 70%;
+    width: 80%;
     margin-right: 10px;
     display: flex;
     flex-direction: column; }
+    .home-lower .home-lower-left .home-lower-left-header a {
+      color: #777; }
     .home-lower .home-lower-left .home-lower-left-header .active {
       background: ghostwhite;
       border-top: #0b1b33 solid 2px;
-      border-bottom: ghostwhite solid 1px; }
+      border-bottom: ghostwhite solid 1px;
+      color: #0b1b33;
+      font-weight: bold; }
     .home-lower .home-lower-left .home-lower-left-header .tab-pane {
       border: none; }
   .home-lower .home-lower-right {
-    width: 30%;
+    width: 20%;
     height: auto;
     margin-left: 10px;
     margin-top: 32px; }
     .home-lower .home-lower-right .home-lower-right-main {
       border: #e0e0e0 solid 1px;
       padding: 25px;
-      height: 600px;
+      height: 100%;
       margin-bottom: 20px;
       background-color: #0b1b33;
-      opacity: 0.8;
-      line-height: 1.8rem;
+      opacity: 0.6;
+      line-height: 2.0rem;
       color: #e4e6e8; }
+      .home-lower .home-lower-right .home-lower-right-main:hover {
+        opacity: 0.8; }
       .home-lower .home-lower-right .home-lower-right-main hr {
         width: 100%;
         margin: 0 auto 5px auto;
         border-color: #e4e6e8; }
       .home-lower .home-lower-right .home-lower-right-main a {
-        text-decoration: none;
-        color: ghostwhite; }
-    .home-lower .home-lower-right .home-lower-right-second {
-      border: #e0e0e0 solid 1px;
-      height: 400px;
-      margin-bottom: 20px;
-      background-color: #0b1b33;
-      opacity: 0.8;
-      line-height: 1.8rem;
-      color: #e4e6e8; }
-      .home-lower .home-lower-right .home-lower-right-second hr {
-        width: 100%;
-        margin: 0 auto 5px auto;
-        border-color: #e4e6e8; }
-      .home-lower .home-lower-right .home-lower-right-second a {
         text-decoration: none;
         color: ghostwhite; }
 

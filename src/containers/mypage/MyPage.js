@@ -1,42 +1,62 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { Grid, Image } from 'semantic-ui-react';
+import MyQuestion from './MyQuestion';
+import MyAnswer from './MyAnswer';
+import image from '../../styles/css/images/testimonials/testimonial3.jpg';
+import { fetchMyQuestion } from '../../redux/actions/mypageAction';
 
 export class MyPage extends Component {
-  state = { user: '' };
+  state = { first: true };
   componentDidMount() {
-    this.getUserInfo();
+    const { userID } = this.props.match.params;
+    this.props.fetchMyQuestion(userID);
   }
 
-  getUserInfo = () => {
-    const { userID } = this.props.match.params;
-    const config = {
-      headers: {
-        'x-access-token': localStorage.getItem('token'),
-      },
-    };
-    axios.get(`http://localhost:3001/api/mypage/profile/${userID}`, config).then(res =>
-      this.setState({
-        user: res.data.data,
-      }));
-  };
+  componentWillReceiveProps() {
+    if (!this.props.loading) this.setState({ first: false });
+  }
+
+  /* eslint no-nested-ternary: 0 */
   render() {
-    console.log(this.state.user);
-    const { user } = this.state;
+    const { user, loading } = this.props;
+    const { first } = this.state;
+    console.log(user);
     return (
       <div className="mypage-container">
-        {!user ? (
+        {loading ? (
           <div>Loading...</div>
+        ) : first ? (
+          <h1>Loading...</h1>
         ) : (
           <div className="mypage-inner-container">
             <div className="first">
-              <div className="first-image">이미지</div>
+              <div className="first-image">
+                <Grid>
+                  <Grid.Column>
+                    <Image
+                      fluid
+                      label={{
+                        as: 'a',
+                        color: 'blue',
+                        content: '업로드',
+                        icon: 'camera',
+                        ribbon: true,
+                        for: 'ex_file',
+                      }}
+                      src={image}
+                    />
+                    {/* <input type="file" id="ex_file" /> */}
+                  </Grid.Column>
+                </Grid>
+              </div>
               <div className="first-userinfo">
                 <div className="username">{user.username}</div>
                 <div className="email">{user.email}</div>
               </div>
             </div>
             <div className="second">
-              <div className="second-one">
+              <div className="second-one shadow">
                 <div className="second-one-title">파워랭킹</div>
                 <div className="second-one-score">12위</div>
                 <br />
@@ -44,7 +64,7 @@ export class MyPage extends Component {
                 <div className="second-one-title">점수</div>
                 <div className="second-one-score">40500</div>
               </div>
-              <div className="second-two">
+              <div className="second-two shadow">
                 <div className="second-two-title">활동</div>
                 <div className="second-two-box">
                   <div className="second-two-box-inner">
@@ -61,7 +81,7 @@ export class MyPage extends Component {
                   </div>
                 </div>
               </div>
-              <div className="second-three">
+              <div className="second-three shadow">
                 <div className="second-three-title">통계</div>
                 <div className="second-three-box">
                   <div className="second-three-box-inner">
@@ -81,7 +101,7 @@ export class MyPage extends Component {
                       {user.numOfAnswers === 0 ? (
                         <span className="default">내역없음</span>
                       ) : (
-                        <span className="blue">
+                        <span className="red">
                           {Math.floor(user.pickedAnswers / user.numOfAnswers * 100)}%
                         </span>
                       )}
@@ -91,7 +111,52 @@ export class MyPage extends Component {
                 </div>
               </div>
             </div>
-            <div className="third">실제 질문 답변 내역</div>
+            <div className="third">
+              <nav>
+                <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a
+                    className="nav-item nav-link active"
+                    id="nav-default-tab"
+                    data-toggle="tab"
+                    href="#nav-default"
+                    role="tab"
+                    aria-controls="nav-default"
+                    aria-selected="true"
+                  >
+                    질문 {user.questions.length}
+                  </a>
+                  <a
+                    className="nav-item nav-link"
+                    id="nav-answer-tab"
+                    data-toggle="tab"
+                    href="#nav-answer"
+                    role="tab"
+                    aria-controls="nav-answer"
+                    aria-selected="false"
+                  >
+                    답변 {user.answers.length}
+                  </a>
+                </div>
+              </nav>
+              <div className="tab-content" id="nav-tabContent">
+                <div
+                  className="tab-pane fade show active"
+                  id="nav-default"
+                  role="tabpanel"
+                  aria-labelledby="nav-default-tab"
+                >
+                  <MyQuestion questions={user.questions} />
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="nav-answer"
+                  role="tabpanel"
+                  aria-labelledby="nav-answer-tab"
+                >
+                  <MyAnswer answers={user.answers} />
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -99,4 +164,11 @@ export class MyPage extends Component {
   }
 }
 
-export default MyPage;
+// 원하는이름 : state.(Reducer/index.js 정의한 이름).(initialState 해당 이름)
+const mapStateToProps = state => ({
+  user: state.mypage.items,
+  loading: state.mypage.loading,
+});
+
+// export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
+export default connect(mapStateToProps, { fetchMyQuestion })(MyPage);

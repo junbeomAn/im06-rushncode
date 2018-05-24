@@ -59,16 +59,21 @@
   padding-bottom: 20px;
   display: flex;
   .home-lower-left {
-    width: 70%;
+    width: 80%;
     margin-right: 10px;
     // border: solid 2px blue;
     display: flex;
     flex-direction: column;
     .home-lower-left-header {
+      a {
+        color: $greyfont;
+      }
       .active {
         background: ghostwhite;
         border-top: $primaryBlue solid 2px;
         border-bottom: ghostwhite solid 1px;
+        color: $primaryBlue;
+        font-weight: bold;
       }
       .tab-pane {
         border: none;
@@ -79,19 +84,22 @@
     }
   }
   .home-lower-right {
-    width: 30%;
+    width: 20%;
     height: auto;
     margin-left: 10px;
     margin-top: 32px;
     .home-lower-right-main {
       border: rgb(224, 224, 224) solid 1px;
       padding: 25px;
-      height: 600px;
+      height: 100%;
       margin-bottom: 20px;
       background-color: $primaryBlue;
-      opacity: 0.8;
-      line-height: 1.8rem;
+      opacity: 0.6;
+      line-height: 2.0rem;
       color: $divider;
+      &:hover{
+        opacity: 0.8;
+      }
       hr {
         width: 100%;
         margin: 0 auto 5px auto;
@@ -102,24 +110,27 @@
         color: ghostwhite;
       }
     }
-    .home-lower-right-second {
-      border: rgb(224, 224, 224) solid 1px;
-      
-      height: 400px;
-      margin-bottom: 20px;
-      background-color: $primaryBlue;
-      opacity: 0.8;
-      line-height: 1.8rem;
-      color: $divider;
-      hr {
-        width: 100%;
-        margin: 0 auto 5px auto;
-        border-color: $divider;
-      }
-      a {
-        text-decoration: none;
-        color: ghostwhite;
-      }
-    }
+    // .home-lower-right-second {
+    //   border: rgb(224, 224, 224) solid 1px;      
+    //   height: 400px;
+    //   margin-bottom: 20px;
+    //   background-color: $primaryBlue;
+    //   opacity: 0.8;
+    //   line-height: 1.8rem;
+    //   color: $divider;
+    //   .adgoogle {
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    //   hr {
+    //     width: 100%;
+    //     margin: 0 auto 5px auto;
+    //     border-color: $divider;
+    //   }
+    //   a {
+    //     text-decoration: none;
+    //     color: ghostwhite;
+    //   }
+    // }
   }
 }

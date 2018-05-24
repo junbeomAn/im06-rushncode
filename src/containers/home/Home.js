@@ -89,9 +89,8 @@ export class Home extends Component {
                   >
                     {<HomeQuestionList posts={questions} /> || 'loading questions'}
                   </div>
-                </div>               
+                </div>
               </div>
-              <div className="home-lower-left-main">left-main</div>
             </div>
             <div className="home-lower-right">
               <div className="home-lower-right-main">
@@ -116,8 +115,8 @@ export class Home extends Component {
                 <hr />
                 <a href="http://pythontutor.com/">파이썬튜터</a><br />                
               </div>
-              <div className="home-lower-right-second">
-                <Advertisement unit="vertical rectangle">
+              {/* <div className="home-lower-right-second">
+                <Advertisement unit="vertical rectangle" className="adgoogle" >
                   <ins
                     className="adsbygoogle"
                     data-ad-client="ca-pub-4591861188995436"
@@ -126,7 +125,7 @@ export class Home extends Component {
                     style={{ display: 'block' }}
                   />
                 </Advertisement>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

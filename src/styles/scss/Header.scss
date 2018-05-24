@@ -8,6 +8,11 @@
   margin: 0 auto;
   z-index: 1;
   // background-color: rgba(0, 0, 0, 0.7) !important;
+  .logo-header {
+    padding: 0;
+    margin: 0;
+    width: 130px;
+  }
 }
 
 .headerItembox {
@@ -51,5 +56,5 @@
 }
 
 // .form-control {
-//   width: 20%; 
+//   width: 20%;
 // }
