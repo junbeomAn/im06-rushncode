@@ -24,6 +24,13 @@ export function fetchQuestionList(page) {
   };
 }
 
+export const fetchHomeQuestions = () => (dispatch) => {
+  axios
+    .get('http://localhost:3001/api/question/getlist/1')
+    .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }))
+    .catch(err => console.log(err));
+}
+
 export function getSearchResult(page, keyword) {
   return (dispatch) => {
     dispatch({ type: FETCH_QUESTION_LIST_BEGIN });

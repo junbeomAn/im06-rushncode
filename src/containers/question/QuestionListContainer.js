@@ -49,8 +49,6 @@ class QuestionListContainer extends Component {
     this.addClassToCurrentPage(index, keyword);
   };
 
-  sortBy = () => {};
-
   /* eslint no-nested-ternary: 0 */
   render() {
     const {
