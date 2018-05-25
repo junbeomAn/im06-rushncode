@@ -31,13 +31,15 @@
             color: grey;
             font-size: 1rem;
             padding-top: 5px;
-            padding-bottom: 5px; }
+            padding-bottom: 5px;
+            font-weight: 400; }
           .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
             text-align: center;
             padding-right: 3px;
             font-weight: bold;
             font-size: 1.2rem;
-            color: grey; }
+            color: grey;
+            font-weight: 400; }
         .questionMain .questionPost .first .firstItem .ItemBox2 .ItemBox2Image {
           margin-top: 1px; }
     .questionMain .questionPost .second {
@@ -64,22 +66,6 @@
             color: #fff; }
           .questionMain .questionPost .second .tags .questListBtn a {
             color: #777; }
-    .questionMain .questionPost .third {
-      width: 20%;
-      margin-right: 15px;
-      padding: 5px 8px;
-      border: solid 1px #777;
-      border: solid 1px #0f240f;
-      background: #0f240f;
-      color: #fff;
-      text-align: center;
-      letter-spacing: 0.1rem;
-      animation-duration: 5s;
-      animation-iteration-count: infinite; }
-      .questionMain .questionPost .third:hover {
-        border: solid 1px #0f240f;
-        background: #fff;
-        color: #0f240f; }
     .questionMain .questionPost .fourth {
       width: 125px;
       padding-right: 10px;

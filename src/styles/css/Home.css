@@ -6,14 +6,12 @@
 
 .homeUpper {
   height: 500px;
-  background-image: url("./img/city3.jpg");
+  background-image: url("../../images/showcase.png");
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   padding-top: 20px;
-  opacity: 0.8;
-  text-align: center;
-  filter: grayscale(50%); }
+  text-align: center; }
 
 .HomeJumbotron {
   width: 50%;
@@ -115,5 +113,7 @@
       .home-lower .home-lower-right .home-lower-right-main a {
         text-decoration: none;
         color: ghostwhite; }
+        .home-lower .home-lower-right .home-lower-right-main a:hover {
+          color: #e8d048; }
 
 /*# sourceMappingURL=Home.css.map */

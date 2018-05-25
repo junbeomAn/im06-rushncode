@@ -1,34 +1,35 @@
 @import "color";
 
 .Header {
-  position: fixed;
-  top: 0;
-  left: 10%;
   width: 80%;
   margin: 0 auto;
-  z-index: 1;
-  // background-color: rgba(0, 0, 0, 0.7) !important;
   .logo-header {
     padding: 0;
     margin: 0;
-    width: 130px;
+    width: 80%;
   }
 }
-
-.headerItembox {
-  justify-content: flex-end;
-  .form-control {
-    width: 20%;
-  }
+.header-container {
+  width: 80%;
+  // border: solid 1px red;
+  display: flex;
+  justify-content: space-between
+}
+.header-title {
+  // border: solid 1px red;
+  width: 200px;
+  padding-left: 10px;
+}
+.header-tabs {
+  height: auto;
+  
+  // border: solid 1px red;
+  justify-content: center;
 }
 
-.navbar-brand {
-  // 위 오른 아래 왼
-  padding: 5px 15px 5px 15px;
-  h1 {
-    font-size: 25px;
-    color: ghostwhite;
-  }
+.header-search {
+  // border: solid 1px blue;
+  display: flex;
 }
 
 .navbar-nav {
@@ -36,25 +37,16 @@
   li {
     .item {
       padding-right: 30px;
-      color: ghostwhite;
-      font-size: 17px;
+      color: black;
+      font-size: 1.3rem;
+      letter-spacing: 0.2rem;
       text-decoration-style: none;
       &:hover {
-        color: lightyellow;
+        color: $primaryPurple;
         font-weight: bold;
       }
     }
   }
 }
 
-.navbar-container {
-  padding: 20px 0 20px 0;
-}
 
-.logos {
-  z-index: 2000;
-}
-
-// .form-control {
-//   width: 20%;
-// }

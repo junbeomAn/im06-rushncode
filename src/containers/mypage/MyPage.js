@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Grid, Image } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import MyQuestion from './MyQuestion';
 import MyAnswer from './MyAnswer';
-import image from '../../styles/css/images/testimonials/testimonial3.jpg';
+// import image from '../../styles/css/images/testimonials/testimonial3.jpg';
+import image from '../../images/profile/coding.png';
 import { fetchMyQuestion } from '../../redux/actions/mypageAction';
 
 export class MyPage extends Component {
-  state = { first: true, imageURL: '' };
+  state = { first: true, selectedFile: '' };
   componentDidMount() {
     const { userID } = this.props.match.params;
     this.props.fetchMyQuestion(userID);
@@ -18,24 +19,26 @@ export class MyPage extends Component {
     if (!this.props.loading) this.setState({ first: false });
   }
 
-  handleUploadImage = (ev) => {
-    ev.preventDefault();
+  fileChangedHandler = async (event) => {
+    // console.log(event.target.files[0]);
+    await this.setState({ selectedFile: event.target.files[0] });
+    this.uploadHandler();
+  };
 
-    const data = new FormData();
-    data.append('file', this.uploadInput.files[0]);
-    data.append('filename', this.fileName.value);
-
+  uploadHandler = () => {
+    console.log('selectedFile : ', this.state.selectedFile);
+    const formData = new FormData();
+    formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name);
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
       },
     };
-    const send = { body: data };
-    axios.post('http://localhost:3001/upload', send, config).then((res) => {
-      res.json().then((body) => {
-        this.setState({ imageURL: `http://localhost:3001/${body.file}` });
-      });
-    });
+    console.log('formData : ', formData);
+    const { userID } = this.props.match.params;
+    axios
+      .post(`http://localhost:3001/api/upload/image/${userID}`, formData, config)
+      .then(res => console.log(res));
   };
 
   /* eslint no-nested-ternary: 0 */
@@ -53,45 +56,20 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                <Grid>
-                  <Grid.Column>
-                    <Image
-                      fluid
-                      label={{
-                        as: 'a',
-                        color: 'blue',
-                        content: '버스기사',
-                        icon: 'bus',
-                        ribbon: true,
-                        onClick: () => {
-                          this.handleUploadImage();
-                        },
-                      }}
-                      src={image}
-                      // src={this.state.imageURL}
-                    />
-                  </Grid.Column>
-                </Grid>
+                <img src={image} />
+              </div>
+              <div className="upload-btn-wrapper">
+                <button className="btn">
+                  <h5 className="upload">
+                    <Icon name="camera retro" size="large" />
+                    <span> 사진 업로드</span>
+                  </h5>
+                </button>
+                <input type="file" name="myfile" onChange={e => this.fileChangedHandler(e)} />
               </div>
               <div className="first-userinfo">
                 <div className="username">{user.username}</div>
                 <div className="email">{user.email}</div>
-                <div className="upload">
-                  {/* 사진파일 업로드 */}
-                  <form onSubmit={this.handleUploadImage}>
-                    <div>
-                      <input
-                        ref={(ref) => {
-                          this.uploadInput = ref;
-                        }}
-                        type="file"
-                      />
-                    </div>
-                    <div>
-                      <button id="ex_file">Upload</button>
-                    </div>
-                  </form>
-                </div>
               </div>
             </div>
             <div className="second">
