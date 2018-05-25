@@ -15,7 +15,7 @@ export class MyAnswer extends Component {
     return (
       <div className="container">
         {answers.map(item => (
-          <div className="box" key={item.aId}>
+          <div className="box" key={item.id}>
             <div className="first">
               <div className="firstItem">
                 <ViewCount count={item.view} />
@@ -40,7 +40,7 @@ export class MyAnswer extends Component {
               <a className="username" href={`/mypage/${item.userID}`}>
                 {item.username}
               </a>
-              <UpdateTime time={item.aTime} />
+              <UpdateTime time={item.updated_at} />
             </div>
           </div>
         ))}
