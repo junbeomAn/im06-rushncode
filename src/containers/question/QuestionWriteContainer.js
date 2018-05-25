@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
-import { Button, Popup } from 'semantic-ui-react';
+import { Icon, Popup } from 'semantic-ui-react';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import {
   fetchQuestionTag,
@@ -157,10 +157,14 @@ class QuestionWriteContainer extends Component {
               />
             </div>
             <div className="mark_down_view_wrapper">
-              <div className="mark_down_view_top" >
+              <div className="mark_down_view_top">
                 <h2>미리보기</h2>
                 <Popup
-                  trigger={<span className="mark_down_tip">? &nbsp;&nbsp;마크다운 팁</span>}
+                  trigger={
+                    <span className="mark_down_tip">
+                      <Icon name="idea" />마크다운 팁
+                    </span>
+                  }
                   content={<MarkDownTip />}
                   on="click"
                   position="bottom left"
@@ -170,19 +174,22 @@ class QuestionWriteContainer extends Component {
               <div className="mark_down_view">
                 <ReactMarkDown className="mark_down_view_item" source={body} />
               </div>
-            </div>            
+            </div>
           </div>
 
           <div className="mark_down_btn">
             {id ? (
               <button
                 onClick={() => this.postModifiedQuestion()}
-                className="btn btn-primary mark_down_btn_item"
+                className="btn btn-primary mark_down_btn_item write-btn"
               >
                 질문수정
               </button>
             ) : (
-              <button onClick={() => this.submit()} className="btn btn-primary mark_down_btn_item">
+              <button
+                onClick={() => this.submit()}
+                className="btn btn-primary mark_down_btn_item write-btn"
+              >
                 질문작성
               </button>
             )}

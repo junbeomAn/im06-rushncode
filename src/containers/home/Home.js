@@ -20,7 +20,9 @@ export class Home extends Component {
     console.log(this.props);
     return (
       <div className="homeContainer">
-        <HomeShowcase />
+        <div className="showcase">
+          <HomeShowcase />
+        </div>
         <div className="home-lower-box">
           <div className="home-lower">
             <div className="home-lower-left">
@@ -35,7 +37,9 @@ export class Home extends Component {
                       role="tab"
                       aria-controls="nav-default"
                       aria-selected="true"
-                      onClick={() => { fetchQuestionList(1); }}
+                      onClick={() => {
+                        fetchQuestionList(1);
+                      }}
                     >
                       최신
                     </a>
@@ -47,7 +51,9 @@ export class Home extends Component {
                       role="tab"
                       aria-controls="nav-like"
                       aria-selected="false"
-                      onClick={() => { getSortedResult(1, 'view'); }}
+                      onClick={() => {
+                        getSortedResult(1, 'view');
+                      }}
                     >
                       인기
                     </a>
@@ -59,7 +65,9 @@ export class Home extends Component {
                       role="tab"
                       aria-controls="nav-reward"
                       aria-selected="false"
-                      onClick={() => { getSortedResult(1, 'reward'); }}
+                      onClick={() => {
+                        getSortedResult(1, 'reward');
+                      }}
                     >
                       금액
                     </a>
@@ -82,7 +90,9 @@ export class Home extends Component {
                       role="tabpanel"
                       aria-labelledby="nav-like-tab"
                     >
-                      {<HomeQuestionList posts={questions} /> || <Loader active inline="centered" />}
+                      {<HomeQuestionList posts={questions} /> || (
+                        <Loader active inline="centered" />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -92,24 +102,93 @@ export class Home extends Component {
               <div className="home-lower-right-main">
                 <h4>교육, 강의 플랫폼</h4>
                 <hr />
-                <a href="https://codestates.com/" target="_blank" without rel="noopener noreferrer">코드스테이츠</a><br />
-                <a href="https://opentutorials.org/course/1" target="_blank" without rel="noopener noreferrer">생활코딩</a><br />
-                <a href="https://www.inflearn.com/" target="_blank" without rel="noopener noreferrer">인프런</a><br />   
-                <a href="https://www.udemy.com/" target="_blank" without rel="noopener noreferrer">Udemy</a><br />
-                <a href="https://www.codecademy.com/" target="_blank" without rel="noopener noreferrer">Codecademy</a><br />
-                <a href="https://www.coursera.org/" target="_blank" without rel="noopener noreferrer">Coursera</a><br />
+                <a href="https://codestates.com/" target="_blank" without rel="noopener noreferrer">
+                  코드스테이츠
+                </a>
+                <br />
+                <a
+                  href="https://opentutorials.org/course/1"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  생활코딩
+                </a>
+                <br />
+                <a
+                  href="https://www.inflearn.com/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  인프런
+                </a>
+                <br />
+                <a href="https://www.udemy.com/" target="_blank" without rel="noopener noreferrer">
+                  Udemy
+                </a>
+                <br />
+                <a
+                  href="https://www.codecademy.com/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  Codecademy
+                </a>
+                <br />
+                <a
+                  href="https://www.coursera.org/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  Coursera
+                </a>
+                <br />
                 <h4>알고리즘</h4>
                 <hr />
-                <a href="https://programmers.co.kr/" target="_blank" without rel="noopener noreferrer">프로그래머스</a><br />
-                <a href="http://www.codewars.com/" target="_blank" without rel="noopener noreferrer">Codewars</a><br />
-                <a href="https://leetcode.com/" target="_blank" without rel="noopener noreferrer">Leetcode</a>
+                <a
+                  href="https://programmers.co.kr/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  프로그래머스
+                </a>
+                <br />
+                <a
+                  href="http://www.codewars.com/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  Codewars
+                </a>
+                <br />
+                <a href="https://leetcode.com/" target="_blank" without rel="noopener noreferrer">
+                  Leetcode
+                </a>
                 <h4>블로그, 문서 </h4>
                 <hr />
-                <a href="https://velopert.com/" target="_blank" without rel="noopener noreferrer">Velopert</a><br />
-                <a href="https://developer.mozilla.org/ko/" target="_blank" without rel="noopener noreferrer">MDN</a>
+                <a href="https://velopert.com/" target="_blank" without rel="noopener noreferrer">
+                  Velopert
+                </a>
+                <br />
+                <a
+                  href="https://developer.mozilla.org/ko/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
+                  MDN
+                </a>
                 <h4>유틸리티 </h4>
                 <hr />
-                <a href="http://pythontutor.com/" target="_blank" without rel="noopener noreferrer">파이썬튜터</a><br />                
+                <a href="http://pythontutor.com/" target="_blank" without rel="noopener noreferrer">
+                  파이썬튜터
+                </a>
+                <br />
               </div>
               {/* <div className="home-lower-right-second">
                 <Advertisement unit="vertical rectangle" className="adgoogle" >
@@ -136,8 +215,6 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, { fetchQuestionList, getSortedResult })(Home);
 
-
-
 // <ul className="nav nav-tabs">
 // <li className="nav-item">
 //   <a className="nav-link active" href="#">
@@ -159,4 +236,4 @@ export default connect(mapStateToProps, { fetchQuestionList, getSortedResult })(
 //     태그
 //   </a>
 // </li>
-// </ul> 
+// </ul>

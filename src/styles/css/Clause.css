@@ -6,12 +6,11 @@
 
 .ClauseUpper {
   height: 200px;
-  background-color: #0b1b33;
+  background-color: rgba(11, 27, 51, 0.8);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   padding-top: 20px;
-  opacity: 0.8;
   text-align: left; }
 
 .ClauseJumbotron {
@@ -20,7 +19,7 @@
   display: inline-block;
   background-color: transparent;
   text-transform: uppercase;
-  color: #fff;
+  color: ghostwhite;
   text-align: center; }
   .ClauseJumbotron h1 {
     font-size: 40px;

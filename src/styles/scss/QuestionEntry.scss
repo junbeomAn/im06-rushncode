@@ -125,9 +125,11 @@
           
         }
         .ItemBoxNum {
+          // border: solid 1px red;
+          padding-bottom: 3px;
           padding-right: 2px;
           text-align: center;
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           color: grey;
         }
       }
@@ -205,7 +207,7 @@
             margin-bottom: 7px;
           }
           .ItemBoxNum {
-            padding-top: 5px;
+            padding-bottom: 3px;
             text-align: center;
             font-size: 1.1rem;
             padding-right: 2px;

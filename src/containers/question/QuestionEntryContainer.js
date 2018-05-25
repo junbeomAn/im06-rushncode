@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
+import { Popup, Icon } from 'semantic-ui-react';
 import QuestionEntry from '../../components/body/question/QuestionEntry';
 import {
   fetchQuestionEntry,
@@ -9,6 +10,7 @@ import {
   fetchModifyAnswer,
 } from '../../redux/actions/questionAction';
 import { Verify } from '../../redux/actions/verifyAction';
+import MarkDownTip from '../../components/body/question/question-entry/MarkDownTip';
 
 class QuestionEntryContainer extends Component {
   constructor(props) {
@@ -274,16 +276,31 @@ class QuestionEntryContainer extends Component {
                     rows="30"
                   />
                 </div>
-                <div className="mark_down_view">
-                  <h2>미리보기</h2>
-                  <ReactMarkDown className="mark_down_view_item" source={this.state.src} />
+                <div className="mark_down_view_wrapper">
+                  <div className="mark_down_view_top">
+                    <h2>미리보기</h2>
+                    <Popup
+                      trigger={
+                        <span className="mark_down_tip">
+                          <Icon name="idea" />마크다운 팁
+                        </span>
+                      }
+                      content={<MarkDownTip />}
+                      on="click"
+                      position="bottom left"
+                      wide
+                    />
+                  </div>
+                  <div className="mark_down_view">
+                    <ReactMarkDown className="mark_down_view_item" source={this.state.src} />
+                  </div>
                 </div>
               </div>
 
               <div className="mark_down_btn">
                 <button
                   onClick={() => this.postAnswer()}
-                  className="btn btn-primary mark_down_btn_item"
+                  className="btn btn-primary mark_down_btn_item write-btn"
                 >
                   답변하기
                 </button>

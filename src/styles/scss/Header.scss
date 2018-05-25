@@ -3,6 +3,7 @@
 .Header {
   width: 80%;
   margin: 0 auto;
+  background: rgba($color: $primaryYellow, $alpha: 1);
   .logo-header {
     padding: 0;
     margin: 0;
@@ -42,8 +43,7 @@
       letter-spacing: 0.2rem;
       text-decoration-style: none;
       &:hover {
-        color: $primaryPurple;
-        font-weight: bold;
+        font-weight: 700;
       }
     }
   }

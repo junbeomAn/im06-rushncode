@@ -1,6 +1,7 @@
 .Header {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background: #e8d048; }
   .Header .logo-header {
     padding: 0;
     margin: 0;
@@ -31,7 +32,6 @@
     letter-spacing: 0.2rem;
     text-decoration-style: none; }
     .navbar-nav li .item:hover {
-      color: #a83fe4;
-      font-weight: bold; }
+      font-weight: 700; }
 
 /*# sourceMappingURL=Header.css.map */
