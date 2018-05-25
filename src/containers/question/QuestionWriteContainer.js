@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
+import { Button, Popup } from 'semantic-ui-react';
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import {
   fetchQuestionTag,
@@ -11,6 +12,7 @@ import {
   initWriteForm,
   fetchQuestionEntry,
 } from '../../redux/actions/questionAction';
+import MarkDownTip from '../../components/body/question/question-entry/MarkDownTip';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
 
 import '../../styles/css/QuestionWrite.css';
@@ -154,9 +156,20 @@ class QuestionWriteContainer extends Component {
                 rows="30"
               />
             </div>
-            <div className="mark_down_view">
-              <h2>미리보기</h2>
-              <ReactMarkDown className="mark_down_view_item" source={body} />
+            <div className="mark_down_view_wrapper">
+              <div className="mark_down_view_top" >
+                <h2>미리보기</h2>
+                <Popup
+                  trigger={<span className="mark_down_tip">? &nbsp;&nbsp;마크다운 팁</span>}
+                  content={<MarkDownTip />}
+                  on="click"
+                  position="bottom center"
+                  wide
+                />
+              </div>
+              <div className="mark_down_view">
+                <ReactMarkDown className="mark_down_view_item" source={body} />
+              </div>
             </div>
           </div>
 

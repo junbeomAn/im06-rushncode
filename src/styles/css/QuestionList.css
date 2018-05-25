@@ -29,11 +29,13 @@
           color: grey;
           font-size: 1.1rem;
           padding-top: 5px;
-          padding-bottom: 5px; }
+          padding-bottom: 5px;
+          font-weight: 400; }
         .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
           text-align: center;
           padding-right: 3px;
-          color: grey; }
+          color: grey;
+          font-weight: 400; }
         .questionMain .questionPost .first .firstItem .ItemBox2 .ItemBox2Image {
           margin-top: 1px; }
     .questionMain .questionPost .second {

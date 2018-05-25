@@ -47,8 +47,8 @@ class Headers extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/job" className="item">
-                  채용정보
+                <NavLink to="/tag" className="item">
+                  태그
                 </NavLink>
               </li>
               {!this.props.isLoggedIn ? (
