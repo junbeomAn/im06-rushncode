@@ -56,7 +56,7 @@ const Answer = ({
           />
         </div>
         <div className="QuestionEntryAnswerSecondReplyAddBtn">
-          <button onClick={() => postAnswerReply(aID)} className="btn btn-primary mb-2">
+          <button onClick={() => postAnswerReply(aID)} className="btn btn-primary mb-2 write-btn">
             확인
           </button>
         </div>

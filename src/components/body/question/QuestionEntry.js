@@ -98,7 +98,10 @@ const QuestionEntry = ({
             />
           </div>
           <div className="QuestionEntryAnswerSecondReplyAddBtn">
-            <button onClick={() => postQuestionReply(qID)} className="btn btn-primary mb-2">
+            <button
+              onClick={() => postQuestionReply(qID)}
+              className="btn btn-primary mb-2 write-btn"
+            >
               확인
             </button>
           </div>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react';
+import image from '../../../../images/profile/coding.png';
 
 const Writer = ({ username, userID }) => (
   <a className="ItemBox likeBtn" href={`/mypage/${userID}`}>
-    <div className="ItemBoxImage">
-      <Icon name="vcard" size="big" />
-      <div className="ItemBoxNum">{username}</div>
+    <div className="ItemBoxNum">
+      <img src={image} alt="사용자" width={40} style={{ borderRadius: '5px' }} />
     </div>
+    <div className="ItemBoxImage">{username}</div>
   </a>
 );
 
