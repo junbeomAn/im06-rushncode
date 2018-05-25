@@ -10,22 +10,25 @@
 // 쇼케이스
 .ClauseUpper {
   height: 200px;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
   background-color: rgba($color: $primaryBlue, $alpha: 0.8);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  padding-top: 20px;
   text-align: left;
 }
 
 .ClauseJumbotron {
-  width: 40%; 
-  padding-left: 20px;
-  display: inline-block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 80px;
   background-color: transparent;
   text-transform: uppercase;
   color: ghostwhite;
-  text-align: center;
+  text-align: left;
   h1 {
     font-size: 40px;
     margin-top: 20px;
@@ -48,7 +51,6 @@
 }
 
 .clause-container {
- 
   .clause-wrapper {
     background-color: ghostwhite;
     padding: 50px 50px 50px 50px;
@@ -66,12 +68,12 @@
     margin: 0 auto;
     // display:none;
   }
-  .nav-tabs{
-    .active{
+  .nav-tabs {
+    .active {
       background: ghostwhite;
       border-top: $primaryBlue solid 2px;
       border-bottom: ghostwhite solid 1px;
       font-weight: bold;
-    }    
+    }
   }
 }

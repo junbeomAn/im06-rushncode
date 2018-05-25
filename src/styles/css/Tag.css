@@ -3,7 +3,7 @@
   background: ghostwhite;
   height: auto; }
   .tag-container .tag-content {
-    width: 80%;
+    width: 90%;
     margin: 30px auto 0 auto; }
     .tag-container .tag-content h2 {
       font-weight: normal;
@@ -29,7 +29,7 @@
   margin-top: 40px;
   text-align: center; }
   .tag-input-container .tag-search-bar {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     height: 60px; }
 
