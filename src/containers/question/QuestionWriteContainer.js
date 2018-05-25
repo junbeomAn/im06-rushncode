@@ -170,7 +170,7 @@ class QuestionWriteContainer extends Component {
               <div className="mark_down_view">
                 <ReactMarkDown className="mark_down_view_item" source={body} />
               </div>
-            </div>
+            </div>            
           </div>
 
           <div className="mark_down_btn">
