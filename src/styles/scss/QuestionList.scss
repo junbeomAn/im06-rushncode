@@ -89,24 +89,6 @@
         }
       }
     }
-    .third {
-      width: 20%;
-      margin-right: 15px;
-      padding: 5px 8px;
-      border: solid 1px $greyfont;
-      border: solid 1px $primaryGreen;
-      background: $primaryGreen;
-      color: #fff;
-      text-align: center;
-      letter-spacing: 0.1rem;
-      animation-duration: 5s;
-      animation-iteration-count: infinite;
-      &:hover {
-        border: solid 1px $primaryGreen;
-        background: #fff;
-        color: $primaryGreen;
-      }
-    }
     .fourth {
       width: 125px;
       padding-right: 10px;

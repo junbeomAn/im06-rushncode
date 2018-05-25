@@ -16,12 +16,35 @@
       height: 250px;
       padding: 10px 20px;
       display: flex; }
+      .mypage-container .mypage-inner-container .first .upload-btn-wrapper {
+        position: absolute;
+        top: 30.2rem;
+        z-index: 300;
+        overflow: hidden;
+        display: inline-block;
+        width: 230px; }
+      .mypage-container .mypage-inner-container .first .btn {
+        text-decoration: none;
+        width: 100%;
+        padding: 8px 20px;
+        color: ghostwhite;
+        background-color: rgba(11, 27, 51, 0.7);
+        border: none;
+        font-size: 20px;
+        font-weight: bold; }
+      .mypage-container .mypage-inner-container .first .upload-btn-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        height: auto; }
       .mypage-container .mypage-inner-container .first .first-image {
         border: solid 1px #777;
-        width: 230px;
-        height: 230px; }
+        min-width: 230px;
+        height: 230px;
+        z-index: 2; }
         .mypage-container .mypage-inner-container .first .first-image img {
-          width: 100%;
           height: 100%; }
       .mypage-container .mypage-inner-container .first .first-userinfo {
         margin-left: 20px;
@@ -34,11 +57,6 @@
           margin-top: 30px;
           font-size: 1.5rem;
           letter-spacing: 1.1px; }
-        .mypage-container .mypage-inner-container .first .first-userinfo .upload {
-          border: solid 1px red;
-          width: 300px; }
-          .mypage-container .mypage-inner-container .first .first-userinfo .upload input {
-            width: 100%; }
     .mypage-container .mypage-inner-container .second {
       border-bottom: solid 2px #e4e6e8;
       height: 250px;

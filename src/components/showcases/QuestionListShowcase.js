@@ -4,11 +4,7 @@ import WriteButton from './../../containers/showcase/writeButton';
 const QuestionListShowcase = () => (
   <div className="homeUpper">
     <div className="jumbotron HomeJumbotron">
-      <h1>돈이 곧 명예</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-        to featured content or information.
-      </p>
+      
       <span className="homeLBtn">
         <WriteButton />
       </span>

@@ -64,9 +64,9 @@
         color: grey;
       }
       &:hover {
-        color: coral;
+        color: $primaryPurple;
         .CountBoxNum {
-          color: coral;
+          color: $primaryPurple;
         }
       }
     }
@@ -212,9 +212,9 @@
             color: grey;
           }
           &:hover {
-            color: coral;
+            color: $primaryPurple;
             .ItemBoxNum {
-              color: coral;
+              color: $primaryPurple;
             }
           }
         }
@@ -236,9 +236,9 @@
           color: grey;
         }
         &:hover {
-          color: coral;
+          color: $primaryPurple;
           .CountBoxNum {
-            color: coral;
+            color: $primaryPurple;
           }
         }
       }
@@ -261,14 +261,14 @@
   color: $greyfont;
   border: none;
   &:hover {
-    color: coral;
+    color: $primaryPurple;
   }
 }
 .picked {
   .picked-item {
-    color: coral;
+    color: $primaryPurple;
     span {
-      color: coral;
+      color: $primaryPurple;
       font-size: 1.3rem;
       font-weight: 600;
     }

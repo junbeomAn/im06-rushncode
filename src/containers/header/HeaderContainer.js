@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 import { getSearchResult } from './../../redux/actions/questionAction';
-import logo from '../../styles/css/img/logo.png';
+import logo from '../../styles/css/img/logo-black.png';
 
 class Headers extends Component {
   constructor(props) {
@@ -27,23 +27,18 @@ class Headers extends Component {
   render() {
     // this.props.Verify();
     return (
-      <nav className="navbar navbar-expand-lg navbar-light Header">
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <span className="navbar-brand title">
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light Header">
+        <div className="collapse navbar-collapse header-container" id="navbarSupportedContent">
+          <div className="navbar-brand header-title">
             <NavLink exact to="/">
               <img className="logo-header" src={logo} alt="logo" />
             </NavLink>
-          </span>
-          <div className="collapse navbar-collapse headerItembox" id="navbarSupportedContent">
-            <ul className="nav navbar-nav navbar-right">
+          </div>
+          <div className="collapse navbar-collapse header-tabs" id="navbarSupportedContent">
+            <ul className="nav navbar-nav navbar-center">
               <li className="nav-item">
                 <NavLink to="/question" className="item">
                   질문
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/rank" className="item">
-                  랭크
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -51,6 +46,18 @@ class Headers extends Component {
                   태그
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/rank" className="item">
+                  랭크
+                </NavLink>
+              </li>
+              {this.props.isLoggedIn && (
+                <li className="nav-item">
+                  <NavLink to={`/mypage/${this.props.userID}`} className="item">
+                    마이페이지
+                  </NavLink>
+                </li>
+              )}
               {!this.props.isLoggedIn ? (
                 <li className="nav-item">
                   <NavLink to="/auth/signin" className="item">
@@ -65,15 +72,17 @@ class Headers extends Component {
                 </li>
               )}
             </ul>
+          </div>
+          <div className="header-search">
             <input
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Search"
+              placeholder="검색어를 입력하세요"
               aria-label="Search"
               onChange={this.changeValue}
             />
             <a href={`/search?q=${this.state.searchWord}`}>
-              <button className="btn btn-outline-light my-2 my-sm-0">Search</button>
+              <button className="btn btn-outline-dark my-2 my-sm-0 search-btn">검색</button>
             </a>
           </div>
         </div>
@@ -83,8 +92,8 @@ class Headers extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { isLoggedIn } = state.verify;
-  return { isLoggedIn };
+  const { isLoggedIn, userID, email } = state.verify;
+  return { isLoggedIn, userID, email };
 };
 
 export default connect(mapStateToProps, { Verify, SignOut, getSearchResult })(Headers);
