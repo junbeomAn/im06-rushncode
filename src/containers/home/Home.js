@@ -96,24 +96,24 @@ export class Home extends Component {
               <div className="home-lower-right-main">
                 <h4>교육, 강의 플랫폼</h4> 
                 <hr />
-                <a href="https://codestates.com/">코드스테이츠</a><br />
-                <a href="https://opentutorials.org/course/1">생활코딩</a><br />
-                <a href="https://www.inflearn.com/">인프런</a><br />   
-                <a href="https://www.udemy.com/">Udemy</a><br />
-                <a href="https://www.codecademy.com/">Codecademy</a><br />
-                <a href="https://www.coursera.org/">Coursera</a><br />
+                <a href="https://codestates.com/" target="_blank" without rel="noopener noreferrer">코드스테이츠</a><br />
+                <a href="https://opentutorials.org/course/1" target="_blank" without rel="noopener noreferrer">생활코딩</a><br />
+                <a href="https://www.inflearn.com/" target="_blank" without rel="noopener noreferrer">인프런</a><br />   
+                <a href="https://www.udemy.com/" target="_blank" without rel="noopener noreferrer">Udemy</a><br />
+                <a href="https://www.codecademy.com/" target="_blank" without rel="noopener noreferrer">Codecademy</a><br />
+                <a href="https://www.coursera.org/" target="_blank" without rel="noopener noreferrer">Coursera</a><br />
                 <h4>알고리즘</h4>
                 <hr />
-                <a href="https://programmers.co.kr/">프로그래머스</a><br />
-                <a href="http://www.codewars.com/">Codewars</a><br />
-                <a href="https://leetcode.com/">Leetcode</a>
+                <a href="https://programmers.co.kr/" target="_blank" without rel="noopener noreferrer">프로그래머스</a><br />
+                <a href="http://www.codewars.com/" target="_blank" without rel="noopener noreferrer">Codewars</a><br />
+                <a href="https://leetcode.com/" target="_blank" without rel="noopener noreferrer">Leetcode</a>
                 <h4>블로그, 문서 </h4>
                 <hr />
-                <a href="https://velopert.com/">Velopert</a><br />
-                <a href="https://developer.mozilla.org/ko/">MDN</a>
+                <a href="https://velopert.com/" target="_blank" without rel="noopener noreferrer">Velopert</a><br />
+                <a href="https://developer.mozilla.org/ko/" target="_blank" without rel="noopener noreferrer">MDN</a>
                 <h4>유틸리티 </h4>
                 <hr />
-                <a href="http://pythontutor.com/">파이썬튜터</a><br />                
+                <a href="http://pythontutor.com/" target="_blank" without rel="noopener noreferrer">파이썬튜터</a><br />                
               </div>
               {/* <div className="home-lower-right-second">
                 <Advertisement unit="vertical rectangle" className="adgoogle" >

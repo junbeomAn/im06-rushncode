@@ -1,41 +1,37 @@
 .Header {
-  position: fixed;
-  top: 0;
-  left: 10%;
   width: 80%;
-  margin: 0 auto;
-  z-index: 1; }
+  margin: 0 auto; }
   .Header .logo-header {
     padding: 0;
     margin: 0;
-    width: 130px; }
+    width: 80%; }
 
-.headerItembox {
-  justify-content: flex-end; }
-  .headerItembox .form-control {
-    width: 20%; }
+.header-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between; }
 
-.navbar-brand {
-  padding: 5px 15px 5px 15px; }
-  .navbar-brand h1 {
-    font-size: 25px;
-    color: ghostwhite; }
+.header-title {
+  width: 200px;
+  padding-left: 10px; }
+
+.header-tabs {
+  height: auto;
+  justify-content: center; }
+
+.header-search {
+  display: flex; }
 
 .navbar-nav {
   padding-right: 41px; }
   .navbar-nav li .item {
     padding-right: 30px;
-    color: ghostwhite;
-    font-size: 17px;
+    color: black;
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
     text-decoration-style: none; }
     .navbar-nav li .item:hover {
-      color: lightyellow;
+      color: #a83fe4;
       font-weight: bold; }
-
-.navbar-container {
-  padding: 20px 0 20px 0; }
-
-.logos {
-  z-index: 2000; }
 
 /*# sourceMappingURL=Header.css.map */

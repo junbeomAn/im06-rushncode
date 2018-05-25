@@ -44,9 +44,9 @@
       font-size: 18px;
       color: grey; }
     .QuestionEntryContainer .QuestionEntryMain .CountBox:hover {
-      color: coral; }
+      color: #a83fe4; }
       .QuestionEntryContainer .QuestionEntryMain .CountBox:hover .CountBoxNum {
-        color: coral; }
+        color: #a83fe4; }
     .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainSecond {
       width: 80%;
       height: auto;
@@ -152,9 +152,9 @@
             padding-right: 2px;
             color: grey; }
           .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .QuestionEntryAnswerThird .ItemBox:hover {
-            color: coral; }
+            color: #a83fe4; }
             .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .QuestionEntryAnswerThird .ItemBox:hover .ItemBoxNum {
-              color: coral; }
+              color: #a83fe4; }
       .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox {
         margin-bottom: 20px; }
         .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox .CountBoxImage {
@@ -169,9 +169,9 @@
           margin-top: 8px;
           color: grey; }
         .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox:hover {
-          color: coral; }
+          color: #a83fe4; }
           .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .CountBox:hover .CountBoxNum {
-            color: coral; }
+            color: #a83fe4; }
 
 .QuestionEntryUpper {
   height: 500px;
@@ -188,12 +188,12 @@
   color: #777;
   border: none; }
   .likeBtn:hover {
-    color: coral; }
+    color: #a83fe4; }
 
 .picked .picked-item {
-  color: coral; }
+  color: #a83fe4; }
   .picked .picked-item span {
-    color: coral;
+    color: #a83fe4;
     font-size: 1.3rem;
     font-weight: 600; }
 
