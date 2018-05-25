@@ -30,8 +30,10 @@ export class MyPage extends Component {
         'x-access-token': localStorage.getItem('token'),
       },
     };
+    
+    const { userID } = this.props.match.params;
     const send = { body: data };
-    axios.post('http://localhost:3001/upload', send, config).then((res) => {
+    axios.post(`http://localhost:3001/api/upload/image/${userID}`, send, config).then((res) => {
       res.json().then((body) => {
         this.setState({ imageURL: `http://localhost:3001/${body.file}` });
       });
