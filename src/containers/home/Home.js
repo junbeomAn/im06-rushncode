@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Advertisement } from 'semantic-ui-react';
+// import { Advertisement } from 'semantic-ui-react';
+import { Loader } from 'semantic-ui-react';
+
 import { fetchQuestionList, getSortedResult } from '../../redux/actions/questionAction';
 import HomeShowcase from '../../components/showcases/HomeShowcase';
 import HomeQuestionList from '../../components/body/HomeQuestionList';
@@ -71,30 +73,24 @@ export class Home extends Component {
                     role="tabpanel"
                     aria-labelledby="nav-default-tab"
                   >
-                    {<HomeQuestionList posts={questions} /> || 'loading questions'}
+                    {<HomeQuestionList posts={questions} /> || <Loader active inline="centered" />}
                   </div>
-                  <div
-                    className="tab-pane fade"
-                    id="nav-like"
-                    role="tabpanel"
-                    aria-labelledby="nav-like-tab"
-                  >
-                    {<HomeQuestionList posts={questions} /> || 'loading questions'}
-                  </div>
-                  <div
-                    className="tab-pane fade"
-                    id="nav-reward"
-                    role="tabpanel"
-                    aria-labelledby="nav-reward-tab"
-                  >
-                    {<HomeQuestionList posts={questions} /> || 'loading questions'}
-                  </div>
+                  {[0, 1].map(() => (
+                    <div
+                      className="tab-pane fade"
+                      id="nav-like"
+                      role="tabpanel"
+                      aria-labelledby="nav-like-tab"
+                    >
+                      {<HomeQuestionList posts={questions} /> || <Loader active inline="centered" />}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             <div className="home-lower-right">
               <div className="home-lower-right-main">
-                <h4>교육, 강의 플랫폼</h4> 
+                <h4>교육, 강의 플랫폼</h4>
                 <hr />
                 <a href="https://codestates.com/" target="_blank" without rel="noopener noreferrer">코드스테이츠</a><br />
                 <a href="https://opentutorials.org/course/1" target="_blank" without rel="noopener noreferrer">생활코딩</a><br />

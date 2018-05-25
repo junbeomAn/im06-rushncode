@@ -1,12 +1,7 @@
 import React from 'react';
 import { Divider, Button, Icon } from 'semantic-ui-react';
-// import { Route, Redirect } from 'react-router';
-// import 'react-flexview/lib/flexView.css';
-// import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
-import { createBrowserHistory } from 'history';
 
-const history = createBrowserHistory();
 
 const Login = ({ keyPress, login, fbLogin }) => (
   <div className="authContainer">
@@ -26,7 +21,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
         <a href="https://github.com/login/oauth/authorize?client_id=9eccd23df65b6d3581f9">
           <Button color="black" className="authBtn">
             <Icon name="github" />Login with Github
-          </Button> 
+          </Button>
         </a>
       </div>
       <Divider horizontal>OR</Divider>
