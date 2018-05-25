@@ -1,7 +1,7 @@
 .authInputContainer {
   display: flex;
   flex-direction: column;
-  width: 33%;
+  width: 350px;
   margin-left: 35%;
   margin-top: 10%;
   padding: 20px; }
@@ -9,7 +9,7 @@
 .authOptionContainer {
   display: flex;
   flex-direction: column;
-  width: 33%;
+  width: 350px;
   margin-left: 35%;
   margin-top: 10px;
   padding: 20px;

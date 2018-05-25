@@ -1,13 +1,24 @@
 import React from 'react';
 import { Input } from 'semantic-ui-react';
-import TagShowcase from '../showcases/TagShowcase';
 
-const Tag = () => (
-  <div className="tagContainer">
+import TagShowcase from '../showcases/TagShowcase';
+import TagContent from './TagContent';
+
+const Tag = ({ valueChange, tags, tagSearch }) => (
+  <div className="tag-container">
     <TagShowcase />
-    <div className="tagInputContainer">
-      <Input placeholder="search tags here. . ." />
+    <div className="tag-input-container">
+      <Input
+        className="tag-search-bar"
+        size="huge"
+        icon="search"
+        onChange={valueChange}
+        onKeyPress={e => tagSearch(e)}
+        iconPosition="left"
+        placeholder="태그 검색"
+      />
     </div>
+    <TagContent tags={tags} />
   </div>
 );
 
