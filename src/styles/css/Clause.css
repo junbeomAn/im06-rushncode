@@ -6,21 +6,24 @@
 
 .ClauseUpper {
   height: 200px;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
   background-color: rgba(11, 27, 51, 0.8);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  padding-top: 20px;
   text-align: left; }
 
 .ClauseJumbotron {
-  width: 40%;
-  padding-left: 20px;
-  display: inline-block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 80px;
   background-color: transparent;
   text-transform: uppercase;
   color: ghostwhite;
-  text-align: center; }
+  text-align: left; }
   .ClauseJumbotron h1 {
     font-size: 40px;
     margin-top: 20px;
