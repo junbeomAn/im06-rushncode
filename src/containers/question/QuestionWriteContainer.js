@@ -163,7 +163,7 @@ class QuestionWriteContainer extends Component {
                   trigger={<span className="mark_down_tip">? &nbsp;&nbsp;마크다운 팁</span>}
                   content={<MarkDownTip />}
                   on="click"
-                  position="bottom center"
+                  position="bottom left"
                   wide
                 />
               </div>

@@ -1,4 +1,5 @@
 import Tag from './body/Tag';
+import TagContent from './body/TagContent';
 import Rank from './body/Rank';
 import Clause from './body/Clause';
 import NoMatch from './body/NoMatch';
@@ -11,6 +12,7 @@ import HomeEachQuestion from './body/HomeEachQuestion';
 
 export {
   Tag,
+  TagContent,
   Rank,
   Clause,
   NoMatch,

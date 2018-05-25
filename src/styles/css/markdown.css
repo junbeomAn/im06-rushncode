@@ -44,12 +44,13 @@
       #markdown .mark_down_box .mark_down_view_wrapper .mark_down_view_top {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         background: #0b1b33;
         opacity: 0.8;
         color: ghostwhite;
         padding: 10px 15px; }
         #markdown .mark_down_box .mark_down_view_wrapper .mark_down_view_top h2 {
-          width: 78%;
+          width: 30%;
           margin: 0;
           font-size: 1.2rem;
           letter-spacing: 3px;

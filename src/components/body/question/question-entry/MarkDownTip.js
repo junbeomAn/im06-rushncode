@@ -10,8 +10,7 @@ const MarkDownTip = () => (
     if (isAwesome()){'{'} <br />
     return true <br />
     {'}'}<br />
-    ```<br />
-
+    ```
     <h3 className="tip-subtitle">헤더</h3>
     # 이것은 `h1` 태그입니다.<br />
     ## 이것은 `h2` 태그입니다.<br />
