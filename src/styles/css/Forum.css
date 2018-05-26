@@ -1,0 +1,19 @@
+.forumContainer {
+  width: 100%;
+  background: ghostwhite; }
+  .forumContainer .ForumMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: ghostwhite; }
+  .forumContainer .Forum {
+    border-bottom: 1px solid #e4e6e8;
+    padding: 10px 15px; }
+    .forumContainer .Forum h2 {
+      color: #333; }
+    .forumContainer .Forum p {
+      color: #777; }
+
+/*# sourceMappingURL=Forum.css.map */

@@ -1,0 +1,64 @@
+@import "color";
+
+.QuestionWriteContainer {
+  width: 100%;
+  height: auto;
+  // display: flex;
+  // flex-direction: column;
+  // padding: 20px 7px;
+  // margin: 0 auto;
+  // margin-top: 55px;
+  background: ghostwhite;
+
+  .QuestionWriteTag {
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 30px;
+    background: white;
+    .QuestionWriteTagTitle {
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      background: $primaryBlue;
+      opacity: 0.8;
+      color: ghostwhite;
+    }
+    .QuestionWriteTagInputBox {
+      padding: 10px 15px;
+      margin: 0px auto;
+      border: solid 1px lightgrey;
+      font-size: 1rem;
+      .QuestionWriteTagInput {
+        width: 100px;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .QuestionWriteInput {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    .inputTitle{
+      font-size: 1.1rem;
+    }
+  }
+
+  .QuestionWriteMoney {
+    width: 90%;
+    margin: 0 auto;
+    .inputReward {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.write-title {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}

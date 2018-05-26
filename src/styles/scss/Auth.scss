@@ -1,0 +1,94 @@
+@import 'color';
+
+.auth-title {
+  position: fixed;  
+  left: 50%;
+  top: 14%;
+  transform: translate(-50%, -50%);  
+}
+.authInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  top: 38%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.loginInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  top: 32%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.authOptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  top: 59%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+}
+.loginOptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  top: 53%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+}
+.authConnectLogin {
+  margin-top: 10px;
+}
+.authContainer {
+  height: 700px;
+  width: 100%;
+  background: ghostwhite;
+}
+.authButtonContainer {
+  flex: 1;
+  width: 100%;
+}
+.authDivider {
+  flex: 0.5;
+}
+.authFormContainer {
+  flex: 1;
+}
+.authInputTitleTag {
+  width: 80px;
+}
+.authBtn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.authSubmitBtn {
+  float: right;
+}
+
+.loginAddText {
+  margin-top: 150px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  // border: solid 1px darkviolet;
+}
+.authAddInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 35%;
+  margin-top: 5%;
+  padding: 20px;
+}

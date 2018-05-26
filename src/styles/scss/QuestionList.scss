@@ -1,0 +1,131 @@
+@import "color";
+
+.questContainer {
+  width: 100%;
+  background: ghostwhite;
+  .search-form {
+    margin-top: 80px;
+    .input-form {
+      width: 60%;
+    }
+  }
+}
+.questionMain {
+  width: 100%;
+  background: ghostwhite;
+
+  .questionPost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 0px 10px;
+    .first {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 220px;
+      color: $greyfont;
+      padding-bottom: 6px;
+      display: flex;
+      text-align: center;
+      .firstItem {
+        width: 100px;
+        .ItemBox {
+          margin-top: 8px;
+          .ItemBoxImage {
+            color: grey;
+            font-size: 1rem;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-weight: 400;
+          }
+          .ItemBoxNum {
+            text-align: center;
+            padding-right: 3px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: grey;
+            font-weight: 400;            
+          }
+        }
+        .ItemBox2 {
+          .ItemBox2Image {
+            margin-top: 1px;
+          }
+        }
+      }
+    }
+    .second {
+      width: 80%;
+      margin: 0;
+      padding: 10px 15px;
+      border-bottom: 1px solid $divider;
+      h2 {
+        color: $primaryBlue;
+        &:hover {
+          font-size: 25px;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s;
+        }
+      }
+      p {
+        color: $greyfont;
+      }
+      .tags {
+        padding-top: 8px;
+        padding-bottom: 10px;
+        .questListBtn {
+          height: 25px;
+          padding-top: 2px;
+          margin-right: 3px;
+          &:hover {
+            a {
+              color: #fff;
+            }
+          }
+          a {
+            color: $greyfont;
+          }
+        }
+      }
+    }
+    .fourth {
+      width: 125px;
+      padding-right: 10px;
+      color: $greyfont;
+      text-align: center;
+      .username {
+        color: $primaryBlue;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+  .questionPagenation {
+    margin: 0;
+    padding-top: 15px;
+    justify-content: center;
+    padding-bottom: 15px;
+
+    .page-link {
+      color: $primaryBlue;
+      border: solid 1px $primaryBlue;
+      background: transparent;
+
+      &:hover {
+        color: #fff;
+        border: solid 1px $primaryBlue;
+        background: $primaryBlue;
+        opacity: 0.7;
+      }
+    }
+
+    .current {
+      background: $primaryBlue;
+      opacity: 0.7;
+      .page-link {
+        color: white;
+      }
+    }
+  }
+}

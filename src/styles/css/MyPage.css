@@ -1,0 +1,227 @@
+.mypage-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #0b1b33;
+  opacity: 0.8;
+  padding: 100px 50px 0px 50px; }
+  .mypage-container .mypage-inner-container {
+    padding: 20px 30px;
+    background: ghostwhite;
+    height: auto;
+    display: flex;
+    flex-direction: column; }
+    .mypage-container .mypage-inner-container .first {
+      border-bottom: solid 2px #e4e6e8;
+      height: 250px;
+      padding: 10px 20px;
+      display: flex; }
+      .mypage-container .mypage-inner-container .first .upload-btn-wrapper {
+        position: absolute;
+        top: 23.0rem;
+        z-index: 300;
+        overflow: hidden;
+        display: inline-block;
+        width: 230px; }
+      .mypage-container .mypage-inner-container .first .btn {
+        text-decoration: none;
+        width: 100%;
+        padding: 8px 20px;
+        color: ghostwhite;
+        background-color: rgba(11, 27, 51, 0.7);
+        border: none;
+        font-size: 20px;
+        font-weight: bold; }
+      .mypage-container .mypage-inner-container .first .upload-btn-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        height: auto; }
+      .mypage-container .mypage-inner-container .first .first-image {
+        min-width: 230px;
+        height: 230px;
+        z-index: 2; }
+        .mypage-container .mypage-inner-container .first .first-image img {
+          height: 100%; }
+      .mypage-container .mypage-inner-container .first .first-userinfo {
+        margin-left: 20px;
+        margin-top: 10px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .username {
+          font-size: 3rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .email {
+          padding-left: 20px;
+          margin-top: 30px;
+          font-size: 1.5rem;
+          letter-spacing: 1.1px; }
+    .mypage-container .mypage-inner-container .second {
+      border-bottom: solid 2px #e4e6e8;
+      height: 250px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between; }
+      .mypage-container .mypage-inner-container .second .second-one {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        border-top: solid 4px rgba(11, 27, 51, 0.8); }
+        .mypage-container .mypage-inner-container .second .second-one .second-one-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .second .second-one .second-one-score {
+          margin-bottom: 15px;
+          font-weight: 600;
+          font-size: 1.8rem;
+          letter-spacing: 1.1px; }
+      .mypage-container .mypage-inner-container .second .second-two {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        border-top: solid 4px rgba(11, 27, 51, 0.8); }
+        .mypage-container .mypage-inner-container .second .second-two .second-two-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .second .second-two .second-two-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px; }
+          .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner {
+            width: 100px;
+            text-align: center; }
+            .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px; }
+              .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner .count .blue {
+                color: blue;
+                opacity: 0.7; }
+              .mypage-container .mypage-inner-container .second .second-two .second-two-box .second-two-box-inner .count .red {
+                color: red;
+                opacity: 0.7; }
+      .mypage-container .mypage-inner-container .second .second-three {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        border-top: solid 4px rgba(11, 27, 51, 0.8); }
+        .mypage-container .mypage-inner-container .second .second-three .second-three-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .second .second-three .second-three-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px; }
+          .mypage-container .mypage-inner-container .second .second-three .second-three-box .second-three-box-inner {
+            width: 100px;
+            text-align: center; }
+            .mypage-container .mypage-inner-container .second .second-three .second-three-box .second-three-box-inner .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px; }
+              .mypage-container .mypage-inner-container .second .second-three .second-three-box .second-three-box-inner .count .blue {
+                color: blue;
+                opacity: 0.7; }
+              .mypage-container .mypage-inner-container .second .second-three .second-three-box .second-three-box-inner .count .red {
+                color: red;
+                opacity: 0.7; }
+    .mypage-container .mypage-inner-container .third {
+      height: auto;
+      padding: 10px 20px; }
+      .mypage-container .mypage-inner-container .third a {
+        color: #777; }
+      .mypage-container .mypage-inner-container .third .active {
+        background: ghostwhite;
+        border-top: #0b1b33 solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: #0b1b33;
+        font-weight: bold; }
+      .mypage-container .mypage-inner-container .third .tab-content {
+        height: auto; }
+      .mypage-container .mypage-inner-container .third .tab-pane {
+        height: auto;
+        border: none; }
+        .mypage-container .mypage-inner-container .third .tab-pane .container {
+          background: ghostwhite;
+          padding: 0;
+          margin: 0; }
+        .mypage-container .mypage-inner-container .third .tab-pane .box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 0px 0px 0px;
+          border-bottom: solid 1px #e4e6e8; }
+          .mypage-container .mypage-inner-container .third .tab-pane .box .first {
+            height: auto;
+            width: 220px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 7px;
+            color: #777;
+            display: flex;
+            text-align: center;
+            border: none; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem {
+              width: 100px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxImage {
+                color: grey;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: 1rem;
+                font-weight: 400; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxNum {
+                padding-right: 3px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: grey; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox2 .ItemBox2Image {
+                margin-top: 1px; }
+          .mypage-container .mypage-inner-container .third .tab-pane .box .second {
+            height: auto;
+            width: 80%;
+            margin: 0;
+            padding: 10px 15px;
+            border-bottom: none;
+            display: flex;
+            flex-direction: column; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .second h2 {
+              color: #0b1b33; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .second h2:hover {
+                font-size: 25px;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .second p {
+              color: #777; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags {
+              padding-top: 8px;
+              padding-bottom: 10px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags .questListBtn {
+                height: 25px;
+                padding-top: 2px;
+                margin-right: 3px; }
+                .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags .questListBtn:hover a {
+                  color: #fff; }
+                .mypage-container .mypage-inner-container .third .tab-pane .box .second .tags .questListBtn a {
+                  color: #777; }
+          .mypage-container .mypage-inner-container .third .tab-pane .box .fourth {
+            width: 125px;
+            height: auto;
+            padding-right: 10px;
+            color: #777;
+            text-align: center; }
+            .mypage-container .mypage-inner-container .third .tab-pane .box .fourth .username {
+              color: #0b1b33;
+              font-size: 15px;
+              font-weight: bold; }
+
+/*# sourceMappingURL=MyPage.css.map */
