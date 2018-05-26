@@ -5,7 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 const Login = ({ keyPress, login, fbLogin }) => (
   <div className="authContainer">
-    <div className="authInputContainer border rounded">
+    <div className="loginInputContainer border rounded">
       <div className="authButtonContainer">
         {/* set HTTPS=true package.json*/}
         {/* <a href={`https://www.facebook.com/v3.0/dialog/oauth?client_id=235916540497077&redirect_uri=http://localhost:3000/auth/facebook&state=st=state123abc,ds=123456789&response_type=code&scope=email,public_profile`}>
@@ -70,7 +70,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
         </button>
       </div>
     </div>
-    <div className="border rounded authOptionContainer">
+    <div className="border rounded loginOptionContainer">
       <p>
         아이디 혹은 비밀번호를 잊으셨나요? <a href="#">찾기</a>
       </p>

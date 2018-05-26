@@ -12,7 +12,17 @@
   width: 350px;
   position: fixed;
   left: 50%;
-  top: 40%; 
+  top: 38%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.loginInputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  top: 32%; 
   transform: translate(-50%, -50%);
   padding: 20px;
 }
@@ -22,7 +32,18 @@
   width: 350px;
   position: fixed;
   left: 50%;
-  top: 62%; 
+  top: 59%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+}
+.loginOptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  top: 53%; 
   transform: translate(-50%, -50%);
   padding: 20px;
   text-align: center;
@@ -33,6 +54,7 @@
 .authContainer {
   height: 700px;
   width: 100%;
+  background: ghostwhite;
 }
 .authButtonContainer {
   flex: 1;
