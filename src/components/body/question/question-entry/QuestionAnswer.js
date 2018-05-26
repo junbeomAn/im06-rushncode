@@ -14,6 +14,7 @@ const QuestionAnswer = ({
   count,
   body,
   time,
+  aImage,
   chAnswers,
   pickAnswer,
   raiseLikeCount,
@@ -76,7 +77,7 @@ const QuestionAnswer = ({
         )}
       </div>
       <div className="QuestionEntryAnswerThirdReward">
-        <Writer username={username} userID={userID} />
+        <Writer username={username} userID={userID} aImage={aImage} />
       </div>
     </div>
   </div>

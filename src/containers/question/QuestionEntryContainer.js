@@ -225,6 +225,7 @@ class QuestionEntryContainer extends Component {
       replies,
       answers,
       exist_picked_ans,
+      image,
     } = this.props.question;
     const { first } = this.state;
     console.log(this.props.question);
@@ -249,6 +250,7 @@ class QuestionEntryContainer extends Component {
               qTime={qTime}
               replies={replies}
               answers={answers}
+              image={image}
               existPickedAnswer={exist_picked_ans}
               pickAnswer={this.pickAnswer}
               raiseLikeCount={this.raiseLikeCount}

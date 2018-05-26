@@ -29,6 +29,7 @@ const QuestionEntry = ({
   replies,
   answers,
   qID,
+  image,
   existPickedAnswer,
   postQuestionReply,
   postAnswerReply,
@@ -115,7 +116,7 @@ const QuestionEntry = ({
           <Reward reward={qReward} />
         </div>
         <div className="QuestionEntryMainThirdItemBox">
-          <Writer username={username} userID={userID} />
+          <Writer username={username} userID={userID} image={image} />
         </div>
       </div>
     </div>
@@ -137,6 +138,7 @@ const QuestionEntry = ({
           count={answer.aGood}
           body={answer.aBody}
           time={answer.aTime}
+          aImage={answer.aImage}
           pickAnswer={pickAnswer}
           raiseLikeCount={raiseLikeCount}
           postAnswerReply={postAnswerReply}
