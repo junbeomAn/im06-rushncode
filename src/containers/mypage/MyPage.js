@@ -5,9 +5,15 @@ import { Icon } from 'semantic-ui-react';
 import MyQuestion from './MyQuestion';
 import MyAnswer from './MyAnswer';
 import { fetchMyQuestion } from '../../redux/actions/mypageAction';
+import { Verify } from '../../redux/actions/verifyAction';
 
 export class MyPage extends Component {
   state = { first: true, selectedFile: '' };
+
+  componentWillMount() {
+    this.props.Verify();
+  }
+
   componentDidMount() {
     const { userID } = this.props.match.params;
     this.props.fetchMyQuestion(userID);
@@ -41,9 +47,9 @@ export class MyPage extends Component {
 
   /* eslint no-nested-ternary: 0 */
   render() {
-    const { user, loading } = this.props;
+    const { user, loading, myID } = this.props;
     const { first } = this.state;
-    console.log(user);
+    const { userID } = this.props.match.params;
     return (
       <div className="mypage-container">
         {loading ? (
@@ -54,17 +60,19 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                <img src={require('../../images/profile/coding.png')} />
+                <img src={require(`../../images/profile/${user.image}.png`)} />
               </div>
-              <div className="upload-btn-wrapper">
-                <button className="btn">
-                  <h5 className="upload">
-                    <Icon name="camera retro" size="large" />
-                    <span> 사진 업로드</span>
-                  </h5>
-                </button>
-                <input type="file" name="myfile" onChange={e => this.fileChangedHandler(e)} />
-              </div>
+              {myID === Number(userID) ? (
+                <div className="upload-btn-wrapper">
+                  <button className="btn">
+                    <h5 className="upload">
+                      <Icon name="camera retro" size="large" />
+                      <span> 사진 업로드</span>
+                    </h5>
+                  </button>
+                  <input type="file" name="myfile" onChange={e => this.fileChangedHandler(e)} />
+                </div>
+              ) : null}
               <div className="first-userinfo">
                 <div className="username">{user.username}</div>
                 <div className="email">{user.email}</div>
@@ -183,7 +191,8 @@ export class MyPage extends Component {
 const mapStateToProps = state => ({
   user: state.mypage.items,
   loading: state.mypage.loading,
+  myID: state.verify.userID,
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
-export default connect(mapStateToProps, { fetchMyQuestion })(MyPage);
+export default connect(mapStateToProps, { fetchMyQuestion, Verify })(MyPage);
