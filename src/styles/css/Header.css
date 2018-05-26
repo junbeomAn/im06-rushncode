@@ -25,7 +25,8 @@
   .header-search .search-input {
     border: solid 3px #0b1b33;
     background: transparent;
-    color: #0b1b33; }
+    color: #0b1b33;
+    font-weight: bolder; }
     .header-search .search-input::placeholder {
       color: #0b1b33;
       font-weight: bolder;
