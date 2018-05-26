@@ -60,7 +60,6 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                {/* <img src={require('../../images/profile/default/default.png')} /> */}
                 <img src={require(`../../images/profile/${user.image}.png`)} />
               </div>
               {myID === Number(userID) ? (
