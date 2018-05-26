@@ -48,6 +48,8 @@ export class MyPage extends Component {
   /* eslint no-nested-ternary: 0 */
   render() {
     const { user, loading, myID } = this.props;
+    console.log(user);
+    
     const { first } = this.state;
     const { userID } = this.props.match.params;
     return (
