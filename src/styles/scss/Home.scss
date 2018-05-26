@@ -9,13 +9,12 @@
 
 // 쇼케이스
 .homeUpper {
-  height: 500px;
+  height: 700px;
   background-image: url("../../images/showcase.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  padding-top: 20px;
-  text-align: center;
+  background-size: contain;
+  // text-align: center;
 }
 
 .HomeJumbotron {

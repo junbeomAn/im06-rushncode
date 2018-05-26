@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { Icon } from 'semantic-ui-react';
 import MyQuestion from './MyQuestion';
 import MyAnswer from './MyAnswer';
-// import image from '../../styles/css/images/testimonials/testimonial3.jpg';
-import image from '../../images/profile/coding.png';
 import { fetchMyQuestion } from '../../redux/actions/mypageAction';
 
 export class MyPage extends Component {
@@ -56,7 +54,7 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                <img src={image} />
+                <img src={require('../../images/profile/coding.png')} />
               </div>
               <div className="upload-btn-wrapper">
                 <button className="btn">

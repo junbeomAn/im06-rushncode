@@ -122,8 +122,15 @@
   height: 400px;
   background: ghostwhite; }
 
-.search-btn {
-  background-color: #0b1b33;
-  color: white; }
+.showcase {
+  background: #e8d048;
+  margin: 0 auto; }
+
+.write-btn {
+  border: none;
+  background: rgba(11, 27, 51, 0.7);
+  color: ghostwhite; }
+  .write-btn:hover {
+    background: #0b1b33; }
 
 /*# sourceMappingURL=App.css.map */

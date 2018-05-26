@@ -58,7 +58,7 @@ const QuestionAnswer = ({
         ) : (
           <div className="ItemBox">
             {myID !== questionID ? null : (
-              <div className="ItemBoxImage">
+              <div className="ItemBoxNum">
                 <div
                   className="likeBtn"
                   onClick={() => {
@@ -68,7 +68,7 @@ const QuestionAnswer = ({
                   }}
                 >
                   <Icon name="check" size="big" />
-                  <div className="ItemBoxNum">채택</div>
+                  <div className="ItemBoxImage">채택</div>
                 </div>
               </div>
             )}

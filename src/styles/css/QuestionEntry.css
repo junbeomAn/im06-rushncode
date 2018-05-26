@@ -87,9 +87,10 @@
         text-align: center;
         color: grey; }
       .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdItemBox .ItemBox .ItemBoxNum {
+        padding-bottom: 3px;
         padding-right: 2px;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         color: grey; }
     .QuestionEntryContainer .QuestionEntryMain .QuestionEntryMainThirdReward {
       margin-top: 20px; }
@@ -146,7 +147,7 @@
             color: grey;
             margin-bottom: 7px; }
           .QuestionEntryContainer .QuestionEntryAnswer .QuestionEntryAnswerEntry .QuestionEntryAnswerThird .ItemBox .ItemBoxNum {
-            padding-top: 5px;
+            padding-bottom: 3px;
             text-align: center;
             font-size: 1.1rem;
             padding-right: 2px;

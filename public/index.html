@@ -49,20 +49,20 @@
     // console.log(element);
     // console.log(wScrollDiff);
     if (wScrollCurrent <= 0) {
-      element.style.top = '0px';
-      element.style.color = 'black !important';
-      element.style.background = 'transparent';
+      // element.style.top = '0px';
+      // element.style.color = 'black !important';
+      element.style.background = '#e8d048';
     } else if (wScrollDiff > 0) {
       element.style.top = (elTop > 0 ? 0 : elTop) + 'px';
     } else if (wScrollDiff < 0) {
-      element.style.background = 'white';
-      element.style.color = 'black';
+      element.style.background = 'rgba(255,255,255,0.7)';
+      element.style.color = 'white !important';
 
       if (wScrollCurrent + wHeight >= dHeight - elHeight) {
         element.style.top = ((elTop = wScrollCurrent + wHeight - dHeight) < 0 ? elTop : 0) + 'px';
       } else {
         element.style.top = (Math.abs(elTop) > elHeight ? -elHeight : elTop) + 'px';
-        // element.style.background = 'transparent';
+        // element.style.background = 'rgba($color: ghostwhite, $alpha: 0.5)';
       }
     }
 

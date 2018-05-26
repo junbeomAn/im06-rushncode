@@ -1,14 +1,14 @@
-@import 'color';
+@import "color";
 
 .tag-container {
   height: 800px;
-  background: ghostwhite;  
-  height: auto;  
+  background: ghostwhite;
+  height: auto;
   .tag-content {
-    width: 80%;
+    width: 90%;
     margin: 30px auto 0 auto;
     h2 {
-      font-weight: normal; 
+      font-weight: normal;
       color: $greyfont;
     }
     .wrapper {
@@ -21,25 +21,23 @@
       color: #444;
       padding-bottom: 80px;
       .box {
-        border-bottom: rgb(224, 224, 224) solid 1px;        
+        border-bottom: rgb(224, 224, 224) solid 1px;
         padding: 20px;
         font-size: 130%;
         span {
           color: $greyfont;
           cursor: pointer;
         }
-      }   
+      }
     }
   }
-  
 }
 .tag-input-container {
   margin-top: 40px;
   text-align: center;
   .tag-search-bar {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     height: 60px;
-  } 
+  }
 }
-

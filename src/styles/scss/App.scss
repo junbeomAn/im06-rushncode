@@ -151,7 +151,17 @@
   background: ghostwhite;
 }
 
-.search-btn {
-  background-color: $primaryBlue;
-  color: white;
+.showcase {
+  background: $primaryYellow;
+  margin: 0 auto;
+}
+
+.write-btn {
+  border: none;
+  background: rgba($color: $primaryBlue, $alpha: 0.7);
+  color: ghostwhite;
+
+  &:hover {
+    background: $primaryBlue;
+  }
 }

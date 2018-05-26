@@ -1,6 +1,7 @@
 .Header {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background: #e8d048; }
   .Header .logo-header {
     padding: 0;
     margin: 0;
@@ -21,17 +22,29 @@
 
 .header-search {
   display: flex; }
+  .header-search .search-btn {
+    letter-spacing: 0.1rem;
+    background-color: transparent;
+    color: #0b1b33;
+    font-weight: 700;
+    border: solid 3px; }
+    .header-search .search-btn:hover {
+      background-color: #0b1b33;
+      color: #e8d048;
+      border: solid 3px #0b1b33; }
 
 .navbar-nav {
-  padding-right: 41px; }
+  padding-right: 41px;
+  display: flex; }
   .navbar-nav li .item {
-    padding-right: 30px;
-    color: black;
-    font-size: 1.3rem;
+    margin: 0 10px;
+    padding: 0px 3px 3px 3px;
+    color: #0b1b33;
+    font-weight: 700;
+    font-size: 1.25rem;
     letter-spacing: 0.2rem;
     text-decoration-style: none; }
     .navbar-nav li .item:hover {
-      color: #a83fe4;
-      font-weight: bold; }
+      border-bottom: solid 2px #0b1b33; }
 
 /*# sourceMappingURL=Header.css.map */

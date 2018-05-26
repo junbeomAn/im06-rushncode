@@ -9,7 +9,9 @@ const QuestionList = ({
   posts, updateStartEndPage, makeAsync, currentPage, start, end,
 }) => (
   <div className="questContainer">
-    <QuestionListShowcase />
+    <div className="showcase">
+      <QuestionListShowcase />
+    </div>
     <div className="questionMain">
       <EachQuestion questions={posts} currentPage={currentPage} />
       <Pagenation
