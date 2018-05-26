@@ -40,7 +40,6 @@
         opacity: 0;
         height: auto; }
       .mypage-container .mypage-inner-container .first .first-image {
-        border: solid 1px #777;
         min-width: 230px;
         height: 230px;
         z-index: 2; }
