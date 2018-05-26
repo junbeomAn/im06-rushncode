@@ -80,7 +80,7 @@ class Headers extends Component {
               placeholder="검색어를 입력하세요"
               aria-label="Search"
               onChange={this.changeValue}
-            />
+            />{/* 현재 a태그에서 navlink로 바꿔놓음. 멘토님이 싱글 웹페이지에 어긋난다고 하셔서. 방법찾아야함.*/ }
             <a href={`/search?q=${this.state.searchWord}`}>
               <button className="btn btn-outline-dark my-2 my-sm-0 search-btn">검색</button>
             </a>

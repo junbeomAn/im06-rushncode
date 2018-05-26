@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { EachQuestion, Pagenation } from './question-list';
 import QuestionListShowcase from '../../showcases/QuestionListShowcase';
 
@@ -9,9 +8,7 @@ const QuestionList = ({
   posts, updateStartEndPage, makeAsync, currentPage, start, end,
 }) => (
   <div className="questContainer">
-    <div className="showcase">
-      <QuestionListShowcase />
-    </div>
+    <QuestionListShowcase />
     <div className="questionMain">
       <EachQuestion questions={posts} currentPage={currentPage} />
       <Pagenation

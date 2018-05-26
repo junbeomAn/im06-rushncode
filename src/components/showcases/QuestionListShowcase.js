@@ -2,9 +2,8 @@ import React from 'react';
 import WriteButton from './../../containers/showcase/writeButton';
 
 const QuestionListShowcase = () => (
-  <div className="homeUpper">
-    <div className="jumbotron HomeJumbotron">
-      
+  <div className="ClauseUpper">
+    <div className="jumbotron ClauseJumbotron">
       <span className="homeLBtn">
         <WriteButton />
       </span>

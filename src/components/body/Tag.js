@@ -4,7 +4,12 @@ import { Input } from 'semantic-ui-react';
 import TagShowcase from '../showcases/TagShowcase';
 import TagContent from './TagContent';
 
-const Tag = ({ valueChange, tags, tagSearch }) => (
+const Tag = ({
+  valueChange,
+  tags,
+  tagSearch,
+  handleTagClick,
+}) => (
   <div className="tag-container">
     <TagShowcase />
     <div className="tag-input-container">
@@ -18,7 +23,7 @@ const Tag = ({ valueChange, tags, tagSearch }) => (
         placeholder="태그 검색"
       />
     </div>
-    <TagContent tags={tags} />
+    <TagContent tags={tags} handleTagClick={handleTagClick} />
   </div>
 );
 
