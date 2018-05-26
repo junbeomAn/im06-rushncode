@@ -24,13 +24,13 @@ const Login = ({ keyPress, login, fbLogin }) => (
           </Button>
         </a>
       </div>
-      <Divider horizontal>OR</Divider>
+      <Divider horizontal>또는</Divider>
       <div className="authFormContainer">
         <div className="form-group">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text authInputTitleTag" id="basic-addon1">
-                E-mail
+                이메일
               </span>
             </div>
             <input
@@ -46,7 +46,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
           <div className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text authInputTitleTag" id="basic-addon1">
-                password
+                비밀번호
               </span>
             </div>
             <input
@@ -72,10 +72,10 @@ const Login = ({ keyPress, login, fbLogin }) => (
     </div>
     <div className="border rounded authOptionContainer">
       <p>
-        Did you forget your password? <a href="#">Find</a>
+        아이디 혹은 비밀번호를 잊으셨나요? <a href="#">찾기</a>
       </p>
       <p>
-        Don't you have account? <a href="/auth/signup">Signup</a>
+        아직 가입한 계정이 없으신가요? <a href="/auth/signup">가입</a>
       </p>
     </div>
   </div>

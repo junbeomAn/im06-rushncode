@@ -26,6 +26,10 @@ class TagContainer extends Component {
     }
   }
 
+  handleTagClick = (path) => {
+    this.props.history.push(path);
+  }
+
   isTagExist = (keyword) => {
     const { tags } = this.props;
     const searchResult = tags.filter(item => item.tag.includes(keyword));
@@ -46,7 +50,12 @@ class TagContainer extends Component {
     return (
       <div>
         {tags.length
-          ? <Tag tags={tags} tagSearch={this.tagSearch} valueChange={this.valueChange} />
+          ? <Tag
+            tags={tags}
+            tagSearch={this.tagSearch}
+            valueChange={this.valueChange}
+            handleTagClick={this.handleTagClick}
+          />
           : <Loader active inline="centered" />
         }
       </div>

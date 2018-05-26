@@ -21,9 +21,9 @@
         border-bottom: #e0e0e0 solid 1px;
         padding: 20px;
         font-size: 130%; }
-        .tag-container .tag-content .wrapper .box a {
+        .tag-container .tag-content .wrapper .box span {
           color: #777;
-          text-decoration: none; }
+          cursor: pointer; }
 
 .tag-input-container {
   margin-top: 40px;
