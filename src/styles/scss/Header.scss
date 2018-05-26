@@ -14,7 +14,7 @@
   width: 80%;
   // border: solid 1px red;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
 .header-title {
   // border: solid 1px red;
@@ -23,7 +23,7 @@
 }
 .header-tabs {
   height: auto;
-  
+
   // border: solid 1px red;
   justify-content: center;
 }
@@ -31,16 +31,29 @@
 .header-search {
   // border: solid 1px blue;
   display: flex;
+  .search-input {
+    border: solid 3px $primaryBlue;
+    background: transparent;
+    color: $primaryBlue;
+    &::placeholder {
+      color: $primaryBlue;
+      font-weight: bolder;
+      letter-spacing: 0.1rem;
+    }
+    &:hover {
+      background-color: ghostwhite;
+    }
+  }
   .search-btn {
     letter-spacing: 0.1rem;
     background-color: transparent;
     color: $primaryBlue;
     font-weight: 700;
     border: solid 3px;
-    &:hover{
-       background-color: $primaryBlue;
-       color: $primaryYellow;
-       border: solid 3px $primaryBlue;
+    &:hover {
+      background-color: $primaryBlue;
+      color: $primaryYellow;
+      border: solid 3px $primaryBlue;
     }
   }
 }
@@ -63,5 +76,3 @@
     }
   }
 }
-
-

@@ -75,7 +75,7 @@ class Headers extends Component {
           </div>
           <div className="header-search">
             <input
-              className="form-control mr-sm-2"
+              className="form-control mr-sm-2 search-input"
               type="search"
               placeholder="검색어를 입력하세요"
               aria-label="Search"
