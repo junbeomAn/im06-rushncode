@@ -51,7 +51,7 @@ export class MyPage extends Component {
   render() {
     const { user, loading, myID } = this.props;
     console.log(user);
-    
+
     const { first } = this.state;
     const { userID } = this.props.match.params;
     return (
@@ -64,7 +64,7 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                <img src={`${URL_API}/${user.image}.png`} />
+                <img src={`${URL_API}/image/${user.image}.png`} />
               </div>
               {myID === Number(userID) ? (
                 <div className="upload-btn-wrapper">
