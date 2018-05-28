@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import { Verify } from './../../redux/actions/verifyAction';
-import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 
 
 class Github extends Component {
@@ -21,7 +21,7 @@ class Github extends Component {
       code,
     };
     
-    const githubUrl = 'http://localhost:3001/api/auth/github';
+    const githubUrl = `${process.env.API_PROD}/api/auth/github`;
     axios
       .post(githubUrl, data)
       .then((res) => {

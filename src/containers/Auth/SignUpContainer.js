@@ -15,7 +15,7 @@ class SignUpContainer extends Component {
     userInfo.username = document.getElementsByClassName('inputUname')[0].value;
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
-    const signUpUrl = 'http://localhost:3001/api/auth/signup';
+    const signUpUrl = `${process.env.API_PROD}/api/auth/signup`;
     axios
       .post(signUpUrl, userInfo)
       .then((res) => {

@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "bootstrap-social": "^5.1.1",
+    "dotenv": "^5.0.1",
     "eslint-config-airbnb": "^16.1.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",

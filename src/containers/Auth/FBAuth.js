@@ -17,7 +17,7 @@ class Facebook extends Component {
   sendFacebookLoginReq(code) {
     console.log(this); // 지워야함@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    const facebookUrl = 'http://localhost:3001/api/auth/facebook';
+    const facebookUrl = `${process.env.API_PROD}/api/auth/facebook`;
     const data = {
       code,
     };

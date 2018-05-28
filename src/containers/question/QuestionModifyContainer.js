@@ -23,7 +23,7 @@ export class QuestionModifyContainer extends Component {
     };
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post('http://localhost:3001/api/question/modifyanswer', data, config)
+      .post(`${process.env.API_PROD}/api/question/modifyanswer`, data, config)
       .then((res) => {
         this.props.history.push(`/question/${res.data.questionID}`);
       })

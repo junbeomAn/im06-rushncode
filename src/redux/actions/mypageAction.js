@@ -10,7 +10,7 @@ export function fetchMyQuestion(userID) {
       },
     };
     return axios
-      .get(`http://localhost:3001/api/mypage/profile/${userID}`, config)
+      .get(`${process.env.API_PROD}/api/mypage/profile/${userID}`, config)
       .then(res => dispatch({ type: FETCH_MY_QUESTION_SUCCESS, payload: res.data.data }));
   };
 }

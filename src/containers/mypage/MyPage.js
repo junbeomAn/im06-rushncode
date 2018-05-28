@@ -41,7 +41,7 @@ export class MyPage extends Component {
     console.log('formData : ', formData);
     const { userID } = this.props.match.params;
     axios
-      .post(`http://localhost:3001/api/upload/image/${userID}`, formData, config)
+      .post(`${process.env.API_PROD}/api/upload/image/${userID}`, formData, config)
       .then(res => console.log(res));
   };
 

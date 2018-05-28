@@ -70,7 +70,7 @@ class QuestionWriteContainer extends Component {
     };
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post('http://localhost:3001/api/question/modifyquestion', data, config)
+      .post(`${process.env.API_PROD}/api/question/modifyquestion`, data, config)
       .then((res) => {
         console.log('답변 제출 응답 : ', res);
         this.props.history.push(`/question/${id}`);
@@ -91,7 +91,7 @@ class QuestionWriteContainer extends Component {
         'Content-Type': 'application/json',
       },
     };
-    const writingUrl = 'http://localhost:3001/api/question/post';
+    const writingUrl = `${process.env.API_PROD}/api/question/post`;
 
     // 글 작성 정보 모두 담는 그릇 설정
     const data = {};

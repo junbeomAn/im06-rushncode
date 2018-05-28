@@ -5,7 +5,7 @@ import { VERIFICATION, SIGNOUT } from './types';
 // const history = createBrowserHistory();
 
 export const Verify = () => (dispatch) => {
-  const verifyUrl = 'http://localhost:3001/api/auth/verify';
+  const verifyUrl = `${process.env.API_PROD}/api/auth/verify`;
   const token = localStorage.getItem('token');
   const config = {
     headers: { 'x-access-token': token },

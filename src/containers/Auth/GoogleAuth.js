@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
 import { Verify } from './../../redux/actions/verifyAction';
 
 
@@ -12,7 +12,7 @@ class Google extends Component {
   }
 
   sendgoogleLoginReq = (code) => {
-    const googleUrl = 'http://localhost:3001/api/auth/google';
+    const googleUrl = `${process.env.API_PROD}/api/auth/google`;
     const data = {
       code,
     };

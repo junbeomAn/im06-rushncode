@@ -54,7 +54,7 @@ class QuestionEntryContainer extends Component {
     };
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post('http://localhost:3001/api/question/answer/', data, config)
+      .post(`${process.env.API_PROD}/api/question/answer/`, data, config)
       .then((res) => {
         console.log('답변 제출 응답 : ', res);
         this.props.fetchQuestionEntry(id);
@@ -77,7 +77,7 @@ class QuestionEntryContainer extends Component {
     data.body = document.getElementsByClassName('questionReplyBody')[0].value;
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post('http://localhost:3001/api/question/reply/', data, config)
+      .post(`${process.env.API_PROD}/api/question/reply`, data, config)
       .then((res) => {
         // console.log(res.data);
         this.props.fetchQuestionEntry(id);
@@ -100,7 +100,7 @@ class QuestionEntryContainer extends Component {
     console.log(data.body);
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post('http://localhost:3001/api/question/chanswer/', data, config)
+      .post(`${process.env.API_PROD}/api/question/chanswer/`, data, config)
       .then((res) => {
         console.log(res.data);
         const { id } = this.props.match.params;
@@ -116,7 +116,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`http://localhost:3001/api/question/pickanswer/${answerID}`, {}, config)
+      .post(`${process.env.API_PROD}/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
         alert(res.data.message);
         const { id } = this.props.match.params;
@@ -133,7 +133,7 @@ class QuestionEntryContainer extends Component {
     };
     if (!answerID) {
       axios
-        .post(`http://localhost:3001/api/question/good/${this.props.question.qID}`, {}, config)
+        .post(`${process.env.API_PROD}/api/question/good/${this.props.question.qID}`, {}, config)
         .then(() => {
           const { id } = this.props.match.params;
           this.props.fetchQuestionEntry(id);
@@ -141,7 +141,7 @@ class QuestionEntryContainer extends Component {
         .catch(err => console.log(err));
     } else {
       axios
-        .post(`http://localhost:3001/api/question/goodanswer/${answerID}`, {}, config)
+        .post(`${process.env.API_PROD}/api/question/goodanswer/${answerID}`, {}, config)
         .then(() => {
           const { id } = this.props.match.params;
           this.props.fetchQuestionEntry(id);
@@ -158,7 +158,7 @@ class QuestionEntryContainer extends Component {
     };
     const { id } = this.props.match.params;
     axios
-      .post(`http://localhost:3001/api/delete/question/${id}`, {}, config)
+      .post(`${process.env.API_PROD}/api/delete/question/${id}`, {}, config)
       .then(() => {
         this.props.history.push('/question');
       })
@@ -172,7 +172,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`http://localhost:3001/api/delete/answer/${answerID}`, {}, config)
+      .post(`${process.env.API_PROD}/api/delete/answer/${answerID}`, {}, config)
       .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
@@ -187,7 +187,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`http://localhost:3001/api/delete/chanswer/${cID}`, {}, config)
+      .post(`${process.env.API_PROD}/api/delete/chanswer/${cID}`, {}, config)
       .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
@@ -202,7 +202,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`http://localhost:3001/api/delete/reply/${rID}`, {}, config)
+      .post(`${process.env.API_PROD}/api/delete/reply/${rID}`, {}, config)
       .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
