@@ -44,7 +44,8 @@ export class MyPage extends Component {
     const { userID } = this.props.match.params;
     axios
       .post(`${URL_API}/api/upload/image/${userID}`, formData, config)
-      .then(res => console.log(res));
+      .then(res => console.log(res))
+      .then(() => window.location.reload());
   };
 
   /* eslint no-nested-ternary: 0 */
