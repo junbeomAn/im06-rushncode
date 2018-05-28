@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { URL_API } from '../../../../config';
 
 const Writer = ({
   username, userID, image, aImage,
@@ -7,17 +8,9 @@ const Writer = ({
   <NavLink className="ItemBox likeBtn" to={`/mypage/${userID}`}>
     <div className="ItemBoxNum">
       {aImage ? (
-        <img
-          src={require(`../../../../images/profile/${aImage}_mini.png`)}
-          style={{ borderRadius: '5px' }}
-          alt="image"
-        />
+        <img src={`${URL_API}/${user.image}.png`} style={{ borderRadius: '5px' }} alt="image" />
       ) : (
-        <img
-          src={require(`../../../../images/profile/${image}_mini.png`)}
-          style={{ borderRadius: '5px' }}
-          alt="image"
-        />
+        <img src={`${URL_API}/${user.image}.png`} style={{ borderRadius: '5px' }} alt="image" />
       )}
     </div>
     <div className="ItemBoxImage">{username}</div>
