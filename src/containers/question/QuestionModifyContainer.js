@@ -9,7 +9,9 @@ import {
   onBodyChange,
 } from '../../redux/actions/questionAction';
 
-export class QuestionModifyContainer extends Component {
+import { URL_API } from '../../config';
+
+class QuestionModifyContainer extends Component {
   postModifiedAnswer = () => {
     const { id } = this.props.match.params;
     const config = {
@@ -23,7 +25,7 @@ export class QuestionModifyContainer extends Component {
     };
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post('http://localhost:3001/api/question/modifyanswer', data, config)
+      .post(`${URL_API}/api/question/modifyanswer`, data, config)
       .then((res) => {
         this.props.history.push(`/question/${res.data.questionID}`);
       })

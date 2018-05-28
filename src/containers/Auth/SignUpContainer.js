@@ -4,18 +4,20 @@ import 'semantic-ui-css/semantic.min.css';
 // import '../../styles/css/Login.css';
 import SignUp from '../../components/body/SignUp';
 
+import { URL_API } from '../../config';
+
 class SignUpContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  signUp = () => {  
+  signUp = () => {
     const userInfo = {};
     userInfo.username = document.getElementsByClassName('inputUname')[0].value;
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
-    const signUpUrl = 'http://localhost:3001/api/auth/signup';
+    const signUpUrl = `${URL_API}/api/auth/signup`;
     axios
       .post(signUpUrl, userInfo)
       .then((res) => {
@@ -28,13 +30,13 @@ class SignUpContainer extends Component {
         }
       })
       .catch(err => console.log(err));
-  }
+  };
 
   keyPress = (e) => {
     if (e.key === 'Enter') {
       this.signUp();
     }
-  }
+  };
 
   render() {
     return <SignUp signUp={this.signUp} keyPress={this.keyPress} />;

@@ -7,6 +7,8 @@ import MyAnswer from './MyAnswer';
 import { fetchMyQuestion } from '../../redux/actions/mypageAction';
 import { Verify } from '../../redux/actions/verifyAction';
 
+import { URL_API } from '../../config';
+
 export class MyPage extends Component {
   state = { first: true, selectedFile: '' };
 
@@ -41,7 +43,7 @@ export class MyPage extends Component {
     console.log('formData : ', formData);
     const { userID } = this.props.match.params;
     axios
-      .post(`http://localhost:3001/api/upload/image/${userID}`, formData, config)
+      .post(`${URL_API}/api/upload/image/${userID}`, formData, config)
       .then(res => console.log(res));
   };
 
