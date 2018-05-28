@@ -56,6 +56,7 @@ class QuestionListContainer extends Component {
     } = this.props;
     const { first } = this.state;
     console.log(questions);
+    console.log(this.props.match);
     return (
       <div>
         {loading ? (

@@ -6,6 +6,9 @@ import { Verify } from './../../redux/actions/verifyAction';
 import Login from '../../components/body/Login';
 import LoginAdd from '../../components/body/LoginAdd';
 
+import { URL_API } from '../../config';
+
+
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +21,8 @@ class LoginContainer extends Component {
     const userInfo = {};
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
-    const signInUrl = 'http://localhost:3001/api/auth/signin';
-
+    const signInUrl = `${URL_API}/api/auth/signin`;
+    console.log(process.env.API_PROD);
     axios
       .post(signInUrl, userInfo)
       .then((res) => {
