@@ -15,21 +15,23 @@ import {
   FETCH_SORTED_TAG_SUCCESS,
 } from './types';
 
+import { URL_API } from '../../config';
+
 export function fetchQuestionList(page) {
   return (dispatch) => {
     dispatch({ type: FETCH_QUESTION_LIST_BEGIN });
     return axios
-      .get(`${process.env.API_PROD}/api/question/getlist/${page}`)
+      .get(`${URL_API}/api/question/getlist/${page}`)
       .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
   };
 }
 
 export const fetchHomeQuestions = () => (dispatch) => {
   axios
-    .get(`${process.env.API_PROD}/api/question/getlist/1`)
+    .get(`${URL_API}/api/question/getlist/1`)
     .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }))
     .catch(err => console.log(err));
-}
+};
 
 export function getSearchResult(page, keyword) {
   return (dispatch) => {
@@ -39,7 +41,7 @@ export function getSearchResult(page, keyword) {
     };
 
     return axios
-      .post(`${process.env.API_PROD}/api/sort/search/${page}`, data)
+      .post(`${URL_API}/api/sort/search/${page}`, data)
       .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
   };
 }
@@ -49,7 +51,7 @@ export function getSortedResult(page, sortby) {
     dispatch({ type: FETCH_QUESTION_LIST_BEGIN });
 
     return axios
-      .get(`${process.env.API_PROD}/api/sort/${sortby}/${page}`)
+      .get(`${URL_API}/api/sort/${sortby}/${page}`)
       .then(res => dispatch({ type: FETCH_QUESTION_LIST_SUCCESS, payload: res.data.data }));
   };
 }
@@ -58,14 +60,14 @@ export function fetchQuestionEntry(id) {
   return (dispatch) => {
     dispatch({ type: FETCH_QUESTION_ENTRY_BEGIN });
     return axios
-      .get(`${process.env.API_PROD}/api/question/displayq/${id}`)
+      .get(`${URL_API}/api/question/displayq/${id}`)
       .then(res => dispatch({ type: FETCH_QUESTION_ENTRY_SUCCESS, payload: res.data.data }));
   };
 }
 
 export const fetchQuestionTag = () => (dispatch) => {
   axios
-    .get(`${process.env.API_PROD}/api/question/gettag`)
+    .get(`${URL_API}/api/question/gettag`)
     .then(res => dispatch({ type: FETCH_QUESTION_TAG, payload: res.data.data }));
 };
 
@@ -87,13 +89,13 @@ export const initWriteForm = () => (dispatch) => {
 
 export const fetchModifyQuestion = id => (dispatch) => {
   axios
-    .get(`${process.env.API_PROD}/api/question/displayq/${id}`)
+    .get(`${URL_API}/api/question/displayq/${id}`)
     .then(res => dispatch({ type: FETCH_MODIFY_QUESTION, payload: res.data.data }));
 };
 
 export const fetchModifyAnswer = id => (dispatch) => {
   axios
-    .get(`${process.env.API_PROD}/api/question/getanswer/${id}`)
+    .get(`${URL_API}/api/question/getanswer/${id}`)
     .then(res => dispatch({ type: FETCH_MODIFY_ANSWER, payload: res.data.data }));
 };
 
@@ -101,7 +103,7 @@ export function fetchSortedByTag(tag, page) {
   return (dispatch) => {
     dispatch({ type: FETCH_SORTED_TAG_BEGIN });
     return axios
-      .post(`${process.env.API_PROD}/api/sort/tag/${tag}/${page}`)
+      .post(`${URL_API}/api/sort/tag/${tag}/${page}`)
       .then(res => dispatch({ type: FETCH_SORTED_TAG_SUCCESS, payload: res.data.data }));
   };
 }

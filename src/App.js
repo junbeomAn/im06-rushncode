@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('@@@@@@@@@@@@@@', process.env.REACT_APP_SETTING);
     return (
       <Provider store={store}>
         <Router>
@@ -30,8 +31,8 @@ class App extends Component {
                 <Route path="/auth" component={Auth} />
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Clause} />
-                <Route path="/search" component={QuestionListContainer} />   
-                <Route path="/sort" component={QuestionListContainer} />    
+                <Route path="/search" component={QuestionListContainer} />
+                <Route path="/sort" component={QuestionListContainer} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

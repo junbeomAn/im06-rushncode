@@ -2,10 +2,12 @@ import axios from 'axios';
 // import { createBrowserHistory } from 'history';
 import { VERIFICATION, SIGNOUT } from './types';
 
+import { URL_API } from '../../config';
+
 // const history = createBrowserHistory();
 
 export const Verify = () => (dispatch) => {
-  const verifyUrl = `${process.env.API_PROD}/api/auth/verify`;
+  const verifyUrl = `${URL_API}/api/auth/verify`;
   const token = localStorage.getItem('token');
   const config = {
     headers: { 'x-access-token': token },

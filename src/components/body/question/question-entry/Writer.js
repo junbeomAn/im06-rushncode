@@ -1,9 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Writer = ({
   username, userID, image, aImage,
 }) => (
-  <a className="ItemBox likeBtn" href={`/mypage/${userID}`}>
+  <NavLink className="ItemBox likeBtn" to={`/mypage/${userID}`}>
     <div className="ItemBoxNum">
       {aImage ? (
         <img
@@ -20,7 +21,7 @@ const Writer = ({
       )}
     </div>
     <div className="ItemBoxImage">{username}</div>
-  </a>
+  </NavLink>
 );
 
 export default Writer;

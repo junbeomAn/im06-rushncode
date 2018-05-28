@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import { Verify } from './../../redux/actions/verifyAction';
 
+import { URL_API } from '../../config';
 
 class Github extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Github extends Component {
     this.sendGithubLoginReq = this.sendGithubLoginReq.bind(this);
   }
   componentWillMount() {
-    this.sendGithubLoginReq(window.location.href.split('=')[1])
+    this.sendGithubLoginReq(window.location.href.split('=')[1]);
   }
 
   sendGithubLoginReq(code) {
@@ -20,8 +21,8 @@ class Github extends Component {
     const data = {
       code,
     };
-    
-    const githubUrl = `${process.env.API_PROD}/api/auth/github`;
+
+    const githubUrl = `${URL_API}/api/auth/github`;
     axios
       .post(githubUrl, data)
       .then((res) => {
@@ -41,12 +42,13 @@ class Github extends Component {
     return (
       <div className="OAuthText">
         <Dimmer active>
-          <Loader><h1>Verifying github information...</h1></Loader>
+          <Loader>
+            <h1>Verifying github information...</h1>
+          </Loader>
         </Dimmer>
-        
       </div>
     );
-  };
+  }
 }
 
 const mapStateToProps = (state) => {

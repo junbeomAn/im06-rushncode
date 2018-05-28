@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
 import { Verify } from './../../redux/actions/verifyAction';
 
+import { URL_API } from '../../config';
 
 class Google extends Component {
   componentWillMount() {
@@ -12,7 +13,7 @@ class Google extends Component {
   }
 
   sendgoogleLoginReq = (code) => {
-    const googleUrl = `${process.env.API_PROD}/api/auth/google`;
+    const googleUrl = `${URL_API}/api/auth/google`;
     const data = {
       code,
     };
@@ -24,7 +25,7 @@ class Google extends Component {
           localStorage.setItem('token', res.data.token);
           console.log('google login success');
           this.props.Verify();
-          this.props.history.push('/'); 
+          this.props.history.push('/');
         } else {
           alert(res.data.message);
           this.props.history.push('/auth/signin');
@@ -39,7 +40,9 @@ class Google extends Component {
     return (
       <div className="OAuthText">
         <Dimmer active>
-          <Loader><h1>Verifying Google information...</h1></Loader>
+          <Loader>
+            <h1>Verifying Google information...</h1>
+          </Loader>
         </Dimmer>
       </div>
     );

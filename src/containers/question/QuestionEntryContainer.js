@@ -12,6 +12,8 @@ import {
 import { Verify } from '../../redux/actions/verifyAction';
 import MarkDownTip from '../../components/body/question/question-entry/MarkDownTip';
 
+import { URL_API } from '../../config';
+
 class QuestionEntryContainer extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,7 @@ class QuestionEntryContainer extends Component {
     };
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post(`${process.env.API_PROD}/api/question/answer/`, data, config)
+      .post(`${URL_API}/api/question/answer/`, data, config)
       .then((res) => {
         console.log('답변 제출 응답 : ', res);
         this.props.fetchQuestionEntry(id);
@@ -77,7 +79,7 @@ class QuestionEntryContainer extends Component {
     data.body = document.getElementsByClassName('questionReplyBody')[0].value;
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post(`${process.env.API_PROD}/api/question/reply`, data, config)
+      .post(`${URL_API}/api/question/reply`, data, config)
       .then((res) => {
         // console.log(res.data);
         this.props.fetchQuestionEntry(id);
@@ -100,7 +102,7 @@ class QuestionEntryContainer extends Component {
     console.log(data.body);
     if (!data.body) return alert('내용을 입력해주세요');
     axios
-      .post(`${process.env.API_PROD}/api/question/chanswer/`, data, config)
+      .post(`${URL_API}/api/question/chanswer/`, data, config)
       .then((res) => {
         console.log(res.data);
         const { id } = this.props.match.params;
@@ -116,7 +118,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`${process.env.API_PROD}/api/question/pickanswer/${answerID}`, {}, config)
+      .post(`${URL_API}/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
         alert(res.data.message);
         const { id } = this.props.match.params;
@@ -133,7 +135,7 @@ class QuestionEntryContainer extends Component {
     };
     if (!answerID) {
       axios
-        .post(`${process.env.API_PROD}/api/question/good/${this.props.question.qID}`, {}, config)
+        .post(`${URL_API}/api/question/good/${this.props.question.qID}`, {}, config)
         .then(() => {
           const { id } = this.props.match.params;
           this.props.fetchQuestionEntry(id);
@@ -141,7 +143,7 @@ class QuestionEntryContainer extends Component {
         .catch(err => console.log(err));
     } else {
       axios
-        .post(`${process.env.API_PROD}/api/question/goodanswer/${answerID}`, {}, config)
+        .post(`${URL_API}/api/question/goodanswer/${answerID}`, {}, config)
         .then(() => {
           const { id } = this.props.match.params;
           this.props.fetchQuestionEntry(id);
@@ -158,7 +160,7 @@ class QuestionEntryContainer extends Component {
     };
     const { id } = this.props.match.params;
     axios
-      .post(`${process.env.API_PROD}/api/delete/question/${id}`, {}, config)
+      .post(`${URL_API}/api/delete/question/${id}`, {}, config)
       .then(() => {
         this.props.history.push('/question');
       })
@@ -172,7 +174,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`${process.env.API_PROD}/api/delete/answer/${answerID}`, {}, config)
+      .post(`${URL_API}/api/delete/answer/${answerID}`, {}, config)
       .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
@@ -187,7 +189,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`${process.env.API_PROD}/api/delete/chanswer/${cID}`, {}, config)
+      .post(`${URL_API}/api/delete/chanswer/${cID}`, {}, config)
       .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
@@ -202,7 +204,7 @@ class QuestionEntryContainer extends Component {
       },
     };
     axios
-      .post(`${process.env.API_PROD}/api/delete/reply/${rID}`, {}, config)
+      .post(`${URL_API}/api/delete/reply/${rID}`, {}, config)
       .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
