@@ -28,9 +28,9 @@ const EachQuestion = ({ questions, currentPage }) => (
           <Tags tags={item.tags} currentPage={currentPage} />
         </div>
         <div className="fourth">
-          <a className="username" href={`/mypage/${item.userID}`}>
+          <NavLink className="username" to={`/mypage/${item.userID}`}>
             {item.username}
-          </a>
+          </NavLink>
           <UpdateTime time={item.updated_at} />
         </div>
       </div>
