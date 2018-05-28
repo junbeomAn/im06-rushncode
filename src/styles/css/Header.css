@@ -22,6 +22,17 @@
 
 .header-search {
   display: flex; }
+  .header-search .search-input {
+    border: solid 3px #0b1b33;
+    background: transparent;
+    color: #0b1b33;
+    font-weight: bolder; }
+    .header-search .search-input::placeholder {
+      color: #0b1b33;
+      font-weight: bolder;
+      letter-spacing: 0.1rem; }
+    .header-search .search-input:hover {
+      background-color: ghostwhite; }
   .header-search .search-btn {
     letter-spacing: 0.1rem;
     background-color: transparent;
