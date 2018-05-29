@@ -44,7 +44,7 @@ export class MyPage extends Component {
     const { userID } = this.props.match.params;
     axios
       .post(`${URL_API}/api/upload/image/${userID}`, formData, config)
-      .then(res => console.log(res));
+      .then(res => window.location.reload());
   };
 
   /* eslint no-nested-ternary: 0 */
@@ -64,7 +64,7 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                <img src={`${URL_API}/${user.image}.png`} />
+                <img src={`${URL_API}/image/${user.image}.png`} />
               </div>
               {myID === Number(userID) ? (
                 <div className="upload-btn-wrapper">

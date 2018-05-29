@@ -3,7 +3,6 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 
 
-
 const Loading = () => (
   <Dimmer active>
     <Loader>
