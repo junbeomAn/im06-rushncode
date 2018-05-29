@@ -9,6 +9,8 @@
 .questionMain {
   width: 100%;
   background: ghostwhite; }
+  .questionMain .question-box {
+    min-height: 570px; }
   .questionMain .questionPost {
     display: flex;
     flex-direction: row;
