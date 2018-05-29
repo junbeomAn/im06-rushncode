@@ -15,7 +15,7 @@ class WriteButton extends Component {
         <button
           type="button"
           onClick={() =>
-            (!this.props.isLoggedIn ? alert('login is required!') : this.props.initWriteForm())
+            (!this.props.isLoggedIn ? alert('로그인이 필요한 서비스입니다.') : this.props.initWriteForm())
           }
           className="btn btn-outline-light btn-lg"
         >

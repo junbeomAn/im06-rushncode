@@ -43,6 +43,9 @@ class QuestionEntryContainer extends Component {
   };
 
   postAnswer = () => {
+    if (!this.props.isLoggedIn) {
+      return alert("로그인이 필요한 서비스입니다.");
+    }
     const { id } = this.props.match.params;
     const { src } = this.state;
     const config = {
@@ -67,6 +70,9 @@ class QuestionEntryContainer extends Component {
   };
 
   postQuestionReply = () => {
+    if (!this.props.isLoggedIn) {
+      return alert('로그인이 필요한 서비스입니다.');
+    }
     const { id } = this.props.match.params;
     const config = {
       headers: {
@@ -90,6 +96,9 @@ class QuestionEntryContainer extends Component {
   };
 
   postAnswerReply = (answerID) => {
+    if (!this.props.isLoggedIn) {
+      return alert('로그인이 필요한 서비스입니다.');
+    }
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
@@ -322,6 +331,7 @@ const mapStateToProps = state => ({
   question: state.questions.item,
   loading: state.questions.loading,
   myID: state.verify.userID,
+  isLoggedIn: state.verify.isLoggedIn,
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)
