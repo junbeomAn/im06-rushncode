@@ -15,6 +15,7 @@ class QuestionListContainer extends Component {
     super(props);
     this.state = {
       first: true,
+      change: true,
     };
   }
 
@@ -30,6 +31,13 @@ class QuestionListContainer extends Component {
     const element = document.getElementById(keyword ? `p${keyword}${index}` : `p${index}`);
     element.classList.add('current');
   };
+
+  changeState = () => {
+    console.log('change좀돼라');
+    this.setState({
+      change: !this.state.change,
+    });
+  }
 
   makeAsync = async (index) => {
     const url = window.location.href;
@@ -71,6 +79,7 @@ class QuestionListContainer extends Component {
             currentPage={current}
             start={start}
             end={end}
+            changeState={this.changeState}
           />
         )}
       </div>
