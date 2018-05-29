@@ -8,13 +8,13 @@ const HomeEachQuestion = ({ questions }) => (
     {questions.map(item => (
       <div className="questionPost" key={item.id}>
         <div className="first">
-          <div className="firstItem">
+          <div className="firstItem view">
             <ViewCount count={item.view} />
           </div>
-          <div className="firstItem">
+          <div className="firstItem like">
             <LikeCount count={item.good} />
           </div>
-          <div className="firstItem">
+          <div className="firstItem answerCount">
             <AnswerCount count={item.countAnswers} />
           </div>
           <div className="firstItem">
@@ -39,4 +39,3 @@ const HomeEachQuestion = ({ questions }) => (
 );
 
 export default HomeEachQuestion;
-
