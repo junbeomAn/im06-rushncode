@@ -22,6 +22,7 @@ const QuestionEntry = ({
   qBody,
   qGood,
   qView,
+  tags,
   qReward,
   qTime,
   pickAnswer,
@@ -51,7 +52,7 @@ const QuestionEntry = ({
           </span>
         ) : null}
       </div>
-      <Tags tags={['javascript', 'c', 'java']} />
+      <Tags tags={tags} />
     </div>
 
     <div className="QuestionEntryMain">

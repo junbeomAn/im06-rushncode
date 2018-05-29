@@ -8,9 +8,17 @@ const Writer = ({
   <NavLink className="ItemBox likeBtn" to={`/mypage/${userID}`}>
     <div className="ItemBoxNum">
       {aImage ? (
-        <img src={`${URL_API}/image/${aImage}_mini.png`} style={{ borderRadius: '5px' }} alt="image" />
+        <img
+          src={`${URL_API}/image/${aImage}_mini.png`}
+          style={{ borderRadius: '5px' }}
+          alt="image"
+        />
       ) : (
-        <img src={`${URL_API}/image/${image}_mini.png`} style={{ borderRadius: '5px' }} alt="image" />
+        <img
+          src={`${URL_API}/image/${image}_mini.png`}
+          style={{ borderRadius: '5px' }}
+          alt="image"
+        />
       )}
     </div>
     <div className="ItemBoxImage">{username}</div>

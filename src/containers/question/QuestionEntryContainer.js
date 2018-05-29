@@ -220,6 +220,7 @@ class QuestionEntryContainer extends Component {
       title,
       qBody,
       qGood,
+      tags,
       qView,
       qReward,
       qTime,
@@ -244,6 +245,7 @@ class QuestionEntryContainer extends Component {
               myID={this.props.myID}
               userID={userID}
               title={title}
+              tags={tags}
               qID={qID}
               qBody={qBody}
               qGood={qGood}
