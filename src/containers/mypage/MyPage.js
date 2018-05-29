@@ -13,6 +13,7 @@ export class MyPage extends Component {
   state = { first: true, selectedFile: '' };
 
   componentWillMount() {
+    // myID 가져오는 용도
     this.props.Verify();
   }
 
@@ -48,7 +49,7 @@ export class MyPage extends Component {
   /* eslint no-nested-ternary: 0 */
   render() {
     const { user, loading, myID } = this.props;
-
+    console.log('props : ', this.props);
     const { first } = this.state;
     const { userID } = this.props.match.params;
     return (
