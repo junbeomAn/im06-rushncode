@@ -133,4 +133,12 @@
   .write-btn:hover {
     background: #0b1b33; }
 
+.no-result-container {
+  text-align: center; }
+  .no-result-container .no-result {
+    font-size: 4rem;
+    font-weight: normal; }
+    .no-result-container .no-result .no-result-keyword {
+      font-weight: bolder; }
+
 /*# sourceMappingURL=App.css.map */
