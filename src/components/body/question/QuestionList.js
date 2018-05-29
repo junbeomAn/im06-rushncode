@@ -6,6 +6,7 @@ import QuestionListShowcase from '../../showcases/QuestionListShowcase';
 
 const QuestionList = ({
   posts,
+  isLoggedIn,
   updateStartEndPage,
   makeAsync,
   currentPage,
@@ -16,7 +17,7 @@ const QuestionList = ({
     <QuestionListShowcase />
     <div className="questionMain">
       <div className="question-box">
-        <EachQuestion questions={posts} currentPage={currentPage} />
+        <EachQuestion questions={posts} currentPage={currentPage} isLoggedIn={isLoggedIn} />
       </div>
       <Pagenation
         updateStartEndPage={updateStartEndPage}
