@@ -5,7 +5,7 @@ import { URL_API } from '../../config';
 
 export function fetchMyQuestion(userID) {
   return (dispatch) => {
-    dispatch({ type: FETCH_MY_QUESTION_BEGIN });
+    dispatch({ type: FETCH_MY_QUESTION_BEGIN }); 
     const config = {
       headers: {
         'x-access-token': localStorage.getItem('token'),
