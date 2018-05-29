@@ -54,10 +54,9 @@ class QuestionListContainer extends Component {
   /* eslint no-nested-ternary: 0 */
   render() {
     const {
-      loading, questions, current, start, end,
+      loading, questions, current, start, end, isLoggedIn,
     } = this.props;
     const { first } = this.state;
-    console.log(questions);
     // console.log(this.props.match);
     return (
       <div>
@@ -69,17 +68,18 @@ class QuestionListContainer extends Component {
           <Dimmer active>
             <Loader />
           </Dimmer>
-        ) : (
-          questions
-          ? <QuestionList
+        ) : questions ? (
+          <QuestionList
             posts={questions}
+            isLoggedIn={isLoggedIn}
             makeAsync={this.makeAsync}
             updateStartEndPage={this.props.updateStartEndPage}
             currentPage={current}
             start={start}
             end={end}
           />
-          : <NoSearchResult />
+        ) : (
+          <NoSearchResult />
         )}
       </div>
     );
@@ -94,6 +94,7 @@ const mapStateToProps = state => ({
   current: state.pagenation.current,
   start: state.pagenation.start,
   end: state.pagenation.end,
+  isLoggedIn: state.verify.isLoggedIn,
 });
 
 // export default 커넥트(mapStateToProps, { action에 정의된 함수 })(해당 컴포넌트)

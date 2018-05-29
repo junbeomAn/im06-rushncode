@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Tags, UpdateTime, LikeCount } from './question/question-list';
 import { ViewCount, AnswerCount, Reward, Complete } from './question/question-entry';
 
-const HomeEachQuestion = ({ questions }) => (
+const HomeEachQuestion = ({ questions, isLoggedIn }) => (
   <div>
     {questions.map(item => (
       <div className="questionPost" key={item.id}>
@@ -28,7 +28,11 @@ const HomeEachQuestion = ({ questions }) => (
           <Tags tags={item.tags} />
         </div>
         <div className="fourth">
-          <NavLink className="username" to={`/mypage/${item.userID}`}>
+          <NavLink
+            className="username"
+            onClick={() => !isLoggedIn && alert('로그인이 필요한 서비스입니다.')}
+            to={isLoggedIn ? `/mypage/${item.userID}` : '/auth/signin'}
+          >
             {item.username}
           </NavLink>
           <UpdateTime time={item.updated_at} />

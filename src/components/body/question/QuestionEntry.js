@@ -40,6 +40,7 @@ const QuestionEntry = ({
   deleteReply,
   fetchModifyQuestion,
   fetchModifyAnswer,
+  isLoggedIn,
 }) => (
   <div>
     <QuestionEntryShowcase />
@@ -117,7 +118,7 @@ const QuestionEntry = ({
           <Reward reward={qReward} />
         </div>
         <div className="QuestionEntryMainThirdItemBox">
-          <Writer username={username} userID={userID} image={image} />
+          <Writer username={username} userID={userID} image={image} isLoggedIn={isLoggedIn} />
         </div>
       </div>
     </div>
@@ -134,6 +135,7 @@ const QuestionEntry = ({
           username={answer.username}
           questionID={userID}
           userID={answer.userID}
+          isLoggedIn={isLoggedIn}
           picked={answer.picked}
           chAnswers={answer.chAnswers}
           count={answer.aGood}
