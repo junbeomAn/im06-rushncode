@@ -13,7 +13,9 @@
 .questionMain {
   width: 100%;
   background: ghostwhite;
-
+  .question-box {
+    min-height: 570px;
+  }
   .questionPost {
     display: flex;
     flex-direction: row;
@@ -45,7 +47,7 @@
             font-weight: bold;
             font-size: 1.2rem;
             color: grey;
-            font-weight: 400;            
+            font-weight: 400;
           }
         }
         .ItemBox2 {
