@@ -133,4 +133,24 @@
   .write-btn:hover {
     background: #0b1b33; }
 
+.no-result-container {
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  border: solid 1px red;
+  align-items: center;
+  min-height: 600px;
+  background: ghostwhite; }
+  .no-result-container h1 {
+    font-size: 4rem; }
+  .no-result-container .no-result-title {
+    opacity: 0.4;
+    color: #777; }
+  .no-result-container .no-result-text {
+    font-weight: normal;
+    opacity: 0.4;
+    color: #777; }
+    .no-result-container .no-result-text .no-result-keyword {
+      font-weight: bolder; }
+
 /*# sourceMappingURL=App.css.map */

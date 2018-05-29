@@ -11,13 +11,12 @@ const QuestionList = ({
   currentPage,
   start,
   end,
-  changeState,
 }) => (
   <div className="questContainer">
     <QuestionListShowcase />
     <div className="questionMain">
       <div className="question-box">
-        <EachQuestion questions={posts} currentPage={currentPage} changeState={changeState} />
+        <EachQuestion questions={posts} currentPage={currentPage} />
       </div>
       <Pagenation
         updateStartEndPage={updateStartEndPage}

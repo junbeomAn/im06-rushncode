@@ -165,3 +165,29 @@
     background: $primaryBlue;
   }
 }
+
+
+.no-result-container { 
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  border: solid 1px red;
+  align-items: center;
+  min-height: 600px;
+  background: ghostwhite;
+  h1 {
+    font-size: 4rem;
+  }
+  .no-result-title {
+    opacity: 0.4;
+    color: $greyfont;
+  }
+  .no-result-text {
+    font-weight: normal;
+    opacity: 0.4;
+    color: $greyfont;
+    .no-result-keyword {
+      font-weight: bolder;
+    }
+  }
+}
