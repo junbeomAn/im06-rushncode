@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Tag, Rank, NoMatch, Clause } from './components';
+import { Rank, NoMatch, Clause, Loadingpage } from './components';
 import { HeaderContainer, Question, Auth, MyPage, Home, Footer, TagContainer } from './containers';
 import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
@@ -33,6 +33,7 @@ class App extends Component {
                 <Route path="/information" component={Clause} />
                 <Route path="/search" component={QuestionListContainer} />
                 <Route path="/sort" component={QuestionListContainer} />
+                <Route path="/loading" component={Loadingpage} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

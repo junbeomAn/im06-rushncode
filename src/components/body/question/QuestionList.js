@@ -5,12 +5,12 @@ import QuestionListShowcase from '../../showcases/QuestionListShowcase';
 // require('bootstrap/less/bootstrap.less');
 
 const QuestionList = ({
-  posts, updateStartEndPage, makeAsync, currentPage, start, end,
+  posts, updateStartEndPage, makeAsync, currentPage, start, end, changeState,
 }) => (
   <div className="questContainer">
     <QuestionListShowcase />
     <div className="questionMain">
-      <EachQuestion questions={posts} currentPage={currentPage} />
+      <EachQuestion questions={posts} currentPage={currentPage} changeState={changeState} />
       <Pagenation
         updateStartEndPage={updateStartEndPage}
         makeAsync={makeAsync}

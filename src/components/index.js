@@ -8,6 +8,7 @@ import Logout from './body/Logout';
 import SignUp from './body/SignUp';
 import HomeQuestionList from './body/HomeQuestionList';
 import HomeEachQuestion from './body/HomeEachQuestion';
+import Loadingpage from './body/Loadingpage';
 
 export {
   Tag,
@@ -20,4 +21,5 @@ export {
   SignUp,
   HomeQuestionList,
   HomeEachQuestion,
+  Loadingpage,
 };
