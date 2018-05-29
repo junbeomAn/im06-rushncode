@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Advertisement } from 'semantic-ui-react';
-import { Loader } from 'semantic-ui-react';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 import { fetchQuestionList, getSortedResult } from '../../redux/actions/questionAction';
 import HomeShowcase from '../../components/showcases/HomeShowcase';
@@ -25,79 +25,87 @@ export class Home extends Component {
         </div>
         <div className="home-lower-box">
           <div className="home-lower">
-            <div className="home-lower-left">
-              <div className="home-lower-left-header">
-                <nav>
-                  <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a
-                      className="nav-item nav-link active"
-                      id="nav-default-tab"
-                      data-toggle="tab"
-                      href="#nav-default"
-                      role="tab"
-                      aria-controls="nav-default"
-                      aria-selected="true"
-                      onClick={() => {
-                        fetchQuestionList(1);
-                      }}
-                    >
-                      최신
-                    </a>
-                    <a
-                      className="nav-item nav-link"
-                      id="nav-like-tab"
-                      data-toggle="tab"
-                      href="#nav-like"
-                      role="tab"
-                      aria-controls="nav-like"
-                      aria-selected="false"
-                      onClick={() => {
-                        getSortedResult(1, 'view');
-                      }}
-                    >
-                      인기
-                    </a>
-                    <a
-                      className="nav-item nav-link"
-                      id="nav-reward-tab"
-                      data-toggle="tab"
-                      href="#nav-reward"
-                      role="tab"
-                      aria-controls="nav-reward"
-                      aria-selected="false"
-                      onClick={() => {
-                        getSortedResult(1, 'reward');
-                      }}
-                    >
-                      금액
-                    </a>
-                  </div>
-                </nav>
-                {/* ------------------------네비게이션 바--------------------------------------------- */}
-                <div className="tab-content" id="nav-tabContent">
-                  <div
-                    className="tab-pane fade show active"
-                    id="nav-default"
-                    role="tabpanel"
-                    aria-labelledby="nav-default-tab"
-                  >
-                    {<HomeQuestionList posts={questions} /> || <Loader active inline="centered" />}
-                  </div>
-                  {[0, 1].map(() => (
+            {questions ? (
+              <div className="home-lower-left">
+                <div className="home-lower-left-header">
+                  <nav>
+                    <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a
+                        className="nav-item nav-link active"
+                        id="nav-default-tab"
+                        data-toggle="tab"
+                        href="#nav-default"
+                        role="tab"
+                        aria-controls="nav-default"
+                        aria-selected="true"
+                        onClick={() => {
+                          fetchQuestionList(1);
+                        }}
+                      >
+                        최신
+                      </a>
+                      <a
+                        className="nav-item nav-link"
+                        id="nav-like-tab"
+                        data-toggle="tab"
+                        href="#nav-like"
+                        role="tab"
+                        aria-controls="nav-like"
+                        aria-selected="false"
+                        onClick={() => {
+                          getSortedResult(1, 'view');
+                        }}
+                      >
+                        인기
+                      </a>
+                      <a
+                        className="nav-item nav-link"
+                        id="nav-reward-tab"
+                        data-toggle="tab"
+                        href="#nav-reward"
+                        role="tab"
+                        aria-controls="nav-reward"
+                        aria-selected="false"
+                        onClick={() => {
+                          getSortedResult(1, 'reward');
+                        }}
+                      >
+                        금액
+                      </a>
+                    </div>
+                  </nav>
+                  {/* ------------------------네비게이션 바--------------------------------------------- */}
+                  <div className="tab-content" id="nav-tabContent">
                     <div
-                      className="tab-pane fade"
-                      id="nav-like"
+                      className="tab-pane fade show active"
+                      id="nav-default"
                       role="tabpanel"
-                      aria-labelledby="nav-like-tab"
+                      aria-labelledby="nav-default-tab"
                     >
                       {<HomeQuestionList posts={questions} /> || (
                         <Loader active inline="centered" />
                       )}
                     </div>
-                  ))}
+                    {[0, 1].map(() => (
+                      <div
+                        className="tab-pane fade"
+                        id="nav-like"
+                        role="tabpanel"
+                        aria-labelledby="nav-like-tab"
+                      >
+                        {<HomeQuestionList posts={questions} /> || (
+                          <Loader active inline="centered" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <Dimmer active>
+                <Loader />
+              </Dimmer>
+            )}
             <div className="home-lower-right">
               <div className="home-lower-right-main">
                 <h4>교육, 강의 플랫폼</h4>

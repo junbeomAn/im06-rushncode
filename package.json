@@ -29,9 +29,9 @@
     "semantic-ui-react": "^0.80.0"
   },
   "scripts": {
-    "start": "set REACT_APP_ENV=development && react-scripts start",
-    "build": "yarn sass:build && react-scripts build",
+    "start": "REACT_APP_ENV=development react-scripts start",
     "sass:build": "sass --update src/styles/scss:src/styles/css",
+    "build": "yarn sass:build && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "sass": "sass --watch src/styles/scss:src/styles/css",
     "eject": "react-scripts eject"

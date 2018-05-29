@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Dimmer, Loader } from 'semantic-ui-react';
+
 import MyQuestion from './MyQuestion';
 import MyAnswer from './MyAnswer';
 import { fetchMyQuestion } from '../../redux/actions/mypageAction';
@@ -51,15 +52,19 @@ export class MyPage extends Component {
   render() {
     const { user, loading, myID } = this.props;
     console.log(user);
-    
+
     const { first } = this.state;
     const { userID } = this.props.match.params;
     return (
       <div className="mypage-container">
         {loading ? (
-          <div>Loading...</div>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
         ) : first ? (
-          <h1>Loading...</h1>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
         ) : (
           <div className="mypage-inner-container">
             <div className="first">

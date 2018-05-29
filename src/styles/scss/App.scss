@@ -165,3 +165,16 @@
     background: $primaryBlue;
   }
 }
+
+
+.no-result-container {
+  text-align: center;  
+
+  .no-result {
+    font-size: 4rem;
+    font-weight: normal;
+    .no-result-keyword {
+      font-weight: bolder;
+    }
+  }
+}

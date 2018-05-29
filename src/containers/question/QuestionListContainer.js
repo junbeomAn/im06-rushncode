@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 import QuestionList from '../../components/body/question/QuestionList';
+import { NoSearchResult } from '../../components';
 import {
   fetchQuestionList,
   fetchSortedByTag,
@@ -15,7 +17,6 @@ class QuestionListContainer extends Component {
     super(props);
     this.state = {
       first: true,
-      change: true,
     };
   }
 
@@ -32,13 +33,6 @@ class QuestionListContainer extends Component {
     element.classList.add('current');
   };
 
-  changeState = () => {
-    console.log('change좀돼라');
-    this.setState({
-      change: !this.state.change,
-    });
-  }
-
   makeAsync = async (index) => {
     const url = window.location.href;
     const keyword = decodeURI(url).split('?q=')[1];
@@ -54,7 +48,7 @@ class QuestionListContainer extends Component {
       await this.props.fetchQuestionList.bind(this, index)();
     }
     this.props.updateCurrPage(index);
-    this.addClassToCurrentPage(index, keyword);
+    this.props.questions && this.addClassToCurrentPage(index, keyword);
   };
 
   /* eslint no-nested-ternary: 0 */
@@ -64,23 +58,28 @@ class QuestionListContainer extends Component {
     } = this.props;
     const { first } = this.state;
     console.log(questions);
-    console.log(this.props.match);
+    // console.log(this.props.match);
     return (
       <div>
         {loading ? (
-          <h1>Loading...</h1>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
         ) : first ? (
-          <h1>Loading...</h1>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
         ) : (
-          <QuestionList
+          questions
+          ? <QuestionList
             posts={questions}
             makeAsync={this.makeAsync}
             updateStartEndPage={this.props.updateStartEndPage}
             currentPage={current}
             start={start}
             end={end}
-            changeState={this.changeState}
           />
+          : <NoSearchResult />
         )}
       </div>
     );

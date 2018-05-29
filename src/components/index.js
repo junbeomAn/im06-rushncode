@@ -9,6 +9,7 @@ import SignUp from './body/SignUp';
 import HomeQuestionList from './body/HomeQuestionList';
 import HomeEachQuestion from './body/HomeEachQuestion';
 import Loadingpage from './body/Loadingpage';
+import NoSearchResult from './body/NoSearchResult';
 
 export {
   Tag,
@@ -22,4 +23,5 @@ export {
   HomeQuestionList,
   HomeEachQuestion,
   Loadingpage,
+  NoSearchResult,
 };

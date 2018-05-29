@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
-import { Popup, Icon } from 'semantic-ui-react';
+import { Popup, Icon, Dimmer, Loader } from 'semantic-ui-react';
+
 import QuestionEntry from '../../components/body/question/QuestionEntry';
 import {
   fetchQuestionEntry,
@@ -229,6 +230,7 @@ class QuestionEntryContainer extends Component {
       title,
       qBody,
       qGood,
+      tags,
       qView,
       qReward,
       qTime,
@@ -243,9 +245,13 @@ class QuestionEntryContainer extends Component {
     return (
       <div>
         {this.props.loading ? (
-          <h1>Loading...</h1>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
         ) : first ? (
-          <h1>Loading...</h1>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
         ) : (
           <div className="QuestionEntryContainer">
             <QuestionEntry
@@ -253,6 +259,7 @@ class QuestionEntryContainer extends Component {
               myID={this.props.myID}
               userID={userID}
               title={title}
+              tags={tags}
               qID={qID}
               qBody={qBody}
               qGood={qGood}
