@@ -1,5 +1,5 @@
-.auth-title {
-  position: fixed;
+.auth-title h1 {
+  position: relative;
   left: 50%;
   top: 14%;
   transform: translate(-50%, -50%); }
@@ -8,9 +8,9 @@
   display: flex;
   flex-direction: column;
   width: 350px;
-  position: fixed;
+  position: relative;
   left: 50%;
-  top: 38%;
+  top: 40%;
   transform: translate(-50%, -50%);
   padding: 20px; }
 
@@ -18,30 +18,19 @@
   display: flex;
   flex-direction: column;
   width: 350px;
-  position: fixed;
+  position: relative;
   left: 50%;
-  top: 32%;
+  top: 40%;
   transform: translate(-50%, -50%);
   padding: 20px; }
-
-.authOptionContainer {
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  position: fixed;
-  left: 50%;
-  top: 59%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  text-align: center; }
 
 .loginOptionContainer {
   display: flex;
   flex-direction: column;
   width: 350px;
-  position: fixed;
+  position: relative;
   left: 50%;
-  top: 53%;
+  top: 28%;
   transform: translate(-50%, -50%);
   padding: 20px;
   text-align: center; }
