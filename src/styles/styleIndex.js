@@ -16,3 +16,4 @@ import './css/markdown.css';
 import './css/MyPage.css';
 import './css/QuestionModify.css';
 import './css/Clause.css';
+import './css/Responsive.css';
