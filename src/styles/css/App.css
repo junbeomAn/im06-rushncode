@@ -134,20 +134,22 @@
     background: #0b1b33; }
 
 .no-result-container {
-  display: flex;
-  justify-content: stretch;
-  flex-direction: column;
-  border: solid 1px red;
-  align-items: center;
-  min-height: 600px;
+  min-height: 720px;
   background: ghostwhite; }
   .no-result-container h1 {
-    font-size: 4rem; }
+    padding-top: 100px;
+    font-size: 3.5rem; }
   .no-result-container .no-result-title {
+    padding-top: 200px;
     opacity: 0.4;
+    text-align: center;
+    margin-top: 50px;
     color: #777; }
   .no-result-container .no-result-text {
+    margin: 0;
+    padding: 0;
     font-weight: normal;
+    text-align: center;
     opacity: 0.4;
     color: #777; }
     .no-result-container .no-result-text .no-result-keyword {

@@ -14,6 +14,7 @@ export class MyPage extends Component {
   state = { first: true, selectedFile: '' };
 
   componentWillMount() {
+    // myID 가져오는 용도
     this.props.Verify();
   }
 
@@ -33,7 +34,6 @@ export class MyPage extends Component {
   };
 
   uploadHandler = () => {
-    console.log('selectedFile : ', this.state.selectedFile);
     const formData = new FormData();
     formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name);
     const config = {
@@ -41,7 +41,6 @@ export class MyPage extends Component {
         'x-access-token': localStorage.getItem('token'),
       },
     };
-    console.log('formData : ', formData);
     const { userID } = this.props.match.params;
     axios
       .post(`${URL_API}/api/upload/image/${userID}`, formData, config)
@@ -51,8 +50,7 @@ export class MyPage extends Component {
   /* eslint no-nested-ternary: 0 */
   render() {
     const { user, loading, myID } = this.props;
-    console.log(user);
-
+    console.log('props : ', this.props);
     const { first } = this.state;
     const { userID } = this.props.match.params;
     return (
