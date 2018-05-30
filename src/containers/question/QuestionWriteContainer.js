@@ -20,13 +20,194 @@ import '../../styles/css/QuestionWrite.css';
 import { URL_API } from '../../config';
 
 class QuestionWriteContainer extends Component {
-  state = {
-    options: [],
-  };
+  constructor(props) {
+    super(props);
+    const MyContract = window.web3.eth.contract([
+      {
+        constant: true,
+        inputs: [],
+        name: 'questioner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getRecipient',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'reward',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getReward',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'question',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'dealBreak',
+        outputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        name: 'pending',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'recipient',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getQuestioner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'dealConclusion',
+        outputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+      {
+        inputs: [
+          {
+            name: '_recipient',
+            type: 'address',
+          },
+          {
+            name: '_reward',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'constructor',
+      },
+    ]);
+    this.state = {
+      options: [],
+      ContractInstance: MyContract.at('0x55e2a514b7adf38b54d4088762ee622de6a7255f'),
+    };
+  }
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
+
+  /** *****************************************************************
+                                이더리움 DAPP
+  ******************************************************************* */
+  getQuestioner = () => {
+    const { getQuestioner } = this.state.ContractInstance;
+
+    getQuestioner((err, questioner) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's questioner::::", questioner);
+    });
+  };
+
+  getRecipient = () => {
+    const { getRecipient } = this.state.ContractInstance;
+
+    getRecipient((err, recipient) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's recipient::::", recipient);
+    });
+  };
+
+  getReward = () => {
+    const { getReward } = this.state.ContractInstance;
+
+    getReward((err, reward) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's reward::::", reward);
+    });
+  };
 
   // 태그 선택 관련
   onTagChange = (e) => {
@@ -189,7 +370,12 @@ class QuestionWriteContainer extends Component {
               </button>
             ) : (
               <button
-                onClick={() => this.submit()}
+                onClick={() => {
+                  this.getQuestioner();
+                  this.getRecipient();
+                  this.getReward();
+                  this.submit();
+                }}
                 className="btn btn-primary mark_down_btn_item write-btn"
               >
                 질문작성
