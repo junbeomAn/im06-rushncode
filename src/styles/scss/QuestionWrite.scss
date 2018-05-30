@@ -40,7 +40,7 @@
     width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
-    .inputTitle{
+    .inputTitle {
       font-size: 1.1rem;
     }
   }
@@ -61,4 +61,7 @@
   margin-bottom: 15px;
   font-size: 1.2rem;
   font-weight: 600;
+}
+pre {
+  width: 100% !important;
 }
