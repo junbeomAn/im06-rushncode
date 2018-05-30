@@ -45,7 +45,7 @@ class QuestionEntryContainer extends Component {
 
   postAnswer = () => {
     if (!this.props.isLoggedIn) {
-      return alert("로그인이 필요한 서비스입니다.");
+      return alert('로그인이 필요한 서비스입니다.');
     }
     const { id } = this.props.match.params;
     const { src } = this.state;
@@ -269,6 +269,7 @@ class QuestionEntryContainer extends Component {
               replies={replies}
               answers={answers}
               image={image}
+              isLoggedIn={this.props.isLoggedIn}
               existPickedAnswer={exist_picked_ans}
               pickAnswer={this.pickAnswer}
               raiseLikeCount={this.raiseLikeCount}

@@ -22,6 +22,7 @@ const QuestionAnswer = ({
   deleteAnswer,
   deleteChAnswer,
   fetchModifyAnswer,
+  isLoggedIn,
 }) => (
   <div className="QuestionEntryAnswerEntry">
     <div className="QuestionEntryAnswerFirst">
@@ -77,7 +78,7 @@ const QuestionAnswer = ({
         )}
       </div>
       <div className="QuestionEntryAnswerThirdReward">
-        <Writer username={username} userID={userID} aImage={aImage} />
+        <Writer username={username} userID={userID} aImage={aImage} isLoggedIn={isLoggedIn} />
       </div>
     </div>
   </div>

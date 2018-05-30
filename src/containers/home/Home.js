@@ -16,7 +16,9 @@ export class Home extends Component {
   }
 
   render() {
-    const { questions, fetchQuestionList, getSortedResult } = this.props;
+    const {
+      questions, fetchQuestionList, getSortedResult, isLoggedIn,
+    } = this.props;
     console.log(this.props);
     return (
       <div className="homeContainer">
@@ -82,7 +84,7 @@ export class Home extends Component {
                       role="tabpanel"
                       aria-labelledby="nav-default-tab"
                     >
-                      {<HomeQuestionList posts={questions} /> || (
+                      {<HomeQuestionList posts={questions} isLoggedIn={isLoggedIn} /> || (
                         <Loader active inline="centered" />
                       )}
                     </div>
@@ -93,7 +95,7 @@ export class Home extends Component {
                         role="tabpanel"
                         aria-labelledby="nav-like-tab"
                       >
-                        {<HomeQuestionList posts={questions} /> || (
+                        {<HomeQuestionList posts={questions} isLoggedIn={isLoggedIn} /> || (
                           <Loader active inline="centered" />
                         )}
                       </div>
@@ -219,6 +221,7 @@ export class Home extends Component {
 
 const mapStateToProps = state => ({
   questions: state.questions.items,
+  isLoggedIn: state.verify.isLoggedIn,
 });
 
 export default connect(mapStateToProps, { fetchQuestionList, getSortedResult })(Home);
