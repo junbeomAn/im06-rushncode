@@ -22,7 +22,7 @@ class LoginContainer extends Component {
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
     const signInUrl = `${URL_API}/api/auth/signin`;
-    console.log(process.env.API_PROD);
+    // console.log(process.env.API_PROD);
     axios
       .post(signInUrl, userInfo)
       .then((res) => {
