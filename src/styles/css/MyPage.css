@@ -5,6 +5,8 @@
   background: #0b1b33;
   opacity: 0.8;
   padding: 100px 50px 0px 50px; }
+  .mypage-container .container {
+    min-height: 200px; }
   .mypage-container .mypage-inner-container {
     padding: 20px 30px;
     background: ghostwhite;
