@@ -18,7 +18,6 @@ class App extends Component {
 
   render() {
     // console.log('@@@@@@@@@@@@@@', process.env.REACT_APP_SETTING);
-    console.log('WEB3 :::: ', this.props);
     return (
       <Provider store={store}>
         <Router>
