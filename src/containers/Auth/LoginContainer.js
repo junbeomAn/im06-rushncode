@@ -36,7 +36,7 @@ class LoginContainer extends Component {
           alert(res.data.message);
           // console.log(res);
           this.props.history.push('/auth/signin');
-        }        
+        }
       })
       .catch(err => alert(err));
   }

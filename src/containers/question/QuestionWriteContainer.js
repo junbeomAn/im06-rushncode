@@ -86,6 +86,7 @@ class QuestionWriteContainer extends Component {
   submit = () => {
     const { options } = this.state;
     const { title, body } = this.props;
+    console.log(body);
     const reward = Number(this.props.reward);
     const config = {
       headers: {
@@ -93,8 +94,7 @@ class QuestionWriteContainer extends Component {
         'Content-Type': 'application/json',
       },
     };
-    const writingUrl = `${URL_API}/api/question/post`;
-
+    const writingUrl = `${URL_API}/api/question/post`;   
     // 글 작성 정보 모두 담는 그릇 설정
     const data = {};
     // 태그 정보 담기 및  태그 선택 안할 시 예외 처리
@@ -174,7 +174,7 @@ class QuestionWriteContainer extends Component {
                 />
               </div>
               <div className="mark_down_view">
-                <ReactMarkDown className="mark_down_view_item" source={body} />
+                <ReactMarkDown className="mark_down_view_item" source={body} sourcePos rawSourcePos />
               </div>
             </div>
           </div>
