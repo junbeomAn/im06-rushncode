@@ -10,12 +10,312 @@ import { Verify } from './../../redux/actions/verifyAction';
 class Question extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    const ABI = [
+      {
+        constant: true,
+        inputs: [],
+        name: 'questioner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getPending',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getRecipient',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'reward',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: '_recipient',
+            type: 'address',
+          },
+        ],
+        name: 'setRecipient',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getReward',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'question',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'dealBreak',
+        outputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        name: 'pending',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'recipient',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getQuestioner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getOwner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'owner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'dealConclusion',
+        outputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+      {
+        inputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'constructor',
+      },
+    ];
+    const MyContract = window.web3.eth.contract(ABI);
+    this.state = { ContractInstance: MyContract.at('0x94d73df0d4f19914d8b98ad2b5b8ed765d1f3b56') };
   }
 
   componentDidMount() {
     this.props.Verify();
   }
+  /** *****************************************************************
+                              이더리움 DAPP 시작
+  ******************************************************************* */
+  newCookie = () => {
+    const { newCookie } = this.state.ContractInstance;
+    newCookie(
+      {
+        gas: 1000000,
+      },
+      (err, c) => {
+        if (err) console.error('An err occured::::', err);
+        console.log('newCokkie!!:::', c);
+      },
+    );
+  };
+
+  getQuestioner = () => {
+    const { getQuestioner } = this.state.ContractInstance;
+    getQuestioner((err, questioner) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's questioner::::", questioner);
+    });
+  };
+
+  getRecipient = () => {
+    const { getRecipient } = this.state.ContractInstance;
+    getRecipient((err, recipient) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's recipient::::", recipient);
+    });
+  };
+
+  getReward = () => {
+    const { getReward } = this.state.ContractInstance;
+    getReward((err, reward) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's reward::::", reward);
+    });
+  };
+
+  getPending = () => {
+    const { getPending } = this.state.ContractInstance;
+    getPending((err, pending) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's pending::::", pending);
+    });
+  };
+
+  setRecipient = () => {
+    const { setRecipient } = this.state.ContractInstance;
+    setRecipient(
+      '0xEB06396B746f0B22981D0BeCBf24435626251204',
+      {
+        gas: 400000,
+        from: window.web3.eth.accounts[0],
+        value: window.web3.toWei(0.01, 'ether'),
+      },
+      (err, result) => {
+        console.log('Smart contract state is changing');
+      },
+    );
+  };
+
+  dealConclusion = () => {
+    const { dealConclusion } = this.state.ContractInstance;
+    dealConclusion(
+      {
+        gas: 400000,
+      },
+      (err) => {
+        if (err) console.error('An err occured::::', err);
+        console.log('Transfer to Recipient!!');
+      },
+    );
+  };
+
+  dealBreak = () => {
+    const { dealBreak } = this.state.ContractInstance;
+    dealBreak(
+      {
+        gas: 400000,
+      },
+      (err) => {
+        if (err) console.error('An err occured::::', err);
+        console.log('Transfer to Recipient!!');
+      },
+    );
+  };
+
+  makeQuestion = (reward) => {
+    const { question } = this.state.ContractInstance;
+    question(
+      {
+        gas: 400000,
+        from: window.web3.eth.accounts[0],
+        value: window.web3.toWei(reward, 'ether'),
+      },
+      (err, result) => {
+        console.log('question is making...');
+      },
+    );
+  };
+  /** *****************************************************************
+                              이더리움 DAPP 종료
+  ******************************************************************* */
 
   render() {
     const { match } = this.props;
@@ -24,8 +324,35 @@ class Question extends Component {
       <Switch>
         <Route component={QuestionModifyContainer} path={`${match.path}/modify/:id`} />
         <Route component={QuestionWriteContainer} path={`${match.path}/write/:id`} />
-        <Route component={QuestionWriteContainer} path={`${match.path}/write`} />
-        <Route component={QuestionEntryContainer} path={`${match.path}/:id`} />
+        {/* <Route component={QuestionWriteContainer} path={`${match.path}/write`} /> */}
+        <Route
+          render={({ match, history }) => (
+            <QuestionWriteContainer
+              newCookie={this.newCookie}
+              makeQuestion={this.makeQuestion}
+              getQuestioner={this.getQuestioner}
+              getRecipient={this.getRecipient}
+              getReward={this.getReward}
+              getPending={this.getPending}
+              match={match}
+              history={history}
+            />
+          )}
+          path={`${match.path}/write`}
+        />
+        {/* <Route component={QuestionEntryContainer} path={`${match.path}/:id`} /> */}
+        <Route
+          render={({ match, history }) => (
+            <QuestionEntryContainer
+              setRecipient={this.setRecipient}
+              dealConclusion={this.dealConclusion}
+              dealBreak={this.dealBreak}
+              match={match}
+              history={history}
+            />
+          )}
+          path={`${match.path}/:id`}
+        />
         <Route component={QuestionListContainer} path={`${match.path}/`} />
       </Switch>
     );

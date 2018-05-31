@@ -281,6 +281,8 @@ class QuestionEntryContainer extends Component {
               deleteReply={this.deleteReply}
               fetchModifyQuestion={this.props.fetchModifyQuestion}
               fetchModifyAnswer={this.props.fetchModifyAnswer}
+              dealConclusion={this.props.dealConclusion}
+              dealBreak={this.props.dealBreak}
             />
             <div id="markdown">
               <h1> add an answer </h1>
