@@ -58,7 +58,7 @@ const QuestionEntry = ({
 
     <div className="QuestionEntryMain">
       <div className="QuestionEntryMainFirst">
-        <LikeCount count={qGood} raiseLikeCount={raiseLikeCount} />
+        <LikeCount count={qGood} raiseLikeCount={raiseLikeCount} isLoggedIn={isLoggedIn} />
       </div>
       <div className="QuestionEntryMainSecond">
         <ReactMarkDown source={qBody.replace(/(?:\r↵|\r|↵)/g, '\n')} />
