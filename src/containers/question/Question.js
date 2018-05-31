@@ -19,7 +19,7 @@ class Question extends Component {
 
   render() {
     const { match } = this.props;
-    console.log(this.props.isLoggedIn);
+    console.log('props::::', this.props);
     return (
       <Switch>
         <Route component={QuestionModifyContainer} path={`${match.path}/modify/:id`} />

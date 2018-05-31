@@ -42,6 +42,20 @@ class QuestionWriteContainer extends Component {
       {
         constant: true,
         inputs: [],
+        name: 'getPending',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
         name: 'getRecipient',
         outputs: [
           {
@@ -161,6 +175,34 @@ class QuestionWriteContainer extends Component {
         type: 'function',
       },
       {
+        constant: true,
+        inputs: [],
+        name: 'getOwner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'owner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
         constant: false,
         inputs: [],
         name: 'dealConclusion',
@@ -180,7 +222,7 @@ class QuestionWriteContainer extends Component {
 
     this.state = {
       options: [],
-      ContractInstance: MyContract.at('0xf66cad008d6c4a538448eeaa7ef8dc5f5c75b5ae'),
+      ContractInstance: MyContract.at('0x9152901763c05fa8d8e45faddf76a551fa1182d0'),
     };
   }
 
@@ -216,10 +258,18 @@ class QuestionWriteContainer extends Component {
     });
   };
 
+  getPending = () => {
+    const { getPending } = this.state.ContractInstance;
+    getPending((err, pending) => {
+      if (err) console.error('An eeor occured::::', err);
+      console.log("This is our contract's pending::::", pending);
+    });
+  };
+
   setRecipient = () => {
     const { setRecipient } = this.state.ContractInstance;
     setRecipient(
-      window.web3.eth.accounts[0],
+      '0xEB06396B746f0B22981D0BeCBf24435626251204',
       {
         gas: 400000,
         from: window.web3.eth.accounts[0],
@@ -227,6 +277,32 @@ class QuestionWriteContainer extends Component {
       },
       (err, result) => {
         console.log('Smart contract state is changing');
+      },
+    );
+  };
+
+  dealConclusion = () => {
+    const { dealConclusion } = this.state.ContractInstance;
+    dealConclusion(
+      {
+        gas: 400000,
+      },
+      (err) => {
+        if (err) console.error('An err occured::::', err);
+        console.log('Transfer to Recipient!!');
+      },
+    );
+  };
+
+  dealBreak = () => {
+    const { dealBreak } = this.state.ContractInstance;
+    dealBreak(
+      {
+        gas: 400000,
+      },
+      (err) => {
+        if (err) console.error('An err occured::::', err);
+        console.log('Transfer to Recipient!!');
       },
     );
   };
@@ -426,9 +502,9 @@ class QuestionWriteContainer extends Component {
               <button
                 onClick={() => {
                   this.getQuestioner();
-                  // this.setRecipient();
                   this.getRecipient();
                   this.getReward();
+                  this.getPending();
                 }}
               >
                 get
@@ -439,6 +515,20 @@ class QuestionWriteContainer extends Component {
                 }}
               >
                 setRecipient
+              </button>
+              <button
+                onClick={() => {
+                  this.dealConclusion();
+                }}
+              >
+                dealConclusion
+              </button>
+              <button
+                onClick={() => {
+                  this.dealBreak();
+                }}
+              >
+                dealBreak
               </button>
             </div>
           </div>
