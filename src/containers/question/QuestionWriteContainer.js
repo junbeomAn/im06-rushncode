@@ -3,6 +3,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
 import { Icon, Popup } from 'semantic-ui-react';
+import { Web3Provider } from 'react-web3';
+
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import {
   fetchQuestionTag,
@@ -15,14 +17,14 @@ import {
 import MarkDownTip from '../../components/body/question/question-entry/MarkDownTip';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
 
-import '../../styles/css/QuestionWrite.css';
-
 import { URL_API } from '../../config';
+
+// import web3, { selectContractInstance, mapReponseToJSON } from '../../web3';
 
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
-    const MyContract = window.web3.eth.contract([
+    const ABI = [
       {
         constant: true,
         inputs: [],
@@ -63,6 +65,20 @@ class QuestionWriteContainer extends Component {
         ],
         payable: false,
         stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: '_recipient',
+            type: 'address',
+          },
+        ],
+        name: 'setRecipient',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
         type: 'function',
       },
       {
@@ -154,24 +170,17 @@ class QuestionWriteContainer extends Component {
         type: 'function',
       },
       {
-        inputs: [
-          {
-            name: '_recipient',
-            type: 'address',
-          },
-          {
-            name: '_reward',
-            type: 'uint256',
-          },
-        ],
+        inputs: [],
         payable: false,
         stateMutability: 'nonpayable',
         type: 'constructor',
       },
-    ]);
+    ];
+    const MyContract = window.web3.eth.contract(ABI);
+
     this.state = {
       options: [],
-      ContractInstance: MyContract.at('0x55e2a514b7adf38b54d4088762ee622de6a7255f'),
+      ContractInstance: MyContract.at('0xf66cad008d6c4a538448eeaa7ef8dc5f5c75b5ae'),
     };
   }
 
@@ -180,7 +189,7 @@ class QuestionWriteContainer extends Component {
   }
 
   /** *****************************************************************
-                                이더리움 DAPP
+                              이더리움 DAPP 시작
   ******************************************************************* */
   getQuestioner = () => {
     const { getQuestioner } = this.state.ContractInstance;
@@ -193,7 +202,6 @@ class QuestionWriteContainer extends Component {
 
   getRecipient = () => {
     const { getRecipient } = this.state.ContractInstance;
-
     getRecipient((err, recipient) => {
       if (err) console.error('An eeor occured::::', err);
       console.log("This is our contract's recipient::::", recipient);
@@ -202,12 +210,43 @@ class QuestionWriteContainer extends Component {
 
   getReward = () => {
     const { getReward } = this.state.ContractInstance;
-
     getReward((err, reward) => {
       if (err) console.error('An eeor occured::::', err);
       console.log("This is our contract's reward::::", reward);
     });
   };
+
+  setRecipient = () => {
+    const { setRecipient } = this.state.ContractInstance;
+    setRecipient(
+      window.web3.eth.accounts[0],
+      {
+        gas: 400000,
+        from: window.web3.eth.accounts[0],
+        value: window.web3.toWei(0.01, 'ether'),
+      },
+      (err, result) => {
+        console.log('Smart contract state is changing');
+      },
+    );
+  };
+
+  makeQuestion = () => {
+    const { question } = this.state.ContractInstance;
+    question(
+      {
+        gas: 400000,
+        from: window.web3.eth.accounts[0],
+        value: window.web3.toWei(0.01, 'ether'),
+      },
+      (err, result) => {
+        console.log('Smart contract state is changing');
+      },
+    );
+  };
+  /** *****************************************************************
+                              이더리움 DAPP 종료
+  ******************************************************************* */
 
   // 태그 선택 관련
   onTagChange = (e) => {
@@ -312,78 +351,94 @@ class QuestionWriteContainer extends Component {
     } = this.props;
     const { id } = match.params;
     return (
-      <div className="QuestionWriteContainer">
-        <QuestionWriteShowcase />
-        <QuestionWrite
-          tags={tags}
-          title={title}
-          reward={reward}
-          isModify={id}
-          onTagChange={this.onTagChange}
-          onTitleChange={onTitleChange}
-          onRewardChange={onRewardChange}
-        />
-        <div className="write-title">내용</div>
-        <div id="markdown">
-          <div className="mark_down_box">
-            <div className="mark_down_input">
-              <h2>입력창</h2>
-              <textarea
-                className="mark_down_input_item"
-                placeholder="질문을 입력 하세요"
-                name="content"
-                value={body}
-                onChange={e => onBodyChange(e)}
-                id="markdownvalue"
-                cols="70"
-                rows="30"
-              />
-            </div>
-            <div className="mark_down_view_wrapper">
-              <div className="mark_down_view_top">
-                <h2>미리보기</h2>
-                <Popup
-                  trigger={
-                    <span className="mark_down_tip">
-                      <Icon name="idea" />마크다운 팁
-                    </span>
-                  }
-                  content={<MarkDownTip />}
-                  on="click"
-                  position="bottom left"
-                  wide
+      <Web3Provider>
+        <div className="QuestionWriteContainer">
+          <QuestionWriteShowcase />
+          <QuestionWrite
+            tags={tags}
+            title={title}
+            reward={reward}
+            isModify={id}
+            onTagChange={this.onTagChange}
+            onTitleChange={onTitleChange}
+            onRewardChange={onRewardChange}
+          />
+          <div className="write-title">내용</div>
+          <div id="markdown">
+            <div className="mark_down_box">
+              <div className="mark_down_input">
+                <h2>입력창</h2>
+                <textarea
+                  className="mark_down_input_item"
+                  placeholder="질문을 입력 하세요"
+                  name="content"
+                  value={body}
+                  onChange={e => onBodyChange(e)}
+                  id="markdownvalue"
+                  cols="70"
+                  rows="30"
                 />
               </div>
-              <div className="mark_down_view">
-                <ReactMarkDown className="mark_down_view_item" source={body} />
+              <div className="mark_down_view_wrapper">
+                <div className="mark_down_view_top">
+                  <h2>미리보기</h2>
+                  <Popup
+                    trigger={
+                      <span className="mark_down_tip">
+                        <Icon name="idea" />마크다운 팁
+                      </span>
+                    }
+                    content={<MarkDownTip />}
+                    on="click"
+                    position="bottom left"
+                    wide
+                  />
+                </div>
+                <div className="mark_down_view">
+                  <ReactMarkDown className="mark_down_view_item" source={body} />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="mark_down_btn">
-            {id ? (
-              <button
-                onClick={() => this.postModifiedQuestion()}
-                className="btn btn-primary mark_down_btn_item write-btn"
-              >
-                질문수정
-              </button>
-            ) : (
+            <div className="mark_down_btn">
+              {id ? (
+                <button
+                  onClick={() => this.postModifiedQuestion()}
+                  className="btn btn-primary mark_down_btn_item write-btn"
+                >
+                  질문수정
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    this.makeQuestion();
+                  }}
+                  className="btn btn-primary mark_down_btn_item write-btn"
+                >
+                  질문작성
+                </button>
+              )}
               <button
                 onClick={() => {
                   this.getQuestioner();
+                  // this.setRecipient();
                   this.getRecipient();
                   this.getReward();
-                  this.submit();
                 }}
-                className="btn btn-primary mark_down_btn_item write-btn"
               >
-                질문작성
+                get
               </button>
-            )}
+              <button
+                onClick={() => {
+                  this.setRecipient();
+                }}
+              >
+                setRecipient
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </Web3Provider>
     );
   }
 }

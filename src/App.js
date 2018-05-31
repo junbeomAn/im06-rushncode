@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Web3Provider } from 'react-web3';
+
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -15,7 +17,8 @@ class App extends Component {
   }
 
   render() {
-    console.log('@@@@@@@@@@@@@@', process.env.REACT_APP_SETTING);
+    // console.log('@@@@@@@@@@@@@@', process.env.REACT_APP_SETTING);
+    console.log('WEB3 :::: ', this.props);
     return (
       <Provider store={store}>
         <Router>
