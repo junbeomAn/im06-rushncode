@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Web3Provider } from 'react-web3';
 
 // REDUX
 import { Provider } from 'react-redux';
