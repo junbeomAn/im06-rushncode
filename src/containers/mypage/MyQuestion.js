@@ -5,6 +5,7 @@ import {
   AnswerCount,
   Reward,
   Complete,
+  Breaked,
 } from '../../components/body/question/question-entry';
 import { Tags, UpdateTime, LikeCount } from '../../components/body/question/question-list';
 
@@ -27,7 +28,13 @@ export class MyQuestion extends Component {
                 <AnswerCount count={item.countAnswers} />
               </div>
               <div className="firstItem">
-                {item.exist_picked_ans ? <Complete /> : <Reward reward={item.reward} />}
+                {item.exist_picked_ans ? (
+                  <Complete />
+                ) : item.breaked ? (
+                  <Breaked />
+                ) : (
+                  <Reward reward={item.reward} />
+                )}
               </div>
             </div>
             <div className="second">

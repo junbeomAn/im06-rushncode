@@ -225,34 +225,6 @@ class QuestionWriteContainer extends Component {
               >
                 get
               </button>
-              {/* <button
-                onClick={() => {
-                  setRecipient();
-                }}
-              >
-                setRecipient
-              </button>
-              <button
-                onClick={() => {
-                  dealConclusion();
-                }}
-              >
-                dealConclusion
-              </button>
-              <button
-                onClick={() => {
-                  this.dealBreak();
-                }}
-              >
-                dealBreak
-              </button> */}
-              {/* <button
-                onClick={() => {
-                  this.props.newCookie();
-                }}
-              >
-                newCookie
-              </button> */}
             </div>
           </div>
         </div>
