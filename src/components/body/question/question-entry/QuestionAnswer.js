@@ -27,66 +27,69 @@ const QuestionAnswer = ({
   dealBreak,
   setRecipient,
 }) => (
-  <div className="QuestionEntryAnswerEntry">
-    <div className="QuestionEntryAnswerFirst">
-      <div className="QuestionEntryAnswerFirstLike">
-        <LikeCountAnswer count={count} raiseLikeCount={raiseLikeCount} aID={aID} />
+  console.log('@@@@@', aID),
+  (
+    <div className="QuestionEntryAnswerEntry">
+      <div className="QuestionEntryAnswerFirst">
+        <div className="QuestionEntryAnswerFirstLike">
+          <LikeCountAnswer count={count} raiseLikeCount={raiseLikeCount} aID={aID} />
+        </div>
       </div>
-    </div>
-    <div className="QuestionEntryAnswerSecond">
-      <Answer
-        userID={userID}
-        body={body}
-        myID={myID}
-        time={time}
-        postAnswerReply={postAnswerReply}
-        aID={aID}
-        chAnswers={chAnswers}
-        deleteAnswer={deleteAnswer}
-        deleteChAnswer={deleteChAnswer}
-        fetchModifyAnswer={fetchModifyAnswer}
-      />
-    </div>
-    <div className="QuestionEntryAnswerThird">
-      <div className="QuestionEntryAnswerThirdCheck">
-        {picked ? (
-          <div className="ItemBox picked">
-            <div className="ItemBoxImage">
-              <div className="picked-item">
-                <Icon name="check" size="big" />
-              </div>
-            </div>
-            <div className="ItemBoxNum picked-item">
-              <span>채택됨</span>
-            </div>
-          </div>
-        ) : (
-          <div className="ItemBox">
-            {myID !== questionID ? null : (
-              <div className="ItemBoxNum">
-                <div
-                  className="likeBtn"
-                  onClick={() => {
-                    if (
-                      window.confirm('채택하시겠습니까? \n<채택 시 답변자에게 이더리움을 전송합니다>')
-                    ) {
-                      setRecipient();
-                      pickAnswer(aID);
-                    }
-                  }}
-                >
+      <div className="QuestionEntryAnswerSecond">
+        <Answer
+          userID={userID}
+          body={body}
+          myID={myID}
+          time={time}
+          postAnswerReply={postAnswerReply}
+          aID={aID}
+          chAnswers={chAnswers}
+          deleteAnswer={deleteAnswer}
+          deleteChAnswer={deleteChAnswer}
+          fetchModifyAnswer={fetchModifyAnswer}
+        />
+      </div>
+      <div className="QuestionEntryAnswerThird">
+        <div className="QuestionEntryAnswerThirdCheck">
+          {picked ? (
+            <div className="ItemBox picked">
+              <div className="ItemBoxImage">
+                <div className="picked-item">
                   <Icon name="check" size="big" />
-                  <div className="ItemBoxImage">채택</div>
                 </div>
               </div>
-            )}
-          </div>
-        )}
-      </div>
-      <div className="QuestionEntryAnswerThirdReward">
-        <Writer username={username} userID={userID} aImage={aImage} isLoggedIn={isLoggedIn} />
+              <div className="ItemBoxNum picked-item">
+                <span>채택됨</span>
+              </div>
+            </div>
+          ) : (
+            <div className="ItemBox">
+              {myID !== questionID ? null : (
+                <div className="ItemBoxNum">
+                  <div
+                    className="likeBtn"
+                    onClick={() => {
+                      if (
+                        window.confirm('채택하시겠습니까?\n<채택 시 답변자에게 이더리움을 전송합니다>')
+                      ) {
+                        pickAnswer(aID);
+                        // setRecipient();
+                      }
+                    }}
+                  >
+                    <Icon name="check" size="big" />
+                    <div className="ItemBoxImage">채택</div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+        <div className="QuestionEntryAnswerThirdReward">
+          <Writer username={username} userID={userID} aImage={aImage} isLoggedIn={isLoggedIn} />
+        </div>
       </div>
     </div>
-  </div>
+  )
 );
 export default QuestionAnswer;

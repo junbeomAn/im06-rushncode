@@ -69,13 +69,13 @@ const QuestionEntry = ({
             .startOf()
             .fromNow()}에 작성 되었습니다
           <span>
-            {myID === userID ? (
+            {myID === userID && (
               <TenaryOption
                 deleteQuestion={deleteQuestion}
                 fetchModifyQuestion={fetchModifyQuestion}
                 qID={qID}
               />
-            ) : null}
+            )}
           </span>
         </div>
         <div className="QuestionEntryMainSecondReplyTitle">댓글</div>
@@ -119,6 +119,7 @@ const QuestionEntry = ({
         <div className="QuestionEntryMainThirdItemBox">
           <Reward reward={qReward} />
         </div>
+        {myID === userID && <div>종결</div>}
         <div className="QuestionEntryMainThirdItemBox">
           <Writer username={username} userID={userID} image={image} isLoggedIn={isLoggedIn} />
         </div>

@@ -130,10 +130,11 @@ class QuestionEntryContainer extends Component {
     axios
       .post(`${URL_API}/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
-        alert(res.data.message);
+        console.log(res.data.message);
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })
+      .then(() => this.props.setRecipient())
       .catch(err => console.log(err));
   };
 
