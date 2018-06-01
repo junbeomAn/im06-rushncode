@@ -9,7 +9,9 @@ import { URL_API } from '../../config';
 class SignUpContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      metaAddress: '',
+    };
   }
 
   signUp = () => {
@@ -17,11 +19,13 @@ class SignUpContainer extends Component {
     userInfo.username = document.getElementsByClassName('inputUname')[0].value;
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
+    userInfo.metaAddress = window.web3.eth.accounts[0];
     const signUpUrl = `${URL_API}/api/auth/signup`;
     axios
       .post(signUpUrl, userInfo)
       .then((res) => {
         if (res.data.message === 'complete signup') {
+          console.log(res);
           alert('Now CHECK your EMAIL to verify.');
           this.props.history.push('/');
         } else {
@@ -39,7 +43,9 @@ class SignUpContainer extends Component {
   };
 
   render() {
-    return <SignUp signUp={this.signUp} keyPress={this.keyPress} />;
+    return (
+      <SignUp signUp={this.signUp} getMetaAddress={this.getMetaAddress} keyPress={this.keyPress} />
+    );
   }
 }
 
