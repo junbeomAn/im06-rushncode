@@ -27,7 +27,7 @@ const QuestionAnswer = ({
   dealBreak,
   setRecipient,
 }) => (
-  console.log('@@@@@', aID),
+  // console.log('@@@@@', aID),
   (
     <div className="QuestionEntryAnswerEntry">
       <div className="QuestionEntryAnswerFirst">

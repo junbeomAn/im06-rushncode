@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import WriteButton from './../../containers/showcase/writeButton';
+// import { NavLink } from 'react-router-dom';
+// import WriteButton from './../../containers/showcase/writeButton';
 
 const HomeShowcase = () => (
   <div className="homeUpper">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ClauseShowcase from '../showcases/ClauseShowcase';
 import ClauseContent from './ClauseContent';
 import PrivacyContent from './PrivacyContent';

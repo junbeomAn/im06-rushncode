@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 import { URL } from '../../config';
 
-const Login = ({ keyPress, login, fbLogin }) => (
+const Login = ({ keyPress, login }) => (
   <div className="authContainer">
     <div className="loginInputContainer border rounded">
       <div className="authButtonContainer">
@@ -73,7 +73,7 @@ const Login = ({ keyPress, login, fbLogin }) => (
     </div>
     <div className="border rounded loginOptionContainer">
       <p>
-        아이디 혹은 비밀번호를 잊으셨나요? <a href="#">찾기</a>
+        아이디 혹은 비밀번호를 잊으셨나요? <a href="/">찾기</a>
       </p>
       <p>
         아직 가입한 계정이 없으신가요? <a href="/auth/signup">가입</a>
