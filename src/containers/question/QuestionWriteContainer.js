@@ -3,6 +3,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import ReactMarkDown from 'react-markdown';
 import { Icon, Popup } from 'semantic-ui-react';
+import { Web3Provider } from 'react-web3';
+
 import QuestionWriteShowcase from '../../components/showcases/QuestionWriteShowcase';
 import {
   fetchQuestionTag,
@@ -15,14 +17,17 @@ import {
 import MarkDownTip from '../../components/body/question/question-entry/MarkDownTip';
 import QuestionWrite from '../../components/body/question/QuestionWrite';
 
-import '../../styles/css/QuestionWrite.css';
-
 import { URL_API } from '../../config';
 
+
 class QuestionWriteContainer extends Component {
-  state = {
-    options: [],
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      options: [],
+    };
+  }
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
@@ -94,7 +99,7 @@ class QuestionWriteContainer extends Component {
         'Content-Type': 'application/json',
       },
     };
-    const writingUrl = `${URL_API}/api/question/post`;   
+    const writingUrl = `${URL_API}/api/question/post`;
     // 글 작성 정보 모두 담는 그릇 설정
     const data = {};
     // 태그 정보 담기 및  태그 선택 안할 시 예외 처리
@@ -128,77 +133,130 @@ class QuestionWriteContainer extends Component {
       onRewardChange,
       onBodyChange,
       match,
+      newCookie,
+      makeQuestion,
+      getQuestioner,
+      getRecipient,
+      getReward,
+      getPending,
     } = this.props;
     const { id } = match.params;
     return (
-      <div className="QuestionWriteContainer">
-        <QuestionWriteShowcase />
-        <QuestionWrite
-          tags={tags}
-          title={title}
-          reward={reward}
-          isModify={id}
-          onTagChange={this.onTagChange}
-          onTitleChange={onTitleChange}
-          onRewardChange={onRewardChange}
-        />
-        <div className="write-title">내용</div>
-        <div id="markdown">
-          <div className="mark_down_box">
-            <div className="mark_down_input">
-              <h2>입력창</h2>
-              <textarea
-                className="mark_down_input_item"
-                placeholder="질문을 입력 하세요"
-                name="content"
-                value={body}
-                onChange={e => onBodyChange(e)}
-                id="markdownvalue"
-                cols="70"
-                rows="30"
-              />
-            </div>
-            <div className="mark_down_view_wrapper">
-              <div className="mark_down_view_top">
-                <h2>미리보기</h2>
-                <Popup
-                  trigger={
-                    <span className="mark_down_tip">
-                      <Icon name="idea" />마크다운 팁
-                    </span>
-                  }
-                  content={<MarkDownTip />}
-                  on="click"
-                  position="bottom left"
-                  wide
+      <Web3Provider>
+        <div className="QuestionWriteContainer">
+          <QuestionWriteShowcase />
+          <QuestionWrite
+            tags={tags}
+            title={title}
+            reward={reward}
+            isModify={id}
+            onTagChange={this.onTagChange}
+            onTitleChange={onTitleChange}
+            onRewardChange={onRewardChange}
+          />
+          <div className="write-title">내용</div>
+          <div id="markdown">
+            <div className="mark_down_box">
+              <div className="mark_down_input">
+                <h2>입력창</h2>
+                <textarea
+                  className="mark_down_input_item"
+                  placeholder="질문을 입력 하세요"
+                  name="content"
+                  value={body}
+                  onChange={e => onBodyChange(e)}
+                  id="markdownvalue"
+                  cols="70"
+                  rows="30"
                 />
               </div>
-              <div className="mark_down_view">
-                <ReactMarkDown className="mark_down_view_item" source={body} sourcePos rawSourcePos />
+              <div className="mark_down_view_wrapper">
+                <div className="mark_down_view_top">
+                  <h2>미리보기</h2>
+                  <Popup
+                    trigger={
+                      <span className="mark_down_tip">
+                        <Icon name="idea" />마크다운 팁
+                      </span>
+                    }
+                    content={<MarkDownTip />}
+                    on="click"
+                    position="bottom left"
+                    wide
+                  />
+                </div>
+                <div className="mark_down_view">
+                  <ReactMarkDown
+                    className="mark_down_view_item"
+                    source={body}
+                    sourcePos
+                    rawSourcePos
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="mark_down_btn">
-            {id ? (
+            <div className="mark_down_btn">
+              {id ? (
+                <button
+                  onClick={() => this.postModifiedQuestion()}
+                  className="btn btn-primary mark_down_btn_item write-btn"
+                >
+                  질문수정
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    makeQuestion(reward);
+                    this.submit();
+                  }}
+                  className="btn btn-primary mark_down_btn_item write-btn"
+                >
+                  질문작성
+                </button>
+              )}
               <button
-                onClick={() => this.postModifiedQuestion()}
-                className="btn btn-primary mark_down_btn_item write-btn"
+                onClick={() => {
+                  getQuestioner();
+                  getRecipient();
+                  getReward();
+                  getPending();
+                }}
               >
-                질문수정
+                get
               </button>
-            ) : (
+              {/* <button
+                onClick={() => {
+                  setRecipient();
+                }}
+              >
+                setRecipient
+              </button>
               <button
-                onClick={() => this.submit()}
-                className="btn btn-primary mark_down_btn_item write-btn"
+                onClick={() => {
+                  dealConclusion();
+                }}
               >
-                질문작성
+                dealConclusion
               </button>
-            )}
-            <button onClick={console.log(this.props.body)}>내용찍자</button>
+              <button
+                onClick={() => {
+                  this.dealBreak();
+                }}
+              >
+                dealBreak
+              </button> */}
+              <button
+                onClick={() => {
+                  this.props.newCookie();
+                }}
+              >
+                newCookie
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </Web3Provider>
     );
   }
 }

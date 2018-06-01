@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Advertisement } from 'semantic-ui-react';
 import { Dimmer, Loader } from 'semantic-ui-react';
+import { Web3Provider } from 'react-web3';
 
 import { fetchQuestionList, getSortedResult } from '../../redux/actions/questionAction';
 import HomeShowcase from '../../components/showcases/HomeShowcase';

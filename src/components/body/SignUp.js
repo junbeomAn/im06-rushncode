@@ -1,10 +1,10 @@
 import React from 'react';
-import { Divider, Button, Icon } from 'semantic-ui-react';
+import { Divider, Button, Icon, Popup } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 import { URL } from '../../config';
 
-const SignUp = ({ keyPress, signUp }) => (
+const SignUp = ({ keyPress, signUp, getMetaAddress }) => (
   <div className="authContainer">
     <div className="auth-title">
       <h1>러시앤코드 계정 만들기</h1>
@@ -23,6 +23,17 @@ const SignUp = ({ keyPress, signUp }) => (
         </a>
       </div>
       <Divider horizontal>또는</Divider>
+      <Popup
+        trigger={
+          <button type="button" style={{ fontWeight: 'bolder' }} className="btn btn-info authBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content={window.web3.eth.accounts[0]} >
+          메타마스크 주소 가져오기
+          </button>
+        }
+        content={window.web3.eth.accounts[0]}
+        on="click"
+        position="bottom left"
+        wide
+      />
       <div className="authFormContainer">
         <div className="form-group">
           <div className="input-group mb-3">
@@ -74,9 +85,6 @@ const SignUp = ({ keyPress, signUp }) => (
           </div>
         </div>
         <div className="authButtonContainer">
-          <button type="button" className="btn btn-secondary authBtn">
-                로그인
-          </button>
           <button
             onClick={() => {
               signUp();
