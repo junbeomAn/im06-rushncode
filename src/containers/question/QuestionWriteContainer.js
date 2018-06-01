@@ -246,13 +246,13 @@ class QuestionWriteContainer extends Component {
               >
                 dealBreak
               </button> */}
-              <button
+              {/* <button
                 onClick={() => {
                   this.props.newCookie();
                 }}
               >
                 newCookie
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

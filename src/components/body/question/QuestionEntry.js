@@ -54,6 +54,16 @@ const QuestionEntry = ({
             <h5>채택이 완료된 게시글 입니다</h5>
           </span>
         ) : null}
+        {myID === userID &&
+          !existPickedAnswer && (
+            <button
+              type="button"
+              className="btn btn-danger questListBtn"
+              onClick={() => dealBreak()}
+            >
+              질문 마감하기
+            </button>
+          )}
       </div>
       <Tags tags={tags} />
     </div>
@@ -69,13 +79,13 @@ const QuestionEntry = ({
             .startOf()
             .fromNow()}에 작성 되었습니다
           <span>
-            {myID === userID ? (
+            {myID === userID && (
               <TenaryOption
                 deleteQuestion={deleteQuestion}
                 fetchModifyQuestion={fetchModifyQuestion}
                 qID={qID}
               />
-            ) : null}
+            )}
           </span>
         </div>
         <div className="QuestionEntryMainSecondReplyTitle">댓글</div>

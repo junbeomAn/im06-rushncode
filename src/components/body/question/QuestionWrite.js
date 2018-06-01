@@ -65,7 +65,7 @@ const QuestionWrite = ({
         className="form-control inputReward"
         name="reward"
         value={reward}
-        placeholder="금액을 입력하세요"
+        placeholder="금액을 입력하세요. 단위는 이더리움 입니다.(ex 0.01은 0.01 ether)"
         onChange={event => onRewardChange(event)}
       />
     </div>
