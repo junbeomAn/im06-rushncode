@@ -12,6 +12,7 @@ import QuestionAnswer from './QuestionAnswer';
 import TenaryOption from './TenaryOption';
 import TenaryOptionTwo from './TenaryOptionTwo';
 import Complete from './Complete';
+import Breaked from './Breaked';
 
 export {
   Showcase,
@@ -28,4 +29,5 @@ export {
   TenaryOption,
   TenaryOptionTwo,
   Complete,
+  Breaked,
 };

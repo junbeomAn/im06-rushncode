@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Tags, UpdateTime, LikeCount } from './question/question-list';
-import { ViewCount, AnswerCount, Reward, Complete } from './question/question-entry';
+import { ViewCount, AnswerCount, Reward, Complete, Breaked } from './question/question-entry';
 
 const HomeEachQuestion = ({ questions, isLoggedIn }) => (
   <div>
@@ -18,7 +18,13 @@ const HomeEachQuestion = ({ questions, isLoggedIn }) => (
             <AnswerCount count={item.countAnswers} />
           </div>
           <div className="firstItem">
-            {item.exist_picked_ans ? <Complete /> : <Reward reward={item.reward} />}
+            {item.exist_picked_ans ? (
+              <Complete />
+            ) : item.breaked ? (
+              <Breaked />
+            ) : (
+              <Reward reward={item.reward} />
+            )}
           </div>
         </div>
         <div className="second">

@@ -259,17 +259,18 @@ class Question extends Component {
     });
   };
 
-  setRecipient = () => {
+  setRecipient = (metaAddress) => {
     const { setRecipient } = this.state.ContractInstance;
+    console.log('metaAddress::::', metaAddress);
     setRecipient(
-      '0x1F27A2D0a74f1d203bE1CfE70e91D7547E3939e1',
+      metaAddress,
       {
         gas: 400000,
         from: window.web3.eth.accounts[0],
         value: window.web3.toWei(0.01, 'ether'),
       },
       (err, result) => {
-        console.log('Smart contract state is changing');
+        console.log('Smart contract recipient is changing...');
         this.dealConclusion();
       },
     );

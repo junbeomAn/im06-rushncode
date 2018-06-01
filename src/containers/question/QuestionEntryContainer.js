@@ -121,6 +121,25 @@ class QuestionEntryContainer extends Component {
       .catch(err => console.log(err));
   };
 
+  breakQuestion = () => {
+    const { id } = this.props.match.params;
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    const data = {
+      questionID: id,
+    };
+    axios
+      .post(`${URL_API}/api/question/breakquestion`, data, config)
+      .then((res) => {
+        console.log('breakQuestion res::::', res);
+        this.props.dealBreak();
+      })
+      .catch(err => console.log(err));
+  };
+
   pickAnswer = (answerID) => {
     const config = {
       headers: {
@@ -130,11 +149,14 @@ class QuestionEntryContainer extends Component {
     axios
       .post(`${URL_API}/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
-        console.log(res.data.message);
+        const { metaAddress } = res.data.data;
+        console.log('metaAddress::::', metaAddress);
+        this.props.setRecipient(metaAddress);
+      })
+      .then(() => {
         const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })
-      .then(() => this.props.setRecipient())
       .catch(err => console.log(err));
   };
 
@@ -238,6 +260,7 @@ class QuestionEntryContainer extends Component {
       qID,
       replies,
       answers,
+      breaked,
       exist_picked_ans,
       image,
     } = this.props.question;
@@ -272,10 +295,12 @@ class QuestionEntryContainer extends Component {
               image={image}
               isLoggedIn={this.props.isLoggedIn}
               existPickedAnswer={exist_picked_ans}
+              breaked={breaked}
               pickAnswer={this.pickAnswer}
               raiseLikeCount={this.raiseLikeCount}
               postQuestionReply={this.postQuestionReply}
               postAnswerReply={this.postAnswerReply}
+              breakQuestion={this.breakQuestion}
               deleteQuestion={this.deleteQuestion}
               deleteAnswer={this.deleteAnswer}
               deleteChAnswer={this.deleteChAnswer}

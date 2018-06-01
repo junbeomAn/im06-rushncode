@@ -85,6 +85,17 @@
   letter-spacing: 0.4px;
 }
 
+.break {
+  font-size: 1.1rem;
+  color: $primaryYellow !important;
+}
+
+.break-badge {
+  padding: 3px 10px;
+  background: $primaryYellow;
+  letter-spacing: 0.4px;
+}
+
 .modify {
   color: $greyfont;
 }
@@ -166,8 +177,7 @@
   }
 }
 
-
-.no-result-container { 
+.no-result-container {
   min-height: 720px;
   background: ghostwhite;
   h1 {
@@ -185,7 +195,7 @@
   .no-result-text {
     margin: 0;
     padding: 0;
-    // border: solid 1px red;    
+    // border: solid 1px red;
     font-weight: normal;
     text-align: center;
     opacity: 0.4;
