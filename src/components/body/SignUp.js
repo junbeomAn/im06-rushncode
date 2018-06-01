@@ -4,14 +4,16 @@ import 'semantic-ui-css/semantic.min.css';
 
 import { URL } from '../../config';
 
-const SignUp = ({ keyPress, signUp, getMetaAddress }) => (
+const SignUp = ({ keyPress, signUp, getMetaAddress, metaAddress }) => (
   <div className="authContainer">
     <div className="auth-title">
       <h1>러시앤코드 계정 만들기</h1>
     </div>
     <div className="authInputContainer border rounded">
       <div className="authButtonContainer">
-        <a href={`https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=${URL}/auth/google&response_type=code&client_id=1057319403388-ng0dluqb41b5kk4gt37bot92piirjiu6.apps.googleusercontent.com`}>
+        <a
+          href={`https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=${URL}/auth/google&response_type=code&client_id=1057319403388-ng0dluqb41b5kk4gt37bot92piirjiu6.apps.googleusercontent.com`}
+        >
           <Button color="google plus" className="authBtn">
             <Icon name="google" />Login with Google
           </Button>
@@ -25,13 +27,14 @@ const SignUp = ({ keyPress, signUp, getMetaAddress }) => (
       <Divider horizontal>또는</Divider>
       <Popup
         trigger={
-          <button type="button" style={{ fontWeight: 'bolder' }} className="btn btn-info authBtn" data-container="body" data-toggle="popover" data-placement="bottom" data-content={window.web3.eth.accounts[0]} >
-          메타마스크 주소 가져오기
+          <button type="button" onClick={getMetaAddress} style={{ fontWeight: 'bolder' }} className="btn btn-info authBtn">
+            메타마스크 주소 가져오기
           </button>
         }
-        content={window.web3.eth.accounts[0]}
+        content={metaAddress || '메타마스크 연결중입니다. 다시 한번 시도 해주세요.'}
         on="click"
-        position="bottom left"
+        position="top left"
+        style={{ opacity: '0.9' }}
         wide
       />
       <div className="authFormContainer">
@@ -98,6 +101,5 @@ const SignUp = ({ keyPress, signUp, getMetaAddress }) => (
     </div>
   </div>
 );
-
 
 export default SignUp;

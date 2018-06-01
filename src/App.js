@@ -24,7 +24,8 @@ class App extends Component {
                 <Route path="/mypage/:userID" component={MyPage} />
                 <Route path="/question" component={Question} />
                 <Route path="/tag" component={TagContainer} />
-                <Route path="/rank" component={Rank} /> <Route path="/auth" component={Auth} />
+                <Route path="/rank" component={Rank} />
+                <Route path="/auth" component={Auth} />
                 <Route path="/clause" component={Clause} />
                 <Route path="/information" component={Clause} />
                 <Route path="/search" component={QuestionListContainer} />

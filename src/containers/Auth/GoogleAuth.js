@@ -25,7 +25,9 @@ class Google extends Component {
           localStorage.setItem('token', res.data.token);
           console.log('google login success');
           this.props.Verify();
-          this.props.history.push('/');
+          if (!alert(`지갑주소 ${window.web3.eth.accounts[0]}를 사용합니다`)) {
+            this.props.history.push('/');
+          }
         } else {
           alert(res.data.message);
           this.props.history.push('/auth/signin');
