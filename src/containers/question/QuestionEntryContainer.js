@@ -137,6 +137,10 @@ class QuestionEntryContainer extends Component {
         console.log('breakQuestion res::::', res);
         this.props.dealBreak();
       })
+      .then(() => {
+        const { id } = this.props.match.params;
+        this.props.fetchQuestionEntry(id);
+      })
       .catch(err => console.log(err));
   };
 
