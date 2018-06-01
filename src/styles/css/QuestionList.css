@@ -1,0 +1,100 @@
+.questContainer {
+  width: 100%;
+  background: ghostwhite; }
+  .questContainer .search-form {
+    margin-top: 80px; }
+    .questContainer .search-form .input-form {
+      width: 60%; }
+
+.questionMain {
+  width: 100%;
+  background: ghostwhite; }
+  .questionMain .question-box {
+    min-height: 570px; }
+  .questionMain .questionPost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 0px 10px; }
+    .questionMain .questionPost .first {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 220px;
+      color: #777;
+      padding-bottom: 6px;
+      display: flex;
+      text-align: center; }
+      .questionMain .questionPost .first .firstItem {
+        width: 100px; }
+        .questionMain .questionPost .first .firstItem .ItemBox {
+          margin-top: 8px; }
+          .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxImage {
+            color: grey;
+            font-size: 1rem;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-weight: 400; }
+          .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+            text-align: center;
+            padding-right: 3px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: grey;
+            font-weight: 400; }
+        .questionMain .questionPost .first .firstItem .ItemBox2 .ItemBox2Image {
+          margin-top: 1px; }
+    .questionMain .questionPost .second {
+      width: 80%;
+      margin: 0;
+      padding: 10px 15px;
+      border-bottom: 1px solid #e4e6e8; }
+      .questionMain .questionPost .second h2 {
+        color: #0b1b33; }
+        .questionMain .questionPost .second h2:hover {
+          font-size: 25px;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s; }
+      .questionMain .questionPost .second p {
+        color: #777; }
+      .questionMain .questionPost .second .tags {
+        padding-top: 8px;
+        padding-bottom: 10px; }
+        .questionMain .questionPost .second .tags .questListBtn {
+          height: 25px;
+          padding-top: 2px;
+          margin-right: 3px; }
+          .questionMain .questionPost .second .tags .questListBtn:hover a {
+            color: #fff; }
+          .questionMain .questionPost .second .tags .questListBtn a {
+            color: #777; }
+    .questionMain .questionPost .fourth {
+      width: 125px;
+      padding-right: 10px;
+      color: #777;
+      text-align: center; }
+      .questionMain .questionPost .fourth .username {
+        color: #0b1b33;
+        font-size: 15px;
+        font-weight: bold; }
+  .questionMain .questionPagenation {
+    margin: 0;
+    padding-top: 15px;
+    justify-content: center;
+    padding-bottom: 15px; }
+    .questionMain .questionPagenation .page-link {
+      color: #0b1b33;
+      border: solid 1px #0b1b33;
+      background: transparent; }
+      .questionMain .questionPagenation .page-link:hover {
+        color: #fff;
+        border: solid 1px #0b1b33;
+        background: #0b1b33;
+        opacity: 0.7; }
+    .questionMain .questionPagenation .current {
+      background: #0b1b33;
+      opacity: 0.7; }
+      .questionMain .questionPagenation .current .page-link {
+        color: white; }
+
+/*# sourceMappingURL=QuestionList.css.map */
