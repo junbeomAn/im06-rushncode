@@ -1,16 +1,11 @@
 import React from 'react';
 import { Divider, Button, Icon } from 'semantic-ui-react';
-// import { Route, Redirect } from 'react-router';
-// import 'react-flexview/lib/flexView.css';
-// import FlexView from 'react-flexview';
 import 'semantic-ui-css/semantic.min.css';
-import { createBrowserHistory } from 'history';
 
 import { URL } from '../../config';
 
-const history = createBrowserHistory();
 
-const LoginAdd = ({ keyPress, login, fbLogin }) => (
+const LoginAdd = ({ keyPress, login }) => (
   <div className="authContainer">
     <div className="loginAddText">
       You already logged in.<br />

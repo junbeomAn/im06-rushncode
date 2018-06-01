@@ -67,7 +67,7 @@ export class MyPage extends Component {
           <div className="mypage-inner-container">
             <div className="first">
               <div className="first-image">
-                <img src={`${URL_API}/image/${user.image}.png`} />
+                <img src={`${URL_API}/image/${user.image}.png`} alt="" />
               </div>
               {myID === Number(userID) ? (
                 <div className="upload-btn-wrapper">

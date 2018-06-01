@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Advertisement } from 'semantic-ui-react';
 import { Dimmer, Loader } from 'semantic-ui-react';
-import { Web3Provider } from 'react-web3';
+// import { Web3Provider } from 'react-web3';
 
 import { fetchQuestionList, getSortedResult } from '../../redux/actions/questionAction';
 import HomeShowcase from '../../components/showcases/HomeShowcase';
@@ -112,15 +112,15 @@ export class Home extends Component {
               <div className="home-lower-right-main">
                 <h4>교육, 강의 플랫폼</h4>
                 <hr />
-                <a href="https://codestates.com/" target="_blank" without rel="noopener noreferrer">
+                <a href="https://codestates.com/" target="_blank" rel="noopener noreferrer" without="true">
                   코드스테이츠
                 </a>
                 <br />
                 <a
                   href="https://opentutorials.org/course/1"
                   target="_blank"
-                  without
                   rel="noopener noreferrer"
+                  without="true"
                 >
                   생활코딩
                 </a>
@@ -128,21 +128,21 @@ export class Home extends Component {
                 <a
                   href="https://www.inflearn.com/"
                   target="_blank"
-                  without
                   rel="noopener noreferrer"
+                  without="true"
                 >
                   인프런
                 </a>
                 <br />
-                <a href="https://www.udemy.com/" target="_blank" without rel="noopener noreferrer">
+                <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer" without="true">
                   Udemy
                 </a>
                 <br />
                 <a
                   href="https://www.codecademy.com/"
                   target="_blank"
-                  without
                   rel="noopener noreferrer"
+                  without="true"
                 >
                   Codecademy
                 </a>
@@ -150,8 +150,8 @@ export class Home extends Component {
                 <a
                   href="https://www.coursera.org/"
                   target="_blank"
-                  without
                   rel="noopener noreferrer"
+                  without="true"
                 >
                   Coursera
                 </a>
@@ -161,8 +161,8 @@ export class Home extends Component {
                 <a
                   href="https://programmers.co.kr/"
                   target="_blank"
-                  without
                   rel="noopener noreferrer"
+                  without="true"
                 >
                   프로그래머스
                 </a>
@@ -170,32 +170,32 @@ export class Home extends Component {
                 <a
                   href="http://www.codewars.com/"
                   target="_blank"
-                  without
                   rel="noopener noreferrer"
+                  without="true"
                 >
                   Codewars
                 </a>
                 <br />
-                <a href="https://leetcode.com/" target="_blank" without rel="noopener noreferrer">
+                <a href="https://leetcode.com/" target="_blank" without="true" rel="noopener noreferrer">
                   Leetcode
                 </a>
                 <h4>블로그, 문서 </h4>
                 <hr />
-                <a href="https://velopert.com/" target="_blank" without rel="noopener noreferrer">
+                <a href="https://velopert.com/" target="_blank" without="true" rel="noopener noreferrer">
                   Velopert
                 </a>
                 <br />
                 <a
                   href="https://developer.mozilla.org/ko/"
                   target="_blank"
-                  without
+                  without="true"
                   rel="noopener noreferrer"
                 >
                   MDN
                 </a>
                 <h4>유틸리티 </h4>
                 <hr />
-                <a href="http://pythontutor.com/" target="_blank" without rel="noopener noreferrer">
+                <a href="http://pythontutor.com/" target="_blank" without="true" rel="noopener noreferrer">
                   파이썬튜터
                 </a>
                 <br />

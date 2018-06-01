@@ -24,7 +24,7 @@ const QuestionAnswer = ({
   fetchModifyAnswer,
   isLoggedIn,
 }) => (
-  console.log('@@@@@', aID),
+  // console.log('@@@@@', aID),
   (
     <div className="QuestionEntryAnswerEntry">
       <div className="QuestionEntryAnswerFirst">

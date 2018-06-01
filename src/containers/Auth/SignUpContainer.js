@@ -14,12 +14,19 @@ class SignUpContainer extends Component {
     };
   }
 
+  getMetaAddress = async () => {
+    await this.setState({
+      metaAddress: window.web3.eth.accounts[0],
+    });
+  }
+
   signUp = () => {
     const userInfo = {};
     userInfo.username = document.getElementsByClassName('inputUname')[0].value;
     userInfo.email = document.getElementsByClassName('inputEmail')[0].value;
     userInfo.password = document.getElementsByClassName('inputPwd')[0].value;
-    userInfo.metaAddress = window.web3.eth.accounts[0];
+    userInfo.metaAddress = this.state.metaAddress;
+
     const signUpUrl = `${URL_API}/api/auth/signup`;
     axios
       .post(signUpUrl, userInfo)
@@ -44,7 +51,7 @@ class SignUpContainer extends Component {
 
   render() {
     return (
-      <SignUp signUp={this.signUp} getMetaAddress={this.getMetaAddress} keyPress={this.keyPress} />
+      <SignUp signUp={this.signUp} getMetaAddress={this.getMetaAddress} metaAddress={this.state.metaAddress} keyPress={this.keyPress} />
     );
   }
 }

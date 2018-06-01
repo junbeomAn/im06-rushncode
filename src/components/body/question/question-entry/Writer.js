@@ -15,13 +15,13 @@ const Writer = ({
         <img
           src={`${URL_API}/image/${aImage}_mini.png`}
           style={{ borderRadius: '5px' }}
-          alt="image"
+          alt=""
         />
       ) : (
         <img
           src={`${URL_API}/image/${image}_mini.png`}
           style={{ borderRadius: '5px' }}
-          alt="image"
+          alt=""
         />
       )}
     </div>
