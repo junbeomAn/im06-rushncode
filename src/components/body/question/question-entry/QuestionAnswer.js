@@ -73,7 +73,6 @@ const QuestionAnswer = ({
                         window.confirm('채택하시겠습니까?\n<채택 시 답변자에게 이더리움을 전송합니다>')
                       ) {
                         pickAnswer(aID);
-                        // setRecipient();
                       }
                     }}
                   >

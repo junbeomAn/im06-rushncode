@@ -54,6 +54,16 @@ const QuestionEntry = ({
             <h5>채택이 완료된 게시글 입니다</h5>
           </span>
         ) : null}
+        {myID === userID &&
+          !existPickedAnswer && (
+            <button
+              type="button"
+              className="btn btn-danger questListBtn"
+              onClick={() => dealBreak()}
+            >
+              질문 마감하기
+            </button>
+          )}
       </div>
       <Tags tags={tags} />
     </div>
@@ -119,7 +129,6 @@ const QuestionEntry = ({
         <div className="QuestionEntryMainThirdItemBox">
           <Reward reward={qReward} />
         </div>
-        {myID === userID && <div>종결</div>}
         <div className="QuestionEntryMainThirdItemBox">
           <Writer username={username} userID={userID} image={image} isLoggedIn={isLoggedIn} />
         </div>
