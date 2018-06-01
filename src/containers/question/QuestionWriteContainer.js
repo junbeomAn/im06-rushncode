@@ -195,6 +195,7 @@ class QuestionWriteContainer extends Component {
                 질문작성
               </button>
             )}
+            <button onClick={console.log(this.props.body)}>내용찍자</button>
           </div>
         </div>
       </div>
