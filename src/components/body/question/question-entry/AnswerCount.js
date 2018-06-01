@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react';
 
 const AnswerCount = ({ count }) => (
   <div className="ItemBox">
