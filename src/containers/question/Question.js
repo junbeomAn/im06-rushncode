@@ -262,7 +262,7 @@ class Question extends Component {
   setRecipient = () => {
     const { setRecipient } = this.state.ContractInstance;
     setRecipient(
-      '0xbe2D1D502dD96Ee5c6341216703957C6886A179B',
+      '0x1F27A2D0a74f1d203bE1CfE70e91D7547E3939e1',
       {
         gas: 400000,
         from: window.web3.eth.accounts[0],
