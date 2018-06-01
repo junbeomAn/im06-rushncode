@@ -1,0 +1,27 @@
+.brwsrCheck {
+  left: 50%;
+  transform: translate(-50%);
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  z-index: 99;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    top: 8%;
+    width: 50%;
+  }
+
+  to {
+    top: 14%;
+    width: 50%;
+  }
+}
+
+.close-message {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
