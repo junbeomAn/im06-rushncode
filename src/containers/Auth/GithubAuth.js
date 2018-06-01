@@ -17,19 +17,23 @@ class Github extends Component {
   }
 
   sendGithubLoginReq(code) {
-    console.log(this); // 지워야함@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    const githubUrl = `${URL_API}/api/auth/github`;
+    const metaAddress = window.web3.eth.accounts[0];
+
     const data = {
       code,
+      metaAddress,
     };
 
-    const githubUrl = `${URL_API}/api/auth/github`;
     axios
       .post(githubUrl, data)
       .then((res) => {
         if (res.data.message === 'login success') {
           localStorage.setItem('token', res.data.token);
           this.props.Verify();
-          this.props.history.push('/');
+          if (!alert(`메타마스크 지갑주소 ${window.web3.eth.accounts[0]}를 사용합니다`)) {
+            this.props.history.push('/');
+          }
         } else {
           alert(res.data.message);
           this.props.history.push('/auth/signin');

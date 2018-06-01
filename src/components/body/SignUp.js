@@ -31,12 +31,13 @@ const SignUp = ({ keyPress, signUp, getMetaAddress, metaAddress }) => (
             메타마스크 주소 가져오기
           </button>
         }
-        content={metaAddress || '메타마스크 연결중입니다. 다시 한번 시도 해주세요.'}
         on="click"
-        position="top left"
+        position="right center"
         style={{ opacity: '0.9' }}
         wide
-      />
+      >
+        {metaAddress || '메타마스크에 연결중입니다. 다시 한번 시도 해주세요.'}&nbsp;&nbsp;{metaAddress && <Icon style={{ display: 'inline' }} name="checkmark" color="green" />}
+      </Popup>
       <div className="authFormContainer">
         <div className="form-group">
           <div className="input-group mb-3">
