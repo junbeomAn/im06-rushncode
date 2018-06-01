@@ -1,9 +1,11 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
 // import WriteButton from './../../containers/showcase/writeButton';
+import BrowserCheckSign from '../../browsercheck/sign';
 
 const HomeShowcase = () => (
   <div className="homeUpper">
+    <BrowserCheckSign />
     <div className="jumbotron HomeJumbotron">
       {/* <span className="homeLBtn">
         <WriteButton />
