@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Message } from 'semantic-ui-react';
-import { isChrome } from './index';
 import BrowserDetect from './check';
 
 class BrowserCheckSign extends Component {
@@ -10,11 +9,9 @@ class BrowserCheckSign extends Component {
 
   handleDismiss = () => {
     this.setState({ visible: false });
-    if (!isChrome) {
-      setTimeout(() => {
-        this.setState({ visible: true });
-      }, 3000);
-    }
+    setTimeout(() => {
+      this.setState({ visible: true });
+    }, 3000);
   }
 
   render() {

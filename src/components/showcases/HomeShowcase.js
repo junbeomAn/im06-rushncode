@@ -2,10 +2,11 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom';
 // import WriteButton from './../../containers/showcase/writeButton';
 import BrowserCheckSign from '../../browsercheck/sign';
+import { isChrome } from '../../browsercheck';
 
 const HomeShowcase = () => (
   <div className="homeUpper">
-    <BrowserCheckSign />
+    {!isChrome && <BrowserCheckSign />}
     <div className="jumbotron HomeJumbotron">
       {/* <span className="homeLBtn">
         <WriteButton />
