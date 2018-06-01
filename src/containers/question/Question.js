@@ -325,7 +325,6 @@ class Question extends Component {
       <Switch>
         <Route component={QuestionModifyContainer} path={`${match.path}/modify/:id`} />
         <Route component={QuestionWriteContainer} path={`${match.path}/write/:id`} />
-        {/* <Route component={QuestionWriteContainer} path={`${match.path}/write`} /> */}
         <Route
           render={({ match, history }) => (
             <QuestionWriteContainer
@@ -341,7 +340,6 @@ class Question extends Component {
           )}
           path={`${match.path}/write`}
         />
-        {/* <Route component={QuestionEntryContainer} path={`${match.path}/:id`} /> */}
         <Route
           render={({ match, history }) => (
             <QuestionEntryContainer
