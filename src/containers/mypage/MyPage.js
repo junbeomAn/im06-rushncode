@@ -88,10 +88,10 @@ export class MyPage extends Component {
             <div className="second">
               <div className="second-one shadow">
                 <div className="second-one-title">등급</div>
-                <div className="second-one-score">버스기사</div>
+                <div className="second-one-score">채굴자</div>
                 <br />
                 <br />
-                <div className="second-one-title">잔액</div>
+                <div className="second-one-title">총 획득 이더</div>
                 <div className="second-one-score">40500</div>
               </div>
               <div className="second-two shadow">
