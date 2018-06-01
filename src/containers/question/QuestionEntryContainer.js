@@ -154,6 +154,7 @@ class QuestionEntryContainer extends Component {
       .post(`${URL_API}/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
         const { metaAddress } = res.data.data;
+        console.log('res::::', res);
         console.log('metaAddress::::', metaAddress);
         this.props.setRecipient(metaAddress);
       })
