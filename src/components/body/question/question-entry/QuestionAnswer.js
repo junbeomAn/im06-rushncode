@@ -25,6 +25,7 @@ const QuestionAnswer = ({
   isLoggedIn,
   dealConclusion,
   dealBreak,
+  setRecipient,
 }) => (
   <div className="QuestionEntryAnswerEntry">
     <div className="QuestionEntryAnswerFirst">
@@ -66,8 +67,10 @@ const QuestionAnswer = ({
                 <div
                   className="likeBtn"
                   onClick={() => {
-                    if (window.confirm('채택하시겠습니까? \n<채택 시 답변자에게 이더리움을 전송합니다>')) {
-                      dealConclusion();
+                    if (
+                      window.confirm('채택하시겠습니까? \n<채택 시 답변자에게 이더리움을 전송합니다>')
+                    ) {
+                      setRecipient();
                       pickAnswer(aID);
                     }
                   }}

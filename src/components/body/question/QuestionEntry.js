@@ -41,8 +41,8 @@ const QuestionEntry = ({
   fetchModifyQuestion,
   fetchModifyAnswer,
   isLoggedIn,
-  dealConclusion,
   dealBreak,
+  setRecipient,
 }) => (
   <div>
     <QuestionEntryShowcase />
@@ -151,8 +151,8 @@ const QuestionEntry = ({
           deleteChAnswer={deleteChAnswer}
           fetchModifyAnswer={fetchModifyAnswer}
           key={answer.aID}
-          dealConclusion={dealConclusion}
           dealBreak={dealBreak}
+          setRecipient={setRecipient}
         />
       ))}
     </div>

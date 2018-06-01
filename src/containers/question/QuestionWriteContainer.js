@@ -19,197 +19,19 @@ import QuestionWrite from '../../components/body/question/QuestionWrite';
 
 import { URL_API } from '../../config';
 
-// import web3, { selectContractInstance, mapReponseToJSON } from '../../web3';
 
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
-    // const ABI = [
-    //   {
-    //     constant: false,
-    //     inputs: [],
-    //     name: 'newCookie',
-    //     outputs: [
-    //       {
-    //         name: 'newContract',
-    //         type: 'address',
-    //       },
-    //     ],
-    //     payable: false,
-    //     stateMutability: 'nonpayable',
-    //     type: 'function',
-    //   },
-    //   {
-    //     inputs: [],
-    //     payable: false,
-    //     stateMutability: 'nonpayable',
-    //     type: 'constructor',
-    //   },
-    //   {
-    //     constant: true,
-    //     inputs: [
-    //       {
-    //         name: '',
-    //         type: 'uint256',
-    //       },
-    //     ],
-    //     name: 'contracts',
-    //     outputs: [
-    //       {
-    //         name: '',
-    //         type: 'address',
-    //       },
-    //     ],
-    //     payable: false,
-    //     stateMutability: 'view',
-    //     type: 'function',
-    //   },
-    //   {
-    //     constant: true,
-    //     inputs: [],
-    //     name: 'getContractCount',
-    //     outputs: [
-    //       {
-    //         name: 'contractCount',
-    //         type: 'uint256',
-    //       },
-    //     ],
-    //     payable: false,
-    //     stateMutability: 'view',
-    //     type: 'function',
-    //   },
-    //   {
-    //     constant: true,
-    //     inputs: [],
-    //     name: 'owner',
-    //     outputs: [
-    //       {
-    //         name: '',
-    //         type: 'address',
-    //       },
-    //     ],
-    //     payable: false,
-    //     stateMutability: 'view',
-    //     type: 'function',
-    //   },
-    // ];
-    // const MyContract = window.web3.eth.contract(ABI);
 
     this.state = {
       options: [],
-      // ContractInstance: MyContract.at('0xe9856d4d0daa8d73b54f345c48bf7297d927c4fc'),
     };
   }
 
   async componentWillMount() {
     await this.props.fetchQuestionTag();
   }
-
-  /** *****************************************************************
-                              이더리움 DAPP 시작
-  ******************************************************************* */
-  // newCookie = () => {
-  //   const { newCookie } = this.state.ContractInstance;
-  //   newCookie(
-  //     {
-  //       gas: 1000000,
-  //     },
-  //     (err, c) => {
-  //       if (err) console.error('An err occured::::', err);
-  //       console.log('newCokkie!!:::', c);
-  //     },
-  //   );
-  // };
-
-  // getQuestioner = () => {
-  //   const { getQuestioner } = this.state.ContractInstance;
-  //   getQuestioner((err, questioner) => {
-  //     if (err) console.error('An eeor occured::::', err);
-  //     console.log("This is our contract's questioner::::", questioner);
-  //   });
-  // };
-
-  // getRecipient = () => {
-  //   const { getRecipient } = this.state.ContractInstance;
-  //   getRecipient((err, recipient) => {
-  //     if (err) console.error('An eeor occured::::', err);
-  //     console.log("This is our contract's recipient::::", recipient);
-  //   });
-  // };
-
-  // getReward = () => {
-  //   const { getReward } = this.state.ContractInstance;
-  //   getReward((err, reward) => {
-  //     if (err) console.error('An eeor occured::::', err);
-  //     console.log("This is our contract's reward::::", reward);
-  //   });
-  // };
-
-  // getPending = () => {
-  //   const { getPending } = this.state.ContractInstance;
-  //   getPending((err, pending) => {
-  //     if (err) console.error('An eeor occured::::', err);
-  //     console.log("This is our contract's pending::::", pending);
-  //   });
-  // };
-
-  // setRecipient = () => {
-  //   const { setRecipient } = this.state.ContractInstance;
-  //   setRecipient(
-  //     '0xEB06396B746f0B22981D0BeCBf24435626251204',
-  //     {
-  //       gas: 400000,
-  //       from: window.web3.eth.accounts[0],
-  //       value: window.web3.toWei(0.01, 'ether'),
-  //     },
-  //     (err, result) => {
-  //       console.log('Smart contract state is changing');
-  //     },
-  //   );
-  // };
-
-  // dealConclusion = () => {
-  //   const { dealConclusion } = this.state.ContractInstance;
-  //   dealConclusion(
-  //     {
-  //       gas: 400000,
-  //     },
-  //     (err) => {
-  //       if (err) console.error('An err occured::::', err);
-  //       console.log('Transfer to Recipient!!');
-  //     },
-  //   );
-  // };
-
-  // dealBreak = () => {
-  //   const { dealBreak } = this.state.ContractInstance;
-  //   dealBreak(
-  //     {
-  //       gas: 400000,
-  //     },
-  //     (err) => {
-  //       if (err) console.error('An err occured::::', err);
-  //       console.log('Transfer to Recipient!!');
-  //     },
-  //   );
-  // };
-
-  // makeQuestion = () => {
-  //   const { question } = this.state.ContractInstance;
-  //   question(
-  //     {
-  //       gas: 400000,
-  //       from: window.web3.eth.accounts[0],
-  //       value: window.web3.toWei(this.props.reward, 'ether'),
-  //     },
-  //     (err, result) => {
-  //       this.submit();
-  //     },
-  //   );
-  // };
-  /** *****************************************************************
-                              이더리움 DAPP 종료
-  ******************************************************************* */
 
   // 태그 선택 관련
   onTagChange = (e) => {

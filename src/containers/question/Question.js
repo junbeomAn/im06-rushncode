@@ -12,9 +12,56 @@ class Question extends Component {
     super(props);
     const ABI = [
       {
+        constant: false,
+        inputs: [],
+        name: 'dealBreak',
+        outputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'dealConclusion',
+        outputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: 'question',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: '_recipient',
+            type: 'address',
+          },
+        ],
+        name: 'setRecipient',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        inputs: [],
+        payable: false,
+        stateMutability: 'nonpayable',
+        type: 'constructor',
+      },
+      {
         constant: true,
         inputs: [],
-        name: 'questioner',
+        name: 'getOwner',
         outputs: [
           {
             name: '',
@@ -42,7 +89,7 @@ class Question extends Component {
       {
         constant: true,
         inputs: [],
-        name: 'getRecipient',
+        name: 'getQuestioner',
         outputs: [
           {
             name: '',
@@ -56,29 +103,15 @@ class Question extends Component {
       {
         constant: true,
         inputs: [],
-        name: 'reward',
+        name: 'getRecipient',
         outputs: [
           {
             name: '',
-            type: 'uint256',
+            type: 'address',
           },
         ],
         payable: false,
         stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: false,
-        inputs: [
-          {
-            name: '_recipient',
-            type: 'address',
-          },
-        ],
-        name: 'setRecipient',
-        outputs: [],
-        payable: true,
-        stateMutability: 'payable',
         type: 'function',
       },
       {
@@ -96,21 +129,17 @@ class Question extends Component {
         type: 'function',
       },
       {
-        constant: false,
+        constant: true,
         inputs: [],
-        name: 'question',
-        outputs: [],
-        payable: true,
-        stateMutability: 'payable',
-        type: 'function',
-      },
-      {
-        constant: false,
-        inputs: [],
-        name: 'dealBreak',
-        outputs: [],
+        name: 'owner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
         payable: false,
-        stateMutability: 'nonpayable',
+        stateMutability: 'view',
         type: 'function',
       },
       {
@@ -135,6 +164,20 @@ class Question extends Component {
       {
         constant: true,
         inputs: [],
+        name: 'questioner',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
         name: 'recipient',
         outputs: [
           {
@@ -149,63 +192,20 @@ class Question extends Component {
       {
         constant: true,
         inputs: [],
-        name: 'getQuestioner',
+        name: 'reward',
         outputs: [
           {
             name: '',
-            type: 'address',
+            type: 'uint256',
           },
         ],
         payable: false,
         stateMutability: 'view',
         type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'getOwner',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'owner',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: false,
-        inputs: [],
-        name: 'dealConclusion',
-        outputs: [],
-        payable: false,
-        stateMutability: 'nonpayable',
-        type: 'function',
-      },
-      {
-        inputs: [],
-        payable: false,
-        stateMutability: 'nonpayable',
-        type: 'constructor',
       },
     ];
     const MyContract = window.web3.eth.contract(ABI);
-    this.state = { ContractInstance: MyContract.at('0x94d73df0d4f19914d8b98ad2b5b8ed765d1f3b56') };
+    this.state = { ContractInstance: MyContract.at('0x2ddaeb6630eaa714c4c4e04eb515ef05c2556308') };
   }
 
   componentDidMount() {
@@ -262,7 +262,7 @@ class Question extends Component {
   setRecipient = () => {
     const { setRecipient } = this.state.ContractInstance;
     setRecipient(
-      '0xEB06396B746f0B22981D0BeCBf24435626251204',
+      '0xbe2D1D502dD96Ee5c6341216703957C6886A179B',
       {
         gas: 400000,
         from: window.web3.eth.accounts[0],
@@ -270,6 +270,7 @@ class Question extends Component {
       },
       (err, result) => {
         console.log('Smart contract state is changing');
+        this.dealConclusion();
       },
     );
   };
@@ -319,7 +320,6 @@ class Question extends Component {
 
   render() {
     const { match } = this.props;
-    console.log('props::::', this.props);
     return (
       <Switch>
         <Route component={QuestionModifyContainer} path={`${match.path}/modify/:id`} />
@@ -345,7 +345,6 @@ class Question extends Component {
           render={({ match, history }) => (
             <QuestionEntryContainer
               setRecipient={this.setRecipient}
-              dealConclusion={this.dealConclusion}
               dealBreak={this.dealBreak}
               match={match}
               history={history}
