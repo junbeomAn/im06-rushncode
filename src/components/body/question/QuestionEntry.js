@@ -31,9 +31,11 @@ const QuestionEntry = ({
   answers,
   qID,
   image,
+  breaked,
   existPickedAnswer,
   postQuestionReply,
   postAnswerReply,
+  breakQuestion,
   deleteQuestion,
   deleteAnswer,
   deleteChAnswer,
@@ -41,7 +43,6 @@ const QuestionEntry = ({
   fetchModifyQuestion,
   fetchModifyAnswer,
   isLoggedIn,
-  dealBreak,
   setRecipient,
 }) => (
   <div>
@@ -54,12 +55,18 @@ const QuestionEntry = ({
             <h5>채택이 완료된 게시글 입니다</h5>
           </span>
         ) : null}
+        {breaked ? (
+          <span className="badge badge-info break-badge">
+            <h5>질문이 마감된 게시글 입니다</h5>
+          </span>
+        ) : null}
         {myID === userID &&
-          !existPickedAnswer && (
+          !existPickedAnswer &&
+          !breaked && (
             <button
               type="button"
               className="btn btn-danger questListBtn"
-              onClick={() => dealBreak()}
+              onClick={() => breakQuestion()}
             >
               질문 마감하기
             </button>
@@ -161,7 +168,6 @@ const QuestionEntry = ({
           deleteChAnswer={deleteChAnswer}
           fetchModifyAnswer={fetchModifyAnswer}
           key={answer.aID}
-          dealBreak={dealBreak}
           setRecipient={setRecipient}
         />
       ))}

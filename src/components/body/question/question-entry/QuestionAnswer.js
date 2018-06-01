@@ -23,9 +23,6 @@ const QuestionAnswer = ({
   deleteChAnswer,
   fetchModifyAnswer,
   isLoggedIn,
-  dealConclusion,
-  dealBreak,
-  setRecipient,
 }) => (
   // console.log('@@@@@', aID),
   (

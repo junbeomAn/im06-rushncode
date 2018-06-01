@@ -5,7 +5,7 @@ const Reward = ({ reward }) => (
     <div className="ItemBoxNum">{reward}</div>
     <div className="ItemBoxImage">
       {/* <Icon name="money" size="big" /> */}
-      금액
+      이더
     </div>
   </div>
 );

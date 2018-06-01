@@ -64,6 +64,15 @@
   background: #a83fe4;
   letter-spacing: 0.4px; }
 
+.break {
+  font-size: 1.1rem;
+  color: #e8d048 !important; }
+
+.break-badge {
+  padding: 3px 10px;
+  background: #e8d048;
+  letter-spacing: 0.4px; }
+
 .modify {
   color: #777; }
 
