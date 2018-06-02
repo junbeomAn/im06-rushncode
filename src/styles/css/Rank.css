@@ -12,7 +12,8 @@
 .rankContainer {
   background: ghostwhite;
   height: auto;
-  margin-bottom: 50px; }
+  min-height: 800px;
+  padding-bottom: 50px; }
 
 .rankUpper {
   height: 100px;

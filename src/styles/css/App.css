@@ -164,4 +164,9 @@
     .no-result-container .no-result-text .no-result-keyword {
       font-weight: bolder; }
 
+.Web3Provider-container {
+  margin: 0 auto;
+  padding-top: 70px;
+  height: 900px !important; }
+
 /*# sourceMappingURL=App.css.map */

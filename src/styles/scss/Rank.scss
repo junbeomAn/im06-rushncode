@@ -1,4 +1,4 @@
-@import 'color';
+@import "color";
 
 .rankSegment {
   width: 90%;
@@ -16,8 +16,9 @@
 }
 .rankContainer {
   background: ghostwhite;
- height: auto;
- margin-bottom: 50px;
+  height: auto;
+  min-height: 800px;
+  padding-bottom: 50px;
 }
 .rankUpper {
   height: 100px;
