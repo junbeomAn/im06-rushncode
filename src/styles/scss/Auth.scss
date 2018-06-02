@@ -70,7 +70,7 @@
   flex: 1;
 }
 .authInputTitleTag {
-  width: 120px;
+  width: 80px;
 }
 .authBtn {
   width: 100%;
@@ -81,7 +81,8 @@
 }
 
 .loginAddText {
-  margin-top: 150px;
+  position: relative;
+  top: 150px;
   width: 100%;
   text-align: center;
   font-size: 30px;
@@ -90,8 +91,10 @@
 .authAddInputContainer {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  margin-left: 35%;
-  margin-top: 5%;
+  width: 350px;
+  position: relative;
+  left: 50%;
+  top: 200px;
+  transform: translate(-50%);
   padding: 20px;
 }

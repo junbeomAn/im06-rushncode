@@ -1,56 +1,83 @@
 import React from 'react';
 import { Segment, Grid, Image } from 'semantic-ui-react';
+// import {  } from 'react-router';
 import RankShowcase from '../showcases/RankShowcase';
 import '../../styles/css/Rank.css';
+import { URL_API } from '../../config';
 
-const arr = [1, 2, 3, 4, 5];
 
-const Rank = () => (
+const Rank = ({ userInfo }) => (
   <div className="rankContainer">
     <RankShowcase />
-    <div className="rankUpper">check your rank dude!!</div>
+    {/* <div className="rankUpper">
+      <Input
+        className="user-search-bar"
+        size="huge"
+        icon="search"
+        onChange={valueChange}
+        onKeyPress={e => tagSearch(e)}
+        iconPosition="left"
+        placeholder="유저 검색"
+      />
+    </div> */}
     <div className="rankSegment">
-      {arr.map(() => (
+      {userInfo.map(item => (
         <Grid columns="equal">
           <Grid.Row divided>
             <Grid.Column>
-              <Segment>
-                <a href="/">
-                  <Image
-                    size="tiny"
-                    src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
-                  />
-                </a>
+              <Segment className="segment">
+                <Image
+                  size="mini"
+                  src={`${URL_API}/image/${item.image}_mini.png`}
+                  className="rank-image"
+                  // onClick={() => { handleUserClick() }}
+                />
+                <div>
+                  <span>{item.username}</span><br />
+                  <span>{item.total_reward} 이더</span><br />
+                </div>
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              <Segment>
-                <a href="/">
-                  <Image
-                    size="tiny"
-                    src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
-                  />
-                </a>
+              <Segment className="segment">
+                <Image
+                  size="mini"
+                  src={`${URL_API}/image/${item.image}_mini.png`}
+                  className="rank-image"
+                  // onClick={() => { handleUserClick() }}
+                />
+                <div>
+                  <span>{item.username}</span><br />
+                  <span>{item.total_reward} 이더</span><br />
+                </div>
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              <Segment>
-                <a href="/">
-                  <Image
-                    size="tiny"
-                    src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
-                  />
-                </a>
+              <Segment className="segment">
+                <Image
+                  size="mini"
+                  src={`${URL_API}/image/${item.image}_mini.png`}
+                  className="rank-image"
+                  // onClick={() => { handleUserClick() }}
+                />
+                <div>
+                  <span>{item.username}</span><br />
+                  <span>{item.total_reward} 이더</span><br />
+                </div>
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              <Segment>
-                <a href="/">
-                  <Image
-                    size="tiny"
-                    src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
-                  />
-                </a>
+              <Segment className="segment">
+                <Image
+                  size="mini"
+                  src={`${URL_API}/image/${item.image}_mini.png`}
+                  className="rank-image"
+                  // onClick={() => { handleUserClick() }}
+                />
+                <div>
+                  <span>{item.username}</span><br />
+                  <span>{item.total_reward} 이더</span><br />
+                </div>
               </Segment>
             </Grid.Column>
           </Grid.Row>
