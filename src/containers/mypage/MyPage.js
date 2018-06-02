@@ -50,7 +50,7 @@ export class MyPage extends Component {
   /* eslint no-nested-ternary: 0 */
   render() {
     const { user, loading, myID } = this.props;
-    console.log('props : ', this.props);
+    console.log('props : ', user);
     const { first } = this.state;
     const { userID } = this.props.match.params;
     return (
@@ -87,12 +87,12 @@ export class MyPage extends Component {
             </div>
             <div className="second">
               <div className="second-one shadow">
-                <div className="second-one-title">등급</div>
-                <div className="second-one-score">채굴자</div>
+                <div className="second-one-title">랭킹</div>
+                <div className="second-one-score">3위</div>
                 <br />
                 <br />
-                <div className="second-one-title">총 획득 이더</div>
-                <div className="second-one-score">40500</div>
+                <div className="second-one-title">누적 획득 이더</div>
+                <div className="second-one-score">{user.total_reward}</div>
               </div>
               <div className="second-two shadow">
                 <div className="second-two-title">활동</div>
