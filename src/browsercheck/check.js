@@ -2,7 +2,7 @@ import { isEdge, isFirefox, isIE, isOpera, isSafari } from './index';
 
 const BrowserDetect = () => {
   if (isEdge) {
-    return 'Edge';
+    return 'Microsoft Edge';
   } else if (isIE) {
     return 'Internet Explorer';
   } else if (isOpera) {

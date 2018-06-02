@@ -20,6 +20,7 @@ export class Home extends Component {
     const {
       questions, fetchQuestionList, getSortedResult, isLoggedIn,
     } = this.props;
+    
     return (
       <div className="homeContainer">
         <div className="showcase">

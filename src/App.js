@@ -30,7 +30,8 @@ class App extends Component {
                 <Route path="/information" component={Clause} />
                 <Route path="/search" component={QuestionListContainer} />
                 <Route path="/sort" component={QuestionListContainer} />
-                <Route path="/loading" component={Loadingpage} /> <Route component={NoMatch} />
+                <Route path="/loading" component={Loadingpage} />
+                <Route component={NoMatch} />
               </Switch>
             </div>
             <Footer />
