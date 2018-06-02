@@ -15,7 +15,7 @@ class RankContainer extends Component {
   componentDidMount() {
     console.log('asdfasdfasdfasdf');
     axios// ${URL_API}
-      .get(`http://localhost:3001/api/user/rank`)
+      .get(`${URL_API}/api/user/rank`)
       .then((res) => {
         console.log(res);
         this.setState({
