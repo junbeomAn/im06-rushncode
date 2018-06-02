@@ -19,7 +19,7 @@ class TagContainer extends Component {
       const { keyword } = this.state;
       const isExist = this.isTagExist(keyword);
       if (isExist) {
-        this.props.history.push(`/sort/tag/${keyword}`)
+        this.props.history.push(`/sort/tag/${keyword}`);
       } else {
         alert('검색결과가 없습니다.');
       }
