@@ -13,7 +13,126 @@ class Question extends Component {
     const ABI = [
       {
         constant: false,
+        inputs: [
+          {
+            name: '_key',
+            type: 'uint32',
+          },
+        ],
+        name: 'setQuestion',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: '',
+            type: 'uint32',
+          },
+        ],
+        name: 'questions',
+        outputs: [
+          {
+            name: 'questioner',
+            type: 'address',
+          },
+          {
+            name: 'recipient',
+            type: 'address',
+          },
+          {
+            name: 'reward',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: '_key',
+            type: 'uint32',
+          },
+        ],
+        name: 'getQuestion',
+        outputs: [
+          {
+            name: '',
+            type: 'address',
+          },
+          {
+            name: '',
+            type: 'address',
+          },
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: '_key',
+            type: 'uint32',
+          },
+          {
+            name: '_recipient',
+            type: 'address',
+          },
+        ],
+        name: 'setRecipientAndDealConclusion',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: true,
         inputs: [],
+        name: 'countQuestions',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: 'getQuestions',
+        outputs: [
+          {
+            name: '',
+            type: 'address[]',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: '_key',
+            type: 'uint32',
+          },
+        ],
         name: 'dealBreak',
         outputs: [],
         payable: false,
@@ -21,182 +140,18 @@ class Question extends Component {
         type: 'function',
       },
       {
-        constant: false,
-        inputs: [],
-        name: 'dealConclusion',
-        outputs: [],
-        payable: false,
-        stateMutability: 'nonpayable',
-        type: 'function',
-      },
-      {
-        constant: false,
-        inputs: [],
-        name: 'question',
-        outputs: [],
-        payable: true,
-        stateMutability: 'payable',
-        type: 'function',
-      },
-      {
-        constant: false,
-        inputs: [
-          {
-            name: '_recipient',
-            type: 'address',
-          },
-        ],
-        name: 'setRecipient',
-        outputs: [],
-        payable: true,
-        stateMutability: 'payable',
-        type: 'function',
-      },
-      {
-        inputs: [],
-        payable: false,
-        stateMutability: 'nonpayable',
-        type: 'constructor',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'getOwner',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'getPending',
-        outputs: [
-          {
-            name: '',
-            type: 'uint256',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'getQuestioner',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'getRecipient',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'getReward',
-        outputs: [
-          {
-            name: '',
-            type: 'uint256',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'owner',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
         constant: true,
         inputs: [
           {
             name: '',
-            type: 'address',
-          },
-        ],
-        name: 'pending',
-        outputs: [
-          {
-            name: '',
             type: 'uint256',
           },
         ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'questioner',
+        name: 'questionsArchive',
         outputs: [
           {
             name: '',
             type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'recipient',
-        outputs: [
-          {
-            name: '',
-            type: 'address',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: 'reward',
-        outputs: [
-          {
-            name: '',
-            type: 'uint256',
           },
         ],
         payable: false,
@@ -205,7 +160,7 @@ class Question extends Component {
       },
     ];
     const MyContract = window.web3.eth.contract(ABI);
-    this.state = { ContractInstance: MyContract.at('0x2ddaeb6630eaa714c4c4e04eb515ef05c2556308') };
+    this.state = { ContractInstance: MyContract.at('0x005b032d947dc8964ff0469375d785da395d310b') };
   }
 
   componentDidMount() {
@@ -214,50 +169,38 @@ class Question extends Component {
   /** *****************************************************************
                               이더리움 DAPP 시작
   ******************************************************************* */
-  newCookie = () => {
-    const { newCookie } = this.state.ContractInstance;
-    newCookie(
-      {
-        gas: 1000000,
-      },
-      (err, c) => {
-        if (err) console.error('An err occured::::', err);
-        console.log('newCokkie!!:::', c);
-      },
-    );
-  };
 
-  getQuestioner = () => {
-    const { getQuestioner } = this.state.ContractInstance;
-    getQuestioner((err, questioner) => {
+  getQuestionArchive = () => {
+    const { getQuestions } = this.state.ContractInstance;
+    getQuestions((err, questions) => {
       if (err) console.error('An eeor occured::::', err);
-      console.log("This is our contract's questioner::::", questioner);
+      console.log("This is our contract's questionArchive::::", questions);
     });
   };
 
-  getRecipient = () => {
-    const { getRecipient } = this.state.ContractInstance;
-    getRecipient((err, recipient) => {
+  getQuestion = (qID) => {
+    const { getQuestion } = this.state.ContractInstance;
+    getQuestion(Number(qID), (err, question) => {
       if (err) console.error('An eeor occured::::', err);
-      console.log("This is our contract's recipient::::", recipient);
+      console.log("This is our contract's question::::", question);
     });
   };
 
-  getReward = () => {
-    const { getReward } = this.state.ContractInstance;
-    getReward((err, reward) => {
-      if (err) console.error('An eeor occured::::', err);
-      console.log("This is our contract's reward::::", reward);
-    });
-  };
+  // getReward = () => {
+  //   const { getReward } = this.state.ContractInstance;
+  //   getReward((err, reward) => {
+  //     if (err) console.error('An eeor occured::::', err);
+  //     console.log("This is our contract's reward::::", reward);
+  //   });
+  // };
 
-  getPending = () => {
-    const { getPending } = this.state.ContractInstance;
-    getPending((err, pending) => {
-      if (err) console.error('An eeor occured::::', err);
-      console.log("This is our contract's pending::::", pending);
-    });
-  };
+  // getPending = () => {
+  //   const { getPending } = this.state.ContractInstance;
+  //   getPending((err, pending) => {
+  //     if (err) console.error('An eeor occured::::', err);
+  //     console.log("This is our contract's pending::::", pending);
+  //   });
+  // };
 
   setRecipient = (metaAddress) => {
     const { setRecipient } = this.state.ContractInstance;
@@ -276,22 +219,28 @@ class Question extends Component {
     );
   };
 
-  dealConclusion = () => {
-    const { dealConclusion } = this.state.ContractInstance;
-    dealConclusion(
+  dealConclusion = (qID, metaAddress) => {
+    const { setRecipientAndDealConclusion } = this.state.ContractInstance;
+    setRecipientAndDealConclusion(
+      Number(qID),
+      metaAddress,
       {
         gas: 400000,
+        from: window.web3.eth.accounts[0],
+        value: window.web3.toWei(0.01, 'ether'),
       },
       (err) => {
         if (err) console.error('An err occured::::', err);
-        console.log('Transfer to Recipient!!');
+        console.log('@@@@@ Set Recipient & Transfer to Recipient!! @@@@@');
       },
     );
   };
 
-  dealBreak = () => {
+  dealBreak = (qID) => {
     const { dealBreak } = this.state.ContractInstance;
+    console.log('@#!@!$!@#!@#!', qID);
     dealBreak(
+      Number(qID),
       {
         gas: 400000,
       },
@@ -302,9 +251,10 @@ class Question extends Component {
     );
   };
 
-  makeQuestion = (reward) => {
-    const { question } = this.state.ContractInstance;
-    question(
+  makeQuestion = (reward, qID) => {
+    const { setQuestion } = this.state.ContractInstance;
+    setQuestion(
+      Number(qID),
       {
         gas: 400000,
         from: window.web3.eth.accounts[0],
@@ -328,12 +278,9 @@ class Question extends Component {
         <Route
           render={({ match, history }) => (
             <QuestionWriteContainer
-              newCookie={this.newCookie}
               makeQuestion={this.makeQuestion}
-              getQuestioner={this.getQuestioner}
-              getRecipient={this.getRecipient}
-              getReward={this.getReward}
-              getPending={this.getPending}
+              getQuestionArchive={this.getQuestionArchive}
+              getQuestion={this.getQuestion}
               match={match}
               history={history}
             />
@@ -343,7 +290,7 @@ class Question extends Component {
         <Route
           render={({ match, history }) => (
             <QuestionEntryContainer
-              setRecipient={this.setRecipient}
+              dealConclusion={this.dealConclusion}
               dealBreak={this.dealBreak}
               match={match}
               history={history}
