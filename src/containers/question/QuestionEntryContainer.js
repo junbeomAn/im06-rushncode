@@ -135,7 +135,7 @@ class QuestionEntryContainer extends Component {
       .post(`${URL_API}/api/question/breakquestion`, data, config)
       .then((res) => {
         console.log('breakQuestion res::::', res);
-        this.props.dealBreak();
+        this.props.dealBreak(id);
       })
       .then(() => {
         const { id } = this.props.match.params;
@@ -150,16 +150,16 @@ class QuestionEntryContainer extends Component {
         'x-access-token': localStorage.getItem('token'),
       },
     };
+    const { id } = this.props.match.params;
     axios
       .post(`${URL_API}/api/question/pickanswer/${answerID}`, {}, config)
       .then((res) => {
         const { metaAddress } = res.data.data;
-        console.log('res::::', res);
         console.log('metaAddress::::', metaAddress);
-        this.props.setRecipient(metaAddress);
+        console.log('id::::', id);
+        this.props.dealConclusion(id, metaAddress);
       })
       .then(() => {
-        const { id } = this.props.match.params;
         this.props.fetchQuestionEntry(id);
       })
       .catch(err => console.log(err));
@@ -270,7 +270,7 @@ class QuestionEntryContainer extends Component {
       image,
     } = this.props.question;
     const { first } = this.state;
-    console.log(this.props.question);
+    console.log('##########', typeof this.props.match.params.id);
     return (
       <div>
         {this.props.loading ? (
@@ -312,8 +312,6 @@ class QuestionEntryContainer extends Component {
               deleteReply={this.deleteReply}
               fetchModifyQuestion={this.props.fetchModifyQuestion}
               fetchModifyAnswer={this.props.fetchModifyAnswer}
-              dealBreak={this.props.dealBreak}
-              setRecipient={this.props.setRecipient}
             />
             <div id="markdown">
               <h1> add an answer </h1>

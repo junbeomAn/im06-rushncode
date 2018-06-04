@@ -19,7 +19,6 @@ import QuestionWrite from '../../components/body/question/QuestionWrite';
 
 import { URL_API } from '../../config';
 
-
 class QuestionWriteContainer extends Component {
   constructor(props) {
     super(props);
@@ -118,6 +117,9 @@ class QuestionWriteContainer extends Component {
     axios
       .post(writingUrl, data, config)
       .then((res) => {
+        const qID = res.data.questionID;
+        console.log('qID : ', qID);
+        this.props.makeQuestion(reward, qID);
         this.props.initWriteForm();
         this.props.history.push('/question');
       })
@@ -133,12 +135,9 @@ class QuestionWriteContainer extends Component {
       onRewardChange,
       onBodyChange,
       match,
-      newCookie,
       makeQuestion,
-      getQuestioner,
-      getRecipient,
-      getReward,
-      getPending,
+      getQuestionArchive,
+      getQuestion,
     } = this.props;
     const { id } = match.params;
     return (
@@ -207,7 +206,6 @@ class QuestionWriteContainer extends Component {
               ) : (
                 <button
                   onClick={() => {
-                    makeQuestion(reward);
                     this.submit();
                   }}
                   className="btn btn-primary mark_down_btn_item write-btn"
@@ -217,10 +215,8 @@ class QuestionWriteContainer extends Component {
               )}
               <button
                 onClick={() => {
-                  getQuestioner();
-                  getRecipient();
-                  getReward();
-                  getPending();
+                  getQuestionArchive();
+                  getQuestion(id);
                 }}
               >
                 get

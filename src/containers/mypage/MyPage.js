@@ -88,7 +88,7 @@ export class MyPage extends Component {
             <div className="second">
               <div className="second-one shadow">
                 <div className="second-one-title">랭킹</div>
-                <div className="second-one-score">3위</div>
+                <div className="second-one-score">{user.rank}위</div>
                 <br />
                 <br />
                 <div className="second-one-title">누적 획득 이더</div>

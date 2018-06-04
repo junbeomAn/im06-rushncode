@@ -168,7 +168,6 @@ const QuestionEntry = ({
           deleteChAnswer={deleteChAnswer}
           fetchModifyAnswer={fetchModifyAnswer}
           key={answer.aID}
-          setRecipient={setRecipient}
         />
       ))}
     </div>
