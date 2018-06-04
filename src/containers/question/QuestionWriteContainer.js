@@ -213,14 +213,14 @@ class QuestionWriteContainer extends Component {
                   질문작성
                 </button>
               )}
-              <button
+              {/* <button
                 onClick={() => {
                   getQuestionArchive();
                   getQuestion(id);
                 }}
               >
                 get
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
