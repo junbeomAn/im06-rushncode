@@ -26,7 +26,11 @@
         font-size: 130%;
         span {
           color: $greyfont;
+          padding: 10px;
           cursor: pointer;
+          &:hover {
+            font-weight: bold;
+          }
         }
       }
     }

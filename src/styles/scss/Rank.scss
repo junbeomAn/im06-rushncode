@@ -3,15 +3,70 @@
 .rankSegment {
   width: 90%;
   position: relative;
-  // margin: 50px auto 50px auto;
-  margin-top: 50px;
-  left: 51%;
-  transform: translate(-50%);
+  margin: 0 auto;
   .segment {
+    display: flex;
     .rank-image {
       margin-right: 20px;
+      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+      box-shadow: 2px 3px 3px lightgrey;
+      cursor: pointer;
     }
-    display: flex;
+    &:hover {
+      background: white !important;
+      box-shadow: 2px 3px 3px lightgrey;
+    }
+    .rank-info {
+      //그리드로 할수도 있음
+      // display: grid;
+      // width: 100%;
+      // grid-template-columns: 20% 40% 40%;
+      // grid-template-rows: auto auto;
+      // text-align: center;
+      // span {
+      //   padding: 3px;
+      // }
+      // .grid-top {
+      //   border-bottom: 0.1rem solid $divider;
+      //   font-weight: bold;
+      // }
+      // .info-middle {
+      //   border-left: 0.1rem solid $divider;
+      //   border-right: 0.1rem solid $divider;
+      // }
+      display: flex;
+      flex-direction: column;
+      .rank-name {
+        color: rgb(117, 150, 250);
+        font-size: 1.2rem;
+        &:hover {
+          color: rgb(101, 111, 248);
+          font-weight: bold;
+        }
+        cursor: pointer;
+      }
+      .total-reward {
+        color: $greyfont;
+        font-weight: bold;
+      }
+      .rank {
+        color: $greyfont;
+      }
+      .rank:hover span {
+        display: none;
+      }
+      .rank:hover:before {
+        content: "순위";
+      }
+      .total-reward:hover span {
+        display: none;
+      }
+      .total-reward:hover:before {
+        content: "누적 이더리움";
+      }
+    }
   }
 }
 .rankContainer {

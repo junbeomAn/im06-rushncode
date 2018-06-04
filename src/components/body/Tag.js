@@ -19,7 +19,7 @@ const Tag = ({
         icon="search"
         onChange={valueChange}
         onKeyPress={e => tagSearch(e)}
-        iconPosition="left"
+        iconPosition="right"
         placeholder="태그 검색"
       />
     </div>

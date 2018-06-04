@@ -1,13 +1,43 @@
+@charset "UTF-8";
 .rankSegment {
   width: 90%;
   position: relative;
-  margin-top: 50px;
-  left: 51%;
-  transform: translate(-50%); }
+  margin: 0 auto; }
   .rankSegment .segment {
     display: flex; }
     .rankSegment .segment .rank-image {
-      margin-right: 20px; }
+      margin-right: 20px;
+      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+      box-shadow: 2px 3px 3px lightgrey;
+      cursor: pointer; }
+    .rankSegment .segment:hover {
+      background: white !important;
+      box-shadow: 2px 3px 3px lightgrey; }
+    .rankSegment .segment .rank-info {
+      display: flex;
+      flex-direction: column; }
+      .rankSegment .segment .rank-info .rank-name {
+        color: #7596fa;
+        font-size: 1.2rem;
+        cursor: pointer; }
+        .rankSegment .segment .rank-info .rank-name:hover {
+          color: #656ff8;
+          font-weight: bold; }
+      .rankSegment .segment .rank-info .total-reward {
+        color: #777;
+        font-weight: bold; }
+      .rankSegment .segment .rank-info .rank {
+        color: #777; }
+      .rankSegment .segment .rank-info .rank:hover span {
+        display: none; }
+      .rankSegment .segment .rank-info .rank:hover:before {
+        content: "순위"; }
+      .rankSegment .segment .rank-info .total-reward:hover span {
+        display: none; }
+      .rankSegment .segment .rank-info .total-reward:hover:before {
+        content: "누적 이더리움"; }
 
 .rankContainer {
   background: ghostwhite;

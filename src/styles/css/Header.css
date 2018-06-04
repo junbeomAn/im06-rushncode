@@ -18,11 +18,14 @@
 
 .header-tabs {
   height: auto;
-  justify-content: center; }
+  width: 50%;
+  justify-content: left; }
 
 .header-search {
-  display: flex; }
+  width: 45%;
+  display: none; }
   .header-search .search-input {
+    width: 100%;
     border: solid 3px #0b1b33;
     background: transparent;
     color: #0b1b33;
@@ -44,9 +47,13 @@
       color: #e8d048;
       border: solid 3px #0b1b33; }
 
+.header-search-invisible {
+  width: 45%;
+  height: 37.5px; }
+
 .navbar-nav {
-  padding-right: 41px;
-  display: flex; }
+  display: flex;
+  justify-content: left; }
   .navbar-nav li .item {
     margin: 0 10px;
     padding: 0px 3px 3px 3px;

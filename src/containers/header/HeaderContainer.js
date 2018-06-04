@@ -11,11 +11,15 @@ class Headers extends Component {
     super(props);
     this.state = {
       searchWord: '',
+      selected: '',
     };
   }
 
   componentDidMount() {
     this.props.Verify();
+    // const selected = window.location.href.split('/')[3];
+    // const selectedTab = document.getElementsByClassName(`${selected}-tab`)[0];
+    // selectedTab.style.borderBottom = 'solid 2px rgb(11, 27, 51)';
   }
 
   changeValue = (e) => {
@@ -37,30 +41,30 @@ class Headers extends Component {
           <div className="collapse navbar-collapse header-tabs" id="navbarSupportedContent">
             <ul className="nav navbar-nav navbar-center">
               <li className="nav-item">
-                <NavLink to="/question" className="item">
+                <NavLink to="/question" className="item question-tab">
                   질문
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/tag" className="item">
+                <NavLink to="/tag" className="item tag-tab">
                   태그
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/rank" className="item">
-                  랭크
+                <NavLink to="/rank" className="item rank-tab">
+                  랭킹
                 </NavLink>
               </li>
               {this.props.isLoggedIn && (
                 <li className="nav-item">
-                  <NavLink to={`/mypage/${this.props.userID}`} className="item">
+                  <NavLink to={`/mypage/${this.props.userID}`} className="item mypage-tab">
                     프로필
                   </NavLink>
                 </li>
               )}
               {!this.props.isLoggedIn ? (
                 <li className="nav-item">
-                  <NavLink to="/auth/signin" className="item">
+                  <NavLink to="/auth/signin" className="item auth-tab">
                     로그인
                   </NavLink>
                 </li>
@@ -85,6 +89,7 @@ class Headers extends Component {
               <button className="btn btn-outline-dark my-2 my-sm-0 search-btn">검색</button>
             </NavLink>
           </div>
+          <div className="header-search-invisible" />
         </div>
       </nav>
     );
