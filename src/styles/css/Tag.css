@@ -23,7 +23,10 @@
         font-size: 130%; }
         .tag-container .tag-content .wrapper .box span {
           color: #777;
+          padding: 10px;
           cursor: pointer; }
+          .tag-container .tag-content .wrapper .box span:hover {
+            font-weight: bold; }
 
 .tag-input-container {
   margin-top: 40px;

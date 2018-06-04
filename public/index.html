@@ -37,6 +37,8 @@
 
   window.addEventListener('scroll', function () {
     element = document.getElementsByClassName('Header')[0];
+    headerSearch = document.getElementsByClassName('header-search')[0];
+    headerSearchInvisible = document.getElementsByClassName('header-search-invisible')[0];
     elHeight = element.offsetHeight;
     dHeight = document.body.offsetHeight;
     wHeight = window.innerHeight;
@@ -52,7 +54,21 @@
       element.style.background = '#e8d048';
     } else if (wScrollDiff > 0) {
       element.style.top = (elTop > 0 ? 0 : elTop) + 'px';
-    } else if (wScrollDiff < 0) {
+    } else if (wScrollDiff < 0 && wScrollDiff > -700) {
+      headerSearch.style.display = 'none';
+      headerSearchInvisible.style.display = 'flex';
+      element.style.background = 'rgba(255,255,255,0.7)';
+      element.style.color = 'white !important';
+
+      if (wScrollCurrent + wHeight >= dHeight - elHeight) {
+        element.style.top = ((elTop = wScrollCurrent + wHeight - dHeight) < 0 ? elTop : 0) + 'px';
+      } else {
+        element.style.top = (Math.abs(elTop) > elHeight ? -elHeight : elTop) + 'px';
+        // element.style.background = 'rgba($color: ghostwhite, $alpha: 0.5)';
+      }
+    } else if (wScrollDiff <= -700) {
+      headerSearch.style.display = 'flex';
+      headerSearchInvisible.style.display = 'none';
       element.style.background = 'rgba(255,255,255,0.7)';
       element.style.color = 'white !important';
 
@@ -64,7 +80,7 @@
       }
     }
 
-    wScrollBefore = wScrollCurrent;
+    // wScrollBefore = wScrollCurrent;
 
   });
 </script>
