@@ -1,0 +1,59 @@
+@import "color";
+
+// ************** 홈 화면 ************** //
+@media (max-width: 768px) {
+  .homeUpper {
+    height: 300px;
+  }
+  .home-lower-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .home-lower {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    .home-lower-left {
+      width: 100%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      .home-lower-left-header {
+        a {
+          color: $greyfont;
+        }
+        .active {
+          background: ghostwhite;
+          border-top: $primaryBlue solid 2px;
+          border-bottom: ghostwhite solid 1px;
+          color: $primaryBlue;
+          font-weight: bold;
+        }
+        .tab-pane {
+          border: none;
+        }
+      }
+      .home-lower-left-main {
+        // border: solid 1px coral;
+      }
+      .questionPost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px 10px 0px;
+        .first {
+          display: none;
+        }
+        .second {
+          width: 100%;
+        }
+      }
+    }
+    .home-lower-right {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.rankSegment {
+  width: 90%;
+  position: relative;
+  margin-top: 50px;
+  left: 51%;
+  transform: translate(-50%); }
+  .rankSegment .segment {
+    display: flex; }
+    .rankSegment .segment .rank-image {
+      margin-right: 20px; }
+
+.rankContainer {
+  background: ghostwhite;
+  height: auto;
+  min-height: 800px;
+  padding-bottom: 50px; }
+
+.rankUpper {
+  height: 100px;
+  margin-top: 40px;
+  text-align: center; }
+  .rankUpper .user-search-bar {
+    width: 90%;
+    margin: 0 auto;
+    height: 60px; }
+
+/*# sourceMappingURL=Rank.css.map */
