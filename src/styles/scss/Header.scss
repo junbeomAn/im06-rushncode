@@ -23,15 +23,17 @@
 }
 .header-tabs {
   height: auto;
-
   // border: solid 1px red;
-  justify-content: center;
+  width: 50%;
+  justify-content: left;
 }
 
 .header-search {
   // border: solid 1px blue;
-  display: flex;
+  width: 45%;
+  display: none; 
   .search-input {
+    width: 100%;
     border: solid 3px $primaryBlue;
     background: transparent;
     color: $primaryBlue;
@@ -56,12 +58,17 @@
       color: $primaryYellow;
       border: solid 3px $primaryBlue;
     }
-  }
+  } 
+}
+.header-search-invisible {
+  width: 45%;
+  height: 37.5px;
 }
 
 .navbar-nav {
-  padding-right: 41px;
+  // padding-right: 41px;
   display: flex;
+  justify-content: left;
   li {
     .item {
       margin: 0 10px;

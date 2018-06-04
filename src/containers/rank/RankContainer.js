@@ -1,57 +1,58 @@
 import React, { Component } from 'react';
 import { Loader } from 'semantic-ui-react';
-import { connect } from 'react-redux';
 import axios from 'axios';
-import { fetchQuestionTag, fetchSortedByTag } from './../../redux/actions/questionAction';
 import { Rank } from '../../components';
 import { URL_API } from '../../config';
 
 class RankContainer extends Component {
   state = {
-    // keyword: '',
+    keyword: '',
     userInfo: [],
   };
 
   componentDidMount() {
-    console.log('asdfasdfasdfasdf');
-    axios// ${URL_API}
+    axios
       .get(`${URL_API}/api/user/rank`)
       .then((res) => {
         console.log(res);
-        this.setState({
-          userInfo: res.data.users,
-        });
+        setTimeout(() => { this.setUserData(res.data.users); }, 1000);
       });
   }
 
-  // userSearch = (event) => {
-  //   if (event.key === 'Enter') {
-  //     const { keyword } = this.state;
-  //     const isExist = this.isTagExist(keyword);
-  //     if (isExist) {
-  //       this.props.history.push(`/sort/tag/${keyword}`);
-  //     } else {
-  //       alert('검색결과가 없습니다.');
-  //     }
-  //   }
-  // }
+  setUserData = (users) => {
+    this.setState({
+      userInfo: users,
+    });
+  }
+
+  userSearch = (event) => {
+    if (event.key === 'Enter') {
+      const { keyword } = this.state;
+      const isExistOrID = this.isUserExist(keyword);
+      if (isExistOrID) {
+        this.props.history.push(`/mypage/${isExistOrID}`);
+      } else {
+        alert('검색결과가 없습니다.');
+      }
+    }
+  }
 
   handleUserClick = (path) => {
     this.props.history.push(path);
   }
 
-  // isTagExist = (keyword) => {
-  //   const { tags } = this.props;
-  //   const searchResult = tags.filter(item => item.tag.includes(keyword));
+  isUserExist = (keyword) => {
+    const { userInfo } = this.state;
+    const searchResult = userInfo.filter(item => item.username === keyword);
 
-  //   return !!searchResult.length;
-  // }
+    return searchResult.length ? searchResult[0].id : false;
+  }
 
-  // valueChange = (event) => {
-  //   this.setState({
-  //     keyword: event.target.value,
-  //   });
-  // }
+  valueChange = (event) => {
+    this.setState({
+      keyword: event.target.value,
+    });
+  }
 
   render() {
     // console.log(this.props);
@@ -62,20 +63,16 @@ class RankContainer extends Component {
       <div>
         {userInfo.length
           ? <Rank
-            // userSearch={this.userSearch}
-            // valueChange={this.valueChange}
+            userSearch={this.userSearch}
+            valueChange={this.valueChange}
             handleUserClick={this.handleUserClick}
             userInfo={userInfo}
-            />
+          />
           : <Loader active inline="centered" />
         }
       </div>
     );
   }
 }
-const mapStateToProps = (state) => {
-  const { tags } = state.questions;
-  return { tags };
-};
 
-export default connect(mapStateToProps, { fetchQuestionTag, fetchSortedByTag })(RankContainer);
+export default RankContainer;

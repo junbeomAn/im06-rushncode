@@ -9,11 +9,25 @@ import HomeShowcase from '../../components/showcases/HomeShowcase';
 import HomeQuestionList from '../../components/body/HomeQuestionList';
 
 export class Home extends Component {
-  state = {};
+  state = {
+    keyword: '',
+  };
 
   componentDidMount() {
     this.props.fetchQuestionList(1);
     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
+
+  handleValueChange = (event) => {
+    this.setState({
+      keyword: event.target.value,
+    });
+  }
+
+  handleSearch = (event) => {
+    if (event.key === 'Enter') {
+      this.props.history.push(`/loading/search?q=${this.state.keyword}`);
+    }
   }
 
   render() {
@@ -24,7 +38,7 @@ export class Home extends Component {
     return (
       <div className="homeContainer">
         <div className="showcase">
-          <HomeShowcase />
+          <HomeShowcase handleValueChange={this.handleValueChange} handleSearch={this.handleSearch} />
         </div>
         <div className="home-lower-box">
           <div className="home-lower">
