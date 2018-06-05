@@ -55,8 +55,13 @@
 .likeBtn {
   cursor: pointer; }
 
-.complete {
-  font-size: 1.1rem;
+.complete-top {
+  width: 0.8vw;
+  color: #a83fe4 !important; }
+
+.complete-bot {
+  font-size: 0.8vw;
+  font-weight: bold;
   color: #a83fe4 !important; }
 
 .complete-badge {
@@ -64,8 +69,13 @@
   background: #a83fe4;
   letter-spacing: 0.4px; }
 
-.break {
-  font-size: 1.1rem;
+.break-top {
+  width: 0.8vw;
+  color: #e8d048 !important; }
+
+.break-bot {
+  font-size: 0.8vw;
+  font-weight: bold;
   color: #e8d048 !important; }
 
 .break-badge {

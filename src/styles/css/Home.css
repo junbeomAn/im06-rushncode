@@ -5,41 +5,54 @@
   background-color: ghostwhite; }
 
 .homeUpper {
-  height: 700px;
-  background-image: url("../../images/showcase.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  text-align: center; }
-  .homeUpper .home-search-bar {
-    position: relative;
-    top: 11%;
-    width: 80%;
-    margin: 0 auto;
-    height: 60px; }
-
-.HomeJumbotron {
-  width: 50%;
-  padding-top: 70px;
-  padding-left: 50px;
-  display: inline-block;
-  background-color: transparent;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center; }
-  .HomeJumbotron h1 {
-    font-size: 40px;
-    letter-spacing: 0.2rem; }
-  .HomeJumbotron p {
-    padding-top: 20px;
-    font-size: 20px;
-    letter-spacing: 0.2rem; }
-  .HomeJumbotron .btn {
-    margin-top: 20px; }
-  .HomeJumbotron .homeLBtn {
-    padding-right: 15px; }
-  .HomeJumbotron .homeRBtn {
-    padding-left: 15px; }
+  height: 40vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .homeUpper .top {
+    display: flex;
+    align-items: space-between;
+    height: 450px; }
+    .homeUpper .top .left {
+      width: 50%;
+      background-image: url("../../images/main-left.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain; }
+    .homeUpper .top .right {
+      width: 50%;
+      background-image: url("../../images/main-right.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .homeUpper .top .right .home-search-btn {
+        width: 62%;
+        margin-top: 30px;
+        background: #0b1b33;
+        color: #e8d048;
+        font-size: 2.3vw;
+        box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.4); }
+        .homeUpper .top .right .home-search-btn:hover {
+          transition: all 0.5s;
+          background: #06101e;
+          color: #e1c31c;
+          box-shadow: 0px 6px 4px 1px rgba(0, 0, 0, 0.6); }
+  .homeUpper .bot {
+    display: flex;
+    background: #0b1b33;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+    .homeUpper .bot .home-search-bar {
+      width: 80%;
+      height: 5vw; }
 
 .home-lower-box {
   width: 90%;
@@ -73,28 +86,29 @@
       padding: 10px 0px 10px 0px; }
       .home-lower .home-lower-left .questionPost .first {
         padding-right: 10px;
-        width: 220px;
+        width: 12vw;
         color: #777;
         padding-bottom: 6px;
         display: flex;
         text-align: center; }
-        .home-lower .home-lower-left .questionPost .first .firstItem {
-          width: 100px; }
-          .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox {
-            margin-top: 8px; }
-            .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxImage {
-              color: grey;
-              font-size: 1rem;
-              font-weight: 400;
-              padding-top: 5px;
-              padding-bottom: 5px; }
-            .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxNum {
-              text-align: center;
-              padding-right: 3px;
-              font-size: 1.2rem;
-              color: grey; }
-          .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox2 .ItemBox2Image {
-            margin-top: 1px; }
+        .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+          padding-top: 4px;
+          height: 30px;
+          text-align: center;
+          padding-right: 3px;
+          font-size: 1vw;
+          color: grey; }
+        .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxImage {
+          color: grey;
+          font-size: 0.8vw;
+          font-weight: 400;
+          padding-top: 0px; }
+        .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .box-icon {
+          height: 30px; }
+        .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .home-icon {
+          padding-top: 0;
+          padding-left: 4px;
+          font-size: 1.5vw; }
   .home-lower .home-lower-right {
     width: 20%;
     height: auto;
@@ -111,11 +125,14 @@
       color: #e4e6e8; }
       .home-lower .home-lower-right .home-lower-right-main:hover {
         opacity: 0.8; }
+      .home-lower .home-lower-right .home-lower-right-main h4 {
+        font-size: 0.9vw; }
       .home-lower .home-lower-right .home-lower-right-main hr {
         width: 100%;
         margin: 0 auto 5px auto;
         border-color: #e4e6e8; }
       .home-lower .home-lower-right .home-lower-right-main a {
+        font-size: 0.8vw;
         text-decoration: none;
         color: ghostwhite; }
         .home-lower .home-lower-right .home-lower-right-main a:hover {

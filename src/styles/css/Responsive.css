@@ -1,4 +1,10 @@
 @media (max-width: 768px) {
+  .middle {
+    width: 100%; }
+
+  .header {
+    width: 100%; }
+
   .homeUpper {
     height: 300px; }
 

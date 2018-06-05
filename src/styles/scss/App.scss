@@ -52,9 +52,6 @@
   }
 }
 
-.timeStamp {
-}
-
 .timeStampReplyName {
   color: #333;
   font-size: 1.1rem;
@@ -74,8 +71,16 @@
   cursor: pointer;
 }
 
-.complete {
-  font-size: 1.1rem;
+.complete-top {
+  // font-size: 1vw;
+  width: 0.8vw;
+  // border: solid 1px blue;
+  color: $primaryPurple !important;
+}
+
+.complete-bot {
+  font-size: 0.8vw;
+  font-weight: bold;
   color: $primaryPurple !important;
 }
 
@@ -85,8 +90,14 @@
   letter-spacing: 0.4px;
 }
 
-.break {
-  font-size: 1.1rem;
+.break-top {
+  width: 0.8vw;
+  color: $primaryYellow !important;
+}
+
+.break-bot {
+  font-size: 0.8vw;
+  font-weight: bold;
   color: $primaryYellow !important;
 }
 

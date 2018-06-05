@@ -35,7 +35,7 @@ class Headers extends Component {
         <div className="collapse navbar-collapse header-container" id="navbarSupportedContent">
           <div className="navbar-brand header-title">
             <NavLink exact to="/">
-              <img className="logo-header" src={logo} alt="logo" />
+              <span className="navbar-brand mb-0 h1 header-brand">러시앤코드</span>
             </NavLink>
           </div>
           <div className="collapse navbar-collapse header-tabs" id="navbarSupportedContent">

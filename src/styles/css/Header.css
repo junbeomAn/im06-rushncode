@@ -13,16 +13,21 @@
   justify-content: space-between; }
 
 .header-title {
-  width: 200px;
-  padding-left: 10px; }
+  width: 10vw;
+  padding-left: 1vw; }
+
+.header-brand {
+  font-size: 1.6vw;
+  font-weight: 900;
+  letter-spacing: 0.1rem; }
 
 .header-tabs {
   height: auto;
-  width: 50%;
+  width: 230px;
   justify-content: left; }
 
 .header-search {
-  width: 45%;
+  width: 35vw;
   display: none; }
   .header-search .search-input {
     width: 100%;
@@ -59,7 +64,7 @@
     padding: 0px 3px 3px 3px;
     color: #0b1b33;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.1vw;
     letter-spacing: 0.2rem;
     text-decoration-style: none; }
     .navbar-nav li .item:hover {

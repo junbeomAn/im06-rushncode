@@ -21,38 +21,43 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 30px;
     .first {
-      padding-left: 10px;
       padding-right: 10px;
-      width: 220px;
+      width: 15vw; // border: solid 1px red;
       color: $greyfont;
       padding-bottom: 6px;
       display: flex;
       text-align: center;
       .firstItem {
-        width: 100px;
+        width: 3vw;
+        margin-bottom: 20px;
         .ItemBox {
-          margin-top: 8px;
+          margin-top: 2vw;
+          .ItemBoxNum {
+            height: 30px;
+            padding-top: 4px;
+            padding-right: 3px;
+            padding-bottom: 0;
+            text-align: center;            
+            font-size: 1vw;
+            color: grey;
+            font-weight: bold;
+          }
           .ItemBoxImage {
             color: grey;
-            font-size: 1rem;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            font-size: 0.8vw;
             font-weight: 400;
+            padding-top: 0px;
           }
-          .ItemBoxNum {
-            text-align: center;
-            padding-right: 3px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: grey;
-            font-weight: 400;
+          .box-icon {
+            height: 30px;
           }
-        }
-        .ItemBox2 {
-          .ItemBox2Image {
-            margin-top: 1px;
+
+          .home-icon {
+            padding-top: 0;
+            padding-left: 4px;
+            font-size: 1.5vw;
           }
         }
       }
@@ -64,10 +69,10 @@
       border-bottom: 1px solid $divider;
       h2 {
         color: $primaryBlue;
+        font-size: 1.7vw;
         &:hover {
-          font-size: 25px;
-          transition-delay: 0.1s;
-          transition-duration: 0.1s;
+          font-size: 1.8vw;
+          transition: all 0.5s;
         }
       }
       p {
@@ -76,9 +81,19 @@
       .tags {
         padding-top: 8px;
         padding-bottom: 10px;
+        // border: solid 1px red;
+        display: flex;
+        align-items: center;
         .questListBtn {
-          height: 25px;
-          padding-top: 2px;
+          min-height: 16px;
+          padding: 0.2vw 0.4vw;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 1.5vw;
+          // border: solid 1px red;
+          
           margin-right: 3px;
           &:hover {
             a {
@@ -86,6 +101,7 @@
             }
           }
           a {
+            font-size: 0.8vw;
             color: $greyfont;
           }
         }
@@ -98,8 +114,11 @@
       text-align: center;
       .username {
         color: $primaryBlue;
-        font-size: 15px;
+        font-size: 0.9vw;
         font-weight: bold;
+      }
+      .time {
+        font-size: 0.8vw;
       }
     }
   }
@@ -108,6 +127,7 @@
     padding-top: 15px;
     justify-content: center;
     padding-bottom: 15px;
+    font-size: 0.8vw;
 
     .page-link {
       color: $primaryBlue;
