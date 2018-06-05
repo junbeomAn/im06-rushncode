@@ -6,6 +6,7 @@ import Home from './home/Home';
 import Footer from './footer/Footer';
 import TagContainer from './tag/TagContainer';
 import RankContainer from './rank/RankContainer';
+import Sidebar from './sidebar/Sidebar';
 
-export { HeaderContainer, Question, Auth, MyPage, Home, Footer, TagContainer, RankContainer };
+export { HeaderContainer, Question, Auth, MyPage, Home, Footer, TagContainer, RankContainer, Sidebar };
 

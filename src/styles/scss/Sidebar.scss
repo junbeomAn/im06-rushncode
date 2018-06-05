@@ -1,0 +1,43 @@
+.home-side-menu {
+  position: relative;
+  left: 30%;
+  width: 30%;
+  height: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: black;
+  opacity: 0.8;
+  .side-upper {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ghostwhite;
+    font-size: 2rem;
+    border-bottom: 1px solid ghostwhite;
+  }
+  a {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    padding: 20px;
+    align-items: center;
+    text-align: right;
+    color: ghostwhite;
+    font-size: 1.3rem;
+    &:hover {
+      background-color: rgb(61, 61, 61);
+    }
+  }
+  .active {
+    opacity: 1 !important;
+  }
+  .item-text {
+    opacity: 0.6;
+    &:hover {
+      // text-underline-position: below;
+    }
+  }
+}
