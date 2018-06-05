@@ -3,41 +3,56 @@
   width: 90%;
   position: relative;
   margin: 0 auto; }
+  .rankSegment .card {
+    margin-bottom: 20px; }
   .rankSegment .segment {
+    background: #0b1b33;
     display: flex; }
+    .rankSegment .segment .rank-num {
+      width: 50px;
+      height: 50px;
+      margin-right: 30px;
+      display: flex;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #0b1b33;
+      justify-content: center;
+      align-items: center; }
     .rankSegment .segment .rank-image {
       margin-right: 20px;
       border-radius: 5px;
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       box-shadow: 2px 3px 3px lightgrey;
       cursor: pointer; }
-    .rankSegment .segment:hover {
-      background: white !important;
-      box-shadow: 2px 3px 3px lightgrey; }
-    .rankSegment .segment .rank-info {
+    .rankSegment .segment .rank-info-box {
       display: flex;
-      flex-direction: column; }
-      .rankSegment .segment .rank-info .rank-name {
-        color: #7596fa;
-        font-size: 1.2rem;
-        cursor: pointer; }
-        .rankSegment .segment .rank-info .rank-name:hover {
-          color: #656ff8;
-          font-weight: bold; }
-      .rankSegment .segment .rank-info .total-reward {
-        color: #777;
-        font-weight: bold; }
-      .rankSegment .segment .rank-info .rank {
-        color: #777; }
-      .rankSegment .segment .rank-info .rank:hover span {
-        display: none; }
-      .rankSegment .segment .rank-info .rank:hover:before {
-        content: "순위"; }
-      .rankSegment .segment .rank-info .total-reward:hover span {
-        display: none; }
-      .rankSegment .segment .rank-info .total-reward:hover:before {
-        content: "누적 이더리움"; }
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 10px; }
+      .rankSegment .segment .rank-info-box .rank-info-top {
+        display: flex; }
+        .rankSegment .segment .rank-info-box .rank-info-top .rank-name {
+          margin-right: 10px;
+          color: #265eb1;
+          opacity: 0.8;
+          font-size: 1.7rem;
+          font-weight: bolder;
+          cursor: pointer; }
+          .rankSegment .segment .rank-info-box .rank-info-top .rank-name:hover {
+            color: #6092dd;
+            font-weight: bolder; }
+        .rankSegment .segment .rank-info-box .rank-info-top .total-reward {
+          color: #777;
+          font-weight: bold;
+          font-size: 1.3rem; }
+          .rankSegment .segment .rank-info-box .rank-info-top .total-reward .ether {
+            font-size: 1rem;
+            font-weight: 500; }
+        .rankSegment .segment .rank-info-box .rank-info-top .total-reward:hover span {
+          display: none; }
+        .rankSegment .segment .rank-info-box .rank-info-top .total-reward:hover:before {
+          content: "누적 이더리움"; }
 
 .rankContainer {
   background: ghostwhite;
@@ -53,5 +68,14 @@
     width: 90%;
     margin: 0 auto;
     height: 60px; }
+
+.rank-first {
+  color: #e8d048; }
+
+.rank-second {
+  color: silver; }
+
+.rank-third {
+  color: #CD7F32; }
 
 /*# sourceMappingURL=Rank.css.map */

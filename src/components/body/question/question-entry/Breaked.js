@@ -2,12 +2,12 @@ import React from 'react';
 import { Icon } from 'semantic-ui-react';
 
 const Breaked = () => (
-  <div className="ItemBox2">
-    <div className="ItemBox2Image break">
-      <Icon name="warning sign" size="big" />
+  <div className="ItemBox">
+    <div className="ItemBoxNum box-icon">
+      <Icon name="warning sign" size="big" className="break-top home-icon" />
     </div>
-    <div className="ItemBoxNum">
-      <span className="break">마감</span>
+    <div className="ItemBoxImage">
+      <span className="break-bot">마감</span>
     </div>
   </div>
 );

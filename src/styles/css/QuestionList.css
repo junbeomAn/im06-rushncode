@@ -16,57 +16,70 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px 10px 0px 10px; }
+    padding: 10px 10px 0px 30px; }
     .questionMain .questionPost .first {
-      padding-left: 10px;
       padding-right: 10px;
-      width: 220px;
+      width: 15vw;
       color: #777;
       padding-bottom: 6px;
       display: flex;
       text-align: center; }
       .questionMain .questionPost .first .firstItem {
-        width: 100px; }
+        width: 3vw;
+        margin-bottom: 20px; }
         .questionMain .questionPost .first .firstItem .ItemBox {
-          margin-top: 8px; }
+          margin-top: 2vw; }
+          .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+            height: 30px;
+            padding-top: 4px;
+            padding-right: 3px;
+            padding-bottom: 0;
+            text-align: center;
+            font-size: 1vw;
+            color: grey;
+            font-weight: bold; }
           .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxImage {
             color: grey;
-            font-size: 1rem;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            font-weight: 400; }
-          .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
-            text-align: center;
-            padding-right: 3px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: grey;
-            font-weight: 400; }
-        .questionMain .questionPost .first .firstItem .ItemBox2 .ItemBox2Image {
-          margin-top: 1px; }
+            font-size: 0.8vw;
+            font-weight: 400;
+            padding-top: 0px; }
+          .questionMain .questionPost .first .firstItem .ItemBox .box-icon {
+            height: 30px; }
+          .questionMain .questionPost .first .firstItem .ItemBox .home-icon {
+            padding-top: 0;
+            padding-left: 4px;
+            font-size: 1.5vw; }
     .questionMain .questionPost .second {
       width: 80%;
       margin: 0;
       padding: 10px 15px;
       border-bottom: 1px solid #e4e6e8; }
       .questionMain .questionPost .second h2 {
-        color: #0b1b33; }
+        color: #0b1b33;
+        font-size: 1.7vw; }
         .questionMain .questionPost .second h2:hover {
-          font-size: 25px;
-          transition-delay: 0.1s;
-          transition-duration: 0.1s; }
+          font-size: 1.8vw;
+          transition: all 0.5s; }
       .questionMain .questionPost .second p {
         color: #777; }
       .questionMain .questionPost .second .tags {
         padding-top: 8px;
-        padding-bottom: 10px; }
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center; }
         .questionMain .questionPost .second .tags .questListBtn {
-          height: 25px;
-          padding-top: 2px;
+          min-height: 16px;
+          padding: 0.2vw 0.4vw;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 1.5vw;
           margin-right: 3px; }
           .questionMain .questionPost .second .tags .questListBtn:hover a {
             color: #fff; }
           .questionMain .questionPost .second .tags .questListBtn a {
+            font-size: 0.8vw;
             color: #777; }
     .questionMain .questionPost .fourth {
       width: 125px;
@@ -75,13 +88,16 @@
       text-align: center; }
       .questionMain .questionPost .fourth .username {
         color: #0b1b33;
-        font-size: 15px;
+        font-size: 0.9vw;
         font-weight: bold; }
+      .questionMain .questionPost .fourth .time {
+        font-size: 0.8vw; }
   .questionMain .questionPagenation {
     margin: 0;
     padding-top: 15px;
     justify-content: center;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    font-size: 0.8vw; }
     .questionMain .questionPagenation .page-link {
       color: #0b1b33;
       border: solid 1px #0b1b33;

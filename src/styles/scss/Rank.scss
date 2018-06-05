@@ -4,67 +4,66 @@
   width: 90%;
   position: relative;
   margin: 0 auto;
+  .card {
+    margin-bottom: 20px;
+  }
   .segment {
+    background: $primaryBlue;
     display: flex;
+    .rank-num {
+      width: 50px;
+      height: 50px;
+      margin-right: 30px;
+      display: flex;
+      font-size: 3rem;
+      font-weight: 900;
+      color: $primaryBlue;
+      // border: solid 1px red;
+      justify-content: center;
+      align-items: center;
+    }
     .rank-image {
       margin-right: 20px;
       border-radius: 5px;
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       box-shadow: 2px 3px 3px lightgrey;
       cursor: pointer;
     }
-    &:hover {
-      background: white !important;
-      box-shadow: 2px 3px 3px lightgrey;
-    }
-    .rank-info {
-      //그리드로 할수도 있음
-      // display: grid;
-      // width: 100%;
-      // grid-template-columns: 20% 40% 40%;
-      // grid-template-rows: auto auto;
-      // text-align: center;
-      // span {
-      //   padding: 3px;
-      // }
-      // .grid-top {
-      //   border-bottom: 0.1rem solid $divider;
-      //   font-weight: bold;
-      // }
-      // .info-middle {
-      //   border-left: 0.1rem solid $divider;
-      //   border-right: 0.1rem solid $divider;
-      // }
+    .rank-info-box {
       display: flex;
       flex-direction: column;
-      .rank-name {
-        color: rgb(117, 150, 250);
-        font-size: 1.2rem;
-        &:hover {
-          color: rgb(101, 111, 248);
-          font-weight: bold;
+      justify-content: space-between;
+      margin-left: 10px;
+      .rank-info-top {
+        display: flex;
+        .rank-name {
+          margin-right: 10px;
+          color: lighten($primaryBlue, 30%);
+          opacity: 0.8;
+          font-size: 1.7rem;
+          font-weight: bolder;
+          &:hover {
+            color: lighten($primaryBlue, 50%);
+            font-weight: bolder;
+          }
+          cursor: pointer;
         }
-        cursor: pointer;
-      }
-      .total-reward {
-        color: $greyfont;
-        font-weight: bold;
-      }
-      .rank {
-        color: $greyfont;
-      }
-      .rank:hover span {
-        display: none;
-      }
-      .rank:hover:before {
-        content: "순위";
-      }
-      .total-reward:hover span {
-        display: none;
-      }
-      .total-reward:hover:before {
-        content: "누적 이더리움";
+        .total-reward {
+          color: $greyfont;
+          font-weight: bold;
+          font-size: 1.3rem;
+          .ether {
+            font-size: 1rem;
+            font-weight: 500;
+          }
+        }
+        .total-reward:hover span {
+          display: none;
+        }
+        .total-reward:hover:before {
+          content: "누적 이더리움";
+        }
       }
     }
   }
@@ -84,4 +83,16 @@
     margin: 0 auto;
     height: 60px;
   }
+}
+
+.rank-first {
+  color: $primaryYellow;
+}
+
+.rank-second {
+  color: silver
+}
+
+.rank-third {
+  color: #CD7F32;
 }
