@@ -7,7 +7,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div>
-        <Button icon>
+        <Button icon className="sidebar-btn">
           <Icon name="sidebar" />
         </Button>
         <div className="home-side-menu">
