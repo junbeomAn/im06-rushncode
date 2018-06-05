@@ -22,23 +22,31 @@ export class Home extends Component {
     this.setState({
       keyword: event.target.value,
     });
-  }
+  };
 
   handleSearch = (event) => {
     if (event.key === 'Enter') {
       this.props.history.push(`/loading/search?q=${this.state.keyword}`);
     }
-  }
+  };
+
+  handleGoAskClick = () => {
+    this.props.history.push('/question/write');
+  };
 
   render() {
     const {
       questions, fetchQuestionList, getSortedResult, isLoggedIn,
     } = this.props;
-    
+
     return (
       <div className="homeContainer">
         <div className="showcase">
-          <HomeShowcase handleValueChange={this.handleValueChange} handleSearch={this.handleSearch} />
+          <HomeShowcase
+            handleValueChange={this.handleValueChange}
+            handleSearch={this.handleSearch}
+            handleGoAskClick={this.handleGoAskClick}
+          />
         </div>
         <div className="home-lower-box">
           <div className="home-lower">
@@ -127,7 +135,12 @@ export class Home extends Component {
               <div className="home-lower-right-main">
                 <h4>교육, 강의 플랫폼</h4>
                 <hr />
-                <a href="https://codestates.com/" target="_blank" rel="noopener noreferrer" without="true">
+                <a
+                  href="https://codestates.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  without="true"
+                >
                   코드스테이츠
                 </a>
                 <br />
@@ -149,7 +162,12 @@ export class Home extends Component {
                   인프런
                 </a>
                 <br />
-                <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer" without="true">
+                <a
+                  href="https://www.udemy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  without="true"
+                >
                   Udemy
                 </a>
                 <br />
@@ -191,12 +209,22 @@ export class Home extends Component {
                   Codewars
                 </a>
                 <br />
-                <a href="https://leetcode.com/" target="_blank" without="true" rel="noopener noreferrer">
+                <a
+                  href="https://leetcode.com/"
+                  target="_blank"
+                  without="true"
+                  rel="noopener noreferrer"
+                >
                   Leetcode
                 </a>
                 <h4>블로그, 문서 </h4>
                 <hr />
-                <a href="https://velopert.com/" target="_blank" without="true" rel="noopener noreferrer">
+                <a
+                  href="https://velopert.com/"
+                  target="_blank"
+                  without="true"
+                  rel="noopener noreferrer"
+                >
                   Velopert
                 </a>
                 <br />
@@ -210,7 +238,12 @@ export class Home extends Component {
                 </a>
                 <h4>유틸리티 </h4>
                 <hr />
-                <a href="http://pythontutor.com/" target="_blank" without="true" rel="noopener noreferrer">
+                <a
+                  href="http://pythontutor.com/"
+                  target="_blank"
+                  without="true"
+                  rel="noopener noreferrer"
+                >
                   파이썬튜터
                 </a>
                 <br />
