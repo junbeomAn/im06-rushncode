@@ -21,7 +21,7 @@ class WriteButton extends Component {
           }
           className="btn btn-outline-light btn-lg ask-btn"
         >
-          질문하기
+          한글로 질문하기
         </button>
       </NavLink>
     );
