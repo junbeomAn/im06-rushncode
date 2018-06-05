@@ -178,30 +178,64 @@
 }
 
 .no-result-container {
-  min-height: 720px;
-  background: ghostwhite;
-  h1 {
-    padding-top: 100px;
-    font-size: 3.5rem;
-  }
-  .no-result-title {
-    padding-top: 200px;
-    opacity: 0.4;
-    // border: solid 1px blue;
-    text-align: center;
-    margin-top: 50px;
-    color: $greyfont;
-  }
-  .no-result-text {
-    margin: 0;
-    padding: 0;
-    // border: solid 1px red;
-    font-weight: normal;
-    text-align: center;
-    opacity: 0.4;
-    color: $greyfont;
-    .no-result-keyword {
+ 
+  min-height: 620px;
+  background-color: rgb(244, 244, 244);
+  .emptybox {
+    height: 100px;
+    h1 {
+      padding-top: 180px;
+      font-size: 2.5rem;
+    }
+    .no-result-text {
+      position: absolute;
+      // border: solid 1px red;
+     
       font-weight: bolder;
+      left: 52%;
+      opacity: 0.4;
+      color: $greyfont;
+      .no-result-keyword {
+        font-weight: bolder;
+      }
+    }
+  }
+  .img-box {
+    min-height: 420px;
+    height: auto;
+    overflow: hidden;
+    background-image: url("../../images/search_empty_page_withoutButton.png");
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .no-result-button-cntr {
+      position: absolute;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      left: 60%;
+      top: 350px;
+      // margin-top: 150px;
+      width: 220px;  
+      .question-in-korean {
+        background-color: $primaryBlue;
+        color: ghostwhite;
+        padding-left: 30px;
+        padding-right: 30px;
+        &:hover {
+          background-color: $primaryBlue;
+          color: ghostwhite;
+        }
+      }
+      .search-by-tag {
+        background-color: transparent;
+        color: rgb(11, 27, 51);
+        &:hover {
+          background-color: transparent;
+        }
+      }
     }
   }
 }

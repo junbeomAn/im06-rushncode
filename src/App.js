@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Rank, NoMatch, Clause, Loadingpage } from './components';
+import { NoMatch, Clause, Loadingpage } from './components';
 import { HeaderContainer, Question, Auth, MyPage, Home, Footer, TagContainer, RankContainer } from './containers';
 import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
