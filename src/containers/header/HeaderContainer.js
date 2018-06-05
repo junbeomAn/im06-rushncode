@@ -4,22 +4,17 @@ import { NavLink } from 'react-router-dom';
 // import Logout from './../../components/body/Logout';
 import { Verify, SignOut } from './../../redux/actions/verifyAction';
 import { getSearchResult } from './../../redux/actions/questionAction';
-import logo from '../../styles/css/img/logo-black.png';
 
 class Headers extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchWord: '',
-      selected: '',
     };
   }
 
   componentDidMount() {
     this.props.Verify();
-    // const selected = window.location.href.split('/')[3];
-    // const selectedTab = document.getElementsByClassName(`${selected}-tab`)[0];
-    // selectedTab.style.borderBottom = 'solid 2px rgb(11, 27, 51)';
   }
 
   changeValue = (e) => {
