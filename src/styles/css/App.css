@@ -56,11 +56,10 @@
   cursor: pointer; }
 
 .complete-top {
-  width: 0.8vw;
   color: #a83fe4 !important; }
 
 .complete-bot {
-  font-size: 0.8vw;
+  font-size: 1vw;
   font-weight: bold;
   color: #a83fe4 !important; }
 
@@ -70,11 +69,10 @@
   letter-spacing: 0.4px; }
 
 .break-top {
-  width: 0.8vw;
   color: #e8d048 !important; }
 
 .break-bot {
-  font-size: 0.8vw;
+  font-size: 1vw;
   font-weight: bold;
   color: #e8d048 !important; }
 
