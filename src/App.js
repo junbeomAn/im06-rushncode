@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Rank, NoMatch, Clause, Loadingpage } from './components';
-import { HeaderContainer, Question, Auth, MyPage, Home, Footer, TagContainer, RankContainer } from './containers';
+import { NoMatch, Clause, Loadingpage } from './components';
+import { HeaderContainer, Question, Auth, MyPage, Home, Footer, TagContainer, RankContainer, Sidebar } from './containers';
 import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
 
@@ -31,7 +31,7 @@ class App extends Component {
                 <Route path="/search" component={QuestionListContainer} />
                 <Route path="/sort" component={QuestionListContainer} />
                 <Route path="/loading" component={Loadingpage} />
-                <Route component={NoMatch} />
+                <Route component={Sidebar} />
               </Switch>
             </div>
             <Footer />
