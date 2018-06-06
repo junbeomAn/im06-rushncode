@@ -349,7 +349,7 @@
           }
         }
         .time {
-          font-size: 0.7rem;
+          font-size: 0.6rem !important;
         }
       }
     }
@@ -371,7 +371,7 @@
       .first {
         padding-left: 20px;
         padding-right: 10px;
-        width: 130px; // border: solid 1px red;
+        width: 120px !important; // border: solid 1px red;
         color: $greyfont;
         padding-bottom: 6px;
         display: flex;
@@ -459,7 +459,7 @@
         }
       }
       .time {
-        font-size: 0.7rem;
+        font-size: 0.6rem !important;
       }
     }
   }
@@ -522,7 +522,8 @@
   .add-answer {
     font-size: 1rem !important;
   }
-  .ask-btn {
+  .ask-btn,
+  .sort-btn {
     font-size: 1rem !important;
   }
 
@@ -603,15 +604,21 @@
       display: none;
     }
   }
-  .ClauseUpper {
-    height: auto;
-    .ClauseJumbotron {
-      height: 100px;
-      span {
-        display: block;
-        position: absolute;
-        top: 40px;
-      }
-    }
+  // .ClauseUpper {
+  //   height: auto;
+  //   .ClauseJumbotron {
+  //     height: 100px;
+  //     span {
+  //       display: block;
+  //       position: absolute;
+  //       top: 40px;
+  //     }
+  //   }
+  // }
+}
+
+@media (max-width: 1024px) {
+  .Header {
+    display: none;
   }
 }
