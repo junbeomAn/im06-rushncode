@@ -5,7 +5,6 @@
   .middle {
     width: 100%;
   }
-
   .header {
     width: 100%;
   }
@@ -62,5 +61,10 @@
     .home-lower-right {
       display: none;
     }
+  }
+}
+@media (max-width: 1024px) {
+  .Header {
+    display: none;
   }
 }

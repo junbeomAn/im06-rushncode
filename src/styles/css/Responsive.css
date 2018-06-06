@@ -44,5 +44,8 @@
           width: 100%; }
     .home-lower .home-lower-right {
       display: none; } }
+@media (max-width: 1024px) {
+  .Header {
+    display: none; } }
 
 /*# sourceMappingURL=Responsive.css.map */
