@@ -21,7 +21,7 @@
       display: flex; }
       .mypage-container .mypage-inner-container .first .upload-btn-wrapper {
         position: absolute;
-        top: 23.0rem;
+        top: 23rem;
         z-index: 300;
         overflow: hidden;
         display: inline-block;
@@ -174,21 +174,24 @@
             text-align: center;
             border: none; }
             .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem {
-              width: 100px; }
-              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxImage {
-                color: grey;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                font-size: 1rem;
-                font-weight: 400; }
+              width: 50px; }
               .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxNum {
-                padding-right: 3px;
+                padding-top: 4px;
+                height: 30px;
                 text-align: center;
-                font-weight: bold;
                 font-size: 1.2rem;
                 color: grey; }
-              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox2 .ItemBox2Image {
-                margin-top: 1px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .ItemBoxImage {
+                color: grey;
+                font-size: 1rem;
+                font-weight: 400;
+                padding-top: 0px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .box-icon {
+                height: 30px; }
+              .mypage-container .mypage-inner-container .third .tab-pane .box .first .firstItem .ItemBox .home-icon {
+                padding-top: 0;
+                padding-left: 4px;
+                font-size: 1.5vw; }
           .mypage-container .mypage-inner-container .third .tab-pane .box .second {
             height: auto;
             width: 80%;
@@ -223,7 +226,7 @@
             color: #777;
             text-align: center; }
             .mypage-container .mypage-inner-container .third .tab-pane .box .fourth .username {
-              color: #0b1b33;
+              color: #265eb1;
               font-size: 15px;
               font-weight: bold; }
 

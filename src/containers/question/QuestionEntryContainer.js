@@ -314,7 +314,7 @@ class QuestionEntryContainer extends Component {
               fetchModifyAnswer={this.props.fetchModifyAnswer}
             />
             <div id="markdown">
-              <h1> add an answer </h1>
+              <h1 className="add-answer"> add an answer </h1>
               <div className="mark_down_box">
                 <div className="mark_down_input">
                   <h2>입력창</h2>

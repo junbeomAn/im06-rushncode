@@ -19,28 +19,27 @@
     padding: 10px 10px 0px 30px; }
     .questionMain .questionPost .first {
       padding-right: 10px;
-      width: 15vw;
+      width: 180px;
       color: #777;
       padding-bottom: 6px;
       display: flex;
       text-align: center; }
       .questionMain .questionPost .first .firstItem {
-        width: 3vw;
+        width: 50px;
         margin-bottom: 20px; }
         .questionMain .questionPost .first .firstItem .ItemBox {
-          margin-top: 2vw; }
+          margin-top: 20px; }
           .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
             height: 30px;
             padding-top: 4px;
-            padding-right: 3px;
             padding-bottom: 0;
             text-align: center;
-            font-size: 1.2vw;
+            font-size: 1.2rem;
             color: grey;
             font-weight: bold; }
           .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxImage {
             color: grey;
-            font-size: 1vw;
+            font-size: 1rem;
             font-weight: 400;
             padding-top: 0px; }
           .questionMain .questionPost .first .firstItem .ItemBox .box-icon {
@@ -48,7 +47,7 @@
           .questionMain .questionPost .first .firstItem .ItemBox .home-icon {
             padding-top: 0;
             padding-left: 4px;
-            font-size: 1.5vw; }
+            font-size: 1.5rem; }
     .questionMain .questionPost .second {
       width: 80%;
       margin: 0;
@@ -56,9 +55,9 @@
       border-bottom: 1px solid #e4e6e8; }
       .questionMain .questionPost .second h2 {
         color: #0b1b33;
-        font-size: 1.7vw; }
+        font-size: 1.7rem; }
         .questionMain .questionPost .second h2:hover {
-          font-size: 1.8vw;
+          font-size: 1.8rem;
           transition: all 0.5s; }
       .questionMain .questionPost .second p {
         color: #777; }
@@ -69,17 +68,17 @@
         align-items: center; }
         .questionMain .questionPost .second .tags .questListBtn {
           min-height: 16px;
-          padding: 0.2vw 0.4vw;
+          padding: 4px 8px;
           margin: 0;
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 1.5vw;
+          height: 25px;
           margin-right: 3px; }
           .questionMain .questionPost .second .tags .questListBtn:hover a {
             color: #fff; }
           .questionMain .questionPost .second .tags .questListBtn a {
-            font-size: 0.8vw;
+            font-size: 0.9rem;
             color: #777; }
     .questionMain .questionPost .fourth {
       width: 125px;
@@ -87,11 +86,13 @@
       color: #777;
       text-align: center; }
       .questionMain .questionPost .fourth .username {
-        color: #0b1b33;
-        font-size: 1.2vw;
+        color: #265eb1;
+        font-size: 1.05rem;
         font-weight: bold; }
+        .questionMain .questionPost .fourth .username:hover {
+          color: #6092dd; }
       .questionMain .questionPost .fourth .time {
-        font-size: 1vw; }
+        font-size: 0.9rem; }
   .questionMain .questionPagenation {
     margin: 0;
     padding-top: 15px;

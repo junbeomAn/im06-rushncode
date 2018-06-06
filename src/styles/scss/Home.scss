@@ -61,6 +61,7 @@
     text-align: center;
     .home-search-bar {
       width: 80%;
+      font-size: 2vw;
       height: 5vw;
     }
   }
@@ -103,25 +104,25 @@
       padding: 10px 0px 10px 0px;
       .first {
         padding-right: 10px;
-        width: 12vw;
+        width: 170px;
         // border: solid 1px red;
         color: $greyfont;
         padding-bottom: 6px;
         display: flex;
         text-align: center;
         .firstItem {
+          width: 50px;
           .ItemBox {
             .ItemBoxNum {
               padding-top: 4px;
               height: 30px;
               text-align: center;
-              padding-right: 3px;
-              font-size: 1.2vw;
+              font-size: 1.2rem;
               color: grey;
             }
             .ItemBoxImage {
               color: grey;
-              font-size: 1vw;
+              font-size: 1rem;
               font-weight: 400;
               padding-top: 0px;
             }
@@ -131,7 +132,7 @@
             .home-icon {
               padding-top: 0;
               padding-left: 4px;
-              font-size: 1.5vw;
+              font-size: 1.5rem;
             }
           }
         }
@@ -156,7 +157,7 @@
         opacity: 0.8;
       }
       h4 {
-        font-size: 0.9vw;
+        font-size: 1.1rem;
       }
       hr {
         width: 100%;
@@ -164,7 +165,7 @@
         border-color: $divider;
       }
       a {
-        font-size: 0.8vw;
+        font-size: 0.9rem;
         text-decoration: none;
         color: ghostwhite;
         &:hover {
