@@ -1,15 +1,223 @@
 @import "color";
 
-// ************** 홈 화면 ************** //
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .middle {
+    width: 100%;
+  }
+  .footer {
     width: 100%;
   }
   .header {
     width: 100%;
   }
+  .complete-bot {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $primaryPurple !important;
+  }
+
+  .break-bot {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $primaryYellow !important;
+  }
+
+  .helpdesk-btn-open {
+    font-size: 1rem;
+  }
+  // ************** 홈 화면 ************** //
+  .homeUpper {
+    height: 400px;
+    .bot {
+      display: flex;
+      background: $primaryBlue;
+      width: 100%;
+      height: 200px;
+    }
+  }
+  .home-lower-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .home-lower {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    .home-lower-left {
+      width: 100%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      .home-lower-left-header {
+        a {
+          color: $greyfont;
+        }
+        .active {
+          background: ghostwhite;
+          border-top: $primaryBlue solid 2px;
+          border-bottom: ghostwhite solid 1px;
+          color: $primaryBlue;
+          font-weight: bold;
+        }
+        .tab-pane {
+          border: none;
+        }
+      }
+      .questionPost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px 10px 0px;
+        .first {
+          padding: 0;
+          padding-right: 10px;
+          width: 140px; // border: solid 1px red;
+          color: $greyfont;
+          padding-bottom: 6px;
+          display: flex;
+          text-align: center;
+          .firstItem {
+            width: 30px;
+            margin-bottom: 20px;
+            .ItemBox {
+              margin-top: 24px;
+              .ItemBoxNum {
+                height: 30px;
+                padding-top: 4px;
+                padding-bottom: 0;
+                text-align: center;
+                font-size: 1.1rem;
+                color: grey;
+                font-weight: bold;
+              }
+              .ItemBoxImage {
+                color: grey;
+                font-size: 0.9rem;
+                font-weight: 400;
+                padding-top: 0px;
+              }
+              .box-icon {
+                height: 30px;
+                // padding: 0;
+                margin-left: 3px;
+              }
+              .home-icon {
+                padding: 0;
+                font-size: 1.1rem;
+              }
+            }
+          }
+        }
+
+        .second {
+          width: 100%;
+          h2 {
+            color: $primaryBlue;
+            font-size: 1.5rem;
+            &:hover {
+              font-size: 1.6rem;
+              transition: all 0.5s;
+            }
+          }
+          .tags {
+            padding-top: 8px;
+            padding-bottom: 10px; // border: solid 1px red;
+            display: flex;
+            align-items: center;
+            .questListBtn {
+              min-height: 13px;
+              padding: 2px 6px;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20px; // border: solid 1px red;
+              margin-right: 3px;
+              &:hover {
+                a {
+                  color: #fff;
+                }
+              }
+              a {
+                font-size: 0.8rem;
+                color: $greyfont;
+              }
+            }
+          }
+        }
+        .fourth {
+          width: 125px;
+          padding-right: 10px;
+          color: $greyfont;
+          text-align: center;
+          .username {
+            color: lighten($primaryBlue, 30%);
+            font-size: 0.95rem;
+            font-weight: bold;
+            &:hover {
+              color: lighten($primaryBlue, 50%);
+            }
+          }
+          .time {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+    .home-lower-right {
+      // display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .middle {
+    width: 100%;
+  }
+  .footer {
+    width: 100%;
+    .footerLeft {
+      font-size: 0.8rem;
+      color: ghostwhite;
+    }
+
+    .footerItem {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: ghostwhite;
+      padding-left: 20px;
+      &:hover {
+        color: $primaryYellow;
+      }
+    }
+  }
+  .complete-bot {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: $primaryPurple !important;
+  }
+  .break-bot {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: $primaryYellow !important;
+  }
+  .helpdesk-btn-open {
+    font-size: 0.8rem;
+  }
+  .header {
+    width: 100%;
+  }
+  // ************** 홈 화면 ************** //
   .homeUpper {
     height: 300px;
+    .bot {
+      display: flex;
+      background: $primaryBlue;
+      width: 100%;
+      height: 120px;
+    }
   }
   .home-lower-box {
     width: 90%;
@@ -51,10 +259,97 @@
         justify-content: center;
         padding: 10px 0px 10px 0px;
         .first {
-          display: none;
+          padding: 0;
+          padding-right: 10px;
+          width: 110px; // border: solid 1px red;
+          color: $greyfont;
+          padding-bottom: 6px;
+          display: flex;
+          text-align: center;
+          .firstItem {
+            width: 30px;
+            margin-bottom: 20px;
+            .ItemBox {
+              margin-top: 20px;
+              .ItemBoxNum {
+                height: 30px;
+                padding-top: 4px;
+                padding-bottom: 0;
+                text-align: center;
+                font-size: 0.9rem;
+                color: grey;
+                font-weight: bold;
+              }
+              .ItemBoxImage {
+                color: grey;
+                font-size: 0.7rem;
+                font-weight: 400;
+                padding-top: 0px;
+              }
+              .box-icon {
+                height: 30px;
+                margin-right: 5px;
+              }
+              .home-icon {
+                padding-top: 0;
+                padding-left: 4px;
+                font-size: 1rem;
+              }
+            }
+          }
         }
         .second {
           width: 100%;
+          h2 {
+            color: $primaryBlue;
+            font-size: 1.2rem;
+            &:hover {
+              font-size: 1.3rem;
+              transition: all 0.5s;
+            }
+          }
+          .tags {
+            padding-top: 8px;
+            padding-bottom: 10px; // border: solid 1px red;
+            display: flex;
+            align-items: center;
+            .questListBtn {
+              min-height: 13px;
+              padding: 2px 6px;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20px; // border: solid 1px red;
+              margin-right: 3px;
+              &:hover {
+                a {
+                  color: #fff;
+                }
+              }
+              a {
+                font-size: 0.7rem;
+                color: $greyfont;
+              }
+            }
+          }
+        }
+      }
+      .fourth {
+        width: 125px;
+        padding-right: 10px;
+        color: $greyfont;
+        text-align: center;
+        .username {
+          color: lighten($primaryBlue, 30%);
+          font-size: 0.85rem;
+          font-weight: bold;
+          &:hover {
+            color: lighten($primaryBlue, 50%);
+          }
+        }
+        .time {
+          font-size: 0.6rem !important;
         }
       }
     }
@@ -62,7 +357,266 @@
       display: none;
     }
   }
+  .nav-item {
+    font-size: 0.8rem;
+  }
+  // ************** 질문 리스트 화면 ************** //
+  .questionMain {
+    .questionPost {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0px 10px 0px;
+      .first {
+        padding-left: 20px;
+        padding-right: 10px;
+        width: 120px !important; // border: solid 1px red;
+        color: $greyfont;
+        padding-bottom: 6px;
+        display: flex;
+        text-align: center;
+        .firstItem {
+          width: 25px;
+          margin-bottom: 20px;
+          .ItemBox {
+            margin-top: 20px;
+            .ItemBoxNum {
+              height: 30px;
+              padding-top: 4px;
+              padding-bottom: 0;
+              text-align: center;
+              font-size: 0.9rem;
+              color: grey;
+              font-weight: bold;
+            }
+            .ItemBoxImage {
+              color: grey;
+              font-size: 0.7rem;
+              font-weight: 400;
+              padding-top: 0px;
+            }
+            .box-icon {
+              height: 30px;
+            }
+            .home-icon {
+              padding-top: 0;
+              padding-left: 4px;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .second {
+        width: 100%;
+        h2 {
+          color: $primaryBlue;
+          font-size: 1.2rem;
+          &:hover {
+            font-size: 1.3rem;
+            transition: all 0.5s;
+          }
+        }
+        .tags {
+          padding-top: 8px;
+          padding-bottom: 10px; // border: solid 1px red;
+          display: flex;
+          align-items: center;
+          .questListBtn {
+            min-height: 13px;
+            padding: 2px 6px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px; // border: solid 1px red;
+            margin-right: 3px;
+            &:hover {
+              a {
+                color: #fff;
+              }
+            }
+            a {
+              font-size: 0.7rem;
+              color: $greyfont;
+            }
+          }
+        }
+      }
+    }
+
+    .fourth {
+      width: 125px;
+      padding-right: 10px;
+      color: $greyfont;
+      text-align: center;
+      .username {
+        color: lighten($primaryBlue, 30%);
+        font-size: 0.85rem;
+        font-weight: bold;
+        &:hover {
+          color: lighten($primaryBlue, 50%);
+        }
+      }
+      .time {
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+  // ************** 질문 엔트리 화면 ************** //
+  p {
+    font-size: 1rem;
+  }
+  .res-icon {
+    font-size: 18px !important;
+  }
+  .CountBoxNum {
+    font-size: 1rem;
+  }
+  .picked {
+    .picked-item {
+      span {
+        color: $primaryPurple;
+        font-size: 0.7rem !important;
+      }
+    }
+  }
+  .add-comment {
+    font-size: 0.9rem;
+  }
+
+  .write-btn {
+    font-size: 0.7rem;
+    padding: 3px 7px;
+  }
+  .write-info {
+    font-size: 0.6rem !important;
+  }
+  .modify {
+    font-size: 0.6rem !important;
+  }
+  .delete {
+    font-size: 0.6rem !important;
+  }
+  .timeStampReplyName {
+    font-size: 0.9rem;
+  }
+  .reply-down {
+    font-size: 0.8rem;
+  }
+  .QuestionEntryMainSecondReplyTitle,
+  .QuestionEntryAnswerSecondReplyTitle {
+    font-size: 1.2rem !important;
+  }
+  .CountBoxNum {
+    margin-left: 2px !important;
+    margin-top: 3px !important;
+    font-size: 1rem !important;
+  }
+  .ItemBoxNum {
+    font-size: 1rem !important;
+  }
+  .ItemBoxImage {
+    font-size: 0.7rem !important;
+  }
+  .add-answer {
+    font-size: 1rem !important;
+  }
+  .ask-btn,
+  .sort-btn {
+    font-size: 1rem !important;
+  }
+
+  .complete-badge {
+    padding: 3px 10px;
+    background: $primaryPurple;
+    h5 {
+      font-size: 0.8rem;
+    }
+    letter-spacing: 0.2px;
+  }
+  .break-badge {
+    padding: 3px 10px;
+    background: $primaryYellow;
+    h5 {
+      font-size: 0.8rem;
+    }
+    letter-spacing: 0.2px;
+  }
+  .QuestionEntryHeaderTop {
+    .answer-title {
+      font-size: 1.2rem !important;
+    }
+  }
+  .QuestionEntryContainer {
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+      padding: 50px 0px 3px 0px;
+    }
+    .tags {
+      padding-top: 8px;
+      padding-bottom: 10px;
+      .questListBtn {
+        height: 20px;
+        padding-top: 2px;
+        margin-right: 3px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .mark_down_box {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .mark_down_input {
+      textarea {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      width: 100% !important;
+      height: 100%;
+      border: solid 1px $divider;
+      background: $primaryBlue;
+      opacity: 0.8;
+      border-radius: 3px;
+      h2 {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 0.9rem !important;
+        letter-spacing: 3px;
+        font-weight: normal;
+        color: white;
+      }
+      .mark_down_input_item {
+        width: 100%;
+        height: 300px !important;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+      }
+    }
+    .mark_down_view_wrapper {
+      display: none;
+    }
+  }
+  // .ClauseUpper {
+  //   height: auto;
+  //   .ClauseJumbotron {
+  //     height: 100px;
+  //     span {
+  //       display: block;
+  //       position: absolute;
+  //       top: 40px;
+  //     }
+  //   }
+  // }
 }
+
 @media (max-width: 1024px) {
   .Header {
     display: none;

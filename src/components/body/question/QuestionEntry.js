@@ -112,7 +112,9 @@ const QuestionEntry = ({
         </div>
         <div className="QuestionEntryAnswerSecondReplyAdd">
           <div className="form-group QuestionEntryAnswerSecondReplyAddInput">
-            <label htmlFor="exampleFormControlTextarea1">add a comment</label>
+            <label className="add-comment" htmlFor="exampleFormControlTextarea1">
+              add a comment
+            </label>
             <textarea
               className="form-control questionReplyBody"
               id="exampleFormControlTextarea1"
@@ -143,7 +145,7 @@ const QuestionEntry = ({
     </div>
     <div className="QuestionEntryHeader">
       <div className="QuestionEntryHeaderTop">
-        <h1>답변 {answers.length}</h1>
+        <h1 className="answer-title">답변 {answers.length}</h1>
       </div>
     </div>
     <div className="QuestionEntryAnswer">

@@ -3,7 +3,7 @@
 .footer {
   width: 80%;
   margin: 0 auto;
-  height: 20rem;
+  height: 20vw;
   background: $primaryBlue;
   opacity: 0.8;
   display: flex;
@@ -23,9 +23,11 @@
   }
 }
 .footerLeft {
+  font-size: 1rem;
   color: ghostwhite;
 }
 .footerItem {
+  font-size: 1rem;
   text-decoration: none;
   color: ghostwhite;
   padding-left: 20px;

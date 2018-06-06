@@ -11,7 +11,7 @@ const LikeCount = ({ count, raiseLikeCount, isLoggedIn }) => (
           raiseLikeCount();
         }}
       >
-        <Icon name="heart" size="big" />
+        <Icon name="heart" size="big" className="res-icon" />
         <div className="CountBoxNum">{count}</div>
       </div>
     </div>

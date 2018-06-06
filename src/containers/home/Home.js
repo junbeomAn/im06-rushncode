@@ -133,7 +133,7 @@ export class Home extends Component {
             )}
             <div className="home-lower-right">
               <div className="home-lower-right-main">
-                <h4>교육, 강의 플랫폼</h4>
+                <h4>교육 플랫폼</h4>
                 <hr />
                 <a
                   href="https://codestates.com/"

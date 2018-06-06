@@ -24,29 +24,28 @@
     padding: 10px 10px 0px 30px;
     .first {
       padding-right: 10px;
-      width: 15vw; // border: solid 1px red;
+      width: 180px; // border: solid 1px red;
       color: $greyfont;
       padding-bottom: 6px;
       display: flex;
       text-align: center;
       .firstItem {
-        width: 3vw;
+        width: 50px;
         margin-bottom: 20px;
         .ItemBox {
-          margin-top: 2vw;
+          margin-top: 20px;
           .ItemBoxNum {
             height: 30px;
             padding-top: 4px;
-            padding-right: 3px;
             padding-bottom: 0;
             text-align: center;            
-            font-size: 1.2vw;
+            font-size: 1.2rem;
             color: grey;
             font-weight: bold;
           }
           .ItemBoxImage {
             color: grey;
-            font-size: 1vw;
+            font-size: 1rem;
             font-weight: 400;
             padding-top: 0px;
           }
@@ -57,7 +56,7 @@
           .home-icon {
             padding-top: 0;
             padding-left: 4px;
-            font-size: 1.5vw;
+            font-size: 1.5rem;
           }
         }
       }
@@ -69,9 +68,9 @@
       border-bottom: 1px solid $divider;
       h2 {
         color: $primaryBlue;
-        font-size: 1.7vw;
+        font-size: 1.7rem;
         &:hover {
-          font-size: 1.8vw;
+          font-size: 1.8rem;
           transition: all 0.5s;
         }
       }
@@ -86,12 +85,12 @@
         align-items: center;
         .questListBtn {
           min-height: 16px;
-          padding: 0.2vw 0.4vw;
+          padding: 4px 8px;
           margin: 0;
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 1.5vw;
+          height: 25px;
           // border: solid 1px red;
           
           margin-right: 3px;
@@ -101,7 +100,7 @@
             }
           }
           a {
-            font-size: 0.8vw;
+            font-size: 0.9rem;
             color: $greyfont;
           }
         }
@@ -113,12 +112,15 @@
       color: $greyfont;
       text-align: center;
       .username {
-        color: $primaryBlue;
-        font-size: 1.2vw;
+        color: lighten($primaryBlue, 30%);
+        font-size: 1.05rem;
         font-weight: bold;
+        &:hover {
+          color: lighten($primaryBlue, 50%);
+        }
       }
       .time {
-        font-size: 1vw;
+        font-size: 0.9rem;
       }
     }
   }

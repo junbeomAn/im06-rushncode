@@ -16,7 +16,7 @@ const Answer = ({
 }) => (
   <div className="QuestionEntryAnswerSecondAnswerBox">
     <div className="QuestionEntryAnswerSecondAnswerEntry">
-      {body}
+      <p>{body}</p>
       <div className="write-info">
         {moment(time)
           .startOf()
@@ -48,7 +48,9 @@ const Answer = ({
       </div>
       <div className="QuestionEntryAnswerSecondReplyAdd">
         <div className="form-group QuestionEntryAnswerSecondReplyAddInput">
-          <label htmlFor="exampleFormControlTextarea1">add a comment</label>
+          <label className="add-comment" htmlFor="exampleFormControlTextarea1">
+            add a comment
+          </label>
           <textarea
             className={`form-control answerReplyBody${aID}`}
             id="exampleFormControlTextarea1"

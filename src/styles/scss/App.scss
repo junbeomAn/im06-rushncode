@@ -79,7 +79,7 @@
 }
 
 .complete-bot {
-  font-size: 1vw;
+  font-size: 1rem;
   font-weight: bold;
   color: $primaryPurple !important;
 }
@@ -96,7 +96,7 @@
 }
 
 .break-bot {
-  font-size: 1vw;
+  font-size: 1rem;
   font-weight: bold;
   color: $primaryYellow !important;
 }
@@ -112,6 +112,7 @@
 }
 
 .helpdesk-btn-open {
+  font-size: 1rem;
   margin-left: 10px;
   padding: 0px;
   padding-left: 10px;
@@ -125,16 +126,18 @@
   }
 }
 .helpdesk-btn-close {
-  margin: 0 auto;
+  margin: auto;
   padding: 5px 10px;
   border: solid 3px rgba($color: $primaryBlue, $alpha: 0.8);
   border-radius: 5px;
+  font-size: 1vw;
   font-weight: 900;
   display: block;
   text-decoration: none;
   background: none;
   color: rgba($color: $primaryBlue, $alpha: 0.8);
 }
+
 .helpdesk-container {
   width: 100%;
   height: 100%;
@@ -144,21 +147,28 @@
     text-align: center;
     letter-spacing: 0.5rem;
     color: rgba($color: $primaryBlue, $alpha: 0.8);
+    h1 {
+      font-size: 2vw;
+    }
   }
   .helpdesk-body {
-    margin-top: 35px;
+    margin-top: 2vw;
     text-align: center;
     color: rgba($color: $primaryBlue, $alpha: 0.8);
     .helpdesk-body-item {
-      margin-bottom: 40px;
+      margin-bottom: 1vw;
+      h3 {
+        margin-top: 0.3vw;
+        font-size: 1.5vw;
+      }
     }
     .helpdesk-body-word {
-      margin-top: 40px;
-      margin-bottom: 30px;
-    }
-    h3 {
-      margin-top: 10px;
-      letter-spacing: 0.1rem;
+      margin-top: 3vw;
+      margin-bottom: 1vw;
+      h3 {
+        font-size: 1.2vw;
+        letter-spacing: 0.1rem;
+      }
     }
   }
 }
@@ -168,8 +178,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 12px;
-  width: 700px;
-  height: 400px;
+  width: 40vw;
+  height: 25vw;
   background: ghostwhite;
 }
 
@@ -188,7 +198,7 @@
   }
 }
 
-.no-result-container { 
+.no-result-container {
   min-height: 620px;
   background-color: rgb(244, 244, 244);
   .emptybox {
@@ -199,11 +209,11 @@
     .no-result-text {
       position: relative;
       text-align: center;
-      top: 120px;  
+      top: 120px;
       font-size: 2.5rem;
       padding-bottom: 15px;
       border-bottom: 2px solid lightgrey;
-      // border: solid 1px red;     
+      // border: solid 1px red;
       font-weight: bolder;
       opacity: 0.4;
       color: $greyfont;
@@ -226,7 +236,7 @@
       left: 60%;
       top: 350px;
       // margin-top: 150px;
-      width: 220px;  
+      width: 220px;
       .question-in-korean {
         background-color: $primaryBlue;
         color: ghostwhite;

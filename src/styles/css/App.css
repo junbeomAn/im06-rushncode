@@ -59,7 +59,7 @@
   color: #a83fe4 !important; }
 
 .complete-bot {
-  font-size: 1vw;
+  font-size: 1rem;
   font-weight: bold;
   color: #a83fe4 !important; }
 
@@ -72,7 +72,7 @@
   color: #e8d048 !important; }
 
 .break-bot {
-  font-size: 1vw;
+  font-size: 1rem;
   font-weight: bold;
   color: #e8d048 !important; }
 
@@ -85,6 +85,7 @@
   color: #777; }
 
 .helpdesk-btn-open {
+  font-size: 1rem;
   margin-left: 10px;
   padding: 0px;
   padding-left: 10px;
@@ -97,10 +98,11 @@
     color: #e8d048; }
 
 .helpdesk-btn-close {
-  margin: 0 auto;
+  margin: auto;
   padding: 5px 10px;
   border: solid 3px rgba(11, 27, 51, 0.8);
   border-radius: 5px;
+  font-size: 1vw;
   font-weight: 900;
   display: block;
   text-decoration: none;
@@ -116,18 +118,23 @@
     text-align: center;
     letter-spacing: 0.5rem;
     color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-title h1 {
+      font-size: 2vw; }
   .helpdesk-container .helpdesk-body {
-    margin-top: 35px;
+    margin-top: 2vw;
     text-align: center;
     color: rgba(11, 27, 51, 0.8); }
     .helpdesk-container .helpdesk-body .helpdesk-body-item {
-      margin-bottom: 40px; }
+      margin-bottom: 1vw; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-item h3 {
+        margin-top: 0.3vw;
+        font-size: 1.5vw; }
     .helpdesk-container .helpdesk-body .helpdesk-body-word {
-      margin-top: 40px;
-      margin-bottom: 30px; }
-    .helpdesk-container .helpdesk-body h3 {
-      margin-top: 10px;
-      letter-spacing: 0.1rem; }
+      margin-top: 3vw;
+      margin-bottom: 1vw; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-word h3 {
+        font-size: 1.2vw;
+        letter-spacing: 0.1rem; }
 
 .helpdesk-modal {
   position: fixed;
@@ -135,8 +142,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 12px;
-  width: 700px;
-  height: 400px;
+  width: 40vw;
+  height: 25vw;
   background: ghostwhite; }
 
 .showcase {

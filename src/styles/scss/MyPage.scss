@@ -24,7 +24,7 @@
       display: flex;
       .upload-btn-wrapper {
         position: absolute;
-        top: 23.0rem;
+        top: 23rem;
         z-index: 300;
         overflow: hidden;
         display: inline-block;
@@ -55,7 +55,7 @@
         height: 230px;
         z-index: 2;
         img {
-          height: 100%;          
+          height: 100%;
         }
       }
       .first-userinfo {
@@ -210,26 +210,29 @@
             text-align: center;
             border: none;
             .firstItem {
-              width: 100px;
+              width: 50px;
+
               .ItemBox {
-                .ItemBoxImage {
-                  color: grey;
-                  padding-top: 5px;
-                  padding-bottom: 5px;
-                  font-size: 1rem;
-                  font-weight: 400;
-                }
                 .ItemBoxNum {
-                  padding-right: 3px;
+                  padding-top: 4px;
+                  height: 30px;
                   text-align: center;
-                  font-weight: bold;
                   font-size: 1.2rem;
                   color: grey;
                 }
-              }
-              .ItemBox2 {
-                .ItemBox2Image {
-                  margin-top: 1px;
+                .ItemBoxImage {
+                  color: grey;
+                  font-size: 1rem;
+                  font-weight: 400;
+                  padding-top: 0px;
+                }
+                .box-icon {
+                  height: 30px;
+                }
+                .home-icon {
+                  padding-top: 0;
+                  padding-left: 4px;
+                  font-size: 1.5vw;
                 }
               }
             }
@@ -278,7 +281,7 @@
             color: $greyfont;
             text-align: center;
             .username {
-              color: $primaryBlue;
+              color: lighten($primaryBlue, 30%);
               font-size: 15px;
               font-weight: bold;
             }
