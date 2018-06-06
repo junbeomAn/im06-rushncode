@@ -61,7 +61,7 @@
           letter-spacing: 1.1px; }
     .mypage-container .mypage-inner-container .second {
       border-bottom: solid 2px #e4e6e8;
-      height: 250px;
+      height: 200px;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between; }
@@ -75,11 +75,24 @@
           font-weight: 600;
           font-size: 1.1rem;
           letter-spacing: 1.1px; }
-        .mypage-container .mypage-inner-container .second .second-one .second-one-score {
-          margin-bottom: 15px;
-          font-weight: 600;
-          font-size: 1.8rem;
-          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .second .second-one .second-one-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px; }
+          .mypage-container .mypage-inner-container .second .second-one .second-one-box .second-one-box-inner {
+            width: 100px;
+            text-align: center; }
+            .mypage-container .mypage-inner-container .second .second-one .second-one-box .second-one-box-inner .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px; }
+              .mypage-container .mypage-inner-container .second .second-one .second-one-box .second-one-box-inner .count .blue {
+                color: blue;
+                opacity: 0.7; }
+              .mypage-container .mypage-inner-container .second .second-one .second-one-box .second-one-box-inner .count .red {
+                color: red;
+                opacity: 0.7; }
       .mypage-container .mypage-inner-container .second .second-two {
         width: 32%;
         padding: 15px 20px;

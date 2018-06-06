@@ -1,3 +1,9 @@
+@charset "UTF-8";
+/* 
+#===================================================================# 
+|                         1024px [ 해상도 분기 ]                       | 
+#===================================================================#
+*/
 @media (max-width: 1024px) {
   .middle {
     width: 100%; }
@@ -131,6 +137,11 @@
               color: #6092dd; }
           .home-lower .home-lower-left .questionPost .fourth .time {
             font-size: 0.85rem; } }
+/* 
+#===================================================================# 
+|                         768px [ 해상도 분기 ]                        | 
+#===================================================================#
+*/
 @media (max-width: 768px) {
   .middle {
     width: 100%; }
@@ -164,6 +175,11 @@
   .header {
     width: 100%; }
 
+  /* 
+  #===================================================================# 
+  |                              홈 화면                                | 
+  #===================================================================#
+  */
   .homeUpper {
     height: 300px; }
     .homeUpper .bot {
@@ -281,6 +297,11 @@
   .nav-item {
     font-size: 0.8rem; }
 
+  /* 
+  #===================================================================# 
+  |                            질문 리스트 화면                           | 
+  #===================================================================#
+  */
   .questionMain .questionPost {
     display: flex;
     flex-direction: row;
@@ -353,13 +374,18 @@
     text-align: center; }
     .questionMain .fourth .username {
       color: #265eb1;
-      font-size: 0.85rem;
+      font-size: 0.85rem !important;
       font-weight: bold; }
       .questionMain .fourth .username:hover {
         color: #6092dd; }
     .questionMain .fourth .time {
       font-size: 0.6rem !important; }
 
+  /* 
+  #===================================================================# 
+  |                            질문 엔트리 화면                           | 
+  #===================================================================#
+  */
   p {
     font-size: 1rem; }
 
@@ -432,7 +458,7 @@
       font-size: 0.8rem; }
 
   .QuestionEntryHeaderTop .answer-title {
-    font-size: 1.2rem !important; }
+    font-size: 1.4rem !important; }
 
   .QuestionEntryContainer h1 {
     font-size: 1.8rem;
@@ -479,7 +505,193 @@
         font-size: 0.8rem;
         padding: 10px 15px; }
     .mark_down_box .mark_down_view_wrapper {
-      display: none; } }
+      display: none; }
+
+  /* 
+  #===================================================================# 
+  |                            질문 롸이팅 화면                           | 
+  #===================================================================#
+  */
+  .ClauseUpper h1 {
+    font-size: 1.8rem; }
+
+  .write-title {
+    font-size: 1.1rem; }
+
+  .form-check-input {
+    width: 10px; }
+
+  .QuestionWriteTagTitle,
+  .QuestionWriteTagInput {
+    font-size: 0.8rem !important; }
+
+  .inputTitle,
+  .inputReward {
+    font-size: 0.8rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                                 태그                               | 
+  #===================================================================#
+  */
+  .tag-container .tag-content .wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-gap: 30px;
+    background: ghostwhite;
+    color: #444;
+    padding-bottom: 80px; }
+
+  .tag-container .tag-search-bar {
+    font-size: 1rem !important;
+    height: 40px; }
+    .tag-container .tag-search-bar input::placeholder {
+      font-size: 1rem !important; }
+  .tag-container h2 {
+    font-size: 1.2rem !important; }
+  .tag-container .box {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 20px !important;
+    width: 90px;
+    height: auto; }
+    .tag-container .box span {
+      font-size: 1rem; }
+
+  /* 
+  #===================================================================# 
+  |                            이용약관, 정보보호                         | 
+  #===================================================================#
+  */
+  .clause-content {
+    font-size: 0.8rem; }
+    .clause-content h2 {
+      font-size: 1.2rem !important; }
+    .clause-content h3 {
+      font-size: 1rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                                 랭크                               | 
+  #===================================================================#
+  */
+  .rankContainer .label {
+    font-size: 0.7rem !important; }
+  .rankContainer .rankUpper {
+    height: 60px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center; }
+    .rankContainer .rankUpper .user-search-bar {
+      width: 90%;
+      margin: 0 auto;
+      height: 40px;
+      font-size: 1rem !important; }
+      .rankContainer .rankUpper .user-search-bar input::placeholder {
+        font-size: 1rem !important; }
+  .rankContainer .rank-num {
+    font-size: 1.7rem !important;
+    width: 30px;
+    height: 30px;
+    margin-right: 14px !important; }
+  .rankContainer img {
+    width: 40px !important;
+    height: 40px !important; }
+  .rankContainer .rank-name {
+    font-size: 1.2rem !important; }
+  .rankContainer .total-reward span {
+    font-size: 1rem !important; }
+  .rankContainer .total-reward:hover span {
+    display: none; }
+  .rankContainer .total-reward:hover:before {
+    content: "누적 이더리움";
+    font-size: 0.9rem; }
+  .rankContainer .rank-info-bot {
+    margin-top: 10px;
+    font-size: 0.8rem; }
+
+  /* 
+  #===================================================================# 
+  |                               마이페이지                             | 
+  #===================================================================#
+  */
+  .count {
+    font-size: 1.1rem !important; }
+
+  .word {
+    font-size: 0.9rem !important; }
+
+  .mypage-container {
+    padding: 100px 0px 0px 0px; }
+    .mypage-container .mypage-inner-container {
+      padding: 00px 0px;
+      width: 100%; }
+      .mypage-container .mypage-inner-container .first {
+        height: auto; }
+        .mypage-container .mypage-inner-container .first .upload-btn-wrapper,
+        .mypage-container .mypage-inner-container .first .btn,
+        .mypage-container .mypage-inner-container .first .upload-btn-wrapper input[type="file"] {
+          display: none; }
+        .mypage-container .mypage-inner-container .first .first-image {
+          min-width: 0;
+          width: 100px;
+          height: 100px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .username {
+          font-size: 2rem;
+          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .email {
+          padding-left: 20px;
+          margin-top: 30px;
+          font-size: 1rem;
+          letter-spacing: 1.1px; }
+      .mypage-container .mypage-inner-container .second {
+        height: auto;
+        display: flex;
+        flex-direction: column; }
+        .mypage-container .mypage-inner-container .second .second-one {
+          width: 100%; }
+          .mypage-container .mypage-inner-container .second .second-one .second-one-title {
+            font-size: 1.1rem; }
+        .mypage-container .mypage-inner-container .second .second-two {
+          width: 100%; }
+          .mypage-container .mypage-inner-container .second .second-two .second-two-title {
+            font-size: 1.1rem; }
+        .mypage-container .mypage-inner-container .second .second-three {
+          width: 100%; }
+          .mypage-container .mypage-inner-container .second .second-three .second-three-title {
+            font-size: 1.1rem; }
+      .mypage-container .mypage-inner-container .third .first {
+        display: none !important; }
+      .mypage-container .mypage-inner-container .third .second {
+        width: 100% !important; }
+        .mypage-container .mypage-inner-container .third .second h2 {
+          color: #0b1b33;
+          font-size: 1.2rem; }
+          .mypage-container .mypage-inner-container .third .second h2:hover {
+            font-size: 1.3rem;
+            transition: all 0.5s; }
+        .mypage-container .mypage-inner-container .third .second .tags {
+          padding-top: 8px;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: center; }
+          .mypage-container .mypage-inner-container .third .second .tags .questListBtn {
+            padding: 2px 6px;
+            height: 20px !important;
+            padding-top: 2px;
+            margin-right: 3px;
+            font-size: 0.8rem; }
+            .mypage-container .mypage-inner-container .third .second .tags .questListBtn:hover a {
+              color: #fff; }
+            .mypage-container .mypage-inner-container .third .second .tags .questListBtn a {
+              font-size: 0.7rem;
+              color: #777; }
+      .mypage-container .mypage-inner-container .third .fourth .username {
+        font-size: 0.85rem !important; }
+      .mypage-container .mypage-inner-container .third .fourth .time {
+        font-size: 0.6rem !important; } }
 @media (max-width: 1024px) {
   .Header {
     display: none; } }
