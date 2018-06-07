@@ -59,6 +59,11 @@
           margin-top: 30px;
           font-size: 1.5rem;
           letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo .status {
+          padding-left: 20px;
+          margin-top: 30px;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px; }
     .mypage-container .mypage-inner-container .second {
       border-bottom: solid 2px #e4e6e8;
       height: 200px;

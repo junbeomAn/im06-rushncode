@@ -83,6 +83,9 @@ export class MyPage extends Component {
               <div className="first-userinfo">
                 <div className="username">{user.username}</div>
                 <div className="email">{user.email}</div>
+                <div className="status">
+                  <p>안녕하세요 저는 소녀 전한길 입니다! 싸랑합니다 여러분</p>
+                </div>
               </div>
             </div>
             <div className="second">

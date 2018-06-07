@@ -432,6 +432,9 @@
 
   .ItemBoxNum {
     font-size: 1rem !important; }
+    .ItemBoxNum img {
+      width: 25px;
+      height: 25px; }
 
   .ItemBoxImage {
     font-size: 0.7rem !important; }
@@ -653,15 +656,15 @@
         .mypage-container .mypage-inner-container .second .second-one {
           width: 100%; }
           .mypage-container .mypage-inner-container .second .second-one .second-one-title {
-            font-size: 1.1rem; }
+            font-size: 1.2rem; }
         .mypage-container .mypage-inner-container .second .second-two {
           width: 100%; }
           .mypage-container .mypage-inner-container .second .second-two .second-two-title {
-            font-size: 1.1rem; }
+            font-size: 1.2rem; }
         .mypage-container .mypage-inner-container .second .second-three {
           width: 100%; }
           .mypage-container .mypage-inner-container .second .second-three .second-three-title {
-            font-size: 1.1rem; }
+            font-size: 1.2rem; }
       .mypage-container .mypage-inner-container .third .first {
         display: none !important; }
       .mypage-container .mypage-inner-container .third .second {
@@ -691,7 +694,59 @@
       .mypage-container .mypage-inner-container .third .fourth .username {
         font-size: 0.85rem !important; }
       .mypage-container .mypage-inner-container .third .fourth .time {
-        font-size: 0.6rem !important; } }
+        font-size: 0.6rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                               헬프데스크                             | 
+  #===================================================================#
+*/
+  .helpdesk-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    width: 340px;
+    height: 230px;
+    background: ghostwhite; }
+
+  .helpdesk-container .helpdesk-title {
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-title h1 {
+      font-size: 1rem !important; }
+  .helpdesk-container .helpdesk-body {
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-body .helpdesk-body-item {
+      margin-bottom: 10px; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-item h3 {
+        margin-top: 5px;
+        font-size: 0.8rem; }
+    .helpdesk-container .helpdesk-body .helpdesk-body-word {
+      margin-top: 5px;
+      margin-bottom: 20px; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-word h3 {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.1rem; }
+  .helpdesk-container .helpdesk-btn-close {
+    margin: auto;
+    padding: 4px 8px;
+    border: solid 2px rgba(11, 27, 51, 0.8);
+    border-radius: 5px;
+    font-size: 0.6rem;
+    font-weight: 900;
+    display: block;
+    text-decoration: none;
+    background: none;
+    color: rgba(11, 27, 51, 0.8); }
+
+  .questionPagenation {
+    font-size: 0.5rem !important; } }
 @media (max-width: 1024px) {
   .Header {
     display: none; } }

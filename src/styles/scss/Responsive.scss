@@ -530,6 +530,10 @@
   }
   .ItemBoxNum {
     font-size: 1rem !important;
+    img {
+      width: 25px;
+      height: 25px;
+    }
   }
   .ItemBoxImage {
     font-size: 0.7rem !important;
@@ -800,19 +804,19 @@
         .second-one {
           width: 100%;
           .second-one-title {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
           }
         }
         .second-two {
           width: 100%;
           .second-two-title {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
           }
         }
         .second-three {
           width: 100%;
           .second-three-title {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
           }
         }
       }
@@ -864,8 +868,69 @@
       }
     }
   }
-}
+  /* 
+  #===================================================================# 
+  |                               헬프데스크                             | 
+  #===================================================================#
+*/
+  .helpdesk-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    width: 340px;
+    height: 230px;
+    background: ghostwhite;
+  }
 
+  .helpdesk-container {
+    .helpdesk-title {
+      margin-top: 20px;
+      text-align: center;
+      letter-spacing: 0.1rem;
+      color: rgba($color: $primaryBlue, $alpha: 0.8);
+      h1 {
+        font-size: 1rem !important;
+      }
+    }
+    .helpdesk-body {
+      margin-top: 10px;
+      text-align: center;
+      color: rgba($color: $primaryBlue, $alpha: 0.8);
+      .helpdesk-body-item {
+        margin-bottom: 10px;
+        h3 {
+          margin-top: 5px;
+          font-size: 0.8rem;
+        }
+      }
+      .helpdesk-body-word {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        h3 {
+          font-size: 0.75rem !important;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+    .helpdesk-btn-close {
+      margin: auto;
+      padding: 4px 8px;
+      border: solid 2px rgba($color: $primaryBlue, $alpha: 0.8);
+      border-radius: 5px;
+      font-size: 0.6rem;
+      font-weight: 900;
+      display: block;
+      text-decoration: none;
+      background: none;
+      color: rgba($color: $primaryBlue, $alpha: 0.8);
+    }
+  }
+  .questionPagenation {
+    font-size: 0.5rem !important;
+  }
+}
 @media (max-width: 1024px) {
   .Header {
     display: none;
