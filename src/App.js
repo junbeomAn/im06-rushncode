@@ -44,7 +44,7 @@ class App extends Component {
     let sidebarOpenBtn = !sidebarOpen ? 'sidebar-btn active' : 'sidebar-btn inactive';
     const currLocation = window.location.href.split('/')[3];
 
-    let sidebarHeader = !(currLocation === 'auth' || currLocation === '') ? 'sidebar-header-title' : 'sidebar-header-title title-inverted';
+    const sidebarHeader = !(currLocation === 'auth' || currLocation === '') ? 'sidebar-header-title' : 'sidebar-header-title title-inverted';
     sidebarOpenBtn = !(currLocation === 'auth' || currLocation === '')
       ? `${sidebarOpenBtn} inverted`
       : sidebarOpenBtn;
