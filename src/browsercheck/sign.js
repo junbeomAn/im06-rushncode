@@ -24,7 +24,7 @@ class BrowserCheckSign extends Component {
           className="brwsrCheck"
         >
           <Message.Header>구글 크롬 브라우저가 사이트에 가장 적합합니다.</Message.Header>
-          <p>현재 {BrowserDetect()} 브라우저로 접속중입니다. <a href="https://www.google.com/chrome/" target="_blank" without="true" rel="noopener noreferrer"className="dwnld-chrome">크롬 브라우저 다운하러 가기</a></p>
+          <p className="browser-detect-detail-msg">현재 {BrowserDetect()} 브라우저로 접속중입니다. <a href="https://www.google.com/chrome/" target="_blank" without="true" rel="noopener noreferrer"className="dwnld-chrome">크롬 브라우저 다운하러 가기</a></p>
         </Message>
       );
     } else {

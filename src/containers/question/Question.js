@@ -6,6 +6,7 @@ import QuestionEntryContainer from './QuestionEntryContainer';
 import QuestionWriteContainer from './QuestionWriteContainer';
 import QuestionModifyContainer from './QuestionModifyContainer';
 import { Verify } from './../../redux/actions/verifyAction';
+import { isChrome } from '../../browsercheck/index';
 
 class Question extends Component {
   constructor(props) {
@@ -159,8 +160,8 @@ class Question extends Component {
         type: 'function',
       },
     ];
-    const MyContract = window.web3.eth.contract(ABI);
-    this.state = { ContractInstance: MyContract.at('0x005b032d947dc8964ff0469375d785da395d310b') };
+    const MyContract = isChrome ? window.web3.eth.contract(ABI) : '';
+    this.state = isChrome ? { ContractInstance: MyContract.at('0x005b032d947dc8964ff0469375d785da395d310b') } : '';
   }
 
   componentDidMount() {
