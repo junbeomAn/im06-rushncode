@@ -23,6 +23,7 @@ const QuestionAnswer = ({
   deleteChAnswer,
   fetchModifyAnswer,
   isLoggedIn,
+  breaked,
 }) => (
   // console.log('@@@@@', aID),
   <div className="QuestionEntryAnswerEntry">
@@ -58,7 +59,7 @@ const QuestionAnswer = ({
               <span>채택됨</span>
             </div>
           </div>
-        ) : (
+        ) : breaked ? null : (
           <div className="ItemBox">
             {myID !== questionID ? null : (
               <div className="ItemBoxNum">
