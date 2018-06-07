@@ -19,3 +19,5 @@ export const isEdge = process.browser && (!isIE && !!window.StyleMedia);
 
 // Chrome 1+
 export const isChrome = process.browser && (!!window.chrome && !!window.chrome.webstore);
+
+export const isMobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;

@@ -3,6 +3,7 @@ import { Divider, Button, Icon, Popup } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 import { URL } from '../../config';
+import { isChrome } from '../../browsercheck';
 
 const SignUp = ({ keyPress, signUp, getMetaAddress, metaAddress }) => (
   <div className="authContainer">
@@ -25,6 +26,7 @@ const SignUp = ({ keyPress, signUp, getMetaAddress, metaAddress }) => (
         </a>
       </div>
       <Divider horizontal>또는</Divider>
+      {isChrome &&
       <Popup
         trigger={
           <button type="button" onClick={getMetaAddress} style={{ fontWeight: 'bolder' }} className="btn btn-info authBtn">
@@ -37,7 +39,7 @@ const SignUp = ({ keyPress, signUp, getMetaAddress, metaAddress }) => (
         wide
       >
         {metaAddress || '메타마스크에 연결중입니다. 다시 한번 시도하시거나, 메타마스크 로그인을 확인해주세요.'}&nbsp;&nbsp;{metaAddress && <Icon style={{ display: 'inline' }} name="checkmark" color="green" />}
-      </Popup>
+      </Popup>}
       <div className="authFormContainer">
         <div className="form-group">
           <div className="input-group mb-3">

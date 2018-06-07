@@ -5,6 +5,7 @@ import { Icon } from 'semantic-ui-react';
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
+
 import { NoMatch, Clause, Loadingpage } from './components';
 import {
   HeaderContainer,
@@ -16,9 +17,12 @@ import {
   TagContainer,
   RankContainer,
   Sidebar,
+  QuestionListContainer,
 } from './containers';
-import QuestionListContainer from './containers/question/QuestionListContainer';
+// import QuestionListContainer from './containers/question/QuestionListContainer';
 import './styles/styleIndex';
+import BrowserCheckSign from './browsercheck/sign';
+import { isChrome, isMobile } from './browsercheck';
 
 class App extends Component {
   state = {
@@ -60,6 +64,7 @@ class App extends Component {
               <Icon size="big" name="sidebar" className={sidebarOpenBtn} onClick={this.handleMenuButtonClick} />
             </div>
             <Sidebar sidebarClassName={sidebarClassName} closeMenuButtonClick={this.closeMenuButtonClick} sidebarCloseBtn={sidebarCloseBtn} sidebarOpen={sidebarOpen} />
+            {(!isChrome && !isMobile) && <BrowserCheckSign />}
             <div className="middle" onClick={this.closeMenuButtonClick}>
               <Switch>
                 <Route exact path="/" component={Home} />

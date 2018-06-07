@@ -15,7 +15,7 @@ class RankContainer extends Component {
       .get(`${URL_API}/api/user/rank`)
       .then((res) => {
         console.log(res);
-        setTimeout(() => { this.setUserData(res.data.users); }, 1000);
+        this.setUserData(res.data.users);
       });
   }
 
