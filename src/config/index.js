@@ -8,7 +8,7 @@
 //     ? 'http://ec2-13-209-50-115.ap-northeast-2.compute.amazonaws.com:3001'
 //     : 'http://localhost:3001';
 
-// export const URL = 'https://rushncode.com';
-// export const URL_API = 'https://rushncode.com';
-export const URL = 'http://localhost:3000';
-export const URL_API = 'http://localhost:3001';
+export const URL = 'https://rushncode.com';
+export const URL_API = 'https://rushncode.com';
+// export const URL = 'http://localhost:3000';
+// export const URL_API = 'http://localhost:3001';

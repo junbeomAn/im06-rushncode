@@ -158,6 +158,7 @@ const QuestionEntry = ({
           userID={answer.userID}
           isLoggedIn={isLoggedIn}
           picked={answer.picked}
+          breaked={breaked}
           chAnswers={answer.chAnswers}
           count={answer.aGood}
           body={answer.aBody}
