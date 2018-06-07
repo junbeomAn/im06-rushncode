@@ -663,6 +663,7 @@
     padding-bottom: 80px;
   }
   .tag-container {
+    min-height: 900px;
     .tag-search-bar {
       font-size: 1rem !important;
       height: 40px;
@@ -773,7 +774,7 @@
       padding: 00px 0px;
       width: 100%;
       .first {
-        height: auto;
+        height: 130px;
         .upload-btn-wrapper,
         .btn,
         .upload-btn-wrapper input[type="file"] {
@@ -785,15 +786,58 @@
           height: 100px;
         }
         .first-userinfo {
+          width: 500px;
+          margin-left: 90px;
           .username {
-            font-size: 2rem;
+            font-size: 1.2rem;
             letter-spacing: 1.1px;
+            margin: 0;
+            display: inline;
           }
           .email {
             padding-left: 20px;
-            margin-top: 30px;
-            font-size: 1rem;
+            margin-top: 3px;
+            font-size: 0.8rem;
             letter-spacing: 1.1px;
+            display: inline;
+          }
+          .status {
+            p {
+              font-size: 0.7rem;
+            }
+            padding-left: 0px;
+            margin-top: 10px;
+            letter-spacing: 1.1px;
+          }
+          .edit-mod-btn {
+            font-size: 0.5rem !important;
+          }
+
+          .edit-status {
+            display: block;
+            width: 100%;
+            min-height: 25px !important;
+            height: 1vw !important;
+          }
+
+          .edit-submit-btn {
+            display: inline;
+            margin-top: 10px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important;
+          }
+
+          .edit-cancel-btn {
+            background: crimson;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important;
           }
         }
       }

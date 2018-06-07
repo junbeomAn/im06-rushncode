@@ -15,7 +15,7 @@
 
   .sidebar-header {
     position: absolute;
-    height: 13%;
+    height: 6%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -96,14 +96,14 @@
 @media (max-width: 768px) {
   .sidebar-header {
     position: absolute;
-    height: 8%;
+    height: 5%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between; }
     .sidebar-header i.sidebar-btn {
       align-self: center;
-      font-size: 1.3em;
+      font-size: 1.15em;
       z-index: 100;
       padding-right: 2%;
       cursor: pointer; }
@@ -116,7 +116,7 @@
       text-decoration: none;
       color: ghostwhite;
       padding-left: 10px;
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       font-weight: 900;
       height: 15px;
       letter-spacing: 0.05rem; }
@@ -145,13 +145,15 @@
       font-weight: bold;
       border-bottom: 0.5px solid ghostwhite; }
       .home-side-menu .side-upper .sidebar-go-home {
-        padding-left: 7px;
+        padding-left: 11px;
+        font-size: 1rem;
         text-decoration: none;
         text-decoration-style: none;
         color: ghostwhite; }
       .home-side-menu .side-upper i.sidebar-close {
         color: ghostwhite !important;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding-right: 28px;
         z-index: 200 !important; }
     .home-side-menu .side-item {
       width: 100%;

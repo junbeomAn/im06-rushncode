@@ -11,7 +11,12 @@ import { Verify } from '../../redux/actions/verifyAction';
 import { URL_API } from '../../config';
 
 export class MyPage extends Component {
-  state = { first: true, selectedFile: '' };
+  state = {
+    first: true,
+    selectedFile: '',
+    isEdit: false,
+    status: '',
+  };
 
   componentWillMount() {
     // myID 가져오는 용도
@@ -47,11 +52,25 @@ export class MyPage extends Component {
       .then(res => window.location.reload());
   };
 
+  updateStatus = () => {
+    const { userID } = this.props.match.params;
+    const data = {
+      status: this.state.status,
+    };
+    const config = {
+      headers: {
+        'x-access-token': localStorage.getItem('token'),
+      },
+    };
+    axios
+      .post(`${URL_API}/api/mypage/updatestatus/${userID}`, data, config)
+      .then(res => window.location.reload());
+  };
+
   /* eslint no-nested-ternary: 0 */
   render() {
     const { user, loading, myID } = this.props;
-    console.log('props : ', user);
-    const { first } = this.state;
+    const { first, isEdit } = this.state;
     const { userID } = this.props.match.params;
     return (
       <div className="mypage-container">
@@ -81,10 +100,46 @@ export class MyPage extends Component {
                 </div>
               ) : null}
               <div className="first-userinfo">
-                <div className="username">{user.username}</div>
+                <h2 className="username">{user.username}</h2>
                 <div className="email">{user.email}</div>
+
                 <div className="status">
-                  <p>안녕하세요 저는 소녀 전한길 입니다! 싸랑합니다 여러분</p>
+                  {myID !== Number(userID) ? (
+                    <p>{`"${user.status}"`}</p>
+                  ) : isEdit ? (
+                    <div>
+                      <input
+                        className="form-control edit-status"
+                        placeholder="상태명을 입력하세요"
+                        onChange={e => this.setState({ status: e.target.value })}
+                      />
+                      <button
+                        type="button"
+                        className="btn btn-primary btn-sm edit-submit-btn"
+                        onClick={() => this.updateStatus()}
+                      >
+                        제출
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-warning btn-sm edit-cancel-btn"
+                        onClick={() => this.setState({ isEdit: !isEdit })}
+                      >
+                        취소
+                      </button>
+                    </div>
+                  ) : (
+                    <div>
+                      <p>{`"${user.status}"`}</p>
+                      <button
+                        type="button"
+                        className="edit-mod-btn"
+                        onClick={() => this.setState({ isEdit: !isEdit })}
+                      >
+                        수정
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -127,9 +182,7 @@ export class MyPage extends Component {
                       {user.numOfAnswers === 0 ? (
                         <span className="default">내역없음</span>
                       ) : (
-                        <span className="blue">
-                          {Math.floor(user.numOfChooseAnswers / user.numOfAnswers * 100)}%
-                        </span>
+                        <span className="blue">{Math.floor(user.percentageOfChoose)}%</span>
                       )}
                     </div>
                     <div className="word">채택률</div>
@@ -139,9 +192,7 @@ export class MyPage extends Component {
                       {user.numOfAnswers === 0 ? (
                         <span className="default">내역없음</span>
                       ) : (
-                        <span className="red">
-                          {Math.floor(user.pickedAnswers / user.numOfAnswers * 100)}%
-                        </span>
+                        <span className="red">{Math.floor(user.percentageOfPicked)}%</span>
                       )}
                     </div>
                     <div className="word">적중률</div>

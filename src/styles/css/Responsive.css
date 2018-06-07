@@ -547,21 +547,23 @@
     color: #444;
     padding-bottom: 80px; }
 
-  .tag-container .tag-search-bar {
-    font-size: 1rem !important;
-    height: 40px; }
-    .tag-container .tag-search-bar input::placeholder {
-      font-size: 1rem !important; }
-  .tag-container h2 {
-    font-size: 1.2rem !important; }
-  .tag-container .box {
-    margin: 0 !important;
-    padding: 0 !important;
-    margin-top: 20px !important;
-    width: 90px;
-    height: auto; }
-    .tag-container .box span {
-      font-size: 1rem; }
+  .tag-container {
+    min-height: 900px; }
+    .tag-container .tag-search-bar {
+      font-size: 1rem !important;
+      height: 40px; }
+      .tag-container .tag-search-bar input::placeholder {
+        font-size: 1rem !important; }
+    .tag-container h2 {
+      font-size: 1.2rem !important; }
+    .tag-container .box {
+      margin: 0 !important;
+      padding: 0 !important;
+      margin-top: 20px !important;
+      width: 90px;
+      height: auto; }
+      .tag-container .box span {
+        font-size: 1rem; }
 
   /* 
   #===================================================================# 
@@ -632,7 +634,7 @@
       padding: 00px 0px;
       width: 100%; }
       .mypage-container .mypage-inner-container .first {
-        height: auto; }
+        height: 130px; }
         .mypage-container .mypage-inner-container .first .upload-btn-wrapper,
         .mypage-container .mypage-inner-container .first .btn,
         .mypage-container .mypage-inner-container .first .upload-btn-wrapper input[type="file"] {
@@ -641,14 +643,49 @@
           min-width: 0;
           width: 100px;
           height: 100px; }
-        .mypage-container .mypage-inner-container .first .first-userinfo .username {
-          font-size: 2rem;
-          letter-spacing: 1.1px; }
-        .mypage-container .mypage-inner-container .first .first-userinfo .email {
-          padding-left: 20px;
-          margin-top: 30px;
-          font-size: 1rem;
-          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo {
+          width: 500px;
+          margin-left: 90px; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .username {
+            font-size: 1.2rem;
+            letter-spacing: 1.1px;
+            margin: 0;
+            display: inline; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .email {
+            padding-left: 20px;
+            margin-top: 3px;
+            font-size: 0.8rem;
+            letter-spacing: 1.1px;
+            display: inline; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .status {
+            padding-left: 0px;
+            margin-top: 10px;
+            letter-spacing: 1.1px; }
+            .mypage-container .mypage-inner-container .first .first-userinfo .status p {
+              font-size: 0.7rem; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-mod-btn {
+            font-size: 0.5rem !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-status {
+            display: block;
+            width: 100%;
+            min-height: 25px !important;
+            height: 1vw !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-submit-btn {
+            display: inline;
+            margin-top: 10px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-cancel-btn {
+            background: crimson;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important; }
       .mypage-container .mypage-inner-container .second {
         height: auto;
         display: flex;

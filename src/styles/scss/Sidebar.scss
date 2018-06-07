@@ -20,7 +20,7 @@
   }
   .sidebar-header {
     position: absolute;
-    height: 13%;
+    height: 6%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -44,8 +44,7 @@
       display: none !important;
     }
     .sidebar-header-title {
-      // position: absolute;
-      align-self: center;      
+      align-self: center;
       text-decoration: none;
       color: ghostwhite;
       // left: 3%;
@@ -125,10 +124,9 @@
 }
 
 @media (max-width: 768px) {
-
   .sidebar-header {
     position: absolute;
-    height: 8%;
+    height: 5%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -139,7 +137,7 @@
       // position: absolute;
       // width: 40px;
       align-self: center;
-      font-size: 1.3em;
+      font-size: 1.15em;
       z-index: 100;
       padding-right: 2%;
       // color: ghostwhite !important;
@@ -153,13 +151,13 @@
     }
     .sidebar-header-title {
       // position: absolute;
-      align-self: center;      
+      align-self: center;
       text-decoration: none;
       color: ghostwhite;
       // left: 3%;
       // top: 30%;
       padding-left: 10px;
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       font-weight: 900;
       height: 15px;
       letter-spacing: 0.05rem;
@@ -192,14 +190,16 @@
       font-weight: bold;
       border-bottom: 0.5px solid ghostwhite;
       .sidebar-go-home {
-        padding-left: 7px;
+        padding-left: 11px;
+        font-size: 1rem;
         text-decoration: none;
         text-decoration-style: none;
         color: ghostwhite;
       }
       i.sidebar-close {
         color: ghostwhite !important;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding-right: 28px;
         z-index: 200 !important;
       }
     }
@@ -232,4 +232,3 @@
     top: 0;
   }
 }
-
