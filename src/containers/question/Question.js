@@ -160,8 +160,11 @@ class Question extends Component {
         type: 'function',
       },
     ];
-    const MyContract = isChrome ? window.web3.eth.contract(ABI) : '';
-    this.state = isChrome ? { ContractInstance: MyContract.at('0x005b032d947dc8964ff0469375d785da395d310b') } : '';
+    const MyContract = isChrome && window.web3 ? window.web3.eth.contract(ABI) : '';
+    this.state =
+      isChrome && window.web3
+        ? { ContractInstance: MyContract.at('0x005b032d947dc8964ff0469375d785da395d310b') }
+        : '';
   }
 
   componentDidMount() {
@@ -186,22 +189,6 @@ class Question extends Component {
       console.log("This is our contract's question::::", question);
     });
   };
-
-  // getReward = () => {
-  //   const { getReward } = this.state.ContractInstance;
-  //   getReward((err, reward) => {
-  //     if (err) console.error('An eeor occured::::', err);
-  //     console.log("This is our contract's reward::::", reward);
-  //   });
-  // };
-
-  // getPending = () => {
-  //   const { getPending } = this.state.ContractInstance;
-  //   getPending((err, pending) => {
-  //     if (err) console.error('An eeor occured::::', err);
-  //     console.log("This is our contract's pending::::", pending);
-  //   });
-  // };
 
   setRecipient = (metaAddress) => {
     const { setRecipient } = this.state.ContractInstance;

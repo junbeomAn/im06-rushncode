@@ -432,6 +432,9 @@
 
   .ItemBoxNum {
     font-size: 1rem !important; }
+    .ItemBoxNum img {
+      width: 25px;
+      height: 25px; }
 
   .ItemBoxImage {
     font-size: 0.7rem !important; }
@@ -544,21 +547,23 @@
     color: #444;
     padding-bottom: 80px; }
 
-  .tag-container .tag-search-bar {
-    font-size: 1rem !important;
-    height: 40px; }
-    .tag-container .tag-search-bar input::placeholder {
-      font-size: 1rem !important; }
-  .tag-container h2 {
-    font-size: 1.2rem !important; }
-  .tag-container .box {
-    margin: 0 !important;
-    padding: 0 !important;
-    margin-top: 20px !important;
-    width: 90px;
-    height: auto; }
-    .tag-container .box span {
-      font-size: 1rem; }
+  .tag-container {
+    min-height: 900px; }
+    .tag-container .tag-search-bar {
+      font-size: 1rem !important;
+      height: 40px; }
+      .tag-container .tag-search-bar input::placeholder {
+        font-size: 1rem !important; }
+    .tag-container h2 {
+      font-size: 1.2rem !important; }
+    .tag-container .box {
+      margin: 0 !important;
+      padding: 0 !important;
+      margin-top: 20px !important;
+      width: 90px;
+      height: auto; }
+      .tag-container .box span {
+        font-size: 1rem; }
 
   /* 
   #===================================================================# 
@@ -629,7 +634,7 @@
       padding: 00px 0px;
       width: 100%; }
       .mypage-container .mypage-inner-container .first {
-        height: auto; }
+        height: 130px; }
         .mypage-container .mypage-inner-container .first .upload-btn-wrapper,
         .mypage-container .mypage-inner-container .first .btn,
         .mypage-container .mypage-inner-container .first .upload-btn-wrapper input[type="file"] {
@@ -638,14 +643,49 @@
           min-width: 0;
           width: 100px;
           height: 100px; }
-        .mypage-container .mypage-inner-container .first .first-userinfo .username {
-          font-size: 2rem;
-          letter-spacing: 1.1px; }
-        .mypage-container .mypage-inner-container .first .first-userinfo .email {
-          padding-left: 20px;
-          margin-top: 30px;
-          font-size: 1rem;
-          letter-spacing: 1.1px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo {
+          width: 500px;
+          margin-left: 90px; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .username {
+            font-size: 1.2rem;
+            letter-spacing: 1.1px;
+            margin: 0;
+            display: inline; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .email {
+            padding-left: 20px;
+            margin-top: 3px;
+            font-size: 0.8rem;
+            letter-spacing: 1.1px;
+            display: inline; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .status {
+            padding-left: 0px;
+            margin-top: 10px;
+            letter-spacing: 1.1px; }
+            .mypage-container .mypage-inner-container .first .first-userinfo .status p {
+              font-size: 0.7rem; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-mod-btn {
+            font-size: 0.5rem !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-status {
+            display: block;
+            width: 100%;
+            min-height: 25px !important;
+            height: 1vw !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-submit-btn {
+            display: inline;
+            margin-top: 10px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-cancel-btn {
+            background: crimson;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important; }
       .mypage-container .mypage-inner-container .second {
         height: auto;
         display: flex;
@@ -653,15 +693,15 @@
         .mypage-container .mypage-inner-container .second .second-one {
           width: 100%; }
           .mypage-container .mypage-inner-container .second .second-one .second-one-title {
-            font-size: 1.1rem; }
+            font-size: 1.2rem; }
         .mypage-container .mypage-inner-container .second .second-two {
           width: 100%; }
           .mypage-container .mypage-inner-container .second .second-two .second-two-title {
-            font-size: 1.1rem; }
+            font-size: 1.2rem; }
         .mypage-container .mypage-inner-container .second .second-three {
           width: 100%; }
           .mypage-container .mypage-inner-container .second .second-three .second-three-title {
-            font-size: 1.1rem; }
+            font-size: 1.2rem; }
       .mypage-container .mypage-inner-container .third .first {
         display: none !important; }
       .mypage-container .mypage-inner-container .third .second {
@@ -691,7 +731,59 @@
       .mypage-container .mypage-inner-container .third .fourth .username {
         font-size: 0.85rem !important; }
       .mypage-container .mypage-inner-container .third .fourth .time {
-        font-size: 0.6rem !important; } }
+        font-size: 0.6rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                               헬프데스크                             | 
+  #===================================================================#
+*/
+  .helpdesk-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    width: 340px;
+    height: 230px;
+    background: ghostwhite; }
+
+  .helpdesk-container .helpdesk-title {
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-title h1 {
+      font-size: 1rem !important; }
+  .helpdesk-container .helpdesk-body {
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-body .helpdesk-body-item {
+      margin-bottom: 10px; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-item h3 {
+        margin-top: 5px;
+        font-size: 0.8rem; }
+    .helpdesk-container .helpdesk-body .helpdesk-body-word {
+      margin-top: 5px;
+      margin-bottom: 20px; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-word h3 {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.1rem; }
+  .helpdesk-container .helpdesk-btn-close {
+    margin: auto;
+    padding: 4px 8px;
+    border: solid 2px rgba(11, 27, 51, 0.8);
+    border-radius: 5px;
+    font-size: 0.6rem;
+    font-weight: 900;
+    display: block;
+    text-decoration: none;
+    background: none;
+    color: rgba(11, 27, 51, 0.8); }
+
+  .questionPagenation {
+    font-size: 0.5rem !important; } }
 @media (max-width: 1024px) {
   .Header {
     display: none; } }

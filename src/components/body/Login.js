@@ -8,12 +8,6 @@ const Login = ({ keyPress, login }) => (
   <div className="authContainer">
     <div className="loginInputContainer border rounded">
       <div className="authButtonContainer">
-        {/* set HTTPS=true package.json*/}
-        {/* <a href={`https://www.facebook.com/v3.0/dialog/oauth?client_id=235916540497077&redirect_uri=${process.env.URL_PROD}/auth/facebook&state=st=state123abc,ds=123456789&response_type=code&scope=email,public_profile`}>
-          <Button color="facebook" className="authBtn">
-            <Icon name="facebook" />Login with Facebook
-          </Button>
-        </a> */}
         <a href={`https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=${URL}/auth/google&response_type=code&client_id=1057319403388-ng0dluqb41b5kk4gt37bot92piirjiu6.apps.googleusercontent.com`}>
           <Button color="google plus" className="authBtn">
             <Icon name="google" />Login with Google

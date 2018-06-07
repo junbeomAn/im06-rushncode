@@ -110,7 +110,11 @@
 .modify {
   color: $greyfont;
 }
-
+/* 
+  #===================================================================# 
+  |                               헬프데스크                             | 
+  #===================================================================#
+*/
 .helpdesk-btn-open {
   font-size: 1rem;
   margin-left: 10px;
@@ -125,17 +129,15 @@
     color: $primaryYellow;
   }
 }
-.helpdesk-btn-close {
-  margin: auto;
-  padding: 5px 10px;
-  border: solid 3px rgba($color: $primaryBlue, $alpha: 0.8);
-  border-radius: 5px;
-  font-size: 1vw;
-  font-weight: 900;
-  display: block;
-  text-decoration: none;
-  background: none;
-  color: rgba($color: $primaryBlue, $alpha: 0.8);
+.helpdesk-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  width: 700px;
+  height: 400px;
+  background: ghostwhite;
 }
 
 .helpdesk-container {
@@ -143,44 +145,46 @@
   height: 100%;
   border: solid 3px rgba($color: $primaryBlue, $alpha: 0.8);
   .helpdesk-title {
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
     letter-spacing: 0.5rem;
     color: rgba($color: $primaryBlue, $alpha: 0.8);
     h1 {
-      font-size: 2vw;
+      font-size: 2rem;
     }
   }
   .helpdesk-body {
-    margin-top: 2vw;
+    margin-top: 20px;
     text-align: center;
     color: rgba($color: $primaryBlue, $alpha: 0.8);
     .helpdesk-body-item {
-      margin-bottom: 1vw;
+      margin-bottom: 40px;
       h3 {
-        margin-top: 0.3vw;
-        font-size: 1.5vw;
+        margin-top: 10px;
+        font-size: 1.5rem;
       }
     }
     .helpdesk-body-word {
-      margin-top: 3vw;
-      margin-bottom: 1vw;
+      margin-top: 5px;
+      margin-bottom: 30px;
       h3 {
-        font-size: 1.2vw;
+        font-size: 1.3rem;
         letter-spacing: 0.1rem;
       }
     }
   }
-}
-.helpdesk-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 12px;
-  width: 40vw;
-  height: 25vw;
-  background: ghostwhite;
+  .helpdesk-btn-close {
+    margin: auto;
+    padding: 5px 10px;
+    border: solid 3px rgba($color: $primaryBlue, $alpha: 0.8);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 900;
+    display: block;
+    text-decoration: none;
+    background: none;
+    color: rgba($color: $primaryBlue, $alpha: 0.8);
+  }
 }
 
 .showcase {

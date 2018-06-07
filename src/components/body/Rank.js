@@ -70,9 +70,7 @@ const Rank = ({
                     </span>
                   </span>
                 </div>
-                <div className="rank-info-bot">
-                  안녕하세여 정의롭고 공평한 세상을 꿈꾸는 소년 전한길 입니다.
-                </div>
+                <div className="rank-info-bot">{`"${item.state_comment}"`}</div>
               </div>
             </Segment>
           </Grid.Column>
