@@ -52,7 +52,7 @@ class Headers extends Component {
               </li>
               {this.props.isLoggedIn && (
                 <li className="nav-item">
-                  <NavLink to={`/mypage/${this.props.userID}`} className="item mypage-tab">
+                  <NavLink to={`/loading/mypage/${this.props.userID}`} className="item mypage-tab">
                     프로필
                   </NavLink>
                 </li>

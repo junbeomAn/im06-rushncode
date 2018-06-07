@@ -29,8 +29,20 @@
   to {
     top: 11%; } }
 .close-message {
-  position: relative;
+  position: fixed;
   left: 50%;
   transform: translate(-50%); }
+
+@media (max-width: 1024px) {
+  .brwsrCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+    width: 35%;
+    font-size: 0.8rem !important; }
+
+  .browser-detect-detail-msg {
+    display: none; } }
 
 /*# sourceMappingURL=browserCheckSign.css.map */
