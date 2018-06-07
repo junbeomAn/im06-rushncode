@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
+
 // REDUX
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -34,14 +35,20 @@ class App extends Component {
     this.setState({
       sidebarOpen: false,
     });
-  };
+  };   
 
   render() {
     const { sidebarOpen } = this.state;
     const sidebarClassName = sidebarOpen ? 'home-side-menu open' : 'home-side-menu';
     const sidebarCloseBtn = sidebarOpen ? 'sidebar-btn sidebar-close active' : 'sidebar-btn sidebar-close inactive';
-    const sidebarOpenBtn = !sidebarOpen ? 'sidebar-btn active' : 'sidebar-btn inactive';
-    
+    let sidebarOpenBtn = !sidebarOpen ? 'sidebar-btn active' : 'sidebar-btn inactive';
+    const currLocation = window.location.href.split('/')[3];
+
+    let sidebarHeader = !(currLocation === 'auth' || currLocation === '') ? 'sidebar-header-title' : 'sidebar-header-title title-inverted';
+    sidebarOpenBtn = !(currLocation === 'auth' || currLocation === '')
+      ? `${sidebarOpenBtn} inverted`
+      : sidebarOpenBtn;
+
     console.log(sidebarOpen);
     return (
       <Provider store={store}>
@@ -49,11 +56,11 @@ class App extends Component {
           <div className="App">
             <HeaderContainer />
             <div className="sidebar-header">
+              <NavLink exact to="/"><span className={sidebarHeader}>러시앤코드</span></NavLink>
               <Icon size="big" name="sidebar" className={sidebarOpenBtn} onClick={this.handleMenuButtonClick} />
-              {/* <Icon size="big" name="close" className={sidebarCloseBtn} onClick={this.closeMenuButtonClick} /> */}
             </div>
             <Sidebar sidebarClassName={sidebarClassName} closeMenuButtonClick={this.closeMenuButtonClick} sidebarCloseBtn={sidebarCloseBtn} sidebarOpen={sidebarOpen} />
-            <div className="middle">
+            <div className="middle" onClick={this.closeMenuButtonClick}>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/mypage/:userID" component={MyPage} />
@@ -66,7 +73,7 @@ class App extends Component {
                 <Route path="/search" component={QuestionListContainer} />
                 <Route path="/sort" component={QuestionListContainer} />
                 <Route path="/loading" component={Loadingpage} />
-                <Route component={Sidebar} />
+                <Route component={NoMatch} />
               </Switch>
             </div>
             <Footer />
