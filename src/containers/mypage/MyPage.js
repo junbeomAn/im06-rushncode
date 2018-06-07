@@ -87,27 +87,32 @@ export class MyPage extends Component {
             </div>
             <div className="second">
               <div className="second-one shadow">
-                <div className="second-one-title">랭킹</div>
-                <div className="second-one-score">{user.rank}위</div>
-                <br />
-                <br />
-                <div className="second-one-title">누적 획득 이더</div>
-                <div className="second-one-score">{user.total_reward}</div>
+                <div className="second-one-title">업적</div>
+                <div className="second-one-box">
+                  <div className="second-one-box-inner">
+                    <div className="count">{user.rank}위</div>
+                    <div className="word">순위</div>
+                  </div>
+                  <div className="second-one-box-inner">
+                    <div className="count">{user.total_reward}</div>
+                    <div className="word">누적 획득 이더</div>
+                  </div>
+                </div>
               </div>
               <div className="second-two shadow">
                 <div className="second-two-title">활동</div>
                 <div className="second-two-box">
                   <div className="second-two-box-inner">
                     <div className="count">{user.numOfQuestions}</div>
-                    <div>질문</div>
+                    <div className="word">질문</div>
                   </div>
                   <div className="second-two-box-inner">
                     <div className="count">{user.numOfAnswers}</div>
-                    <div>답변</div>
+                    <div className="word">답변</div>
                   </div>
                   <div className="second-two-box-inner">
                     <div className="count">{user.numOfChooseAnswers}</div>
-                    <div>채택</div>
+                    <div className="word">채택</div>
                   </div>
                 </div>
               </div>
@@ -124,7 +129,7 @@ export class MyPage extends Component {
                         </span>
                       )}
                     </div>
-                    <div>채택률</div>
+                    <div className="word">채택률</div>
                   </div>
                   <div className="second-three-box-inner">
                     <div className="count">
@@ -136,7 +141,7 @@ export class MyPage extends Component {
                         </span>
                       )}
                     </div>
-                    <div>적중률</div>
+                    <div className="word">적중률</div>
                   </div>
                 </div>
               </div>
