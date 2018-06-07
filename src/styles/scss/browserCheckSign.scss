@@ -1,7 +1,9 @@
 .brwsrCheck {
+  position: fixed !important;
   left: 50%;
-  width: 550px;
   transform: translate(-50%);
+  height: 11%;
+  width: 50%;
   z-index: 99;
   animation-duration: 1s;
   animation-name: slidein;
@@ -25,7 +27,7 @@
 
 @keyframes slidein {
   from {
-    top: 8%;    
+    top: 8.5%;    
   }
 
   to {

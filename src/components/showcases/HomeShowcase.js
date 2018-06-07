@@ -7,6 +7,7 @@ import { isChrome } from '../../browsercheck';
 
 const HomeShowcase = ({ handleValueChange, handleSearch, handleGoAskClick }) => (
   <div className="homeUpper">
+    {isChrome && <BrowserCheckSign />}
     <div className="top">
       <div className="left" />
       <div className="right">
@@ -25,7 +26,6 @@ const HomeShowcase = ({ handleValueChange, handleSearch, handleGoAskClick }) => 
         placeholder="검색어를 입력하세요"
       />
     </div>
-    {!isChrome && <BrowserCheckSign />}
   </div>
 );
 
