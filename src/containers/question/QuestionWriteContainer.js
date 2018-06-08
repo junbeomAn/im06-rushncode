@@ -124,7 +124,9 @@ class QuestionWriteContainer extends Component {
         this.props.history.push('/question');
       })
       .catch(err => alert(err));
+    
   };
+
   render() {
     const {
       tags,

@@ -1,5 +1,4 @@
 @import "color";
-
 @media (min-width: 1024px) {
   .home-side-menu {
     display: none;
@@ -19,22 +18,21 @@
     width: 100%;
   }
   .sidebar-header {
-    position: absolute;
-    height: 6%;
+    position: fixed;
+    height: 7%;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    // background-color: $primaryBlue;
+    background-color: $primaryYellow;
+    justify-content: space-between; // background-color: $primaryBlue;
+    z-index: 70;
     // opacity: 0.7;
     i.sidebar-btn {
       // position: absolute;
       // width: 40px;
       align-self: center;
       font-size: 2rem;
-      z-index: 100;
-      padding-right: 2%;
-      // color: ghostwhite !important;
+      padding-right: 2%; // color: ghostwhite !important;
       cursor: pointer;
     }
     .active {
@@ -46,23 +44,20 @@
     .sidebar-header-title {
       align-self: center;
       text-decoration: none;
-      color: ghostwhite;
-      // left: 3%;
+      color: $primaryBlue; // left: 3%;
       // top: 30%;
       padding-left: 20px;
       font-size: 1.6rem;
       font-weight: 900;
       height: 30px;
-      letter-spacing: 0.1rem;
-      // display: flex;
+      letter-spacing: 0.1rem; // display: flex;
     }
     .title-inverted {
       color: $primaryBlue !important;
     }
   }
-
   .home-side-menu {
-    position: absolute;
+    position: fixed;
     top: -500px;
     width: 100%;
     transition: top 0.5s ease-in-out;
@@ -125,13 +120,14 @@
 
 @media (max-width: 768px) {
   .sidebar-header {
-    position: absolute;
-    height: 5%;
+    position: fixed;
+    height: 6%;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // background-color: $primaryBlue;
+    align-self: center;
+    justify-content: space-between; // background-color: $primaryBlue;
+    z-index: 70;
+    background-color: $primaryYellow;
     // opacity: 0.7;
     i.sidebar-btn {
       // position: absolute;
@@ -139,9 +135,7 @@
       align-self: center;
       font-size: 1.3em;
       z-index: 100;
-      padding-top: 3px;
-      padding-right: 2%;
-      // color: ghostwhite !important;
+      padding-right: 2%; // color: ghostwhite !important;
       cursor: pointer;
     }
     .active {
@@ -153,22 +147,19 @@
     .sidebar-header-title {
       align-self: center;
       text-decoration: none;
-      color: ghostwhite;
-      padding-top: 3px;
+      color: $primaryBlue;
       padding-left: 10px;
       font-size: 1.2rem;
       font-weight: 900;
       height: 15px;
-      letter-spacing: 0.05rem;
-      // display: flex;
+      letter-spacing: 0.05rem; // display: flex;
     }
-    .title-inverted {
-      color: $primaryBlue !important;
-    }
+    // .title-inverted {
+    //   color: $primaryBlue !important;
+    // }
   }
-
   .home-side-menu {
-    position: absolute;
+    position: fixed;
     top: -500px;
     width: 100%;
     transition: top 0.5s ease-in-out;

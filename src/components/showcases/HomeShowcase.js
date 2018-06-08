@@ -1,13 +1,8 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
 import { Input, Button } from 'semantic-ui-react';
-// import WriteButton from './../../containers/showcase/writeButton';
-import BrowserCheckSign from '../../browsercheck/sign';
-import { isChrome, isMobile } from '../../browsercheck';
 
 const HomeShowcase = ({ handleValueChange, handleSearch, handleGoAskClick }) => (
   <div className="homeUpper">
-    {/* {(!isChrome && !isMobile) && <BrowserCheckSign />} */}
     <div className="top">
       <div className="left" />
       <div className="right">
