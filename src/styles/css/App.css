@@ -162,14 +162,21 @@
   .write-btn:hover {
     background: #0b1b33; }
 
+/* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+*/
 .no-result-container {
-  min-height: 620px;
-  background-color: #f4f4f4; }
+  min-height: 900px;
+  background-color: ghostwhite;
+  padding-top: 100px; }
   .no-result-container .emptybox {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150px; }
+    height: 300px; }
     .no-result-container .emptybox .no-result-text {
       position: relative;
       text-align: center;
@@ -182,22 +189,21 @@
       color: #777;
       font-weight: bolder; }
   .no-result-container .img-box {
-    min-height: 420px;
-    background-image: url("../../images/search_empty_page_withoutButton.png");
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+    display: flex;
+    min-height: 300px;
     background-repeat: no-repeat; }
     .no-result-container .img-box .no-result-button-cntr {
-      position: absolute;
+      width: 100%;
+      height: 200px;
       display: flex;
-      text-align: center;
       flex-direction: column;
-      left: 60%;
-      top: 350px;
-      width: 220px; }
+      justify-content: center;
+      align-items: center;
+      left: 60%; }
       .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+        width: 100%;
+        height: auto;
+        font-size: 2.3vw;
         background-color: #0b1b33;
         color: ghostwhite;
         padding-left: 30px;
@@ -206,6 +212,7 @@
           background-color: #0b1b33;
           color: ghostwhite; }
       .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+        font-size: 1.5vw;
         background-color: transparent;
         color: #0b1b33; }
         .no-result-container .img-box .no-result-button-cntr .search-by-tag:hover {

@@ -5,6 +5,9 @@
 #===================================================================#
 */
 @media (max-width: 1024px) {
+  .body {
+    background: ghostwhite !important; }
+
   .middle {
     width: 100%; }
 
@@ -136,13 +139,36 @@
             .home-lower .home-lower-left .questionPost .fourth .username:hover {
               color: #6092dd; }
           .home-lower .home-lower-left .questionPost .fourth .time {
-            font-size: 0.85rem; } }
+            font-size: 0.85rem; }
+
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    margin: 0 !important;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .no-result-container .img-box .no-result-button-cntr {
+      height: 200px; }
+      .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+        width: 100%;
+        height: auto;
+        font-size: 2rem; }
+      .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+        font-size: 1.5rem; } }
 /* 
 #===================================================================# 
 |                         768px [ 해상도 분기 ]                        | 
 #===================================================================#
 */
 @media (max-width: 768px) {
+  .App {
+    background: ghostwhite !important; }
+
   .middle {
     width: 100%; }
 
@@ -783,7 +809,27 @@
     color: rgba(11, 27, 51, 0.8); }
 
   .questionPagenation {
-    font-size: 0.5rem !important; } }
+    font-size: 0.5rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px; }
+    .no-result-container .emptybox {
+      height: 100px; }
+      .no-result-container .emptybox .no-result-text {
+        font-size: 1.5rem; }
+    .no-result-container .img-box .no-result-button-cntr {
+      height: 300px; }
+      .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+        width: 100%;
+        height: auto;
+        font-size: 1rem; }
+      .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+        font-size: 0.8rem; } }
 @media (max-width: 1024px) {
   .Header {
     display: none; } }
@@ -793,6 +839,9 @@
 #===================================================================#
 */
 @media (max-width: 450px) {
+  .middle {
+    background: ghostwhite !important; }
+
   .homeUpper {
     height: 200px !important; }
 
@@ -809,6 +858,26 @@
     .bot .home-search-bar {
       width: 80%;
       font-size: 0.7rem !important;
-      height: 55% !important; } }
+      height: 55% !important; }
+
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px; }
+    .no-result-container .emptybox .no-result-text {
+      font-size: 1.2rem; }
+    .no-result-container .img-box {
+      padding-top: 100px; }
+      .no-result-container .img-box .no-result-button-cntr {
+        height: 100px; }
+        .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 1rem; }
+        .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+          font-size: 0.8rem; } }
 
 /*# sourceMappingURL=Responsive.css.map */
