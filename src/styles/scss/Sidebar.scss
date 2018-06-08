@@ -19,7 +19,7 @@
     width: 100%;
   }
   .sidebar-header {
-    position: absolute;
+    position: fixed;
     height: 6%;
     width: 100%;
     display: flex;
@@ -62,7 +62,7 @@
   }
 
   .home-side-menu {
-    position: absolute;
+    position: fixed;
     top: -500px;
     width: 100%;
     transition: top 0.5s ease-in-out;
@@ -125,7 +125,7 @@
 
 @media (max-width: 768px) {
   .sidebar-header {
-    position: absolute;
+    position: fixed;
     height: 5%;
     width: 100%;
     display: flex;
@@ -169,7 +169,7 @@
   }
 
   .home-side-menu {
-    position: absolute;
+    position: fixed;
     top: -500px;
     width: 100%;
     transition: top 0.5s ease-in-out;
