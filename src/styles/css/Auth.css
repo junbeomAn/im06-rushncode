@@ -80,4 +80,15 @@
   transform: translate(-50%);
   padding: 20px; }
 
+@media (max-width: 768px) {
+  .authInputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    position: relative;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    padding: 20px; } }
+
 /*# sourceMappingURL=Auth.css.map */
