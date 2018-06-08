@@ -787,5 +787,28 @@
 @media (max-width: 1024px) {
   .Header {
     display: none; } }
+/* 
+#===================================================================# 
+|                     450px [ 해상도 분기 ] - 모바일                    | 
+#===================================================================#
+*/
+@media (max-width: 450px) {
+  .homeUpper {
+    height: 200px !important; }
+
+  .questionPost .first {
+    display: none !important; }
+  .questionPost .second {
+    width: 740px !important; }
+
+  .top .home-search-btn {
+    margin-top: 20px !important; }
+
+  .bot {
+    height: 150px; }
+    .bot .home-search-bar {
+      width: 80%;
+      font-size: 0.7rem !important;
+      height: 55% !important; } }
 
 /*# sourceMappingURL=Responsive.css.map */
