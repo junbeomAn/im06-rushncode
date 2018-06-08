@@ -1,0 +1,56 @@
+.brwsrCheck {
+  position: fixed !important;
+  left: 50%;
+  transform: translate(-50%);
+  height: 11%;
+  width: 50%;
+  z-index: 99;
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  -webkit-animation-name: slidein;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+}
+.dwnld-chrome {
+  text-decoration: none;
+  color: #794b02;
+  font-weight: bold;
+  &:hover {
+    color: brown;
+  }
+}
+
+@keyframes slidein {
+  from {
+    top: 8.5%;
+  }
+
+  to {
+    top: 11%;
+  }
+}
+
+.close-message {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@media (max-width: 1024px) {
+  .brwsrCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+    width: 35%;
+    font-size: 0.8rem !important;
+  }
+  .browser-detect-detail-msg {
+    display: none;
+  }
+}

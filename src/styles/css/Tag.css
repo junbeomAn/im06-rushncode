@@ -1,0 +1,39 @@
+.tag-container {
+  height: 800px;
+  background: ghostwhite;
+  height: auto; }
+  .tag-container .tag-content {
+    width: 90%;
+    margin: 30px auto 0 auto; }
+    .tag-container .tag-content h2 {
+      font-weight: normal;
+      color: #777; }
+    .tag-container .tag-content .wrapper {
+      display: grid;
+      width: 100%;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 100px 100px 100px 100px;
+      grid-gap: 30px;
+      background: ghostwhite;
+      color: #444;
+      padding-bottom: 80px; }
+      .tag-container .tag-content .wrapper .box {
+        border-bottom: #e0e0e0 solid 1px;
+        padding: 20px;
+        font-size: 130%; }
+        .tag-container .tag-content .wrapper .box span {
+          color: #777;
+          padding: 10px;
+          cursor: pointer; }
+          .tag-container .tag-content .wrapper .box span:hover {
+            font-weight: bold; }
+
+.tag-input-container {
+  margin-top: 40px;
+  text-align: center; }
+  .tag-input-container .tag-search-bar {
+    width: 90%;
+    margin: 0 auto;
+    height: 60px; }
+
+/*# sourceMappingURL=Tag.css.map */

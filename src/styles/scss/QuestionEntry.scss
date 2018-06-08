@@ -1,0 +1,266 @@
+@import "color";
+
+.QuestionEntryContainer {
+  background: ghostwhite;
+  display: flex;
+  flex-direction: column;
+
+  // 헤더
+  .QuestionEntryHeader {
+    width: 90%;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    border-bottom: 2px solid $divider;
+    .questHeaderTop {
+      display: flex;
+    }
+  }
+  .tags {
+    padding-top: 8px;
+    padding-bottom: 10px;
+    .questListBtn {
+      height: 25px;
+      padding-top: 2px;
+      margin-right: 3px;
+      &:hover {
+        a {
+          color: #fff;
+        }
+      }
+      a {
+        color: $greyfont;
+      }
+    }
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    padding: 50px 0px 3px 0px;
+  }
+
+  // 미들
+  .QuestionEntryMain {
+    // border: solid 1px blue;
+    width: 90%;
+    padding-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    .QuestionEntryMainFirst {
+      width: 10%;
+      margin: 0 auto;
+    }
+    .CountBox {
+      .CountBoxImage {
+        margin-bottom: 10px;
+        text-align: center;
+        color: $greyfont;
+      }
+      .CountBoxNum {
+        margin: 0 auto;
+        margin-top: 8px;
+        margin-right: 4px;
+        text-align: center;
+        font-size: 18px;
+        color: grey;
+      }
+      &:hover {
+        color: $primaryPurple;
+        .CountBoxNum {
+          color: $primaryPurple;
+        }
+      }
+    }
+    // q바디
+    .QuestionEntryMainSecond {
+      width: 80%;
+      height: auto;
+      padding: 0px 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      overflow-wrap: break-word;
+      .QuestionEntryMainSecondReplyTitle {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $divider;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .QuestionEntryMainSecondReply {
+        padding-top: 10px;
+        .QuestionEntryMainSecondReplyEntry {
+          height: auto;
+          padding-bottom: 5px;
+          margin-top: 5px;
+          border-bottom: 1px solid $divider;
+          overflow: hidden;
+          font-size: 1rem;
+        }
+      }
+      .QuestionEntryAnswerSecondReplyAdd {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: $greyfont;
+        .QuestionEntryAnswerSecondReplyAddInput {
+          margin-bottom: 8px;
+        }
+        .QuestionEntryAnswerSecondReplyAddBtn {
+          text-align: right;
+        }
+      }
+    }
+    .QuestionEntryMainThird {
+      width: 10%;
+      text-align: center;
+      // border: 1px solid black;
+    }
+    .QuestionEntryMainThirdItemBox {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      .ItemBox {
+        .ItemBoxImage {
+          // margin-bottom: 7px;
+          text-align: center;
+          color: grey;
+        }
+        .ItemBoxNum {
+          // border: solid 1px red;
+          padding-bottom: 3px;
+          padding-right: 2px;
+          text-align: center;
+          font-size: 1.3rem;
+          color: grey;
+        }
+      }
+    }
+    .QuestionEntryMainThirdReward {
+      margin-top: 20px;
+    }
+  }
+
+  // 답변
+  .QuestionEntryAnswer {
+    // border: solid 1px blue;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    overflow-wrap: break-word;
+    .QuestionEntryAnswerEntry {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid $divider;
+      display: flex;
+
+      .QuestionEntryAnswerFirst {
+        width: 10%;
+        margin: 0 auto;
+      }
+
+      .QuestionEntryAnswerSecond {
+        width: 80%;
+        padding: 0px 20px;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        // border: 1px solid black;
+        .QuestionEntryAnswerSecondReplyTitle {
+          padding-top: 20px;
+          padding-bottom: 10px;
+          border-bottom: 2px solid $divider;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .QuestionEntryAnswerSecondReply {
+          padding-top: 10px;
+          .QuestionEntryAnswerSecondReplyEntry {
+            height: auto;
+            padding-bottom: 5px;
+            margin-top: 5px;
+            border-bottom: 1px solid $divider;
+            overflow: hidden;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+        .QuestionEntryAnswerSecondReplyAdd {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          color: $greyfont;
+          .QuestionEntryAnswerSecondReplyAddInput {
+            margin-bottom: 8px;
+          }
+          .QuestionEntryAnswerSecondReplyAddBtn {
+            text-align: right;
+          }
+        }
+      }
+
+      .QuestionEntryAnswerThird {
+        width: 10%;
+        text-align: center;
+        .ItemBox {
+          margin-bottom: 20px;
+          .ItemBoxImage {
+            text-align: center;
+            color: grey;
+            margin-bottom: 7px;
+          }
+          .ItemBoxNum {
+            padding-bottom: 3px;
+            text-align: center;
+            font-size: 1.1rem;
+            padding-right: 2px;
+            color: grey;
+          }
+          &:hover {
+            color: $primaryPurple;
+            .ItemBoxNum {
+              color: $primaryPurple;
+            }
+          }
+        }
+      }
+      .CountBox {
+        margin-bottom: 20px;
+        .CountBoxImage {
+          text-align: center;
+          margin-bottom: 5px;
+          color: $greyfont;
+          // border: solid 1px red;
+        }
+        .CountBoxNum {
+          text-align: center;
+          font-size: 18px;
+          margin: 0 auto;
+          margin-right: 4px;
+          margin-top: 8px;
+          color: grey;
+        }
+        &:hover {
+          color: $primaryPurple;
+          .CountBoxNum {
+            color: $primaryPurple;
+          }
+        }
+      }
+    }
+  }
+}
+
+.likeBtn {
+  color: $greyfont;
+  border: none;
+  &:hover {
+    color: $primaryPurple;
+  }
+}
+.picked {
+  .picked-item {
+    color: $primaryPurple;
+    span {
+      color: $primaryPurple;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+}

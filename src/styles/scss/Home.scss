@@ -1,0 +1,177 @@
+@import "color";
+.homeContainer {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background-color: ghostwhite;
+}
+
+// 쇼케이스
+.homeUpper {
+  height: 40vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .top {
+    display: flex;
+    align-items: space-between;
+    height: 450px;
+    .left {
+      width: 50%;
+      background-image: url("../../images/main-left.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .right {
+      width: 50%;
+      background-image: url("../../images/main-right.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .home-search-btn {
+        width: 62%;
+        margin-top: 30px;
+        background: $primaryBlue;
+        color: $primaryYellow;
+        font-size: 2.3vw;
+        box-shadow: 0px 4px 4px 2px rgba($color: black, $alpha: 0.4);
+        &:hover {
+          transition: all 0.5s;
+          background: darken($primaryBlue, 5%);
+          color: darken($primaryYellow, 10%);
+          box-shadow: 0px 6px 4px 1px rgba($color: black, $alpha: 0.6);
+        }
+      }
+    }
+  }
+  .bot {
+    display: flex;
+    background: $primaryBlue;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .home-search-bar {
+      width: 80%;
+      font-size: 2vw;
+      height: 5vw;
+    }
+  }
+}
+
+.home-lower-box {
+  width: 90%;
+  margin: 0 auto;
+}
+.home-lower {
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  .home-lower-left {
+    width: 80%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    .home-lower-left-header {
+      a {
+        color: $greyfont;
+      }
+      .active {
+        background: ghostwhite;
+        border-top: $primaryBlue solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: $primaryBlue;
+        font-weight: bold;
+      }
+      .tab-pane {
+        border: none;
+      }
+    }
+    .questionPost {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0px 10px 0px;
+      .first {
+        padding-right: 10px;
+        width: 170px;
+        // border: solid 1px red;
+        color: $greyfont;
+        padding-bottom: 6px;
+        display: flex;
+        text-align: center;
+        .firstItem {
+          width: 50px;
+          .ItemBox {
+            .ItemBoxNum {
+              padding-top: 4px;
+              height: 30px;
+              text-align: center;
+              font-size: 1.2rem;
+              color: grey;
+            }
+            .ItemBoxImage {
+              color: grey;
+              font-size: 1rem;
+              font-weight: 400;
+              padding-top: 0px;
+            }
+            .box-icon {
+              height: 30px;
+            }
+            .home-icon {
+              padding-top: 0;
+              padding-left: 4px;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .home-lower-right {
+    width: 20%;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 32px;
+    .home-lower-right-main {
+      border: rgb(224, 224, 224) solid 1px;
+      padding: 25px;
+      height: 100%;
+      margin-bottom: 20px;
+      background-color: $primaryBlue;
+      opacity: 0.6;
+      line-height: 2rem;
+      color: $divider;
+      &:hover {
+        opacity: 0.8;
+      }
+      h4 {
+        font-size: 1.1rem;
+      }
+      hr {
+        width: 100%;
+        margin: 0 auto 5px auto;
+        border-color: $divider;
+      }
+      a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: ghostwhite;
+        &:hover {
+          color: $primaryYellow;
+        }
+      }
+    }
+  }
+}
