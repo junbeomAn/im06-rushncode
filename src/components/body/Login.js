@@ -78,7 +78,7 @@ const Login = ({ keyPress, login }) => (
 
 export default Login;
 
-// <div className="authContainer">
+// <div className="authContainer" >
 //   <div className="authInputContainer">
 //     <Segment>
 //       <div className="authButtonContainer">
