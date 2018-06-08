@@ -12,7 +12,7 @@
       display: grid;
       width: 100%;
       grid-template-columns: auto auto auto;
-      grid-template-rows: 100px 100px 100px 100px;
+      grid-template-rows: auto;
       grid-gap: 30px;
       background: ghostwhite;
       color: #444;
@@ -20,7 +20,7 @@
       .tag-container .tag-content .wrapper .box {
         border-bottom: #e0e0e0 solid 1px;
         padding: 20px;
-        font-size: 130%; }
+        font-size: 1.3rem; }
         .tag-container .tag-content .wrapper .box span {
           color: #777;
           padding: 10px;

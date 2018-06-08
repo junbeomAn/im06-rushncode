@@ -5,6 +5,9 @@
 #===================================================================#
 */
 @media (max-width: 1024px) {
+  .body {
+    background: ghostwhite !important;
+  }
   .middle {
     width: 100%;
   }
@@ -171,6 +174,31 @@
       }
     }
   }
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    margin: 0 !important;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .img-box {
+      .no-result-button-cntr {
+        height: 200px;
+        .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 2rem;
+        }
+        .search-by-tag {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
 }
 
 /* 
@@ -180,6 +208,9 @@
 */
 
 @media (max-width: 768px) {
+  .App {
+    background: ghostwhite !important;
+  }
   .middle {
     width: 100%;
   }
@@ -681,7 +712,7 @@
       width: 90px;
       height: auto;
       span {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
   }
@@ -974,6 +1005,33 @@
   .questionPagenation {
     font-size: 0.5rem !important;
   }
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px;
+    .emptybox {
+      height: 100px;
+      .no-result-text {
+        font-size: 1.5rem;
+      }
+    }
+    .img-box {
+      .no-result-button-cntr {
+        height: 300px;
+        .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 1rem;
+        }
+        .search-by-tag {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 1024px) {
   .Header {
@@ -988,6 +1046,9 @@
 */
 
 @media (max-width: 450px) {
+  .middle {
+    background: ghostwhite !important;
+  }
   .homeUpper {
     height: 200px !important;
   }
@@ -1010,6 +1071,33 @@
       width: 80%;
       font-size: 0.7rem !important;
       height: 55% !important;
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px;
+    .emptybox {
+      .no-result-text {
+        font-size: 1.2rem;
+      }
+    }
+    .img-box {
+      padding-top: 100px;
+      .no-result-button-cntr {
+        height: 100px;
+        .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 1rem;
+        }
+        .search-by-tag {
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 }
