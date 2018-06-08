@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,wBAAwB;EACtB,UAAU,ECFE,OAAe;EDG3B,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,IAAI;EACZ,kCAAS;IACP,WAAW,EAAE,KAAK;IAClB,qCAAG;MACD,KAAK,EAAE,KAAK;MACZ,SAAS,EAAE,MAAM",
+"sources": ["../scss/QuestionModify.scss","../scss/Color.scss"],
+"names": [],
+"file": "QuestionModify.css"
+}

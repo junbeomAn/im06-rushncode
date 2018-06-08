@@ -1,0 +1,370 @@
+@import "color";
+
+.mypage-container {
+  width: 100%;
+  height: auto;
+  min-height: 670px;
+  margin: 0 auto;
+  background: $primaryBlue;
+  opacity: 0.8;
+  padding: 100px 50px 0px 50px;
+  .container {
+    min-height: 200px;
+  }
+  .mypage-inner-container {
+    padding: 20px 30px;
+    background: ghostwhite;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    .first {
+      border-bottom: solid 2px $divider;
+      height: 250px;
+      padding: 10px 20px;
+      display: flex;
+      .upload-btn-wrapper {
+        position: absolute;
+        top: 23rem;
+        z-index: 300;
+        overflow: hidden;
+        display: inline-block;
+        width: 230px;
+        // border: solid 1px red;
+      }
+      .btn {
+        text-decoration: none;
+        width: 100%;
+        padding: 8px 20px;
+        color: ghostwhite;
+        background-color: rgba($color: $primaryBlue, $alpha: 0.7);
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .upload-btn-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        height: auto;
+      }
+      .first-image {
+        min-width: 230px;
+        height: 230px;
+        z-index: 2;
+        img {
+          height: 100%;
+        }
+      }
+      .first-userinfo {
+        width: 100%;
+        height: 230px;
+        margin-left: 20px;
+        margin-top: 10px;
+        overflow-wrap: break-word;
+        .username {
+          font-size: 3rem;
+          letter-spacing: 1.1px;
+        }
+        .email {
+          padding-left: 20px;
+          margin-top: 30px;
+          font-size: 1.5rem;
+          letter-spacing: 1.1px;
+        }
+        .status {
+          padding-left: 20px;
+          margin-top: 30px;
+          p {
+            display: inline;
+            font-size: 1.1rem;
+            letter-spacing: 1.1px;
+            margin: 0;
+          }
+          .edit-mod-btn {
+            border: none;
+            background: none;
+            color: #265eb1;
+            font-size: 0.9rem;
+          }
+          .edit-status {
+            display: block;
+            width: 100%;
+            min-height: 45px;
+            height: 2.5vw;
+          }
+          .edit-submit-btn {
+            display: inline;
+            margin-top: 10px;
+            width: 60px;
+            height: 32px;
+            font-weight: 400;
+            font-size: 0.9rem;
+          }
+          .edit-cancel-btn {
+            background: crimson;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 60px;
+            height: 32px;
+            font-weight: 400;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+    .second {
+      border-bottom: solid 2px $divider;
+      height: 200px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      .second-one {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
+        .second-one-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px;
+        }
+        .second-one-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px;
+          .second-one-box-inner {
+            width: 100px;
+            text-align: center;
+            .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px;
+              .blue {
+                color: blue;
+                opacity: 0.7;
+              }
+              .red {
+                color: red;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+      // .second-one {
+      //   width: 32%;
+      //   padding: 15px 20px;
+      //   background: #f9f9f9;
+      //   border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
+      //   .second-one-title {
+      //     margin-bottom: 20px;
+      //     font-weight: 600;
+      //     font-size: 1.1rem;
+      //     letter-spacing: 1.1px;
+      //   }
+      //   .second-one-score {
+      //     margin-bottom: 15px;
+      //     font-weight: 600;
+      //     font-size: 1.8rem;
+      //     letter-spacing: 1.1px;
+      //   }
+      // }
+      .second-two {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
+        .second-two-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px;
+        }
+        .second-two-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px;
+          .second-two-box-inner {
+            width: 100px;
+            text-align: center;
+            .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px;
+              .blue {
+                color: blue;
+                opacity: 0.7;
+              }
+              .red {
+                color: red;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+      .second-three {
+        width: 32%;
+        padding: 15px 20px;
+        background: #f9f9f9;
+        border-top: solid 4px rgba($color: $primaryBlue, $alpha: 0.8);
+        .second-three-title {
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          letter-spacing: 1.1px;
+        }
+        .second-three-box {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 2px;
+          .second-three-box-inner {
+            width: 100px;
+            text-align: center;
+            .count {
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+              font-weight: 800;
+              letter-spacing: 1.1px;
+              .blue {
+                color: blue;
+                opacity: 0.7;
+              }
+              .red {
+                color: red;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+    }
+    .third {
+      height: auto;
+      padding: 10px 20px;
+      a {
+        color: $greyfont;
+      }
+      .active {
+        background: ghostwhite;
+        border-top: $primaryBlue solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: $primaryBlue;
+        font-weight: bold;
+      }
+      .tab-content {
+        height: auto;
+      }
+      .tab-pane {
+        height: auto;
+        border: none;
+        .container {
+          background: ghostwhite;
+          padding: 0;
+          margin: 0;
+        }
+        .box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 0px 0px 0px;
+          border-bottom: solid 1px $divider;
+          .first {
+            height: auto;
+            width: 220px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 7px;
+            color: $greyfont;
+            display: flex;
+            text-align: center;
+            border: none;
+            .firstItem {
+              width: 50px;
+
+              .ItemBox {
+                .ItemBoxNum {
+                  padding-top: 4px;
+                  height: 30px;
+                  text-align: center;
+                  font-size: 1.2rem;
+                  color: grey;
+                }
+                .ItemBoxImage {
+                  color: grey;
+                  font-size: 1rem;
+                  font-weight: 400;
+                  padding-top: 0px;
+                }
+                .box-icon {
+                  height: 30px;
+                }
+                .home-icon {
+                  padding-top: 0;
+                  padding-left: 4px;
+                  font-size: 1.5vw;
+                }
+              }
+            }
+          }
+          .second {
+            height: auto;
+            width: 80%;
+            margin: 0;
+            padding: 10px 15px;
+            border-bottom: none;
+            display: flex;
+            flex-direction: column;
+            h2 {
+              color: $primaryBlue;
+              &:hover {
+                font-size: 25px;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s;
+              }
+            }
+            p {
+              color: $greyfont;
+            }
+            .tags {
+              padding-top: 8px;
+              padding-bottom: 10px;
+              .questListBtn {
+                height: 25px;
+                padding-top: 2px;
+                margin-right: 3px;
+                &:hover {
+                  a {
+                    color: #fff;
+                  }
+                }
+                a {
+                  color: $greyfont;
+                }
+              }
+            }
+          }
+          .fourth {
+            width: 125px;
+            height: auto;
+            padding-right: 10px;
+            color: $greyfont;
+            text-align: center;
+            .username {
+              color: lighten($primaryBlue, 30%);
+              font-size: 15px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

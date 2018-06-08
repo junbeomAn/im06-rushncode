@@ -1,0 +1,883 @@
+@charset "UTF-8";
+/* 
+#===================================================================# 
+|                         1024px [ 해상도 분기 ]                       | 
+#===================================================================#
+*/
+@media (max-width: 1024px) {
+  .body {
+    background: ghostwhite !important; }
+
+  .middle {
+    width: 100%; }
+
+  .footer {
+    width: 100%; }
+
+  .header {
+    width: 100%; }
+
+  .complete-bot {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #a83fe4 !important; }
+
+  .break-bot {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #e8d048 !important; }
+
+  .helpdesk-btn-open {
+    font-size: 1rem; }
+
+  .homeUpper {
+    height: 400px; }
+    .homeUpper .bot {
+      display: flex;
+      background: #0b1b33;
+      width: 100%;
+      height: 200px; }
+
+  .home-lower-box {
+    width: 90%;
+    margin: 0 auto; }
+
+  .home-lower {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex; }
+    .home-lower .home-lower-left {
+      width: 100%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column; }
+      .home-lower .home-lower-left .home-lower-left-header a {
+        color: #777; }
+      .home-lower .home-lower-left .home-lower-left-header .active {
+        background: ghostwhite;
+        border-top: #0b1b33 solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: #0b1b33;
+        font-weight: bold; }
+      .home-lower .home-lower-left .home-lower-left-header .tab-pane {
+        border: none; }
+      .home-lower .home-lower-left .questionPost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px 10px 0px; }
+        .home-lower .home-lower-left .questionPost .first {
+          padding: 0;
+          padding-right: 10px;
+          width: 140px;
+          color: #777;
+          padding-bottom: 6px;
+          display: flex;
+          text-align: center; }
+          .home-lower .home-lower-left .questionPost .first .firstItem {
+            width: 30px;
+            margin-bottom: 20px; }
+            .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox {
+              margin-top: 24px; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+                height: 30px;
+                padding-top: 4px;
+                padding-bottom: 0;
+                text-align: center;
+                font-size: 1.1rem;
+                color: grey;
+                font-weight: bold; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxImage {
+                color: grey;
+                font-size: 0.9rem;
+                font-weight: 400;
+                padding-top: 0px; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .box-icon {
+                height: 30px;
+                margin-left: 3px; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .home-icon {
+                padding: 0;
+                font-size: 1.1rem; }
+        .home-lower .home-lower-left .questionPost .second {
+          width: 100%; }
+          .home-lower .home-lower-left .questionPost .second h2 {
+            color: #0b1b33;
+            font-size: 1.5rem; }
+            .home-lower .home-lower-left .questionPost .second h2:hover {
+              font-size: 1.6rem;
+              transition: all 0.5s; }
+          .home-lower .home-lower-left .questionPost .second .tags {
+            padding-top: 8px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center; }
+            .home-lower .home-lower-left .questionPost .second .tags .questListBtn {
+              min-height: 13px;
+              padding: 2px 6px;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20px;
+              margin-right: 3px; }
+              .home-lower .home-lower-left .questionPost .second .tags .questListBtn:hover a {
+                color: #fff; }
+              .home-lower .home-lower-left .questionPost .second .tags .questListBtn a {
+                font-size: 0.8rem;
+                color: #777; }
+        .home-lower .home-lower-left .questionPost .fourth {
+          width: 125px;
+          padding-right: 10px;
+          color: #777;
+          text-align: center; }
+          .home-lower .home-lower-left .questionPost .fourth .username {
+            color: #265eb1;
+            font-size: 0.95rem;
+            font-weight: bold; }
+            .home-lower .home-lower-left .questionPost .fourth .username:hover {
+              color: #6092dd; }
+          .home-lower .home-lower-left .questionPost .fourth .time {
+            font-size: 0.85rem; }
+
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    margin: 0 !important;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .no-result-container .img-box .no-result-button-cntr {
+      height: 200px; }
+      .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+        width: 100%;
+        height: auto;
+        font-size: 2rem; }
+      .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+        font-size: 1.5rem; } }
+/* 
+#===================================================================# 
+|                         768px [ 해상도 분기 ]                        | 
+#===================================================================#
+*/
+@media (max-width: 768px) {
+  .App {
+    background: ghostwhite !important; }
+
+  .middle {
+    width: 100%; }
+
+  .footer {
+    width: 100%; }
+    .footer .footerLeft {
+      font-size: 0.8rem;
+      color: ghostwhite; }
+    .footer .footerItem {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: ghostwhite;
+      padding-left: 20px; }
+      .footer .footerItem:hover {
+        color: #e8d048; }
+
+  .complete-bot {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #a83fe4 !important; }
+
+  .break-bot {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #e8d048 !important; }
+
+  .helpdesk-btn-open {
+    font-size: 0.8rem; }
+
+  .header {
+    width: 100%; }
+
+  /* 
+  #===================================================================# 
+  |                              홈 화면                                | 
+  #===================================================================#
+  */
+  .homeUpper {
+    height: 300px; }
+    .homeUpper .bot {
+      display: flex;
+      background: #0b1b33;
+      width: 100%;
+      height: 120px; }
+
+  .home-lower-box {
+    width: 90%;
+    margin: 0 auto; }
+
+  .home-lower {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex; }
+    .home-lower .home-lower-left {
+      width: 100%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column; }
+      .home-lower .home-lower-left .home-lower-left-header a {
+        color: #777; }
+      .home-lower .home-lower-left .home-lower-left-header .active {
+        background: ghostwhite;
+        border-top: #0b1b33 solid 2px;
+        border-bottom: ghostwhite solid 1px;
+        color: #0b1b33;
+        font-weight: bold; }
+      .home-lower .home-lower-left .home-lower-left-header .tab-pane {
+        border: none; }
+      .home-lower .home-lower-left .questionPost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px 10px 0px; }
+        .home-lower .home-lower-left .questionPost .first {
+          padding: 0;
+          padding-right: 10px;
+          width: 110px;
+          color: #777;
+          padding-bottom: 6px;
+          display: flex;
+          text-align: center; }
+          .home-lower .home-lower-left .questionPost .first .firstItem {
+            width: 30px;
+            margin-bottom: 20px; }
+            .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox {
+              margin-top: 20px; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+                height: 30px;
+                padding-top: 4px;
+                padding-bottom: 0;
+                text-align: center;
+                font-size: 0.9rem;
+                color: grey;
+                font-weight: bold; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .ItemBoxImage {
+                color: grey;
+                font-size: 0.7rem;
+                font-weight: 400;
+                padding-top: 0px; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .box-icon {
+                height: 30px;
+                margin-right: 5px; }
+              .home-lower .home-lower-left .questionPost .first .firstItem .ItemBox .home-icon {
+                padding-top: 0;
+                padding-left: 4px;
+                font-size: 1rem; }
+        .home-lower .home-lower-left .questionPost .second {
+          width: 100%; }
+          .home-lower .home-lower-left .questionPost .second h2 {
+            color: #0b1b33;
+            font-size: 1.2rem; }
+            .home-lower .home-lower-left .questionPost .second h2:hover {
+              font-size: 1.3rem;
+              transition: all 0.5s; }
+          .home-lower .home-lower-left .questionPost .second .tags {
+            padding-top: 8px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center; }
+            .home-lower .home-lower-left .questionPost .second .tags .questListBtn {
+              min-height: 13px;
+              padding: 2px 6px;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20px;
+              margin-right: 3px; }
+              .home-lower .home-lower-left .questionPost .second .tags .questListBtn:hover a {
+                color: #fff; }
+              .home-lower .home-lower-left .questionPost .second .tags .questListBtn a {
+                font-size: 0.7rem;
+                color: #777; }
+      .home-lower .home-lower-left .fourth {
+        width: 125px;
+        padding-right: 10px;
+        color: #777;
+        text-align: center; }
+        .home-lower .home-lower-left .fourth .username {
+          color: #265eb1;
+          font-size: 0.85rem;
+          font-weight: bold; }
+          .home-lower .home-lower-left .fourth .username:hover {
+            color: #6092dd; }
+        .home-lower .home-lower-left .fourth .time {
+          font-size: 0.6rem !important; }
+    .home-lower .home-lower-right {
+      display: none; }
+
+  .nav-item {
+    font-size: 0.8rem; }
+
+  /* 
+  #===================================================================# 
+  |                            질문 리스트 화면                           | 
+  #===================================================================#
+  */
+  .questionMain .questionPost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 10px 0px; }
+    .questionMain .questionPost .first {
+      padding-left: 20px;
+      padding-right: 10px;
+      width: 120px !important;
+      color: #777;
+      padding-bottom: 6px;
+      display: flex;
+      text-align: center; }
+      .questionMain .questionPost .first .firstItem {
+        width: 25px;
+        margin-bottom: 20px; }
+        .questionMain .questionPost .first .firstItem .ItemBox {
+          margin-top: 20px; }
+          .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxNum {
+            height: 30px;
+            padding-top: 4px;
+            padding-bottom: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: grey;
+            font-weight: bold; }
+          .questionMain .questionPost .first .firstItem .ItemBox .ItemBoxImage {
+            color: grey;
+            font-size: 0.7rem;
+            font-weight: 400;
+            padding-top: 0px; }
+          .questionMain .questionPost .first .firstItem .ItemBox .box-icon {
+            height: 30px; }
+          .questionMain .questionPost .first .firstItem .ItemBox .home-icon {
+            padding-top: 0;
+            padding-left: 4px;
+            font-size: 1rem; }
+    .questionMain .questionPost .second {
+      width: 100%; }
+      .questionMain .questionPost .second h2 {
+        color: #0b1b33;
+        font-size: 1.2rem; }
+        .questionMain .questionPost .second h2:hover {
+          font-size: 1.3rem;
+          transition: all 0.5s; }
+      .questionMain .questionPost .second .tags {
+        padding-top: 8px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center; }
+        .questionMain .questionPost .second .tags .questListBtn {
+          min-height: 13px;
+          padding: 2px 6px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 20px;
+          margin-right: 3px; }
+          .questionMain .questionPost .second .tags .questListBtn:hover a {
+            color: #fff; }
+          .questionMain .questionPost .second .tags .questListBtn a {
+            font-size: 0.7rem;
+            color: #777; }
+  .questionMain .fourth {
+    width: 125px;
+    padding-right: 10px;
+    color: #777;
+    text-align: center; }
+    .questionMain .fourth .username {
+      color: #265eb1;
+      font-size: 0.85rem !important;
+      font-weight: bold; }
+      .questionMain .fourth .username:hover {
+        color: #6092dd; }
+    .questionMain .fourth .time {
+      font-size: 0.6rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                            질문 엔트리 화면                           | 
+  #===================================================================#
+  */
+  p {
+    font-size: 1rem; }
+
+  .res-icon {
+    font-size: 18px !important; }
+
+  .CountBoxNum {
+    font-size: 1rem; }
+
+  .picked .picked-item span {
+    color: #a83fe4;
+    font-size: 0.7rem !important; }
+
+  .add-comment {
+    font-size: 0.9rem; }
+
+  .write-btn {
+    font-size: 0.7rem;
+    padding: 3px 7px; }
+
+  .write-info {
+    font-size: 0.6rem !important; }
+
+  .modify {
+    font-size: 0.6rem !important; }
+
+  .delete {
+    font-size: 0.6rem !important; }
+
+  .timeStampReplyName {
+    font-size: 0.9rem; }
+
+  .reply-down {
+    font-size: 0.8rem; }
+
+  .QuestionEntryMainSecondReplyTitle,
+  .QuestionEntryAnswerSecondReplyTitle {
+    font-size: 1.2rem !important; }
+
+  .CountBoxNum {
+    margin-left: 2px !important;
+    margin-top: 3px !important;
+    font-size: 1rem !important; }
+
+  .ItemBoxNum {
+    font-size: 1rem !important; }
+    .ItemBoxNum img {
+      width: 25px;
+      height: 25px; }
+
+  .ItemBoxImage {
+    font-size: 0.7rem !important; }
+
+  .add-answer {
+    font-size: 1rem !important; }
+
+  .ask-btn,
+  .sort-btn {
+    font-size: 1rem !important; }
+
+  .complete-badge {
+    padding: 3px 10px;
+    background: #a83fe4;
+    letter-spacing: 0.2px; }
+    .complete-badge h5 {
+      font-size: 0.8rem; }
+
+  .break-badge {
+    padding: 3px 10px;
+    background: #e8d048;
+    letter-spacing: 0.2px; }
+    .break-badge h5 {
+      font-size: 0.8rem; }
+
+  .QuestionEntryHeaderTop .answer-title {
+    font-size: 1.4rem !important; }
+
+  .QuestionEntryContainer h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    padding: 50px 0px 3px 0px; }
+  .QuestionEntryContainer .tags {
+    padding-top: 8px;
+    padding-bottom: 10px; }
+    .QuestionEntryContainer .tags .questListBtn {
+      height: 20px;
+      padding-top: 2px;
+      margin-right: 3px;
+      font-size: 0.8rem; }
+
+  .mark_down_box {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .mark_down_box .mark_down_input {
+      width: 100% !important;
+      height: 100%;
+      border: solid 1px #e4e6e8;
+      background: #0b1b33;
+      opacity: 0.8;
+      border-radius: 3px; }
+      .mark_down_box .mark_down_input textarea {
+        margin: 0;
+        padding: 0;
+        border: none; }
+      .mark_down_box .mark_down_input h2 {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 0.9rem !important;
+        letter-spacing: 3px;
+        font-weight: normal;
+        color: white; }
+      .mark_down_box .mark_down_input .mark_down_input_item {
+        width: 100%;
+        height: 300px !important;
+        font-size: 0.8rem;
+        padding: 10px 15px; }
+    .mark_down_box .mark_down_view_wrapper {
+      display: none; }
+
+  /* 
+  #===================================================================# 
+  |                            질문 롸이팅 화면                           | 
+  #===================================================================#
+  */
+  .ClauseUpper h1 {
+    font-size: 1.8rem; }
+
+  .write-title {
+    font-size: 1.1rem; }
+
+  .form-check-input {
+    width: 10px; }
+
+  .QuestionWriteTagTitle,
+  .QuestionWriteTagInput {
+    font-size: 0.8rem !important; }
+
+  .inputTitle,
+  .inputReward {
+    font-size: 0.8rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                                 태그                               | 
+  #===================================================================#
+  */
+  .tag-container .tag-content .wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-gap: 30px;
+    background: ghostwhite;
+    color: #444;
+    padding-bottom: 80px; }
+
+  .tag-container {
+    min-height: 900px; }
+    .tag-container .tag-search-bar {
+      font-size: 1rem !important;
+      height: 40px; }
+      .tag-container .tag-search-bar input::placeholder {
+        font-size: 1rem !important; }
+    .tag-container h2 {
+      font-size: 1.2rem !important; }
+    .tag-container .box {
+      margin: 0 !important;
+      padding: 0 !important;
+      margin-top: 20px !important;
+      width: 90px;
+      height: auto; }
+      .tag-container .box span {
+        font-size: 0.8rem; }
+
+  /* 
+  #===================================================================# 
+  |                            이용약관, 정보보호                         | 
+  #===================================================================#
+  */
+  .clause-content {
+    font-size: 0.8rem; }
+    .clause-content h2 {
+      font-size: 1.2rem !important; }
+    .clause-content h3 {
+      font-size: 1rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                                 랭크                               | 
+  #===================================================================#
+  */
+  .rankContainer .label {
+    font-size: 0.7rem !important; }
+  .rankContainer .rankUpper {
+    height: 60px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center; }
+    .rankContainer .rankUpper .user-search-bar {
+      width: 90%;
+      margin: 0 auto;
+      height: 40px;
+      font-size: 1rem !important; }
+      .rankContainer .rankUpper .user-search-bar input::placeholder {
+        font-size: 1rem !important; }
+  .rankContainer .rank-num {
+    font-size: 1.7rem !important;
+    width: 30px;
+    height: 30px;
+    margin-right: 14px !important; }
+  .rankContainer img {
+    width: 40px !important;
+    height: 40px !important; }
+  .rankContainer .rank-name {
+    font-size: 1.2rem !important; }
+  .rankContainer .total-reward span {
+    font-size: 1rem !important; }
+  .rankContainer .total-reward:hover span {
+    display: none; }
+  .rankContainer .total-reward:hover:before {
+    content: "누적 이더리움";
+    font-size: 0.9rem; }
+  .rankContainer .rank-info-bot {
+    margin-top: 10px;
+    font-size: 0.8rem; }
+
+  /* 
+  #===================================================================# 
+  |                               마이페이지                             | 
+  #===================================================================#
+  */
+  .count {
+    font-size: 1.1rem !important; }
+
+  .word {
+    font-size: 0.9rem !important; }
+
+  .mypage-container {
+    padding: 100px 0px 0px 0px; }
+    .mypage-container .mypage-inner-container {
+      padding: 00px 0px;
+      width: 100%; }
+      .mypage-container .mypage-inner-container .first {
+        height: 130px; }
+        .mypage-container .mypage-inner-container .first .upload-btn-wrapper,
+        .mypage-container .mypage-inner-container .first .btn,
+        .mypage-container .mypage-inner-container .first .upload-btn-wrapper input[type="file"] {
+          display: none; }
+        .mypage-container .mypage-inner-container .first .first-image {
+          min-width: 0;
+          width: 100px;
+          height: 100px; }
+        .mypage-container .mypage-inner-container .first .first-userinfo {
+          width: 500px;
+          margin-left: 90px; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .username {
+            font-size: 1.2rem;
+            letter-spacing: 1.1px;
+            margin: 0;
+            display: inline; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .email {
+            padding-left: 20px;
+            margin-top: 3px;
+            font-size: 0.8rem;
+            letter-spacing: 1.1px;
+            display: inline; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .status {
+            padding-left: 0px;
+            margin-top: 10px;
+            letter-spacing: 1.1px; }
+            .mypage-container .mypage-inner-container .first .first-userinfo .status p {
+              font-size: 0.7rem; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-mod-btn {
+            font-size: 0.5rem !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-status {
+            display: block;
+            width: 100%;
+            min-height: 25px !important;
+            height: 1vw !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-submit-btn {
+            display: inline;
+            margin-top: 10px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important; }
+          .mypage-container .mypage-inner-container .first .first-userinfo .edit-cancel-btn {
+            background: crimson;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important; }
+      .mypage-container .mypage-inner-container .second {
+        height: auto;
+        display: flex;
+        flex-direction: column; }
+        .mypage-container .mypage-inner-container .second .second-one {
+          width: 100%; }
+          .mypage-container .mypage-inner-container .second .second-one .second-one-title {
+            font-size: 1.2rem; }
+        .mypage-container .mypage-inner-container .second .second-two {
+          width: 100%; }
+          .mypage-container .mypage-inner-container .second .second-two .second-two-title {
+            font-size: 1.2rem; }
+        .mypage-container .mypage-inner-container .second .second-three {
+          width: 100%; }
+          .mypage-container .mypage-inner-container .second .second-three .second-three-title {
+            font-size: 1.2rem; }
+      .mypage-container .mypage-inner-container .third .first {
+        display: none !important; }
+      .mypage-container .mypage-inner-container .third .second {
+        width: 100% !important; }
+        .mypage-container .mypage-inner-container .third .second h2 {
+          color: #0b1b33;
+          font-size: 1.2rem; }
+          .mypage-container .mypage-inner-container .third .second h2:hover {
+            font-size: 1.3rem;
+            transition: all 0.5s; }
+        .mypage-container .mypage-inner-container .third .second .tags {
+          padding-top: 8px;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: center; }
+          .mypage-container .mypage-inner-container .third .second .tags .questListBtn {
+            padding: 2px 6px;
+            height: 20px !important;
+            padding-top: 2px;
+            margin-right: 3px;
+            font-size: 0.8rem; }
+            .mypage-container .mypage-inner-container .third .second .tags .questListBtn:hover a {
+              color: #fff; }
+            .mypage-container .mypage-inner-container .third .second .tags .questListBtn a {
+              font-size: 0.7rem;
+              color: #777; }
+      .mypage-container .mypage-inner-container .third .fourth .username {
+        font-size: 0.85rem !important; }
+      .mypage-container .mypage-inner-container .third .fourth .time {
+        font-size: 0.6rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                               헬프데스크                             | 
+  #===================================================================#
+*/
+  .helpdesk-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    width: 340px;
+    height: 230px;
+    background: ghostwhite; }
+
+  .helpdesk-container .helpdesk-title {
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-title h1 {
+      font-size: 1rem !important; }
+  .helpdesk-container .helpdesk-body {
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(11, 27, 51, 0.8); }
+    .helpdesk-container .helpdesk-body .helpdesk-body-item {
+      margin-bottom: 10px; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-item h3 {
+        margin-top: 5px;
+        font-size: 0.8rem; }
+    .helpdesk-container .helpdesk-body .helpdesk-body-word {
+      margin-top: 5px;
+      margin-bottom: 20px; }
+      .helpdesk-container .helpdesk-body .helpdesk-body-word h3 {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.1rem; }
+  .helpdesk-container .helpdesk-btn-close {
+    margin: auto;
+    padding: 4px 8px;
+    border: solid 2px rgba(11, 27, 51, 0.8);
+    border-radius: 5px;
+    font-size: 0.6rem;
+    font-weight: 900;
+    display: block;
+    text-decoration: none;
+    background: none;
+    color: rgba(11, 27, 51, 0.8); }
+
+  .questionPagenation {
+    font-size: 0.5rem !important; }
+
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px; }
+    .no-result-container .emptybox {
+      height: 100px; }
+      .no-result-container .emptybox .no-result-text {
+        font-size: 1.5rem; }
+    .no-result-container .img-box .no-result-button-cntr {
+      height: 300px; }
+      .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+        width: 100%;
+        height: auto;
+        font-size: 1rem; }
+      .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+        font-size: 0.8rem; } }
+@media (max-width: 1024px) {
+  .Header {
+    display: none; } }
+/* 
+#===================================================================# 
+|                     450px [ 해상도 분기 ] - 모바일                    | 
+#===================================================================#
+*/
+@media (max-width: 450px) {
+  .middle {
+    background: ghostwhite !important; }
+
+  .homeUpper {
+    height: 200px !important; }
+
+  .questionPost .first {
+    display: none !important; }
+  .questionPost .second {
+    width: 740px !important; }
+
+  .top .home-search-btn {
+    margin-top: 20px !important; }
+
+  .bot {
+    height: 150px; }
+    .bot .home-search-bar {
+      width: 80%;
+      font-size: 0.7rem !important;
+      height: 55% !important; }
+
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px; }
+    .no-result-container .emptybox .no-result-text {
+      font-size: 1.2rem; }
+    .no-result-container .img-box {
+      padding-top: 100px; }
+      .no-result-container .img-box .no-result-button-cntr {
+        height: 100px; }
+        .no-result-container .img-box .no-result-button-cntr .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 1rem; }
+        .no-result-container .img-box .no-result-button-cntr .search-by-tag {
+          font-size: 0.8rem; } }
+
+/*# sourceMappingURL=Responsive.css.map */

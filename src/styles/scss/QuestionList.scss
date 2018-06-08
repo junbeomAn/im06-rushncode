@@ -1,0 +1,155 @@
+@import "color";
+
+.questContainer {
+  width: 100%;
+  background: ghostwhite;
+  .search-form {
+    margin-top: 80px;
+    .input-form {
+      width: 60%;
+    }
+  }
+}
+.questionMain {
+  width: 100%;
+  background: ghostwhite;
+  .question-box {
+    min-height: 570px;
+  }
+  .questionPost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 0px 30px;
+    .first {
+      padding-right: 10px;
+      width: 180px; // border: solid 1px red;
+      color: $greyfont;
+      padding-bottom: 6px;
+      display: flex;
+      text-align: center;
+      .firstItem {
+        width: 50px;
+        margin-bottom: 20px;
+        .ItemBox {
+          margin-top: 20px;
+          .ItemBoxNum {
+            height: 30px;
+            padding-top: 4px;
+            padding-bottom: 0;
+            text-align: center;            
+            font-size: 1.2rem;
+            color: grey;
+            font-weight: bold;
+          }
+          .ItemBoxImage {
+            color: grey;
+            font-size: 1rem;
+            font-weight: 400;
+            padding-top: 0px;
+          }
+          .box-icon {
+            height: 30px;
+          }
+
+          .home-icon {
+            padding-top: 0;
+            padding-left: 4px;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    .second {
+      width: 80%;
+      margin: 0;
+      padding: 10px 15px;
+      border-bottom: 1px solid $divider;
+      h2 {
+        color: $primaryBlue;
+        font-size: 1.7rem;
+        &:hover {
+          font-size: 1.8rem;
+          transition: all 0.5s;
+        }
+      }
+      p {
+        color: $greyfont;
+      }
+      .tags {
+        padding-top: 8px;
+        padding-bottom: 10px;
+        // border: solid 1px red;
+        display: flex;
+        align-items: center;
+        .questListBtn {
+          min-height: 16px;
+          padding: 4px 8px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 25px;
+          // border: solid 1px red;
+          
+          margin-right: 3px;
+          &:hover {
+            a {
+              color: #fff;
+            }
+          }
+          a {
+            font-size: 0.9rem;
+            color: $greyfont;
+          }
+        }
+      }
+    }
+    .fourth {
+      width: 125px;
+      padding-right: 10px;
+      color: $greyfont;
+      text-align: center;
+      .username {
+        color: lighten($primaryBlue, 30%);
+        font-size: 1.05rem;
+        font-weight: bold;
+        &:hover {
+          color: lighten($primaryBlue, 50%);
+        }
+      }
+      .time {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .questionPagenation {
+    margin: 0;
+    padding-top: 15px;
+    justify-content: center;
+    padding-bottom: 15px;
+    font-size: 0.9rem;
+
+    .page-link {
+      color: $primaryBlue;
+      border: solid 1px $primaryBlue;
+      background: transparent;
+
+      &:hover {
+        color: #fff;
+        border: solid 1px $primaryBlue;
+        background: $primaryBlue;
+        opacity: 0.7;
+      }
+    }
+
+    .current {
+      background: $primaryBlue;
+      opacity: 0.7;
+      .page-link {
+        color: white;
+      }
+    }
+  }
+}
