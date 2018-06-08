@@ -15,7 +15,7 @@
       display: grid;
       width: 100%;
       grid-template-columns: auto auto auto;
-      grid-template-rows: 100px 100px 100px 100px;
+      grid-template-rows: auto;
       grid-gap: 30px;
       background: ghostwhite;
       color: #444;
@@ -23,7 +23,7 @@
       .box {
         border-bottom: rgb(224, 224, 224) solid 1px;
         padding: 20px;
-        font-size: 130%;
+        font-size: 1.3rem;
         span {
           color: $greyfont;
           padding: 10px;
