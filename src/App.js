@@ -45,13 +45,7 @@ class App extends Component {
     const { sidebarOpen } = this.state;
     const sidebarClassName = sidebarOpen ? 'home-side-menu open' : 'home-side-menu';
     const sidebarCloseBtn = sidebarOpen ? 'sidebar-btn sidebar-close active' : 'sidebar-btn sidebar-close inactive';
-    let sidebarOpenBtn = !sidebarOpen ? 'sidebar-btn active' : 'sidebar-btn inactive';
-    const currLocation = window.location.href.split('/')[3];
-
-    const sidebarHeader = !(currLocation === 'auth' || currLocation === '') ? 'sidebar-header-title' : 'sidebar-header-title title-inverted';
-    sidebarOpenBtn = !(currLocation === 'auth' || currLocation === '')
-      ? `${sidebarOpenBtn} inverted`
-      : sidebarOpenBtn;
+    const sidebarOpenBtn = !sidebarOpen ? 'sidebar-btn active' : 'sidebar-btn inactive';
 
     console.log(sidebarOpen);
     return (
@@ -60,7 +54,7 @@ class App extends Component {
           <div className="App">
             <HeaderContainer />
             <div className="sidebar-header">
-              <NavLink exact to="/"><span className={sidebarHeader}>러시앤코드</span></NavLink>
+              <NavLink exact to="/"><span className="sidebar-header-title">러시앤코드</span></NavLink>
               <Icon size="big" name="sidebar" className={sidebarOpenBtn} onClick={this.handleMenuButtonClick} />
             </div>
             <Sidebar sidebarClassName={sidebarClassName} closeMenuButtonClick={this.closeMenuButtonClick} sidebarCloseBtn={sidebarCloseBtn} sidebarOpen={sidebarOpen} />

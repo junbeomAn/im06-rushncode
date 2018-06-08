@@ -111,12 +111,13 @@ export class Home extends Component {
                         <Loader active inline="centered" />
                       )}
                     </div>
-                    {[0, 1].map(() => (
+                    {[0, 1].map(item => (
                       <div
                         className="tab-pane fade"
                         id="nav-like"
                         role="tabpanel"
                         aria-labelledby="nav-like-tab"
+                        key={`home${item}`}
                       >
                         {<HomeQuestionList posts={questions} isLoggedIn={isLoggedIn} /> || (
                           <Loader active inline="centered" />
