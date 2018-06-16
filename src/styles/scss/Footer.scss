@@ -1,0 +1,37 @@
+@import "color";
+
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  height: 20vw;
+  background: $primaryBlue;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // background-image: url("./images/unsplash/photo-1424873380396-9580028d74db.jpg");
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  .footer-inner{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.footerLeft {
+  font-size: 1rem;
+  color: ghostwhite;
+}
+.footerItem {
+  font-size: 1rem;
+  text-decoration: none;
+  color: ghostwhite;
+  padding-left: 20px;
+  &:hover {
+    color: $primaryYellow;
+  }
+}

@@ -1,0 +1,67 @@
+.homeContainer {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background-color: ghostwhite; }
+
+.ClauseUpper {
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  background-color: rgba(11, 27, 51, 0.8);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  text-align: left; }
+
+.ClauseJumbotron {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 80px;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: ghostwhite;
+  text-align: left; }
+  .ClauseJumbotron h1 {
+    font-size: 40px;
+    margin-top: 20px;
+    letter-spacing: 0.2rem; }
+  .ClauseJumbotron p {
+    padding-top: 20px;
+    font-size: 20px;
+    letter-spacing: 0.2rem; }
+  .ClauseJumbotron .btn {
+    margin-top: 20px; }
+  .ClauseJumbotron .homeLBtn {
+    padding-right: 15px; }
+  .ClauseJumbotron .homeRBtn {
+    padding-left: 15px; }
+
+.clause-container .clause-wrapper {
+  background-color: ghostwhite;
+  padding: 50px 50px 50px 50px;
+  height: auto;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  line-height: 1.5rem; }
+  .clause-container .clause-wrapper a {
+    color: #777; }
+.clause-container .clause-content {
+  padding-top: 40px;
+  width: 90%;
+  margin: 0 auto; }
+.clause-container .nav-tabs .active {
+  background: ghostwhite;
+  border-top: #0b1b33 solid 2px;
+  border-bottom: ghostwhite solid 1px;
+  font-weight: bold; }
+
+.sort-btn {
+  font-size: 1.2rem; }
+
+.ask-btn {
+  font-size: 1.2rem; }
+
+/*# sourceMappingURL=Clause.css.map */

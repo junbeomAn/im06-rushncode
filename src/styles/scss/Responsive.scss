@@ -1,0 +1,1103 @@
+@import "color";
+/* 
+#===================================================================# 
+|                         1024px [ 해상도 분기 ]                       | 
+#===================================================================#
+*/
+@media (max-width: 1024px) {
+  .body {
+    background: ghostwhite !important;
+  }
+  .middle {
+    width: 100%;
+  }
+  .footer {
+    width: 100%;
+  }
+  .header {
+    width: 100%;
+  }
+  .complete-bot {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $primaryPurple !important;
+  }
+
+  .break-bot {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $primaryYellow !important;
+  }
+
+  .helpdesk-btn-open {
+    font-size: 1rem;
+  }
+  // ************** 홈 화면 ************** //
+  .homeUpper {
+    height: 400px;
+    .bot {
+      display: flex;
+      background: $primaryBlue;
+      width: 100%;
+      height: 200px;
+    }
+  }
+  .home-lower-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .home-lower {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    .home-lower-left {
+      width: 100%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      .home-lower-left-header {
+        a {
+          color: $greyfont;
+        }
+        .active {
+          background: ghostwhite;
+          border-top: $primaryBlue solid 2px;
+          border-bottom: ghostwhite solid 1px;
+          color: $primaryBlue;
+          font-weight: bold;
+        }
+        .tab-pane {
+          border: none;
+        }
+      }
+      .questionPost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px 10px 0px;
+        .first {
+          padding: 0;
+          padding-right: 10px;
+          width: 140px; // border: solid 1px red;
+          color: $greyfont;
+          padding-bottom: 6px;
+          display: flex;
+          text-align: center;
+          .firstItem {
+            width: 30px;
+            margin-bottom: 20px;
+            .ItemBox {
+              margin-top: 24px;
+              .ItemBoxNum {
+                height: 30px;
+                padding-top: 4px;
+                padding-bottom: 0;
+                text-align: center;
+                font-size: 1.1rem;
+                color: grey;
+                font-weight: bold;
+              }
+              .ItemBoxImage {
+                color: grey;
+                font-size: 0.9rem;
+                font-weight: 400;
+                padding-top: 0px;
+              }
+              .box-icon {
+                height: 30px;
+                // padding: 0;
+                margin-left: 3px;
+              }
+              .home-icon {
+                padding: 0;
+                font-size: 1.1rem;
+              }
+            }
+          }
+        }
+
+        .second {
+          width: 100%;
+          h2 {
+            color: $primaryBlue;
+            font-size: 1.5rem;
+            &:hover {
+              font-size: 1.6rem;
+              transition: all 0.5s;
+            }
+          }
+          .tags {
+            padding-top: 8px;
+            padding-bottom: 10px; // border: solid 1px red;
+            display: flex;
+            align-items: center;
+            .questListBtn {
+              min-height: 13px;
+              padding: 2px 6px;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20px; // border: solid 1px red;
+              margin-right: 3px;
+              &:hover {
+                a {
+                  color: #fff;
+                }
+              }
+              a {
+                font-size: 0.8rem;
+                color: $greyfont;
+              }
+            }
+          }
+        }
+        .fourth {
+          width: 125px;
+          padding-right: 10px;
+          color: $greyfont;
+          text-align: center;
+          .username {
+            color: lighten($primaryBlue, 30%);
+            font-size: 0.95rem;
+            font-weight: bold;
+            &:hover {
+              color: lighten($primaryBlue, 50%);
+            }
+          }
+          .time {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    margin: 0 !important;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .img-box {
+      .no-result-button-cntr {
+        height: 200px;
+        .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 2rem;
+        }
+        .search-by-tag {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+/* 
+#===================================================================# 
+|                         768px [ 해상도 분기 ]                        | 
+#===================================================================#
+*/
+
+@media (max-width: 768px) {
+  .App {
+    background: ghostwhite !important;
+  }
+  .middle {
+    width: 100%;
+  }
+  .footer {
+    width: 100%;
+    .footerLeft {
+      font-size: 0.8rem;
+      color: ghostwhite;
+    }
+
+    .footerItem {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: ghostwhite;
+      padding-left: 20px;
+      &:hover {
+        color: $primaryYellow;
+      }
+    }
+  }
+  .complete-bot {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: $primaryPurple !important;
+  }
+  .break-bot {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: $primaryYellow !important;
+  }
+  .helpdesk-btn-open {
+    font-size: 0.8rem;
+  }
+  .header {
+    width: 100%;
+  }
+  /* 
+  #===================================================================# 
+  |                              홈 화면                                | 
+  #===================================================================#
+  */
+  .homeUpper {
+    height: 300px;
+    .bot {
+      display: flex;
+      background: $primaryBlue;
+      width: 100%;
+      height: 120px;
+    }
+  }
+  .home-lower-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .home-lower {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    .home-lower-left {
+      width: 100%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      .home-lower-left-header {
+        a {
+          color: $greyfont;
+        }
+        .active {
+          background: ghostwhite;
+          border-top: $primaryBlue solid 2px;
+          border-bottom: ghostwhite solid 1px;
+          color: $primaryBlue;
+          font-weight: bold;
+        }
+        .tab-pane {
+          border: none;
+        }
+      }
+      .questionPost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px 10px 0px;
+        .first {
+          padding: 0;
+          padding-right: 10px;
+          width: 110px;
+          color: $greyfont;
+          padding-bottom: 6px;
+          display: flex;
+          text-align: center;
+          .firstItem {
+            width: 30px;
+            margin-bottom: 20px;
+            .ItemBox {
+              margin-top: 20px;
+              .ItemBoxNum {
+                height: 30px;
+                padding-top: 4px;
+                padding-bottom: 0;
+                text-align: center;
+                font-size: 0.9rem;
+                color: grey;
+                font-weight: bold;
+              }
+              .ItemBoxImage {
+                color: grey;
+                font-size: 0.7rem;
+                font-weight: 400;
+                padding-top: 0px;
+              }
+              .box-icon {
+                height: 30px;
+                margin-right: 5px;
+              }
+              .home-icon {
+                padding-top: 0;
+                padding-left: 4px;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+        .second {
+          width: 100%;
+          h2 {
+            color: $primaryBlue;
+            font-size: 1.2rem;
+            &:hover {
+              font-size: 1.3rem;
+              transition: all 0.5s;
+            }
+          }
+          .tags {
+            padding-top: 8px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            .questListBtn {
+              min-height: 13px;
+              padding: 2px 6px;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20px;
+              margin-right: 3px;
+              &:hover {
+                a {
+                  color: #fff;
+                }
+              }
+              a {
+                font-size: 0.7rem;
+                color: $greyfont;
+              }
+            }
+          }
+        }
+      }
+      .fourth {
+        width: 125px;
+        padding-right: 10px;
+        color: $greyfont;
+        text-align: center;
+        .username {
+          color: lighten($primaryBlue, 30%);
+          font-size: 0.85rem;
+          font-weight: bold;
+          &:hover {
+            color: lighten($primaryBlue, 50%);
+          }
+        }
+        .time {
+          font-size: 0.6rem !important;
+        }
+      }
+    }
+    .home-lower-right {
+      display: none;
+    }
+  }
+  .nav-item {
+    font-size: 0.8rem;
+  }
+  /* 
+  #===================================================================# 
+  |                            질문 리스트 화면                           | 
+  #===================================================================#
+  */
+  .questionMain {
+    .questionPost {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0px 10px 0px;
+      .first {
+        padding-left: 20px;
+        padding-right: 10px;
+        width: 120px !important;
+        color: $greyfont;
+        padding-bottom: 6px;
+        display: flex;
+        text-align: center;
+        .firstItem {
+          width: 25px;
+          margin-bottom: 20px;
+          .ItemBox {
+            margin-top: 20px;
+            .ItemBoxNum {
+              height: 30px;
+              padding-top: 4px;
+              padding-bottom: 0;
+              text-align: center;
+              font-size: 0.9rem;
+              color: grey;
+              font-weight: bold;
+            }
+            .ItemBoxImage {
+              color: grey;
+              font-size: 0.7rem;
+              font-weight: 400;
+              padding-top: 0px;
+            }
+            .box-icon {
+              height: 30px;
+            }
+            .home-icon {
+              padding-top: 0;
+              padding-left: 4px;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .second {
+        width: 100%;
+        h2 {
+          color: $primaryBlue;
+          font-size: 1.2rem;
+          &:hover {
+            font-size: 1.3rem;
+            transition: all 0.5s;
+          }
+        }
+        .tags {
+          padding-top: 8px;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: center;
+          .questListBtn {
+            min-height: 13px;
+            padding: 2px 6px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            margin-right: 3px;
+            &:hover {
+              a {
+                color: #fff;
+              }
+            }
+            a {
+              font-size: 0.7rem;
+              color: $greyfont;
+            }
+          }
+        }
+      }
+    }
+    .fourth {
+      width: 125px;
+      padding-right: 10px;
+      color: $greyfont;
+      text-align: center;
+      .username {
+        color: lighten($primaryBlue, 30%);
+        font-size: 0.85rem !important;
+        font-weight: bold;
+        &:hover {
+          color: lighten($primaryBlue, 50%);
+        }
+      }
+      .time {
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                            질문 엔트리 화면                           | 
+  #===================================================================#
+  */
+  p {
+    font-size: 1rem;
+  }
+  .res-icon {
+    font-size: 18px !important;
+  }
+  .CountBoxNum {
+    font-size: 1rem;
+  }
+  .picked {
+    .picked-item {
+      span {
+        color: $primaryPurple;
+        font-size: 0.7rem !important;
+      }
+    }
+  }
+  .add-comment {
+    font-size: 0.9rem;
+  }
+
+  .write-btn {
+    font-size: 0.7rem;
+    padding: 3px 7px;
+  }
+  .write-info {
+    font-size: 0.6rem !important;
+  }
+  .modify {
+    font-size: 0.6rem !important;
+  }
+  .delete {
+    font-size: 0.6rem !important;
+  }
+  .timeStampReplyName {
+    font-size: 0.9rem;
+  }
+  .reply-down {
+    font-size: 0.8rem;
+  }
+  .QuestionEntryMainSecondReplyTitle,
+  .QuestionEntryAnswerSecondReplyTitle {
+    font-size: 1.2rem !important;
+  }
+  .CountBoxNum {
+    margin-left: 2px !important;
+    margin-top: 3px !important;
+    font-size: 1rem !important;
+  }
+  .ItemBoxNum {
+    font-size: 1rem !important;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .ItemBoxImage {
+    font-size: 0.7rem !important;
+  }
+  .add-answer {
+    font-size: 1rem !important;
+  }
+  .ask-btn,
+  .sort-btn {
+    font-size: 1rem !important;
+  }
+
+  .complete-badge {
+    padding: 3px 10px;
+    background: $primaryPurple;
+    h5 {
+      font-size: 0.8rem;
+    }
+    letter-spacing: 0.2px;
+  }
+  .break-badge {
+    padding: 3px 10px;
+    background: $primaryYellow;
+    h5 {
+      font-size: 0.8rem;
+    }
+    letter-spacing: 0.2px;
+  }
+  .QuestionEntryHeaderTop {
+    .answer-title {
+      font-size: 1.4rem !important;
+    }
+  }
+  .QuestionEntryContainer {
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+      padding: 50px 0px 3px 0px;
+    }
+    .tags {
+      padding-top: 8px;
+      padding-bottom: 10px;
+      .questListBtn {
+        height: 20px;
+        padding-top: 2px;
+        margin-right: 3px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .mark_down_box {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .mark_down_input {
+      textarea {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      width: 100% !important;
+      height: 100%;
+      border: solid 1px $divider;
+      background: $primaryBlue;
+      opacity: 0.8;
+      border-radius: 3px;
+      h2 {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 0.9rem !important;
+        letter-spacing: 3px;
+        font-weight: normal;
+        color: white;
+      }
+      .mark_down_input_item {
+        width: 100%;
+        height: 300px !important;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+      }
+    }
+    .mark_down_view_wrapper {
+      display: none;
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                            질문 롸이팅 화면                           | 
+  #===================================================================#
+  */
+  .ClauseUpper {
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+  .write-title {
+    font-size: 1.1rem;
+  }
+  .form-check-input {
+    width: 10px;
+  }
+  .QuestionWriteTagTitle,
+  .QuestionWriteTagInput {
+    font-size: 0.8rem !important;
+  }
+  .inputTitle,
+  .inputReward {
+    font-size: 0.8rem !important;
+  }
+  /* 
+  #===================================================================# 
+  |                                 태그                               | 
+  #===================================================================#
+  */
+  .tag-container .tag-content .wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-gap: 30px;
+    background: ghostwhite;
+    color: #444;
+    padding-bottom: 80px;
+  }
+  .tag-container {
+    min-height: 900px;
+    .tag-search-bar {
+      font-size: 1rem !important;
+      height: 40px;
+      input::placeholder {
+        font-size: 1rem !important;
+      }
+    }
+    h2 {
+      font-size: 1.2rem !important;
+    }
+    .box {
+      margin: 0 !important;
+      padding: 0 !important;
+      margin-top: 20px !important;
+      width: 90px;
+      height: auto;
+      span {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                            이용약관, 정보보호                         | 
+  #===================================================================#
+  */
+  .clause-content {
+    font-size: 0.8rem;
+    h2 {
+      font-size: 1.2rem !important;
+    }
+    h3 {
+      font-size: 1rem !important;
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                                 랭크                               | 
+  #===================================================================#
+  */
+  .rankContainer {
+    .label {
+      font-size: 0.7rem !important;
+    }
+    .rankUpper {
+      height: 60px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+      .user-search-bar {
+        width: 90%;
+        margin: 0 auto;
+        height: 40px;
+        font-size: 1rem !important;
+        input::placeholder {
+          font-size: 1rem !important;
+        }
+      }
+    }
+    .rank-num {
+      font-size: 1.7rem !important;
+      width: 30px;
+      height: 30px;
+      margin-right: 14px !important;
+    }
+    img {
+      width: 40px !important;
+      height: 40px !important;
+    }
+    .rank-name {
+      font-size: 1.2rem !important;
+    }
+    .total-reward {
+      span {
+        font-size: 1rem !important;
+      }
+    }
+    .total-reward:hover span {
+      display: none;
+    }
+
+    .total-reward:hover:before {
+      content: "누적 이더리움";
+      font-size: 0.9rem;
+    }
+    .rank-info-bot {
+      // display: none;
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                               마이페이지                             | 
+  #===================================================================#
+  */
+  .count {
+    font-size: 1.1rem !important;
+  }
+
+  .word {
+    font-size: 0.9rem !important;
+  }
+
+  .mypage-container {
+    padding: 100px 0px 0px 0px;
+    .mypage-inner-container {
+      padding: 00px 0px;
+      width: 100%;
+      .first {
+        height: 130px;
+        .upload-btn-wrapper,
+        .btn,
+        .upload-btn-wrapper input[type="file"] {
+          display: none;
+        }
+        .first-image {
+          min-width: 0;
+          width: 100px;
+          height: 100px;
+        }
+        .first-userinfo {
+          width: 500px;
+          margin-left: 90px;
+          .username {
+            font-size: 1.2rem;
+            letter-spacing: 1.1px;
+            margin: 0;
+            display: inline;
+          }
+          .email {
+            padding-left: 20px;
+            margin-top: 3px;
+            font-size: 0.8rem;
+            letter-spacing: 1.1px;
+            display: inline;
+          }
+          .status {
+            p {
+              font-size: 0.7rem;
+            }
+            padding-left: 0px;
+            margin-top: 10px;
+            letter-spacing: 1.1px;
+          }
+          .edit-mod-btn {
+            font-size: 0.5rem !important;
+          }
+
+          .edit-status {
+            display: block;
+            width: 100%;
+            min-height: 25px !important;
+            height: 1vw !important;
+          }
+
+          .edit-submit-btn {
+            display: inline;
+            margin-top: 10px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important;
+          }
+
+          .edit-cancel-btn {
+            background: crimson;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 60px !important;
+            height: 23px !important;
+            font-weight: 400;
+            font-size: 0.5rem !important;
+          }
+        }
+      }
+      .second {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .second-one {
+          width: 100%;
+          .second-one-title {
+            font-size: 1.2rem;
+          }
+        }
+        .second-two {
+          width: 100%;
+          .second-two-title {
+            font-size: 1.2rem;
+          }
+        }
+        .second-three {
+          width: 100%;
+          .second-three-title {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .third {
+        .first {
+          display: none !important;
+        }
+        .second {
+          width: 100% !important;
+          h2 {
+            color: $primaryBlue;
+            font-size: 1.2rem;
+            &:hover {
+              font-size: 1.3rem;
+              transition: all 0.5s;
+            }
+          }
+          .tags {
+            padding-top: 8px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            .questListBtn {
+              padding: 2px 6px;
+              height: 20px !important;
+              padding-top: 2px;
+              margin-right: 3px;
+              font-size: 0.8rem;
+              &:hover {
+                a {
+                  color: #fff;
+                }
+              }
+              a {
+                font-size: 0.7rem;
+                color: $greyfont;
+              }
+            }
+          }
+        }
+        .fourth {
+          .username {
+            font-size: 0.85rem !important;
+          }
+          .time {
+            font-size: 0.6rem !important;
+          }
+        }
+      }
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                               헬프데스크                             | 
+  #===================================================================#
+*/
+  .helpdesk-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    width: 340px;
+    height: 230px;
+    background: ghostwhite;
+  }
+
+  .helpdesk-container {
+    .helpdesk-title {
+      margin-top: 20px;
+      text-align: center;
+      letter-spacing: 0.1rem;
+      color: rgba($color: $primaryBlue, $alpha: 0.8);
+      h1 {
+        font-size: 1rem !important;
+      }
+    }
+    .helpdesk-body {
+      margin-top: 10px;
+      text-align: center;
+      color: rgba($color: $primaryBlue, $alpha: 0.8);
+      .helpdesk-body-item {
+        margin-bottom: 10px;
+        h3 {
+          margin-top: 5px;
+          font-size: 0.8rem;
+        }
+      }
+      .helpdesk-body-word {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        h3 {
+          font-size: 0.75rem !important;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+    .helpdesk-btn-close {
+      margin: auto;
+      padding: 4px 8px;
+      border: solid 2px rgba($color: $primaryBlue, $alpha: 0.8);
+      border-radius: 5px;
+      font-size: 0.6rem;
+      font-weight: 900;
+      display: block;
+      text-decoration: none;
+      background: none;
+      color: rgba($color: $primaryBlue, $alpha: 0.8);
+    }
+  }
+  .questionPagenation {
+    font-size: 0.5rem !important;
+  }
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px;
+    .emptybox {
+      height: 100px;
+      .no-result-text {
+        font-size: 1.5rem;
+      }
+    }
+    .img-box {
+      .no-result-button-cntr {
+        height: 300px;
+        .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 1rem;
+        }
+        .search-by-tag {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .Header {
+    display: none;
+  }
+}
+
+/* 
+#===================================================================# 
+|                     450px [ 해상도 분기 ] - 모바일                    | 
+#===================================================================#
+*/
+
+@media (max-width: 450px) {
+  .middle {
+    background: ghostwhite !important;
+  }
+  .homeUpper {
+    height: 200px !important;
+  }
+  .questionPost {
+    .first {
+      display: none !important;
+    }
+    .second {
+      width: 740px !important;
+    }
+  }
+  .top {
+    .home-search-btn {
+      margin-top: 20px !important;
+    }
+  }
+  .bot {
+    height: 150px;
+    .home-search-bar {
+      width: 80%;
+      font-size: 0.7rem !important;
+      height: 55% !important;
+    }
+  }
+  /* 
+  #===================================================================# 
+  |                            검색결과 없음                             | 
+  #===================================================================#
+  */
+  .no-result-container {
+    min-height: 400px;
+    .emptybox {
+      .no-result-text {
+        font-size: 1.2rem;
+      }
+    }
+    .img-box {
+      padding-top: 100px;
+      .no-result-button-cntr {
+        height: 100px;
+        .question-in-korean {
+          width: 100%;
+          height: auto;
+          font-size: 1rem;
+        }
+        .search-by-tag {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
